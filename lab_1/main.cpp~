@@ -35,11 +35,11 @@ int main()
     Transcript** storedInToT = new Transcript*[testListSize];
     
     //now populuate that list using the copy function
-    for (int i = 0; i < testListSize; i++)
+    /*for (int i = 0; i < testListSize; i++)
     {
         storedInToT[i] = testToT.getTranscriptCopy(testStudentIDs[i]);
         
-    }
+    }*/
     
     //print that list using the test class
     //this is a bit cumbersome, but was done to
