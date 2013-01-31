@@ -6,28 +6,26 @@ TOT::TOT()
     currentTranscriptCount = 0;
 }
 
-TOT::TOT(Transcript* copylist, int listSize)
+TOT::TOT(Transcript* transcriptList, int listSize)
 {
 	currentTranscriptCount = listSize;
 	
 	for (int i = 0; i < listSize; ++i){
-		Transcript* transcripts[listSize] = new Transcript;
-		transcripts[i].studentID = copylist[i].studentID;
-		transcripts[i].numberOfSemesters = copylist[i]->numberOfSemesters;
-		transcripts[i]->semseters = new *Semester[numberOfSemesters];
-		for (int j = 0; j < transcripts[i]->numberOfSemseters; ++j){
-			transcripts[i].semseters[j].term = copylist[i]->semesters[j].term;
-			transcripts[i].semseters[j].year = copylist[i]->semesters[j].year;
-			transcripts[i].semseters[j].numberOfCourses = copylist[i]->semesters[j].numberOfCourses;
-			copylist[i]->semesters[j].courses = new *course[numberOfCourses];
-			for (int k = 0; k < numberOfCOurses; ++k){
-				copylist[i]->semesters[j].courses = new *course[numberOfCourses];
-				transcripts[i].semseters[j]->courses[k].courseNumber = copylist[i]->semesters->[j]->courses[k].courseNumber;
-				transcripts[i].semseters[j]->courses[k].grade = copylist[i]->semesters->[j]->courses[k].grade;
+		transcripts[i] = new Transcript;
+		transcripts[i]->studentID = transcriptList[i].studentID;
+		transcripts[i]->numberOfSemesters = transcriptList[i].numberOfSemesters;
+		for (int j = 0; j < transcripts[i]->numberOfSemesters; ++j){
+			transcripts[i]->semesters = new Semester;
+			transcripts[i]->semesters[j].term = transcriptList[i].semesters[j].term;
+			transcripts[i]->semesters[j].year = transcriptList[i].semesters[j].year;
+			transcripts[i]->semesters[j].numberOfCourses = transcriptList[i].semesters[j].numberOfCourses;
+			for (int k = 0; k < transcriptList[i].semesters[j].numberOfCourses; ++k){
+				transcripts[i]->semesters[j].courses = new Course;
+				transcripts[i]->semesters[j].courses[k].courseNumber = transcriptList[i].semesters[j].courses[k].courseNumber;
+				transcripts[i]->semesters[j].courses[k].grade = transcriptList[i].semesters[j].courses[k].grade;
 			}
 		}
-	}
-		
+	}		
 }
 
 
