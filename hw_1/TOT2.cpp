@@ -1,13 +1,15 @@
-#include "TOT.h"
+//TOT2.cpp file for homework 1
 
-TOT::TOT()
+TOT2::TOT2()
 
 {
-    currentTranscriptCount = 0;
+	currentCount = 0;
+	currentCapacity = INIT_SIZE;
 }
 
-TOT::TOT(Transcript* transcriptList, int listSize)
+TOT2::TOT2(Transcript* transcriptList, int listSize)
 {
+	
 	currentTranscriptCount = listSize;
 	
 	for (int i = 0; i < listSize; ++i){
@@ -26,29 +28,21 @@ TOT::TOT(Transcript* transcriptList, int listSize)
 			}
 		}
 	}
+	
+	
+	
 }
 
-
-
-Transcript* TOT::lookUp(string sID)
+void TOT2::expand()
 {
-    int i = 0;
-    while (i < MAX_SIZE && (transcripts[i]->studentID != sID ))
-    {
-        i++;
-    }
-        
-    if (i < MAX_SIZE)
-    {
-        return transcripts[i];
-    }
-    
-    else
-    {
-        return NULL;
-    }
+	Transcript** temp = new Transcript*[currentCount * RESIZE_FACTOR];
+	
+	for (int i = 0; i < currentCount; ++i){
+		temp[i] = transcripts[i];
+	}
+	
+	delete transcripts;
+	
+	transcripts = temp;
+	temp = NULL;
 }
-
-
-
-

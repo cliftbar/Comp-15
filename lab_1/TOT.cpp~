@@ -21,8 +21,8 @@ TOT::TOT(Transcript* transcriptList, int listSize)
 			transcripts[i]->semesters[j].numberOfCourses = transcriptList[i].semesters[j].numberOfCourses;
 			for (int k = 0; k < transcriptList[i].semesters[j].numberOfCourses; ++k){
 				transcripts[i]->semesters[j].courses = new Course;
-				transcripts[i]->semesters[j].courses[k].courseNumber = transcriptList[i].semesters.[j].courses[k].courseNumber;
-				transcripts[i]->semesters[j].courses[k].grade = transcriptList[i].semesters.[j].courses[k].grade;
+				transcripts[i]->semesters[j].courses[k].courseNumber = transcriptList[i].semesters[j].courses[k].courseNumber;
+				transcripts[i]->semesters[j].courses[k].grade = transcriptList[i].semesters[j].courses[k].grade;
 			}
 		}
 	}		
