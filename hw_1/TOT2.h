@@ -29,6 +29,8 @@ class TOT2
 
         //new function add a single Transcript to the system, returns bool if it worked
         bool addTranscript(Transcript* t);
+	   
+	   string student_ID;
 
     private:
     

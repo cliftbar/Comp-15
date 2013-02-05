@@ -18,12 +18,12 @@ TOT2::TOT2(Transcript* transcriptList, int listSize)
 		transcripts[i] = new Transcript;
 		transcripts[i]->studentID = transcriptList[i].studentID;
 		transcripts[i]->numberOfSemesters = transcriptList[i].numberOfSemesters;
-		transcripts[i]->semesters = new Semester[numberOfSemesters];
+		transcripts[i]->semesters = new Semester[transcriptList[i].numberOfSemesters];
 		for (int j = 0; j < transcripts[i]->numberOfSemesters; ++j){
 			transcripts[i]->semesters[j].term = transcriptList[i].semesters[j].term;
 			transcripts[i]->semesters[j].year = transcriptList[i].semesters[j].year;
 			transcripts[i]->semesters[j].numberOfCourses = transcriptList[i].semesters[j].numberOfCourses;
-			transcripts[i]->semesters[j].courses = new Course[numberOfCourses];
+			transcripts[i]->semesters[j].courses = new Course[transcriptList[i].semesters[j].numberOfCourses];
 			for (int k = 0; k < transcriptList[i].semesters[j].numberOfCourses; ++k){
 				transcripts[i]->semesters[j].courses[k].courseNumber = transcriptList[i].semesters[j].courses[k].courseNumber;
 				transcripts[i]->semesters[j].courses[k].grade = transcriptList[i].semesters[j].courses[k].grade;
@@ -49,13 +49,13 @@ void TOT2::expand()
 	temp = NULL;
 }
 
-bool addTranscript(Transcript* t)
+bool TOT2::addTranscript(Transcript* t)
 {
 	if (currentCount == currentCapacity){
 		expand();
 	}
 	
-	pos = currentCount;
+	int pos = currentCount;
 	
 	transcripts[pos] = new Transcript;
 	transcripts[pos]->studentID = t->studentID;
@@ -72,18 +72,18 @@ bool addTranscript(Transcript* t)
 		}
 	}
 	
-	++currentCount
+	++currentCount;
 	return true;
 }
 
-Transcript* getTranscriptCopy(string studentID)
+Transcript* TOT2::getTranscriptCopy(string studentID)
 {
 	Transcript* hold_transcript;
 	hold_transcript = NULL;
 	int i = 0;
 	
-	do{
-		if (transcripts[i]->studentID != studentID){
+	while (true){
+		if (transcripts[i]!= NULL && transcripts[i]->studentID != studentID){
 			++i;
 		}else if (transcripts[i]->studentID == studentID){
 			hold_transcript->studentID = transcripts[i]->studentID;
@@ -92,14 +92,14 @@ Transcript* getTranscriptCopy(string studentID)
 			for (int j = 0; j < hold_transcript->numberOfSemesters; ++j){
 				hold_transcript->semesters[j].term = transcripts[i]->semesters[j].term;
 				hold_transcript->semesters[j].year = transcripts[i]->semesters[j].year;
-				hold_transcript->semesters[j].numberOfCourses = transcripts[i].semesters[j].numberOfCourses;
+				hold_transcript->semesters[j].numberOfCourses = transcripts[i]->semesters[j].numberOfCourses;
 				hold_transcript->semesters[j].courses = new Course[hold_transcript->semesters[j].numberOfCourses];
 				for (int k = 0; k < hold_transcript->semesters[j].numberOfCourses; ++k){
 					hold_transcript->semesters[j].courses[k].courseNumber = transcripts[i]->semesters[j].courses[k].courseNumber;
 					hold_transcript->semesters[j].courses[k].grade = transcripts[i]->semesters[j].courses[k].grade;
 				}
 			}
-			break
+			break;
 		}
 	}
 	
