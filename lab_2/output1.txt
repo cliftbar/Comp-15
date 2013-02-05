@@ -1,0 +1,9 @@
+List 1
+1 
+It should be 
+1 3 3 4 4 6 7 9 9 9 12 12 22 55 56 78
+
+List 2
+4 8 15 
+It should be 
+4 8 15 16 23 42
