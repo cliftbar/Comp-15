@@ -1,0 +1,126 @@
+TOT2(Transcript* transcriptList, int listSize) take 2 entered.
+TOT2(Transcript* transcriptList, int listSize) take 2 left.
+hold_transcript->studentID: S006559
+hold_transcript->numberOfSemesters: 9
+hold_transcript->semesters[0].term: F
+hold_transcript->semesters[0].year: 2011
+hold_transcript->semesters[0].numberOfCourses: 6
+hold_transcript->semesters[0].courses: 0x1c703a8
+hold_transcript->semesters[0].courses[0].courseNumber:PHIL033
+hold_transcript->semesters[0].courses[0].grade: B
+hold_transcript->semesters[0].courses[1].courseNumber:BIOL153
+hold_transcript->semesters[0].courses[1].grade: B
+hold_transcript->semesters[0].courses[2].courseNumber:COMP149
+hold_transcript->semesters[0].courses[2].grade: D
+hold_transcript->semesters[0].courses[3].courseNumber:BIOL227
+hold_transcript->semesters[0].courses[3].grade: B
+hold_transcript->semesters[0].courses[4].courseNumber:EC228
+hold_transcript->semesters[0].courses[4].grade: C
+hold_transcript->semesters[0].courses[5].courseNumber:EC045
+hold_transcript->semesters[0].courses[5].grade: B
+hold_transcript->semesters[1].term: S
+hold_transcript->semesters[1].year: 2012
+hold_transcript->semesters[1].numberOfCourses: 6
+hold_transcript->semesters[1].courses: 0x1c70418
+hold_transcript->semesters[1].courses[0].courseNumber:AST029
+hold_transcript->semesters[1].courses[0].grade: B
+hold_transcript->semesters[1].courses[1].courseNumber:CLS112
+hold_transcript->semesters[1].courses[1].grade: B
+hold_transcript->semesters[1].courses[2].courseNumber:GEOL097
+hold_transcript->semesters[1].courses[2].grade: A
+hold_transcript->semesters[1].courses[3].courseNumber:LING105
+hold_transcript->semesters[1].courses[3].grade: B
+hold_transcript->semesters[1].courses[4].courseNumber:INTR010
+hold_transcript->semesters[1].courses[4].grade: B
+hold_transcript->semesters[1].courses[5].courseNumber:LING034
+hold_transcript->semesters[1].courses[5].grade: B
+hold_transcript->semesters[2].term: F
+hold_transcript->semesters[2].year: 2012
+hold_transcript->semesters[2].numberOfCourses: 4
+hold_transcript->semesters[2].courses: 0x1c70488
+hold_transcript->semesters[2].courses[0].courseNumber:INTR253
+hold_transcript->semesters[2].courses[0].grade: B
+hold_transcript->semesters[2].courses[1].courseNumber:MATH067
+hold_transcript->semesters[2].courses[1].grade: A
+hold_transcript->semesters[2].courses[2].courseNumber:INTR153
+hold_transcript->semesters[2].courses[2].grade: B
+hold_transcript->semesters[2].courses[3].courseNumber:BIOL234
+hold_transcript->semesters[2].courses[3].grade: B
+hold_transcript->semesters[3].term: S
+hold_transcript->semesters[3].year: 2013
+hold_transcript->semesters[3].numberOfCourses: 3
+hold_transcript->semesters[3].courses: 0x1c704d8
+hold_transcript->semesters[3].courses[0].courseNumber:CLS065
+hold_transcript->semesters[3].courses[0].grade: B
+hold_transcript->semesters[3].courses[1].courseNumber:MATH192
+hold_transcript->semesters[3].courses[1].grade: B
+hold_transcript->semesters[3].courses[2].courseNumber:PHIL278
+hold_transcript->semesters[3].courses[2].grade: B
+hold_transcript->semesters[4].term: F
+hold_transcript->semesters[4].year: 2013
+hold_transcript->semesters[4].numberOfCourses: 4
+hold_transcript->semesters[4].courses: 0x1c70518
+hold_transcript->semesters[4].courses[0].courseNumber:CLS047
+hold_transcript->semesters[4].courses[0].grade: B
+hold_transcript->semesters[4].courses[1].courseNumber:LING064
+hold_transcript->semesters[4].courses[1].grade: A
+hold_transcript->semesters[4].courses[2].courseNumber:GEOL097
+hold_transcript->semesters[4].courses[2].grade: B
+hold_transcript->semesters[4].courses[3].courseNumber:HIST047
+hold_transcript->semesters[4].courses[3].grade: B
+hold_transcript->semesters[5].term: S
+hold_transcript->semesters[5].year: 2014
+hold_transcript->semesters[5].numberOfCourses: 4
+hold_transcript->semesters[5].courses: 0x1c70568
+hold_transcript->semesters[5].courses[0].courseNumber:CLS106
+hold_transcript->semesters[5].courses[0].grade: B
+hold_transcript->semesters[5].courses[1].courseNumber:CLS122
+hold_transcript->semesters[5].courses[1].grade: C
+hold_transcript->semesters[5].courses[2].courseNumber:PHIL270
+hold_transcript->semesters[5].courses[2].grade: A
+hold_transcript->semesters[5].courses[3].courseNumber:CLS046
+hold_transcript->semesters[5].courses[3].grade: A
+hold_transcript->semesters[6].term: F
+hold_transcript->semesters[6].year: 2014
+hold_transcript->semesters[6].numberOfCourses: 6
+hold_transcript->semesters[6].courses: 0x1c705b8
+hold_transcript->semesters[6].courses[0].courseNumber:GEOL206
+hold_transcript->semesters[6].courses[0].grade: B
+hold_transcript->semesters[6].courses[1].courseNumber:MATH243
+hold_transcript->semesters[6].courses[1].grade: B
+hold_transcript->semesters[6].courses[2].courseNumber:AST161
+hold_transcript->semesters[6].courses[2].grade: C
+hold_transcript->semesters[6].courses[3].courseNumber:MATH240
+hold_transcript->semesters[6].courses[3].grade: B
+hold_transcript->semesters[6].courses[4].courseNumber:GEOL246
+hold_transcript->semesters[6].courses[4].grade: B
+hold_transcript->semesters[6].courses[5].courseNumber:GEOL124
+hold_transcript->semesters[6].courses[5].grade: B
+hold_transcript->semesters[7].term: S
+hold_transcript->semesters[7].year: 2015
+hold_transcript->semesters[7].numberOfCourses: 5
+hold_transcript->semesters[7].courses: 0x1c70628
+hold_transcript->semesters[7].courses[0].courseNumber:CLS153
+hold_transcript->semesters[7].courses[0].grade: A
+hold_transcript->semesters[7].courses[1].courseNumber:MATH200
+hold_transcript->semesters[7].courses[1].grade: B
+hold_transcript->semesters[7].courses[2].courseNumber:BIOL100
+hold_transcript->semesters[7].courses[2].grade: B
+hold_transcript->semesters[7].courses[3].courseNumber:HIST244
+hold_transcript->semesters[7].courses[3].grade: D
+hold_transcript->semesters[7].courses[4].courseNumber:HIST169
+hold_transcript->semesters[7].courses[4].grade: B
+hold_transcript->semesters[8].term: F
+hold_transcript->semesters[8].year: 2015
+hold_transcript->semesters[8].numberOfCourses: 5
+hold_transcript->semesters[8].courses: 0x1c70688
+hold_transcript->semesters[8].courses[0].courseNumber:MATH180
+hold_transcript->semesters[8].courses[0].grade: B
+hold_transcript->semesters[8].courses[1].courseNumber:MATH032
+hold_transcript->semesters[8].courses[1].grade: B
+hold_transcript->semesters[8].courses[2].courseNumber:COMP171
+hold_transcript->semesters[8].courses[2].grade: C
+hold_transcript->semesters[8].courses[3].courseNumber:CLS033
+hold_transcript->semesters[8].courses[3].grade: B
+hold_transcript->semesters[8].courses[4].courseNumber:EC116
+hold_transcript->semesters[8].courses[4].grade: C

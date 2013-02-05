@@ -10,34 +10,22 @@ TOT2::TOT2()
 
 TOT2::TOT2(Transcript* transcriptList, int listSize)
 {	
+	cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 entered.\n";
 	currentCount = 0;
 	currentCapacity = INIT_SIZE;
 	transcripts = new Transcript*[currentCapacity];
 	
 	for (int i = 0; i < listSize; ++i){
-		transcripts[i] = new Transcript;
-		transcripts[i]->studentID = transcriptList[i].studentID;
-		transcripts[i]->numberOfSemesters = transcriptList[i].numberOfSemesters;
-		transcripts[i]->semesters = new Semester[transcriptList[i].numberOfSemesters];
-		for (int j = 0; j < transcripts[i]->numberOfSemesters; ++j){
-			transcripts[i]->semesters[j].term = transcriptList[i].semesters[j].term;
-			transcripts[i]->semesters[j].year = transcriptList[i].semesters[j].year;
-			transcripts[i]->semesters[j].numberOfCourses = transcriptList[i].semesters[j].numberOfCourses;
-			transcripts[i]->semesters[j].courses = new Course[transcriptList[i].semesters[j].numberOfCourses];
-			for (int k = 0; k < transcriptList[i].semesters[j].numberOfCourses; ++k){
-				transcripts[i]->semesters[j].courses[k].courseNumber = transcriptList[i].semesters[j].courses[k].courseNumber;
-				transcripts[i]->semesters[j].courses[k].grade = transcriptList[i].semesters[j].courses[k].grade;
-			}
-		}
-		
-		++currentCount;
+		addTranscript(transcriptList);
 	}
+	cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 left.\n";
 }
 
 void TOT2::expand()
 {
 	Transcript** temp = NULL;
-	temp = new Transcript*[currentCount * RESIZE_FACTOR];
+	currentCapacity = currentCount*RESIZE_FACTOR;
+	temp = new Transcript*[currentCapacity];
 	
 	for (int i = 0; i < currentCount; ++i){
 		temp[i] = transcripts[i];
@@ -51,74 +39,101 @@ void TOT2::expand()
 
 bool TOT2::addTranscript(Transcript* t)
 {
-	if (currentCount == currentCapacity){
+	//cerr << "TOT2::addTranscript(Transcript* t) entered.\n";//debug code
+	if (currentCount >= currentCapacity){
+		//cerr << "addTranscript tried to expanded array.\n";//debug code
 		expand();
+	}else{
+		//cerr << "addTranscript did not expand array.\n";//debug code
 	}
 	
-	int pos = currentCount;
 	
-	transcripts[pos] = new Transcript;
-	transcripts[pos]->studentID = t->studentID;
-	transcripts[pos]->numberOfSemesters = t->numberOfSemesters;
-	for (int j = 0; j < t->numberOfSemesters; ++j){
-		transcripts[pos]->semesters = new Semester;
-		transcripts[pos]->semesters[j].term = t->semesters[j].term;
-		transcripts[pos]->semesters[j].year = t->semesters[j].year;
-		transcripts[pos]->semesters[j].numberOfCourses = t->semesters[j].numberOfCourses;
-		for (int k = 0; k < t->semesters[j].numberOfCourses; ++k){
-			transcripts[pos]->semesters[j].courses = new Course;
-			transcripts[pos]->semesters[j].courses[k].courseNumber = t->semesters[j].courses[k].courseNumber;
-			transcripts[pos]->semesters[j].courses[k].grade = t->semesters[j].courses[k].grade;
+	transcripts[currentCount] = new Transcript;
+	//cerr << "check_1\n";//debug code
+	transcripts[currentCount]->studentID = t[currentCount].studentID;
+	//cerr << "check_2: t[currentCount].studentID: " << t[currentCount].studentID << endl;//debug code
+	//cerr << t[currentCount].studentID << endl;//debug code
+	transcripts[currentCount]->numberOfSemesters = t[currentCount].numberOfSemesters;
+	transcripts[currentCount]->semesters = new Semester[t[currentCount].numberOfSemesters];
+	for (int j = 0; j < t[currentCount].numberOfSemesters; ++j){
+		//cerr << "check_4\n";//debug code
+		//cerr << "currentCount: " << currentCount << endl;//debug code
+		transcripts[currentCount]->semesters[j].term = t[currentCount].semesters[j].term;
+		transcripts[currentCount]->semesters[j].year = t[currentCount].semesters[j].year;
+		transcripts[currentCount]->semesters[j].numberOfCourses = t[currentCount].semesters[j].numberOfCourses;
+		transcripts[currentCount]->semesters[j].courses = new Course[t[currentCount].semesters[j].numberOfCourses];
+		for (int k = 0; k < t[currentCount].semesters[j].numberOfCourses; ++k){
+			//cerr << "check_5\n";//debug code
+			//cerr << t[currentCount].semesters[j].courses[k].courseNumber << endl;//deug code
+			transcripts[currentCount]->semesters[j].courses[k].courseNumber = t[currentCount].semesters[j].courses[k].courseNumber;
+			//cerr << t[currentCount].semesters[j].courses[k].grade << endl;//debug code
+			transcripts[currentCount]->semesters[j].courses[k].grade = t[currentCount].semesters[j].courses[k].grade;
 		}
+		//cerr << "check_3\n";//debug code
 	}
 	
 	++currentCount;
+	//cerr << "TOT2::addTranscript(Transcript* t) left.\n";//debug code
 	return true;
 }
 
 Transcript* TOT2::getTranscriptCopy(string studentID)
 {
+	//cerr << "TOT2::getTranscriptCopy(string studentID) entered\n";
 	Transcript* hold_transcript;
 	hold_transcript = NULL;
-	int i = 0;
 	
-	while (true){
+	for (int i = 0; i < currentCount; ++i){
 		if (transcripts[i]!= NULL && transcripts[i]->studentID != studentID){
-			++i;
-		}else if (transcripts[i]->studentID == studentID){
+			//cerr << "transcripts[i]->studentID: " << transcripts[i]->studentID << endl;//debug code
+			//cerr << "studentID: " << studentID << endl;//debug code
+			//cerr << i << endl;//debug code
+			//cerr << "^^not the same, ++i.\n";//debug code
+			
+		}else if (transcripts[i] != NULL && transcripts[i]->studentID == studentID){
+			//cerr << "studentID found.\n";//debug code
+			hold_transcript = new Transcript;
 			hold_transcript->studentID = transcripts[i]->studentID;
 			hold_transcript->numberOfSemesters = transcripts[i]->numberOfSemesters;
-			hold_transcript->semesters = new Semester[hold_transcript->numberOfSemesters];
-			for (int j = 0; j < hold_transcript->numberOfSemesters; ++j){
+			hold_transcript->semesters = new Semester[transcripts[i]->numberOfSemesters];
+			for (int j = 0; j < transcripts[i]->numberOfSemesters; ++j){
+				//cerr << "check_6\n";//debug code
 				hold_transcript->semesters[j].term = transcripts[i]->semesters[j].term;
 				hold_transcript->semesters[j].year = transcripts[i]->semesters[j].year;
 				hold_transcript->semesters[j].numberOfCourses = transcripts[i]->semesters[j].numberOfCourses;
-				hold_transcript->semesters[j].courses = new Course[hold_transcript->semesters[j].numberOfCourses];
-				for (int k = 0; k < hold_transcript->semesters[j].numberOfCourses; ++k){
+				hold_transcript->semesters[j].courses = new Course[transcripts[i]->semesters[j].numberOfCourses];
+				for (int k = 0; k < transcripts[i]->semesters[j].numberOfCourses; ++k){
+					//cerr << "check_7\n";//debug code
+					//cerr << "courseNumber added: " << transcripts[i]->semesters[j].courses[k].courseNumber << endl;//debug code
+					//cerr << "grade added: " << transcripts[i]->semesters[j].courses[k].courseNumber << endl;//debug code
 					hold_transcript->semesters[j].courses[k].courseNumber = transcripts[i]->semesters[j].courses[k].courseNumber;
 					hold_transcript->semesters[j].courses[k].grade = transcripts[i]->semesters[j].courses[k].grade;
 				}
 			}
-			break;
+		//cerr << "breaking loop\n";//debug code
+		break;
 		}
+		//cerr << "check_8\n";//debug code
 	}
 	
-	//Debug couting
-	cout << "hold_transcript->studentID: " << hold_transcript->studentID;
-	cout << "hold_transcript->numberOfSemesters: " << hold_transcript->numberOfSemesters;
+	
+	//Debug code
+	cerr << "hold_transcript->studentID: " << hold_transcript->studentID << endl;
+	cerr << "hold_transcript->numberOfSemesters: " << hold_transcript->numberOfSemesters << endl;
 	for (int j = 0; j < hold_transcript->numberOfSemesters; ++j){
-		cout << "hold_transcript->semesters[" << j << "].term: " << hold_transcript->semesters[j].term;
-		cout << "hold_transcript->semesters[" << j << "].year: " << hold_transcript->semesters[j].year;
-		cout << "hold_transcript->semesters[" << j << "].numberOfCourses: " << hold_transcript->semesters[j].numberOfCourses;
-		cout << "hold_transcript->semesters[" << j << "].courses: " << hold_transcript->semesters[j].courses;
+		cerr << "hold_transcript->semesters[" << j << "].term: " << hold_transcript->semesters[j].term << endl;
+		cerr << "hold_transcript->semesters[" << j << "].year: " << hold_transcript->semesters[j].year << endl;
+		cerr << "hold_transcript->semesters[" << j << "].numberOfCourses: " << hold_transcript->semesters[j].numberOfCourses << endl;
+		cerr << "hold_transcript->semesters[" << j << "].courses: " << hold_transcript->semesters[j].courses << endl;
 		for (int k = 0; k < hold_transcript->semesters[j].numberOfCourses; ++k){
-			cout << "hold_transcript->semesters[" << j << "].courses[" << k << "].courseNumber:" << hold_transcript->semesters[j].courses[k].courseNumber;
-			cout << "hold_transcript->semesters[" << j << "].courses[" << k << "].grade: " << hold_transcript->semesters[j].courses[k].grade;
+			cerr << "hold_transcript->semesters[" << j << "].courses[" << k << "].courseNumber:" << hold_transcript->semesters[j].courses[k].courseNumber << endl;
+			cerr << "hold_transcript->semesters[" << j << "].courses[" << k << "].grade: " << hold_transcript->semesters[j].courses[k].grade << endl;
 		}
 	}
-	
+	//*/
 return hold_transcript;
 }
+
 
 
 
