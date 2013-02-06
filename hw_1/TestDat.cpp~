@@ -1,6 +1,3 @@
-//Provided by Comp-15 Administration
-//Used by Cameron Barclift
-
 #include "TestDat.h"
 
 using namespace std;

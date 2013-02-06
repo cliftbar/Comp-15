@@ -1,7 +1,9 @@
+//Created by: Cameron Barclift
 //main.cpp file for homework 1
 //runs tests on TOT2.cpp
 //reads in a studenID from the stream and prints the requested transcript,
-//or an error if the transcript is not there
+//or an error if the transcript is not there.
+
 #include <iostream>
 #include "TOT2.h"
 #include "TestDat.h"

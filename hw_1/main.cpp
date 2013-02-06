@@ -24,10 +24,14 @@ int main()
 		my_system.transcript_list_print(&(tsList[i]));
 	}//*/
 	
+	//gets student ID to look up
 	cout << "Enter a student ID to retrieve a transcript.\n";
 	cin >> student_ID;
 	
+	//gets a copy of the requested transcript
 	tran_copy = my_system.getTranscriptCopy(student_ID);
+	
+	//prints the transcript or error message
 	if (tran_copy != NULL){
 		my_system.transcript_list_print(tran_copy);
 	}else if (tran_copy == NULL){

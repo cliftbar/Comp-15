@@ -18,7 +18,6 @@ class TOT2
     public:
 
         //constructor creates dynamic array of size INIT_SIZE, sets pointers to NULL
-
         TOT2();
 
         //same constructor as before, note you may call addTranscript function

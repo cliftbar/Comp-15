@@ -14,9 +14,11 @@ TOT2::TOT2()
 	currentCapacity = INIT_SIZE;
 }
 
+//Constructor for class, intializes transcripts,
+//the list of transcripts held in the class,
+//from the provided list of transcripts
 TOT2::TOT2(Transcript* transcriptList, int listSize)
 {	
-	//cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 entered.\n";
 	currentCount = 0;
 	currentCapacity = INIT_SIZE;
 	transcripts = new Transcript*[currentCapacity];
@@ -27,9 +29,10 @@ TOT2::TOT2(Transcript* transcriptList, int listSize)
 		transcript_list_print(transcripts[i]);
 		//*/
 	}
-	//cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 left.\n";
 }
 
+//expands the dynamic array of transcripts contained in the class
+//it doubles the capacity of the array
 void TOT2::expand()
 {
 	Transcript** temp = NULL;
@@ -46,6 +49,8 @@ void TOT2::expand()
 	temp = NULL;
 }
 
+//The function takes a pointer to a list of transcripts
+//and adds that list to transcripts (contained in the list).
 bool TOT2::addTranscript(Transcript* t)
 {
 	//cerr << "TOT2::addTranscript(Transcript* t) entered.\n";//debug code
@@ -55,7 +60,6 @@ bool TOT2::addTranscript(Transcript* t)
 	}else{
 		//cerr << "addTranscript did not expand array.\n";//debug code
 	}
-	
 	
 	transcripts[currentCount] = new Transcript;
 	//cerr << "check_1\n";//debug code
@@ -86,6 +90,8 @@ bool TOT2::addTranscript(Transcript* t)
 	return true;
 }
 
+//Function takes a student ID, finds the corrosponding transcript,
+//then  returns a pointer to a COPY of the transcript
 Transcript* TOT2::getTranscriptCopy(string studentID)
 {
 	//cerr << "TOT2::getTranscriptCopy(string studentID) entered\n";
@@ -126,6 +132,8 @@ Transcript* TOT2::getTranscriptCopy(string studentID)
 return hold_transcript;
 }
 
+//The function takes a student ID, finds the corrosponding transcript, and returns a pointer to the ACTUAL transcript.
+//This function is private so no one breaks the transcript list
 Transcript* TOT2::lookUp(string sID)
 {
 	//cerr << "lookUp entered\n";
@@ -142,17 +150,18 @@ Transcript* TOT2::lookUp(string sID)
 return NULL;
 }
 
+//Takes a pointer to a transcript and prints it to the screen.
 void TOT2::transcript_list_print(Transcript* t_in)
 {
-	cerr << "t_in->studentID: " << t_in->studentID << endl;
-	cerr << "t_in->numberOfSemesters: " << t_in->numberOfSemesters << endl;
+	cout << "t_in->studentID: " << t_in->studentID << endl;
+	cout << "t_in->numberOfSemesters: " << t_in->numberOfSemesters << endl;
 	for (int j = 0; j < t_in->numberOfSemesters; ++j){
-		cerr << "t_in->semesters[" << j << "].term: " << t_in->semesters[j].term << endl;
-		cerr << "t_in->semesters[" << j << "].year: " << t_in->semesters[j].year << endl;
-		cerr << "t_in->semesters[" << j << "].numberOfCourses: " << t_in->semesters[j].numberOfCourses << endl;
+		cout << "t_in->semesters[" << j << "].term: " << t_in->semesters[j].term << endl;
+		cout << "t_in->semesters[" << j << "].year: " << t_in->semesters[j].year << endl;
+		cout << "t_in->semesters[" << j << "].numberOfCourses: " << t_in->semesters[j].numberOfCourses << endl;
 		for (int k = 0; k < t_in->semesters[j].numberOfCourses; ++k){
-			cerr << "t_in->semesters[" << j << "].courses[" << k << "].courseNumber:" << t_in->semesters[j].courses[k].courseNumber << endl;
-			cerr << "t_in->semesters[" << j << "].courses[" << k << "].grade: " << t_in->semesters[j].courses[k].grade << endl;
+			cout << "t_in->semesters[" << j << "].courses[" << k << "].courseNumber:" << t_in->semesters[j].courses[k].courseNumber << endl;
+			cout << "t_in->semesters[" << j << "].courses[" << k << "].grade: " << t_in->semesters[j].courses[k].grade << endl;
 		}
 	}
 }

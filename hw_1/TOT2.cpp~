@@ -1,7 +1,13 @@
+//Created by: Cameron Barclift
 //TOT2.cpp file for homework 1
+//defines the functions in the class TOT2, which is declared in TOT2.h
 
 #include "TOT2.h"
 
+//default constuctor for the class
+//It does about the minimum to not break if called
+//I would really prefer if you didn't use this one, 
+//since it doesn't matter for the explicit assignment
 TOT2::TOT2()
 {
 	currentCount = 0;
@@ -17,7 +23,7 @@ TOT2::TOT2(Transcript* transcriptList, int listSize)
 	
 	for (int i = 0; i < listSize; ++i){
 		addTranscript(transcriptList);
-		/*//prints every transcript added
+		/*//prints every transcript added for testing purposes
 		transcript_list_print(transcripts[i]);
 		//*/
 	}

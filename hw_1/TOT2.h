@@ -1,3 +1,6 @@
+//Modified by: Cameron Barclift
+//Added print function
+
 #ifndef TOT2_H
 #define TOT2_H
 
