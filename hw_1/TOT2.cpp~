@@ -10,15 +10,18 @@ TOT2::TOT2()
 
 TOT2::TOT2(Transcript* transcriptList, int listSize)
 {	
-	cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 entered.\n";
+	//cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 entered.\n";
 	currentCount = 0;
 	currentCapacity = INIT_SIZE;
 	transcripts = new Transcript*[currentCapacity];
 	
 	for (int i = 0; i < listSize; ++i){
 		addTranscript(transcriptList);
+		/*//prints every transcript added
+		transcript_list_print(transcripts[i]);
+		//*/
 	}
-	cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 left.\n";
+	//cerr << "TOT2(Transcript* transcriptList, int listSize) take 2 left.\n";
 }
 
 void TOT2::expand()
@@ -81,60 +84,71 @@ Transcript* TOT2::getTranscriptCopy(string studentID)
 {
 	//cerr << "TOT2::getTranscriptCopy(string studentID) entered\n";
 	Transcript* hold_transcript;
+	Transcript* transcript_to_copy;
 	hold_transcript = NULL;
+	transcript_to_copy = lookUp(studentID);
 	
-	for (int i = 0; i < currentCount; ++i){
-		if (transcripts[i]!= NULL && transcripts[i]->studentID != studentID){
-			//cerr << "transcripts[i]->studentID: " << transcripts[i]->studentID << endl;//debug code
-			//cerr << "studentID: " << studentID << endl;//debug code
-			//cerr << i << endl;//debug code
-			//cerr << "^^not the same, ++i.\n";//debug code
-			
-		}else if (transcripts[i] != NULL && transcripts[i]->studentID == studentID){
-			//cerr << "studentID found.\n";//debug code
-			hold_transcript = new Transcript;
-			hold_transcript->studentID = transcripts[i]->studentID;
-			hold_transcript->numberOfSemesters = transcripts[i]->numberOfSemesters;
-			hold_transcript->semesters = new Semester[transcripts[i]->numberOfSemesters];
-			for (int j = 0; j < transcripts[i]->numberOfSemesters; ++j){
-				//cerr << "check_6\n";//debug code
-				hold_transcript->semesters[j].term = transcripts[i]->semesters[j].term;
-				hold_transcript->semesters[j].year = transcripts[i]->semesters[j].year;
-				hold_transcript->semesters[j].numberOfCourses = transcripts[i]->semesters[j].numberOfCourses;
-				hold_transcript->semesters[j].courses = new Course[transcripts[i]->semesters[j].numberOfCourses];
-				for (int k = 0; k < transcripts[i]->semesters[j].numberOfCourses; ++k){
-					//cerr << "check_7\n";//debug code
-					//cerr << "courseNumber added: " << transcripts[i]->semesters[j].courses[k].courseNumber << endl;//debug code
-					//cerr << "grade added: " << transcripts[i]->semesters[j].courses[k].courseNumber << endl;//debug code
-					hold_transcript->semesters[j].courses[k].courseNumber = transcripts[i]->semesters[j].courses[k].courseNumber;
-					hold_transcript->semesters[j].courses[k].grade = transcripts[i]->semesters[j].courses[k].grade;
-				}
+	if (transcript_to_copy != NULL){
+		//cerr << "studentID found.\n";//debug code
+		hold_transcript = new Transcript;
+		hold_transcript->studentID = transcript_to_copy->studentID;
+		hold_transcript->numberOfSemesters = transcript_to_copy->numberOfSemesters;
+		hold_transcript->semesters = new Semester[transcript_to_copy->numberOfSemesters];
+		for (int j = 0; j < transcript_to_copy->numberOfSemesters; ++j){
+			//cerr << "check_6\n";//debug code
+			hold_transcript->semesters[j].term = transcript_to_copy->semesters[j].term;
+			hold_transcript->semesters[j].year = transcript_to_copy->semesters[j].year;
+			hold_transcript->semesters[j].numberOfCourses = transcript_to_copy->semesters[j].numberOfCourses;
+			hold_transcript->semesters[j].courses = new Course[transcript_to_copy->semesters[j].numberOfCourses];
+			for (int k = 0; k < transcript_to_copy->semesters[j].numberOfCourses; ++k){
+				//cerr << "check_7\n";//debug code
+				//cerr << "courseNumber added: " << transcript_to_copy->semesters[j].courses[k].courseNumber << endl;//debug code
+				//cerr << "grade added: " << transcript_to_copy->semesters[j].courses[k].courseNumber << endl;//debug code
+				hold_transcript->semesters[j].courses[k].courseNumber = transcript_to_copy->semesters[j].courses[k].courseNumber;
+				hold_transcript->semesters[j].courses[k].grade = transcript_to_copy->semesters[j].courses[k].grade;
 			}
-		//cerr << "breaking loop\n";//debug code
-		break;
 		}
-		//cerr << "check_8\n";//debug code
 	}
 	
 	
-	//Debug code
-	cerr << "hold_transcript->studentID: " << hold_transcript->studentID << endl;
-	cerr << "hold_transcript->numberOfSemesters: " << hold_transcript->numberOfSemesters << endl;
-	for (int j = 0; j < hold_transcript->numberOfSemesters; ++j){
-		cerr << "hold_transcript->semesters[" << j << "].term: " << hold_transcript->semesters[j].term << endl;
-		cerr << "hold_transcript->semesters[" << j << "].year: " << hold_transcript->semesters[j].year << endl;
-		cerr << "hold_transcript->semesters[" << j << "].numberOfCourses: " << hold_transcript->semesters[j].numberOfCourses << endl;
-		cerr << "hold_transcript->semesters[" << j << "].courses: " << hold_transcript->semesters[j].courses << endl;
-		for (int k = 0; k < hold_transcript->semesters[j].numberOfCourses; ++k){
-			cerr << "hold_transcript->semesters[" << j << "].courses[" << k << "].courseNumber:" << hold_transcript->semesters[j].courses[k].courseNumber << endl;
-			cerr << "hold_transcript->semesters[" << j << "].courses[" << k << "].grade: " << hold_transcript->semesters[j].courses[k].grade << endl;
-		}
-	}
-	//*/
+	/*//Debug code
+	if(transcript_to_copy != NULL){
+		cerr << "transcript_list_print test\n";
+		transcript_list_print(hold_transcript);
+	}//*/
+	
 return hold_transcript;
 }
 
+Transcript* TOT2::lookUp(string sID)
+{
+	//cerr << "lookUp entered\n";
+	//cerr << "sID: " << sID << endl;
+	for (int i = 0; i < currentCount; ++i){
+		//cerr << "transcripts[i].studentID: " << transcripts[i]->studentID << endl;
+		if (transcripts[i] != NULL && transcripts[i]->studentID == sID){
+			//cerr << "lookUp exited found transcript\n";
+			return transcripts[i];
+		}
+	}
 
+//cerr << "lookUp exited, no transcript\n";
+return NULL;
+}
 
+void TOT2::transcript_list_print(Transcript* t_in)
+{
+	cerr << "t_in->studentID: " << t_in->studentID << endl;
+	cerr << "t_in->numberOfSemesters: " << t_in->numberOfSemesters << endl;
+	for (int j = 0; j < t_in->numberOfSemesters; ++j){
+		cerr << "t_in->semesters[" << j << "].term: " << t_in->semesters[j].term << endl;
+		cerr << "t_in->semesters[" << j << "].year: " << t_in->semesters[j].year << endl;
+		cerr << "t_in->semesters[" << j << "].numberOfCourses: " << t_in->semesters[j].numberOfCourses << endl;
+		for (int k = 0; k < t_in->semesters[j].numberOfCourses; ++k){
+			cerr << "t_in->semesters[" << j << "].courses[" << k << "].courseNumber:" << t_in->semesters[j].courses[k].courseNumber << endl;
+			cerr << "t_in->semesters[" << j << "].courses[" << k << "].grade: " << t_in->semesters[j].courses[k].grade << endl;
+		}
+	}
+}
 
 

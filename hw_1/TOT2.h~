@@ -30,7 +30,7 @@ class TOT2
         //new function add a single Transcript to the system, returns bool if it worked
         bool addTranscript(Transcript* t);
 	   
-	   string student_ID;
+	   void transcript_list_print(Transcript* t_in);
 
     private:
     

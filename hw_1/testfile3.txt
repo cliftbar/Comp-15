@@ -1,0 +1,69 @@
+t_in->studentID: S008891
+t_in->numberOfSemesters: 5
+t_in->semesters[0].term: F
+t_in->semesters[0].year: 2011
+t_in->semesters[0].numberOfCourses: 6
+t_in->semesters[0].courses[0].courseNumber:EC143
+t_in->semesters[0].courses[0].grade: A
+t_in->semesters[0].courses[1].courseNumber:BIOL093
+t_in->semesters[0].courses[1].grade: B
+t_in->semesters[0].courses[2].courseNumber:HIST025
+t_in->semesters[0].courses[2].grade: B
+t_in->semesters[0].courses[3].courseNumber:PHIL076
+t_in->semesters[0].courses[3].grade: B
+t_in->semesters[0].courses[4].courseNumber:COMP033
+t_in->semesters[0].courses[4].grade: B
+t_in->semesters[0].courses[5].courseNumber:COMP199
+t_in->semesters[0].courses[5].grade: A
+t_in->semesters[1].term: S
+t_in->semesters[1].year: 2012
+t_in->semesters[1].numberOfCourses: 6
+t_in->semesters[1].courses[0].courseNumber:HIST168
+t_in->semesters[1].courses[0].grade: C
+t_in->semesters[1].courses[1].courseNumber:COMP135
+t_in->semesters[1].courses[1].grade: B
+t_in->semesters[1].courses[2].courseNumber:COMP031
+t_in->semesters[1].courses[2].grade: B
+t_in->semesters[1].courses[3].courseNumber:HIST145
+t_in->semesters[1].courses[3].grade: C
+t_in->semesters[1].courses[4].courseNumber:COMP159
+t_in->semesters[1].courses[4].grade: C
+t_in->semesters[1].courses[5].courseNumber:MATH251
+t_in->semesters[1].courses[5].grade: A
+t_in->semesters[2].term: F
+t_in->semesters[2].year: 2012
+t_in->semesters[2].numberOfCourses: 4
+t_in->semesters[2].courses[0].courseNumber:EC226
+t_in->semesters[2].courses[0].grade: B
+t_in->semesters[2].courses[1].courseNumber:GEOL080
+t_in->semesters[2].courses[1].grade: B
+t_in->semesters[2].courses[2].courseNumber:AST220
+t_in->semesters[2].courses[2].grade: C
+t_in->semesters[2].courses[3].courseNumber:AST062
+t_in->semesters[2].courses[3].grade: C
+t_in->semesters[3].term: S
+t_in->semesters[3].year: 2013
+t_in->semesters[3].numberOfCourses: 5
+t_in->semesters[3].courses[0].courseNumber:MATH162
+t_in->semesters[3].courses[0].grade: B
+t_in->semesters[3].courses[1].courseNumber:BIOL082
+t_in->semesters[3].courses[1].grade: A
+t_in->semesters[3].courses[2].courseNumber:COMP055
+t_in->semesters[3].courses[2].grade: C
+t_in->semesters[3].courses[3].courseNumber:MATH127
+t_in->semesters[3].courses[3].grade: A
+t_in->semesters[3].courses[4].courseNumber:CLS012
+t_in->semesters[3].courses[4].grade: A
+t_in->semesters[4].term: F
+t_in->semesters[4].year: 2013
+t_in->semesters[4].numberOfCourses: 5
+t_in->semesters[4].courses[0].courseNumber:MATH253
+t_in->semesters[4].courses[0].grade: A
+t_in->semesters[4].courses[1].courseNumber:LING179
+t_in->semesters[4].courses[1].grade: B
+t_in->semesters[4].courses[2].courseNumber:PHIL096
+t_in->semesters[4].courses[2].grade: A
+t_in->semesters[4].courses[3].courseNumber:GEOL141
+t_in->semesters[4].courses[3].grade: C
+t_in->semesters[4].courses[4].courseNumber:COMP121
+t_in->semesters[4].courses[4].grade: B

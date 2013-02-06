@@ -18,7 +18,6 @@ class TOT2
     public:
 
         //constructor creates dynamic array of size INIT_SIZE, sets pointers to NULL
-
         TOT2();
 
         //same constructor as before, note you may call addTranscript function
@@ -29,6 +28,8 @@ class TOT2
 
         //new function add a single Transcript to the system, returns bool if it worked
         bool addTranscript(Transcript* t);
+	   
+	   void transcript_list_print(Transcript* t_in);
 
     private:
     
