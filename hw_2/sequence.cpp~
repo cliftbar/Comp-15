@@ -1,0 +1,41 @@
+
+#include "sequence.h"
+#include <iostream>
+
+using namespace std;
+
+Sequence_List::Sequence_List()
+{
+	head = NULL;
+}
+
+Sequence_List::Is_Empty()
+{
+	if(head == NULL){
+		return true;
+	}else {
+		return false;
+	}
+}
+
+Sequence_List::insert(Element_Type value_in)
+{
+	Node* node_in = new Node;
+	Node* iter;
+	
+	if (Is_Empty){
+		head = node_in;
+		return;
+	}else if(Is_Empty != false){
+		
+}
+
+Sequence_List::concatentation(Sequence_List* list_in)
+{
+	
+}
+
+Sequence_List::remove();
+{
+	
+}
