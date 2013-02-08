@@ -1,3 +1,4 @@
+
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
@@ -9,13 +10,13 @@ using namespace std;
 
 struct Node
 {
-	ElementType data;
+	Element_Type data;
 	Node* next;
 };
 
 class Sequence_List
 {
-	Public:
+	public:
 		//constructor
 		Sequence_List();
 		
@@ -23,22 +24,25 @@ class Sequence_List
 		Sequence_List(Sequence_List &rhs);
 		
 		//returns true if the list is empty
-		bool isEmpty();
+		bool Is_Empty();
 		
 		//inserts the passed value into the list
 		void insert(Element_Type value_in);
 				
-		void concatenation();
+		void concatenation(Sequence_List list_in);
 		
-		void remove();
+		int remove();
+		
+		void pub_print();
 		
 		//Destructor
 		~Sequence_List();
 		
-	Private:
+	private:
 		Node* head;
+		Node* tail;
+		
+		void priv_print(Node* iter);
 };
-
-
 
 #endif
