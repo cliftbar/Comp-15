@@ -48,8 +48,14 @@ int main()
 	cout << "You entered: \n";
 	even_sequence.print();
 	
-	//sequences concatenated
+	//odd and even concatenated
+	cout << "odd + even\n";
 	odd_sequence.concatenation(even_sequence);
+	odd_sequence.print();
+	
+	//sequence concatenated self
+	cout << "odd + odd\n";
+	odd_sequence.concatenation(odd_sequence);
 	odd_sequence.print();
 	
 return 0;	

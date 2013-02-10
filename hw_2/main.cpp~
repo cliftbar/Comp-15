@@ -28,7 +28,7 @@ int main()
 	
 	cout << "You entered: \n";
 	odd_sequence.print();
-	
+	/*
 	//even_sequence
 	do{
 		cout << "Read in number? \n";
@@ -47,6 +47,16 @@ int main()
 	
 	cout << "You entered: \n";
 	even_sequence.print();
+	
+	//odd and even concatenated
+	cout << "odd + even\n";
+	odd_sequence.concatenation(even_sequence);
+	odd_sequence.print();
+	*/
+	//sequence concatenated self
+	cout << "odd + odd\n";
+	odd_sequence.concatenation(odd_sequence);
+	odd_sequence.print();
 	
 return 0;	
 }
