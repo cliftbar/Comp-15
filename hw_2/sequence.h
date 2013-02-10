@@ -21,7 +21,7 @@ class Sequence_List
 		Sequence_List();
 		
 		//copy constructor
-		Sequence_List(Sequence_List &rhs);
+		Sequence_List(const Sequence_List &rhs);
 		
 		//returns true if the list is empty
 		bool Is_Empty();
@@ -42,7 +42,11 @@ class Sequence_List
 		Node* head;
 		Node* tail;
 		
+		//private print function, so I can get to head
 		void priv_print(Node* iter);
+		
+		//copies the list given into a new list for copy contructor
+		void copy_lists(Node* h_in);
 };
 
 #endif

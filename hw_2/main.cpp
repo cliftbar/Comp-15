@@ -12,6 +12,7 @@ int main()
 	int odd_num;
 	int even_num;
 	bool exit;
+	bool read_in;
 	
 	//odd_sequence
 	do{
@@ -30,18 +31,26 @@ int main()
 	
 	//even_sequence
 	do{
-	cout << "Enter even number: \n";
-	cin >> even_num;
+		cout << "Read in number? \n";
+		cin >> read_in;
+		
+		if (read_in) {
+			cout << "Enter even number: \n";
+			cin >> even_num;
+			even_sequence.insert(even_num);
+		}
 	
-	even_sequence.insert(even_num);
-	
-	cout << "Enter 1 to finish even sequence. \n";
-	cin >> exit;
+		cout << "Enter 1 to finish even sequence. \n";
+		cin >> exit;
 	
 	}while (!exit);
 	
 	cout << "You entered: \n";
 	even_sequence.print();
+	
+	//sequences concatenated
+	odd_sequence.concatenation(even_sequence);
+	odd_sequence.print();
 	
 return 0;	
 }

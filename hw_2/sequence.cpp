@@ -20,6 +20,31 @@ bool Sequence_List::Is_Empty()
 	}
 }
 
+//copy constructor
+Sequence_List::Sequence_List(const Sequence_List &rhs)
+{
+	head = NULL;
+	copy_lists(rhs.head);
+}
+
+void Sequence_List::copy_lists(Node* h_in)
+{
+	Node* copy_node = NULL;
+	
+	if (h_in == NULL){
+		return;
+	}else if (h_in != NULL){
+		copy_node = new Node;
+		copy_node->data = h_in->data;
+		copy_node->next = h_in->next;
+		if (head == NULL){
+		head = copy_node;
+		}
+		copy_lists(h_in->next);
+	}
+}
+	
+
 //new node added onto the end of the linked list
 void Sequence_List::insert(Element_Type value_in)
 {
@@ -58,14 +83,15 @@ return 0;
 
 void Sequence_List::concatenation(Sequence_List list_in)
 {
-	Node* list_in_copy = NULL;
-	Node* current_list = head;
+	Sequence_List list_in_copy = list_in;
 	
-	//list_in_copy = list_in //make copy constructor work here
+	list_in_copy.print();
 	
 	//tail points to last element
 	//list_in_copy is the head of a dynamic list
-	//tail->next = list_in_copy;
+	tail->next = list_in_copy.head;
+	tail = list_in_copy.tail;
+	
 	
 }
 
