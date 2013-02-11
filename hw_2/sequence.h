@@ -29,7 +29,7 @@ class Sequence_List
 		//inserts the passed value into the list
 		void insert(Element_Type value_in);
 				
-		void concatenation(Sequence_List list_in);
+		void concatenation(const Sequence_List list_in);
 		
 		int remove();
 		

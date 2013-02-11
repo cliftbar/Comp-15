@@ -29,21 +29,15 @@ Sequence_List::Sequence_List(const Sequence_List &rhs)
 
 void Sequence_List::copy_lists(Node* h_in)
 {
-	cout << "check_3\n";
 	Node* copy_node = NULL;
-	
-	
 	
 	if (h_in == NULL){
 		return;
 	}else if (h_in != NULL){
 		copy_node = new Node;
-		cout << "current node data: " << h_in->data << endl;
 		copy_node->data = h_in->data;
-		cout << "check_1\n";
 		copy_node->next = h_in->next;
 		if (head == NULL){
-		cout << "check_2\n";
 		head = copy_node;
 		}
 		copy_lists(h_in->next);
@@ -91,14 +85,9 @@ void Sequence_List::concatenation(Sequence_List list_in)
 {
 	Sequence_List list_in_copy = list_in;
 	
-	list_in_copy.print();
-	
-	//tail points to last element
-	//list_in_copy is the head of a dynamic list
-	tail->next = list_in_copy.head;
-	tail = list_in_copy.tail;
-	
-	
+	while (!list_in_copy.Is_Empty()){
+		insert(list_in_copy.remove());
+	}	
 }
 
 //public print function, just calls priv_print

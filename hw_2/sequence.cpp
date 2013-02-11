@@ -81,18 +81,13 @@ int Sequence_List::remove()
 return 0;
 }
 
-void Sequence_List::concatenation(Sequence_List list_in)
+void Sequence_List::concatenation(const Sequence_List list_in)
 {
 	Sequence_List list_in_copy = list_in;
 	
-	list_in_copy.print();
-	
-	//tail points to last element
-	//list_in_copy is the head of a dynamic list
-	tail->next = list_in_copy.head;
-	tail = list_in_copy.tail;
-	
-	
+	while (!list_in_copy.Is_Empty()){
+		insert(list_in_copy.remove());
+	}	
 }
 
 //public print function, just calls priv_print
