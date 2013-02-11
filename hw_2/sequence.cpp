@@ -45,7 +45,7 @@ void Sequence_List::copy_lists(Node* h_in)
 }
 	
 
-//new node added onto the end of the linked list
+//new node added onto the beginning of the linked list
 void Sequence_List::insert(Element_Type value_in)
 {
 	Node* add_node = new Node;
@@ -61,6 +61,27 @@ void Sequence_List::insert(Element_Type value_in)
 		//cerr << "adding, list NOT empty.\n";//DEBUG CODE
 		add_node->next = head;
 		head = add_node;
+		return;
+	}
+}
+
+//new node added onto the end of the linked list
+//This is not implemented yet!!!!!!!!!!!!!!
+void Sequence_List::insert(Element_Type value_in)
+{
+	Node* add_node = new Node;
+	add_node->data = value_in;
+	add_node->next = NULL;
+	
+	if (Sequence_List::Is_Empty()){
+		//cerr << "adding, list empty.\n";//DEBUG CODE
+		head = add_node;
+		tail = add_node;
+		return;
+	}else if(!Sequence_List::Is_Empty()){
+		//cerr << "adding, list NOT empty.\n";//DEBUG CODE
+		tail->next = add_node;
+		tail = add_node;
 		return;
 	}
 }
