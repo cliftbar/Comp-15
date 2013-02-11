@@ -65,7 +65,7 @@ void Sequence_List::insert(Element_Type value_in)
 	}
 }
 
-int Sequence_List::remove()
+Element_Type Sequence_List::remove()
 {
 	Node* node_out;
 	

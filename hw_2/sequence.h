@@ -31,7 +31,7 @@ class Sequence_List
 				
 		void concatenation(const Sequence_List list_in);
 		
-		int remove();
+		Element_Type remove();
 		
 		void print();
 		
