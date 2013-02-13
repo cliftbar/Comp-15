@@ -51,12 +51,21 @@ int main()
 	
 	cout << "You entered: \n";
 	even_sequence.print();
-	/*
+	
 	//odd and even concatenated
 	cout << "odd + even\n";
 	odd_sequence.concatenation(even_sequence);
 	odd_sequence.print();
 	
+	cout << "odd remove: " << odd_sequence.remove() << endl;
+	odd_sequence.print();
+	cout << "odd remove: " << odd_sequence.remove() << endl;
+	odd_sequence.print();
+	cout << "odd remove: " << odd_sequence.remove() << endl;
+	odd_sequence.print();
+	cout << "odd remove: " << odd_sequence.remove() << endl;
+	odd_sequence.print();
+	/*
 	//even and odd concatenated
 	cout << "even + odd\n";
 	even_sequence.concatenation(odd_sequence);
@@ -86,16 +95,16 @@ int main()
 	cout << "even + single\n";
 	even_sequence.concatenation(single_sequence);
 	even_sequence.print();
-	*/
+	
 	//single and even concatenated
 	cout << "single + even\n";
 	single_sequence.concatenation(even_sequence);
 	single_sequence.print();
-	/*
-	//odd and single concatenated
+	*/
+	//single and single concatenated
 	cout << "single + single\n";
 	single_sequence.concatenation(single_sequence);
 	single_sequence.print();
-	*/
+	
 return 0;	
 }
