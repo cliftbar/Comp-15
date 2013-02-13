@@ -1,7 +1,11 @@
 //Header file for Comp-15 HW 2
 //Created by: Cameron Barclift
 //Declares a class to contain a sequence and relavent
-//functions and a node struct for a linked list implementation
+//functions and a node struct for a linked list implementation.
+//This program implements the sequence as a queue,
+//elements are removed from the front and added to
+//the back.  This implementation allowed for concatenate to call
+//insert and remove.
 
 #ifndef SEQUENCE_H
 #define SEQUENCE_H

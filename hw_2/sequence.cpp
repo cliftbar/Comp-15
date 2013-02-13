@@ -1,6 +1,9 @@
 //Sequence.cpp file for HW 2, defines
 //the functions from sequence.h
 //Created by: Cameron Barclift
+//This program implements the sequence as a queue,
+//elements are removed from the front and added to
+//the back.
 
 #include "sequence.h"
 #include <iostream>
@@ -47,9 +50,6 @@ void Sequence_List::copy_lists(Node* h_in)
 	//////DEBUG END////////*/
 	
 	if (h_in == NULL){
-		//!!Check if I need to set tail == NULL
-		//cout << "tail->data: " << tail->data << endl;//DEBUG CODE
-		tail = NULL;
 		return;
 	}else if (h_in != NULL){
 		copy_node = new Node;
@@ -107,11 +107,6 @@ Element_Type Sequence_List::remove()
 		//if list is empty, error message and exit
 		cerr << "list empty, no remove.\n";//DEBUG CODE
 		exit(1);
-	}else if(head == NULL){
-		//!!check if this is needed
-		node_out = head;
-		head = NULL;
-		tail = NULL;
 	}else if(!Sequence_List::Is_Empty()){
 		node_out = head;
 		head = head->next;

@@ -1,13 +1,23 @@
-
+//Header file for Comp-15 HW 2
+//Created by: Cameron Barclift
+//Declares a class to contain a sequence and relavent
+//functions and a node struct for a linked list implementation.
+//This program implements the sequence as a queue,
+//elements are removed from the front and added to
+//the back.  This implementation allowed for concatenate to call
+//insert and remove.
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
 #include <iostream>
 #include <string>
+
+//declares a typedef Element_Type
 typedef int Element_Type;
 
 using namespace std;
 
+//Node declaration
 struct Node
 {
 	Element_Type data;
@@ -29,9 +39,9 @@ class Sequence_List
 		//inserts the passed value into the list
 		void insert(Element_Type value_in);
 				
-		void concatenation(Sequence_List list_in);
+		void concatenation(const Sequence_List list_in);
 		
-		int remove();
+		Element_Type remove();
 		
 		void print();
 		
