@@ -1,13 +1,20 @@
+//Header file for Comp-15 HW 2
+//Created by: Cameron Barclift
+//Declares a class to contain a sequence and relavent
+//functions and a node struct for a linked list implementation
 
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 
 #include <iostream>
 #include <string>
+
+//declares a typedef Element_Type
 typedef int Element_Type;
 
 using namespace std;
 
+//Node declaration
 struct Node
 {
 	Element_Type data;
