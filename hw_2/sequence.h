@@ -12,11 +12,9 @@
 
 #include <iostream>
 #include <string>
-
+using namespace std;
 //declares a typedef Element_Type
 typedef int Element_Type;
-
-using namespace std;
 
 //Node declaration
 struct Node

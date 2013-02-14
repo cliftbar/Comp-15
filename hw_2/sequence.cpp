@@ -61,7 +61,8 @@ void Sequence_List::copy_lists(Node* h_in)
 	}
 }
 
-//new node added onto the end of the linked list
+//new node added onto the tail of the linked list
+//value is passed in.
 void Sequence_List::insert(Element_Type value_in)
 {
 	//A new node is created, assigned the value passed,
@@ -93,7 +94,7 @@ Element_Type Sequence_List::remove()
 	
 	if(Sequence_List::Is_Empty()){
 		//if list is empty, error message and exit
-		cerr << "list empty, no remove.\n";
+		cerr << "List empty, cannot remove.\n";
 		exit(1);
 	}else if(!Sequence_List::Is_Empty()){
 		//temp_node assigned to head, then head moved to next node
@@ -111,7 +112,8 @@ return 0;
 //takes in a copy of a list, and removes all of the elements 
 //and puts them into the sequence, using insert and remove
 //list_in is a copy of the sequence passed to concatenation,
-//and is destroyed by the function
+//and is destroyed by the function.  Sequence is passed by 
+//value.
 void Sequence_List::concatenation(Sequence_List list_in)
 {	
 	//loops until list_in is empty
@@ -137,12 +139,10 @@ void Sequence_List::priv_print(Node* iter)
 		cout << iter->data << " ";
 		priv_print(iter->next);
 	}
-	
-return;
+//return;
 }
 
 //default destructor
 Sequence_List::~Sequence_List()
 {
-	
 }
