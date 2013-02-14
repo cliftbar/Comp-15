@@ -5,7 +5,8 @@
 //This program implements the sequence as a queue,
 //elements are removed from the front and added to
 //the back.  This implementation allowed for concatenate to call
-//insert and remove.
+//insert and remove while perserving the order of the two sequences.
+
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
 

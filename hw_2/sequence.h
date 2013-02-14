@@ -5,7 +5,7 @@
 //This program implements the sequence as a queue,
 //elements are removed from the front and added to
 //the back.  This implementation allowed for concatenate to call
-//insert and remove.
+//insert and remove while perserving the order of the two sequences.
 
 #ifndef SEQUENCE_H
 #define SEQUENCE_H
@@ -39,11 +39,16 @@ class Sequence_List
 		
 		//inserts the passed value into the list
 		void insert(Element_Type value_in);
-				
+		
+		//adds one sequence onto another. 
+		//The order of the added sequence is perserved,
+		//and the added sequence is not altered
 		void concatenation(const Sequence_List list_in);
 		
+		//removes an element from a sequenece, returns the value of the element
 		Element_Type remove();
 		
+		//prints all of the elements in a list, followed by an end line
 		void print();
 		
 		//Destructor
@@ -56,7 +61,7 @@ class Sequence_List
 		//private print function, so I can get to head
 		void priv_print(Node* iter);
 		
-		//copies the list given into a new list for copy contructor
+		//copies the list given by the pointer into a new list for copy contructor
 		void copy_lists(Node* h_in);
 };
 

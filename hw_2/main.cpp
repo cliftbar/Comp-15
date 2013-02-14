@@ -60,7 +60,7 @@ int main()
 	cout << "odd remove: " << odd_sequence.remove() << endl;
 	odd_sequence.print();
 	
-	/*
+	
 	//even and odd concatenated
 	cout << "even + odd\n";
 	even_sequence.concatenation(odd_sequence);
@@ -95,7 +95,7 @@ int main()
 	cout << "single + even\n";
 	single_sequence.concatenation(even_sequence);
 	single_sequence.print();
-	*/
+
 	//single and single concatenated
 	cout << "single + single\n";
 	single_sequence.concatenation(single_sequence);
