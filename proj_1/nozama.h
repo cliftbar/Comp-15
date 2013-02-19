@@ -23,6 +23,12 @@ struct Order
 	string priority;
 };
 
+struct Packing_Report
+{
+	bool package_out;
+	Order o_out;
+	
+
 struct Queue_node
 {
 	Order data;
@@ -40,6 +46,7 @@ public:
 	Order deliver_order();
 	//determines if the fetching unit is free,
 	bool unit_free();
+	bool order_ready();
 private:
 	//chooses the shortest queue by reading in
 	void choose_queue(Packing_Unit);
@@ -61,7 +68,7 @@ class Packing_Unit
 public:
 	int queue_length()
 	void add_to_queue(Order o_add);
-	
+	Packing_Report packing_done();
 private:
 	//checks if the order added is supreme or not
 	void is_supreme()
@@ -81,10 +88,11 @@ private:
 class front_desk
 {
 public:
-	void read_in_orders
-	Order 
+	void read_in_order();
+	bool is_order()
+	Order pass_order()
 private:
-	
+	Order curr_order;
 };
 
 
@@ -94,11 +102,14 @@ public:
 	void 
 	void report()
 private:
-	Fetching_Unit* fetchers[];
-	Packing_Unit* packers[];
-	void increment_time;
+	void increment_time();
+	void shortest_queue();
 	
-	int absolute_time
+	
+	Fetching_Unit* fetchers[1];
+	Packing_Unit* packers[3];
+	Packing_Unit* next_packer
+	int absolute_time;
 	
 };
 
