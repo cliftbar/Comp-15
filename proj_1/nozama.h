@@ -27,7 +27,6 @@ struct Packing_Report
 {
 	bool package_out;
 	Order o_out;	
-	
 
 struct Queue_node
 {
