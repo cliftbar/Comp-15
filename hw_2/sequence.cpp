@@ -139,7 +139,6 @@ void Sequence_List::priv_print(Node* iter)
 		cout << iter->data << " ";
 		priv_print(iter->next);
 	}
-//return;
 }
 
 //default destructor
