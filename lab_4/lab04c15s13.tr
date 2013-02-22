@@ -1,0 +1,257 @@
+.de Is
+.sp 3p
+.IP "\fC\\$1\fP"
+..
+.\"
+.\" new as of 2013-02-18
+.\"
+.nr LL 6.5i
+.de Ct
+\\s-1\\fC\\$1\\fP\\s0
+..
+.de Ss
+.DS L
+.ps 7
+.vs 8p
+.ft C
+.nf
+.in +0.15i
+..
+.de Se
+.in -0.15i
+.DE
+..
+.ll 6.5i
+.nr LL 6.5i
+.rm CH
+.ds RH \s8lab 04\s0
+.ds RF \s8page %\s0
+.ds LF \s8__NOW__\s0
+.ft PB
+.lt 6.5i
+.tl 'comp15'Exam Practice'\s-1LAB 4: Linked Lists and Classes\s0'
+.ft H
+.sp -5p
+\l'6.5i'
+.sp 5p
+.2C
+.SH
+\f(HBPractice for Exam\fP
+.sp 2p
+.LP
+The best way to practice for the exam is to write code
+that uses the ideas we have been studying:
+.DS L
+  \(bu Classes
+  \(bu Linked lists
+  \(bu Constructors
+  \(bu Dynamic Memory Allocation
+  \(bu Overloaded functions
+.DE
+For this lab you will add some more functions
+(aka methods) to the SortedList class you worked with
+in lab2.
+.sp 8p
+For the lab work on the first few on the list.  For
+practice, do a one or two more each day until the
+exam.  As you do more and more, the ideas will get
+clearer, and your speed and accuracy will increase.
+.SH
+\f(HBThe Files\fP
+.sp 2p
+.LP
+Start with the lab2 files you already worked on.
+.sp 8p
+\(rh Make a folder called lab4.  
+.sp 8p
+\(rh Then copy the new files from 
+.Ss
+.sp 2p
+.ps +1
+/comp/15/public_html/files/lab4
+.sp 2p
+.Se
+\(rh Then copy the files from
+lab2 to lab4.  On the linux Desktop, you can just open
+the two folders and copy the files with the usual Ctrl-C
+Ctrl-V sequence.  
+
+Or from the command line, you can type:
+.Ss
+.sp 2p
+.ps +1
+cd
+cp Desktop/comp15/lab2/* Desktop/comp15/lab4
+.Se
+assuming those directory names and paths are what you
+used in your account.  If these are not so, adjust 
+to fit your locations.
+.sp 8p
+You should now have the files:
+.Ss
+.ps +1
+.vs +1
+main.cpp
+main2.cpp
+sortedlist.h
+sortedlist.cpp
+input1.txt
+input2.txt
+.Se
+.SH
+\f(HBCompiling\fP
+.sp 2p
+.LP
+To use the new main, compile with:
+.Ss
+.ps +1
+ clang++ -g -Wall -Wextra main2.cpp sortedlist.cpp
+.Se
+and run it with
+.Ss
+.ps +1
+ ./a.out
+.Se
+.SH
+\f(HBAdding New Methods\fP
+.sp 2p
+.LP
+There are lots of things you can do with a sorted list.  Here is
+a long list of new methods you can write:
+.Is "int length()"
+length returns the number of elements in the list.
+.Is "int findMax()"
+findMax() returns the largest value in the list.  
+If the 
+list is empty, the function prints an error message and calls exit(1);
+.Is "double findMedian()"
+findMedian() returns the median value in the list.  This function
+is declared to return a double.  The reason is that the median value
+in a list with an even number of elements is the average of the
+two middle values.  The list values are all ints, but the mean may
+have a fractional part.  If the 
+list is empty, the function prints an error message and calls exit(1);
+.Is "int freq(int val)"
+freq() returns the number of times the specified value appears in
+the list.  If the value never appear, freq() returns 0.  If the
+list is empty, freq() returns 0.
+.Is "SortedList whereis(val)"
+whereis() returns a new sorted list that contains the index values
+of all elements where val appears.  
+.sp 3p
+For example, if the list \fCl\fP is 2 3 3 3 5 8
+.br
+then \fCl.whereis(3)\fP returns the list 1 2 3
+.Is "void merge(SortedList& l2)"
+merge() merges a second list into the original list.
+For example if the lists are:
+.sp 3p
+  \fCl1\fP = 1 5 8
+  \fCl2\fP = 1 2 5 10
+.sp 2p
+then after doing:  \fCl1.merge(l2)\fP
+.sp 2p
+  \fCl1\fP will be 1 2 5 5 8 10
+.Is "void removeVals(int v)"
+removeVals(int) takes a single integer value as an argument
+and modifies the list by deleting all elements that contain
+that value.  
+.Is "void removeVals(SortedList& l2)"
+removeVals(SortedList&) is an overloaded version of removeVals().
+If the argument is a SortedList, then this function removes from
+the original list all the values that appear in the list
+passed to it.
+For example if the lists are:
+.sp 3p
+  \fCl1\fP = 1 5 8
+  \fCl2\fP = 1 2 5 10
+.sp 2p
+then after doing:  \fCl1.removeVals(l2)\fP
+.sp 2p
+  \fCl1\fP will be 8
+.Is "SortedList findDuplicates()"
+findDuplicates looks through a SortedList and returns
+a new sorted list that contains a list of which values
+appear more than once in the original list.
+For example given this list and this assignment:
+.sp 3p
+  \fCl1\fP = 1 2 2 3 4 4 4 5
+  \fCl2 = l1.findDuplicates()\fP
+.sp 2p
+then 
+.sp 2p
+  \fCl2\fP will be 2 4
+.sp 2p
+.Is "void removeDuplicates()"
+removeDuplicates() modifies the calling array by removing
+all duplicate values, leaving only one instance of each
+value.  
+.sp 3p
+For example, given this list and this function call:
+.sp 3p
+  \fCl\fP is 2 3 3 3 5 8 8
+  \fCl.removeDuplicates()\fP,
+.sp 2p
+then 
+.sp 2p
+  \fCl\fP will contain 2 3 5 8
+.Is "\s-2SortedList findCommonValues(SortedList&)\s+2"
+findCommonValues() is passed a second list and returns a new
+list that contains the values both lists contain.  There are
+no duplicates in the result.  For example:
+.sp 3p
+  \fCl1\fP = 1 5 8
+  \fCl2\fP = 1 2 5 10
+.sp 2p
+then after doing:  
+.sp 2p
+  \fCl3 = l1.findCommonValues(l2)\fP
+.sp 2p
+  \fCl3\fP will 1 5
+.Is "int getMaxFrequency()"
+getMaxFrequency returns the largest number of times any value
+appears in the list.  If the list is empty, this function returns 0.
+For example given this list:
+.sp 3p
+  \fCl1\fP = 1 2 2 3 4 4 4 5
+.sp 2p
+then
+.sp 2p
+  \fCl1.getMaxFrequency()\fP  returns 3
+.sp 2p
+.Is "int* toArray()"
+toArray() returns a dynamically allocated array of
+ints that contains the values stored in the SortedList.
+.SH
+\f(HBAdding Functions\fP
+.sp 2p
+.LP
+Add one function at a time.  To add a function, you need to do
+this:
+.DS L
+  [a] Add the function declaration to sortedlist.h
+  [b] Add the code to sortedlist.cpp
+  [c] Turn on the test in main2.cpp
+       See main.cpp for how to do that
+  [d] Compile
+  [e] Fix syntax errors
+  [f] run
+  [g] debug
+.DE
+.SH
+\f(HBProvide What You Do\fP
+.sp 2p
+.LP
+At the end of the lab time, please provide what you
+have.
+.Ss
+.ps +1
+provide comp15 lab4 main2.cpp sortedlist.*
+.Se
+.SH
+\f(HBKeep Working\fP
+.sp 2p
+.LP
+These functions exercise all sorts of skills involving linked
+lists, loops, passing values, returning values.  If you do one or
+two a day, you will be in good shape for the exam.

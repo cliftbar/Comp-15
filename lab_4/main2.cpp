@@ -1,0 +1,392 @@
+
+/* main2.cpp
+ * Comp 15, Spring 2013
+ * lab2 extended
+ * Name: 
+ *
+ * Version 2 for review: this version tests the 
+ *   new methods:
+ *     int    length()	 		-- returns number of elements
+ *     int    findMax()			-- returns the maximum value
+ *     double findMedian()		-- returns the median value
+ *					   (note: may not be an int)
+ *     int freq(value)                  -- returns freq of value
+ *     sortedlist whereis(value)        -- list of where value appears
+ *     merge(takes another list by ref) -- destructive
+ *     removeVals(int)			-- overload function
+ *     removeVals(takes another list by ref) -- destructive
+ *     sortedlist findDuplicates()      -- returns a list of duplicate value
+ *     removeDuplicates()	        -- modifies current list
+ *     sortedlist findCommonValues(list2)   -- returns a list of common values
+ *     int getMaxFrequency()		-- returns greatest freq of elements
+ *     int* toArray()
+ *
+ * NOTE: test code for FINDCOMMONVALS and FINDMAXFREQ are not written
+ *       you need to add them if you want to test these new functions
+ */
+
+#include "sortedlist.h"
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+using namespace std;
+
+//
+// This program will test many functions
+// To turn on a test,  set the value after the name to 1
+// To turn off a test, set the value after the name to 0
+//
+#define	COPYCONSTRUCTOR	0
+#define	ASSIGNMENT	0
+#define LENGTH		0
+#define	FINDMAX		0
+#define	FINDMEDIAN	0
+#define	FREQ		0
+#define	WHEREIS		0
+#define	MERGE		0
+#define	REMOVEVALS	0
+#define	FINDDUPES	0
+#define	REMOVEDUPES	0
+#define	FINDCOMMONVALS	0
+#define	FINDMAXFREQ	0
+
+void readFile(SortedList& l, const char filename[]);
+void confirm(string name, SortedList& l, string correct);
+
+const char file1[] = "input1.txt";
+const char file2[] = "input2.txt";
+
+void	test_insert();
+void	test_copycons();
+void	test_assign();
+void	test_length();
+void	test_findmax();
+void	test_findmedian();
+void	test_freq();
+void	test_whereis();
+void	test_merge();
+void	test_removevals();
+void	test_finddupes();
+void	test_removedupes();
+void	test_findcommon();
+void	test_findmaxfreq();
+
+int main()
+{
+	test_insert();
+	test_copycons();
+	test_assign();
+	test_length();
+	test_findmax();
+	test_findmedian();
+	test_freq();
+	test_whereis();
+	test_merge();
+	test_removevals();
+	test_removedupes();
+/*
+ * these need to be installed somewhere in this file
+ *
+	test_findcommon();
+	test_findmaxfreq();
+ */
+	return 0;
+}
+
+void test_insert()
+{
+	printf("Running test_insert\n");
+	SortedList l1;
+	SortedList l2;
+	
+	//tests the insert function.
+	readFile(l1, file1);
+	readFile(l2, file2);
+	
+	confirm("List 1", l1, "1 3 3 4 4 6 7 9 9 9 12 12 22 55 56 78");
+	confirm("List 2", l2, "4 8 15 16 23 42" );
+}
+
+void test_copycons()
+{
+#if COPYCONSTRUCTOR
+	printf("Running test_copycons\n");
+	SortedList l1;
+	readFile(l1, file1);
+	SortedList l3 = l1;
+	l1.insert(21);
+	l3.insert(54);
+	
+	confirm("List 1", l1, "1 3 3 4 4 6 7 9 9 9 12 12 21 22 55 56 78");
+	confirm("List 3", l3, "1 3 3 4 4 6 7 9 9 9 12 12 22 54 55 56 78");
+#endif
+}
+
+void test_assign()
+{
+#if ASSIGNMENT
+	printf("Running test_assign\n");
+	SortedList l1, l2;
+	readFile(l2, file2);
+	SortedList l4;
+	l4 = l2;
+	l2.insert(33);
+	l4.insert(1);
+	confirm("List 2", l2, "4 8 15 16 23 33 42");
+	confirm("List 4", l4, "1 4 8 15 16 23 42" );
+	
+	//Special cases of assignment and copy
+	//copying a null list each time.
+	
+	SortedList l5;
+	l1 = l5;
+	SortedList l6 = l5;
+	l5.insert(7);
+	l5.insert(2);
+	l6.insert(8);
+	l6.insert(9);
+	l1.insert(4);
+	l1.insert(2);
+	l1.insert(5);
+	
+	confirm("List 5", l5, "2 7");
+	confirm("List 6", l6, "8 9");
+	confirm("List 1", l1, "2 4 5");
+#endif
+}
+
+void test_length()
+{
+#if LENGTH
+	printf("Running test_length\n");
+	SortedList l1, l2, l3;
+	int	len;
+	readFile(l1, file1);
+	readFile(l2, file2);
+
+	len = l1.length();
+	cout << "list is "; l1.print();
+	printf("Your length is %d, should be 16\n", len);
+
+	len = l2.length();
+	cout << "list is "; l2.print();
+	printf("Your length is %d, should be 6\n", len);
+
+	len = l3.length();
+	cout << "list is "; l3.print();
+	printf("Your length is %d, should be 0\n", len);
+#endif
+}
+
+void test_findmax()
+{
+#if FINDMAX	
+	printf("Running test_findmax\n");
+	SortedList l1, l2;
+	int	m1, m2;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+	m1 = l1.findMax();
+	m2 = l2.findMax();
+	cout << "list is "; l1.print();
+	printf("Your max is %d, should be 78\n", m1);
+	cout << "list is "; l2.print();
+	printf("Your max is %d, should be 42\n", m2);
+	SortedList eric;
+	eric.insert(-100);
+	eric.insert(-101);
+	eric.insert(-102);
+	m1 = eric.findMax();
+	cout << "list is "; eric.print();
+	printf("Your max is %d, should be -100\n", m1);
+#endif
+}
+void test_findmedian()
+{
+#if FINDMEDIAN
+	printf("Running test_findmedian\n");
+	SortedList l1, l2;
+	double	m1, m2;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+	m1 = l1.findMedian();
+	m2 = l2.findMedian();
+	cout << "list is "; l1.print();
+	printf("Your median is %f, should be 9\n", m1);
+	cout << "list is "; l2.print();
+	printf("Your median is %f, should be 15.5\n", m2);
+#endif
+}
+void test_freq()
+{
+#if FREQ	
+	printf("Running test_freq\n");
+	SortedList l1, l2;
+	void checkfreq(SortedList&, int num, int correct);
+	readFile(l1, file1);
+	readFile(l2, file2);
+
+	checkfreq(l1,  3, 2);
+	checkfreq(l1, 78, 1);
+	checkfreq(l1,  1, 1);
+	checkfreq(l1,  0, 0);
+
+	checkfreq(l2,  3, 0);
+	checkfreq(l2,  4, 1);
+	checkfreq(l2, 42, 1);
+	checkfreq(l2, 43, 0);
+}
+void checkfreq(SortedList& l, int num, int correct)
+{
+	printf("Running checkfreq\n");
+	int	f = l.freq(num);;
+	cout << "list is "; l.print();
+	printf("Your freq(%d) rets %d, should be %d\n", num, f, correct);
+#endif
+}
+
+void test_whereis()
+{
+#if WHEREIS	
+	printf("Running test_whereis\n");
+	void checkwhereis(SortedList&, int, string);
+	SortedList l1, l2, result;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+
+	checkwhereis(l1, 4, "3 4");
+	checkwhereis(l1, 12, "10 11");
+	checkwhereis(l1, 99, "");
+
+	checkwhereis(l2, 4, "0");
+	checkwhereis(l2, 24, "");
+}
+void checkwhereis(SortedList& l, int num, string correct)
+{
+	SortedList result;
+
+	result = l.whereis(num);
+	cout << "whereis "<< num << " in " ; l.print();
+	confirm("your result", result, correct);
+#endif
+}
+
+
+void test_merge()
+{
+#if MERGE	
+	printf("Running test_merge\n");
+	SortedList l1, l2;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+	cout << "Before List1.merge(List2):\n";
+	cout << "  List 1 is " ; l1.print();
+	cout << "  List 2 is " ; l2.print();
+	l1.merge(l2);
+	confirm("After List1.merge(List2), List1", l1, 
+		"1 3 3 4 4 4 6 7 8 9 9 9 12 12 15 16 22 23 42 55 56 78");
+	cout << "  and List 2 is " ; l2.print();
+#endif
+}
+	
+void test_removevals()
+{
+#if REMOVEVALS
+	printf("Running test_removevals\n");
+	SortedList l1, l2, l3;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+	l3 = l2;
+	l3.insert(6); l3.insert(12); l3.insert(6); l3.insert(78);
+	printf("About to remove value 23 from "); l2.print();
+	l2.removeVals(23);
+	confirm("list", l2, "4 8 15 16 42");
+	printf("About to remove value 4 from "); l2.print;()
+	l2.removeVals(4);
+	confirm("list", l2, "8 15 16 42");
+	putchar('\n');
+	printf("List 1 is now "); l1.print();
+	printf("List 3 is now "); l3.print();
+	printf("  Calling L1.remove(l3)\n");
+	confirm("List 1", l1, "1 3 3 7 9 9 9 12 22 55 56");
+#endif
+}
+void test_finddupes()
+{
+#if FINDDUPES
+	printf("Running test_finddupes\n");
+	SortedList l1, l2, result;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+
+	printf("Looking for duplicate values in "); l1.print();
+	result = l1.findDuplicates();
+	confirm("list of duplicates", result, "3 4 9 12");
+
+	printf("Looking for duplicate values in "); l2.print();
+	result = l2.findDuplicates();
+	confirm("list of duplicates", result, "");
+
+	l2.insert(8); l2.insert(42);
+	printf("Looking for duplicate values in "); l2.print();
+	result = l2.findDuplicates();
+	confirm("list of duplicates", result, "8 42");
+#endif
+}
+	
+void test_removedupes()
+{
+#if REMOVEDUPES
+	printf("Running test_removedupes\n");
+	SortedList l1, l2, l3;
+
+	readFile(l1, file1);
+	readFile(l2, file2);
+	l3.insert(4);l3.insert(4);l3.insert(4);l3.insert(4);
+
+	printf("About to remove duplicate values in "); l1.print();
+	l1.removeDuplicates();
+	confirm("after removing duplicates", l1, "1 3 4 6 7 9 12 22 55 56 78");
+
+	printf("About to remove duplicate values in "); l2.print();
+	l2.removeDuplicates();
+	confirm("after removing duplicates", l2, "4 8 15 16 23 42" );
+
+	printf("About to remove duplicate values in "); l3.print();
+	l3.removeDuplicates();
+	confirm("after removing duplicates", l3, "");
+#endif
+}
+
+//
+//  Reads the file and inserts the
+//  element into the list, l, that was passed in.
+
+void readFile(SortedList &l, const char filename[])
+{
+	int temp;
+	ifstream fin;
+
+	fin.open(filename);
+	while ( fin >> temp ){
+  		l.insert(temp);
+	}
+	fin.close();
+}
+//
+// Show user what the list contains then show what it ought to contain
+// Let the user decide if it is correct
+//
+void confirm(string name, SortedList& l, string correct)
+{
+	cout << name << " is now:" << endl;
+	l.print();
+	cout << "It should be" << endl;
+	cout << correct << endl << endl;
+}
