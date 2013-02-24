@@ -43,7 +43,7 @@ public:
 private:
 
     //capacity is size of array, not amount stored in list
-  int capacity;
+  int listSize;
   Order* orders;
   void expandList();
 
