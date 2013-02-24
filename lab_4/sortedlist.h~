@@ -1,7 +1,7 @@
  /* sortedlist.h 
   * Comp 15, Spring 2013
   * Lab 2
-  * Name: 
+  * Name: Cameron Barclift
   */
 
 
@@ -42,6 +42,21 @@ public:
 
     /* assignment operator: used when a  */
   const SortedList& operator=(const SortedList &rhs);
+  
+  //returns the number of elements in the list
+  int length();
+  
+  //find max value in list
+  int findMax();
+  
+  //find the median of a list
+  double findMedian();
+  
+  //finds the frequency of the passed value
+  int freq(int val);
+  
+  //Finds the duplicates in the list
+  SortedList findDuplicates();
 
     /* destructor */
   ~SortedList();

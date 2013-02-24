@@ -45,7 +45,7 @@ using namespace std;
 #define	WHEREIS		0
 #define	MERGE		0
 #define	REMOVEVALS	0
-#define	FINDDUPES	1
+#define	FINDDUPES	0
 #define	REMOVEDUPES	0
 #define	FINDCOMMONVALS	0
 #define	FINDMAXFREQ	0

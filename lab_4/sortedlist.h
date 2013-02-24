@@ -28,7 +28,6 @@ public:
     /* Adds a new value to the list, preserving ascending sorted order. */
   void insert(int value);
 
-
     /* Returns true if list is empty. */
     /* This method is "const", which is a promise to the compiler
         that it won't change the value of any private variables. */
@@ -39,9 +38,27 @@ public:
 
     /* copy constructor: used when a brand new SortedList is being made */
   SortedList(SortedList &rhs);
+  
+  //const copy constructor
+  SortedList(const SortedList &rhs);
 
     /* assignment operator: used when a  */
   const SortedList& operator=(const SortedList &rhs);
+  
+  //returns the number of elements in the list
+  int length();
+  
+  //find max value in list
+  int findMax();
+  
+  //find the median of a list
+  double findMedian();
+  
+  //finds the frequency of the passed value
+  int freq(int val);
+  
+  //Finds the duplicates in the list
+  SortedList findDuplicates();
 
     /* destructor */
   ~SortedList();

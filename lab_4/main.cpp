@@ -47,7 +47,7 @@ int main(){
 	
 	// now test the copy constructor,
 	// remove the following comment after you implement it
-/*
+
 	SortedList l3 = l1;
 	l1.insert(21);
 	l3.insert(54);
@@ -61,12 +61,12 @@ int main(){
 	l3.print();
 	cout << "It should be \n";
 	cout << "1 3 3 4 4 6 7 9 9 9 12 12 22 54 55 56 78\n\n";
-*/
+
 
 	// now test the assignment operator,
 	// remove the following comment after you implement it
 	
-/*	
+
 	SortedList l4;
 	l4 = l2;
 	l2.insert(33);
@@ -113,7 +113,7 @@ int main(){
 	l1.print();
 	cout << "It should be \n";
 	cout << "2 4 5\n\n";
-*/
+
 
 	return 0;
 }
