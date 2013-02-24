@@ -5,6 +5,7 @@
   */
   
 #include "sortedlist.h"
+#include <cstdlib>
 
 /******
 
@@ -66,40 +67,38 @@ void SortedList::insert(int v){
 
 	Node* np = new Node;
 	Node* iter = head;
-	Node* prev = head;
+	Node* prev = NULL;
 
 	np->data = v;
 	np->next = NULL;
-	cerr << "v: " << v << endl;//DEBUG CODE*/
 	
 	if (isEmpty()){
-		cerr << "list empty\n";
 		head = np;
 		prev = np;
 		return;
 	}else if (iter->data > np->data){
-		cerr << "front case, single list\n";
 		np->next = iter;
 		head = np;
 		return;
 	}else{
-		cerr << "middle/end\n";
 		while((iter->data < np->data) && iter->next != NULL){
 			prev = iter;
 			iter = iter->next;
-			cerr << iter->data << " " << np->data << endl;
 		}
-		cerr << "found place\n";
 		if (iter->next != NULL){
-			cerr << "iter->next != NULL\n";
-			prev = np;
-			np->next = iter;
-			return;
-		}else if (iter->next == NULL){
-			cerr << "iter->next = NULL\n";
 			prev->next = np;
 			np->next = iter;
 			return;
+		}else if (iter->next == NULL){
+			if(iter->data < np->data){
+				iter->next = np;
+				np->next = NULL;
+				return;
+			}else if(iter->data >= np->data){
+				prev->next = np;
+				np->next = iter;
+				return;
+			}
 		}
 	}
 }
@@ -112,9 +111,28 @@ void SortedList::insert(int v){
   *  head to NULL! Otherwise what would happen when you call
   *  insertNodesFromList?
   */
-SortedList::SortedList(SortedList &rhs){
+SortedList::SortedList(SortedList &rhs)
+{
+	Node* h_in = rhs.head;
+	
+	head = NULL;
+	
+	while(h_in != NULL){
+		insert(h_in->data);
+		h_in = h_in->next;
+	}
+}
 
-	//your code here and your comment above 
+SortedList::SortedList(const SortedList &rhs)
+{
+	Node* h_in = rhs.head;
+	
+	head = NULL;
+	
+	while(h_in != NULL){
+		insert(h_in->data);
+		h_in = h_in->next;
+	}
 }
 
  /* Does: Assignment Operator
@@ -128,12 +146,127 @@ SortedList::SortedList(SortedList &rhs){
 const SortedList& SortedList::operator=(const SortedList &rhs){	
 //check to make sure that you don't overwrite yourself
 //with yourself...just in case someone does list1 = list1;
+  
   if (this != &rhs) {
-    
+	  deleteList();
+	  copyNodesFromList(rhs.head);    
   }
   
     //unlike copy constructor, return this (a pointer to yourself)
   return *this;
+}
+
+//find length of sortedlist
+int SortedList::length()
+{
+	int len = 0;
+	Node* iter = head;
+	
+	while(iter != NULL){
+		++len;
+		iter = iter->next;
+	}
+	
+return len;
+}
+
+//find the max value of the sortedlist
+int SortedList::findMax()
+{
+	int max = head->data;
+	Node* iter = head;
+	
+	while(iter != NULL){
+		if (iter->data > max){
+			max = iter->data;
+		}
+		iter = iter->next;
+	}
+	
+return max;
+}
+
+//finds the median of the sortedlist
+double SortedList::findMedian()
+{
+	double median;
+	int len = length();
+	Node* iter = head;
+	cerr << "len: " << len << endl;
+	cerr << "len%2: " << len%2 << endl;
+	if (isEmpty()){
+		exit(1);
+	}else if (len%2 != 0){
+		for (int i = 0; i <= ((len/2)); ++i){
+			iter = iter->next;
+		}
+		median = iter->data;
+	}else if (len%2 == 0){
+		for (int i = 1; i <= (len/2)-1; ++i){
+			cerr << "iter->data: " << iter->data << endl;
+			iter = iter->next;
+		}
+		cerr << "iter->data: " << iter->data << endl;
+		cerr << "iter->data->next: " << iter->next->data << endl;
+
+		cerr << "len/2: " << len/2 << endl;
+		median = (iter->data + iter->next->data)/2;
+	}
+	
+return median;
+}
+
+//returns the fequency of the passed value
+int SortedList::freq(int val)
+{
+	Node* iter = head;
+	int freq = 0;
+	
+	if(isEmpty()){
+		return freq;
+	}
+	while (iter != NULL){
+		if (val == iter->data){
+			++freq;
+		}
+		
+		iter = iter->next;
+	}
+	
+return freq;
+}
+
+SortedList SortedList::findDuplicates()
+{
+	SortedList new_list;
+	Node* iter = head;
+	int len = length();
+	int comp_array[len];
+	int i = 0;
+	bool used = false;
+	
+	while (iter->next != NULL){
+		if (iter->next != NULL && iter->data == iter->next->data){
+			for (int k = 0; k < i; ++k){
+				if (comp_array[k] == iter->data){
+					used = true;
+					break;
+				}
+			}
+			if (!used){
+				comp_array[i] = iter->data;
+				new_list.insert(iter->data);
+			}
+		}
+		
+		if (iter->next != NULL){
+			iter = iter->next;
+		}
+		++i;
+		used = false;
+	}
+
+return new_list;
 }
 
  /* Does: destructor - deletes any nodes in list 
@@ -161,12 +294,17 @@ SortedList::~SortedList(){
   * Calls: 
   * Notes: Remember to set head to NULL when you're done!
   */
-void SortedList::deleteList(){
-
-  // your code here and comment above
-    
-
-    
+void SortedList::deleteList()
+{
+	Node* temp;
+	Node* iter = head;
+		
+	while (iter != NULL){
+		temp = iter;
+		iter = iter->next;
+		delete temp;
+	}
+	head = NULL;
 }
 
  /* Does: 
@@ -178,5 +316,11 @@ void SortedList::deleteList(){
 void SortedList::copyNodesFromList(Node* otherList){
 
   // your code here and comment above
+    Node* h_in = otherList;
+
+	while (h_in != NULL){
+		  insert(h_in->data);
+		  h_in = h_in->next;
+	  }
 }
 

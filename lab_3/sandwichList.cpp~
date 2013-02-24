@@ -69,23 +69,21 @@ void SandwichList::expandList()
 	
 	capacity = capacity * 2;
 	temp_array = new Order[capacity];
-	int j = 0;
-	int i = front;
+	int i = 0;
 	
-	do{
+	while(!isEmpty()){
 		//cout << "check 1\n";
-		cout << "j; " << j << " ";
 		cout << "i: " << i << " ";
 		cout << "back: " << back << endl;
-		temp_array[j] = orders[i];
-		++j;
-		i = (++i)%(capacity/2);
+		temp_array[i] = getNext();
+		cout << "temp_array[i]: " << temp_array[i].orderNbr << endl;
+		++i;
 		
-	}while(i != back);
+	};
 	
 	//cout << "check 2\n";
 	front = 0;
-	back = j + 1;
+	back = i;
 	
 	orders = temp_array;
 	for (int k = 0; k < back; ++k){
