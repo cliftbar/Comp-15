@@ -59,6 +59,9 @@ public:
   
   //Finds the duplicates in the list
   SortedList findDuplicates();
+  
+  //removes the duplicates from a list
+  void removeDuplicates();
 
     /* destructor */
   ~SortedList();

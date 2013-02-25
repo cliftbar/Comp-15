@@ -246,36 +246,49 @@ SortedList SortedList::findDuplicates()
 	bool used = false;
 	
 	while (iter->next != NULL){
-		//cerr << "iter->data: " << iter->data << endl;
 		if (iter->next != NULL && iter->data == iter->next->data){
-			cerr << "dup\n";
 			for (int k = 0; k < i; ++k){
-				 	
 				if (comp_array[k] == iter->data){
 					used = true;
-					cerr << "used: " << used << endl;
 					break;
 				}
 			}
 			if (!used){
 				comp_array[i] = iter->data;
-				cerr << "comp_array[]: " << endl;
 				new_list.insert(iter->data);
 			}
-			
-			//cerr << "inserted into new thang\n";	
 		}
 		
 		if (iter->next != NULL){
-			cerr << "iter->next != NULL\n";
 			iter = iter->next;
 		}
 		++i;
 		used = false;
 	}
-	//cerr << "out of loop\n";
 
 return new_list;
+}
+
+//removes the duplicates from a list
+void SortedList::removeDuplicates()
+{
+	cerr << "check4\n";
+
+	Node* iter = head;
+	Node* to_remove;
+	cerr << "check2\n";
+
+	while(iter->next != NULL && iter->next->next != NULL){
+		cerr << "check3\n";
+		if (iter->data == iter->next->data){
+			cerr << "check1\n";
+			to_remove = iter->next;
+			iter->next = iter->next->next;
+			delete to_remove;
+		}else{
+			iter = iter->next;
+		}
+	}	
 }
 
  /* Does: destructor - deletes any nodes in list 

@@ -269,6 +269,23 @@ SortedList SortedList::findDuplicates()
 return new_list;
 }
 
+//removes the duplicates from a list
+void SortedList::removeDuplicates()
+{
+	Node* iter = head;
+	Node* to_remove;
+
+	while(iter->next != NULL && iter->next->next != NULL){
+		if (iter->data == iter->next->data){
+			to_remove = iter->next;
+			iter->next = iter->next->next;
+			delete to_remove;
+		}else{
+			iter = iter->next;
+		}
+	}	
+}
+
  /* Does: destructor - deletes any nodes in list 
   * Arguments: none
   * Returns: none
