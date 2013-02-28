@@ -27,7 +27,6 @@ public:
 	Order remove();
 	int get_length();
 	void print_queue();
-	int t_next();
 	
 private:
 	Node* front;

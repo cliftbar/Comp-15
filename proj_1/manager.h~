@@ -14,7 +14,7 @@ using namespace std;
 class Manager
 {
 public:
-	Manager();
+	Manger();
 	//runs all of the functions required for
 	//a time interval on the floor
 	void run_floor();

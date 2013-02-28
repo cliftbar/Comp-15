@@ -1,0 +1,55 @@
+//front.cpp
+//Created by: Cameron Barclift
+
+#include "front_desk.h"
+////////////Public Methods///////////
+
+Front_Desk::Front_Desk()
+{
+}
+
+void Front_Desk::read_in()
+{
+	string junk;
+	Order new_order;
+
+	while(!cin.eof()){
+		cin >> junk;
+		if(!cin.eof()){
+			cin >> new_order.id;
+			cin >> junk;
+			cin >> new_order.priority;
+			cin >> junk >> junk >> junk >> junk;
+			cin >> new_order.t_arrive;
+			cin >> junk >> junk;
+			cin >> new_order.t_fetch;
+			cin >> junk >> junk >> junk;
+			cin >> new_order.t_pack;
+			cin >> junk;
+			
+			order_queue.insert(new_order);
+		}
+	}
+	
+	
+
+return;
+}
+
+bool Front_Desk::is_order()
+{
+	return true;
+}
+
+Order Front_Desk::pass_order()
+{
+	Queue pass_to = order_queue;
+	
+return pass_to;
+}
+
+void Front_Desk::print_orders()
+{
+	order_queue.print_queue();
+	cout << "queue length: " << order_queue.get_length() << endl;
+}
