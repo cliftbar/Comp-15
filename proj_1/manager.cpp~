@@ -24,9 +24,9 @@ void Manager::run_floor()
 		}
 		
 		//fetch_bot.print_debug();
-		cout << "fetch_bot order ready: " << fetch_bot.order_ready() << endl;
+		//cout << "fetch_bot order ready: " << fetch_bot.order_ready() << endl;
 		if (fetch_bot.order_ready()){
-			cout << "check1\n";
+			//cout << "check1\n";
 			next_order = fetch_bot.deliver_order();
 			next_order.t_out = absolute_time;
 			order_out.insert(next_order);

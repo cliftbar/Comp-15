@@ -23,7 +23,7 @@ void Manager::run_floor()
 			fetch_bot.get_order(order_takers.pass_order());
 		}
 		
-		//fetch_bot.print_debug();
+		fetch_bot.print_debug();
 		//cout << "fetch_bot order ready: " << fetch_bot.order_ready() << endl;
 		if (fetch_bot.order_ready()){
 			//cout << "check1\n";

@@ -81,21 +81,85 @@ Time out: 0
 queue length: 10
 
 pass_order id: 1
+Fetcher, Current Order ID: 1
+Current Time: 0
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 1
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 2
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 3
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 4
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 5
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 6
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 7
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 8
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 9
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 10
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 11
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 12
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 13
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 14
+Current order fetch time: 15
+
 buffer queue empty: 0
+Fetcher, Current Order ID: 1
+Current Time: 15
+Current order fetch time: 15
+
 buffer queue empty: 0
 Order ID: 3
 Time arrive: 5
