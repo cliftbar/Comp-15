@@ -18,16 +18,15 @@ public:
 	//cosntructor
 	Buffer();
 	
-	//reads in and stores the file/stream input into a queue
 	void read_in();
 	
-	//returns a pointer to a copy of the buffer queue
+	//Passes an order from the queue
+	//Does not check if there is an order or not
 	Queue* pass_queue();
 	
 	void print_orders();
 	
 private:
-	
 	//Queue for orders read in by Buffer
 	Queue order_queue;
 };

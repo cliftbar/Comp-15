@@ -1,10 +1,11 @@
+//queue.cpp
 //Created by: Cameron Barclift
+//implements a queue of orders, fifo
 
 #ifndef QUEUE
 #define QUEUE
 #include <iostream>
 #include <cstdlib>
-#include <string>
 #include "order.h"
 
 using namespace std;
@@ -20,23 +21,37 @@ struct Node
 class Queue
 {
 public:
+	//constructor
 	Queue();
+	
+	//copy constructor
 	Queue(const Queue &rhs);
-	//const Queue operator=(const Queue &rhs);
+	
 	bool is_empty();
+	
 	void insert(const Order to_add);
+	
+	//cannot handle an empty queue, program terminates
 	Order remove();
+	
 	int get_length();
+	
 	void print_queue();
+	
+	//returns the arrival time of the next order in the queue
 	int t_next();
 	
 private:
-	void delete_list();
-	void copy_in_list(const Node* f_other);
-	Node* front;
-	Node* back;
-	int length;
 	
+	void delete_list();
+	
+	void copy_in_list(Node* f_other);
+	
+	Node* front;
+	
+	Node* back;
+	
+	int length;	
 };
 
 #endif

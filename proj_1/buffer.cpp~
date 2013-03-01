@@ -1,13 +1,16 @@
-//front.cpp
+//buffer.cpp
 //Created by: Cameron Barclift
+//need a destructor
 
 #include "buffer.h"
 ////////////Public Methods///////////
 
+//constructor
 Buffer::Buffer()
 {
 }
 
+//reads in and stores the file/stream input into a queue
 void Buffer::read_in()
 {
 	string junk;
@@ -27,25 +30,25 @@ void Buffer::read_in()
 			cin >> new_order.t_pack;
 			cin >> junk;
 			
+			new_order.t_out = 0;
+			new_order.fetch_wait = 0;
+
 			order_queue.insert(new_order);
 		}
 	}
 	
-	
-
 return;
 }
 
-bool Buffer::is_order()
-{
-	return true;
-}
-
+//returns a pointer to a copy of the buffer queue
 Queue* Buffer::pass_queue()
 {
 	Queue* pass_to = new Queue;
+	Queue temp = order_queue;
 	
-	pass_to = order_queue;
+	while(!temp.is_empty()){
+		pass_to->insert(temp.remove());
+	}
 	
 return pass_to;
 }

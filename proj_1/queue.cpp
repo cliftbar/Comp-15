@@ -1,11 +1,12 @@
 //queue.cpp
-//implements a queue, fifo
+//Created by: Cameron Barclift
+//implements a queue of orders, fifo
 
 #include "queue.h"
 
-///////////public functions///////////
+////////////////PUBLIC METHODS///////////////////////
 
-
+//default constructor
 Queue::Queue()
 {
 	front = NULL;
@@ -13,9 +14,9 @@ Queue::Queue()
 	length = 0;
 }
 
+//copy constructor
 Queue::Queue(const Queue &rhs)
 {
-	
 	front = NULL;
 	back = NULL;
 	length = 0;
@@ -28,6 +29,7 @@ bool Queue::is_empty()
 	return (front == NULL);
 }
 
+//inserts an order, original order is perserved
 void Queue::insert(const Order to_add)
 {
 	Node* temp = new Node;
@@ -55,6 +57,7 @@ Order Queue::remove()
 	Order r_var;
 	
 	if (is_empty()){
+		cerr << "queue empty, failure.\n";
 		exit(1);
 	}
 	
@@ -92,16 +95,18 @@ void Queue::print_queue()
 		iter = iter->next;
 	}
 	
-	//cout << "queue length: " << length << endl << endl;
+	//cout << "queue length: " << length << endl << endl;//DEBUG
 }
 
+//returns the arrival time of the next order in the queue
 int Queue::t_next()
 {
 	return front->data.t_arrive;
 }
 
-/////////Private Methods///////////////
+/////////PRIVATE METHODS///////////////
 
+//Deletes the entire list
 void Queue::delete_list()
 {
 	Node* temp;
@@ -117,6 +122,7 @@ void Queue::delete_list()
 	back = NULL;
 }
 
+//copies a queue into this queue
 void Queue::copy_in_list(Node* f_other)
 {
 	Node* f_in = f_other;

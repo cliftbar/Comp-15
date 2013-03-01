@@ -1,13 +1,19 @@
-//front.cpp
+//buffer.cpp
 //Created by: Cameron Barclift
+//need a destructor
+//Buffer reads input from the standard stream and stores the relevant
+//data into a queue.  It can pass out a copy of the buffer queue
 
 #include "buffer.h"
+
 ////////////Public Methods///////////
 
+//constructor
 Buffer::Buffer()
 {
 }
 
+//reads in and stores the file/stream input into a queue
 void Buffer::read_in()
 {
 	string junk;
@@ -34,16 +40,10 @@ void Buffer::read_in()
 		}
 	}
 	
-	
-
 return;
 }
 
-bool Buffer::is_order()
-{
-	return true;
-}
-
+//returns a pointer to a copy of the buffer queue
 Queue* Buffer::pass_queue()
 {
 	Queue* pass_to = new Queue;
