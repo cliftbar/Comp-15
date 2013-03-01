@@ -15,7 +15,7 @@ void Front_Desk::run_buffer()
 	
 	sales.read_in();
 	
-	sales.print_orders();//DUBUG CODE
+	//sales.print_orders();//DUBUG CODE
 	buffer_queue = sales.pass_queue();
 	
 	if (!buffer_queue->is_empty()){
@@ -25,7 +25,7 @@ void Front_Desk::run_buffer()
 
 bool Front_Desk::is_done()
 {
-	cout << "buffer queue empty: " << buffer_queue->is_empty() << endl;
+	//cout << "buffer queue empty: " << buffer_queue->is_empty() << endl;
 	return done;
 }
 
@@ -47,7 +47,7 @@ Order Front_Desk::pass_order()
 	}
 	
 	r_order.fetch_wait = desk_time;
-	cout << "pass_order id: " << r_order.id << endl;
+	//cout << "pass_order id: " << r_order.id << endl;
 	
 	return r_order;
 }

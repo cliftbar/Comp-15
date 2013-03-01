@@ -23,17 +23,6 @@ Queue::Queue(const Queue &rhs)
 	copy_in_list(rhs.front);
 }
 
-/*
-const Queue Queue::operator=(const Queue &rhs)
-{
-	if (this != &rhs){
-		delete_list();
-		copy_in_list(rhs.front);
-	}
-	return this;
-}
-*/
-
 bool Queue::is_empty()
 {
 	return (front == NULL);
@@ -90,19 +79,20 @@ void Queue::print_queue()
 	Node* iter = front;
 	
 	while(iter != NULL){
-		cout << "Order ID: " << iter->data.id << endl;
-		cout << "Time arrive: " << iter->data.t_arrive << endl;
-		cout << "Fetch Time: " << iter->data.t_fetch << endl;
-		cout << "Packing Time: " << iter->data.t_pack << endl;
-		cout << "Priority: " << iter->data.priority << endl;
-		cout << "Fetch wait: " << iter->data.fetch_wait << endl;
-		cout << "Time out: " << iter->data.t_out << endl;
+		cout << "Order " << iter->data.id << " ";
+		cout << "for " << iter->data.priority << " customer ";
+		cout << "arrived at time " << iter->data.t_arrive << endl;
+		cout << "fetch time " << iter->data.t_fetch << " minutes, ";
+		cout << "pack time " << iter->data.t_pack << " minutes" << endl;
+		
+		cout << "the order was added to packaging queue at time " << iter->data.fetch_wait << endl;
+		//cout << "Time out: " << iter->data.t_out << endl;
 		cout << endl;
 		
 		iter = iter->next;
 	}
 	
-	cout << "queue length: " << length << endl << endl;
+	//cout << "queue length: " << length << endl << endl;
 }
 
 int Queue::t_next()

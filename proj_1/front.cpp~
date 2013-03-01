@@ -25,7 +25,7 @@ void Front_Desk::run_buffer()
 
 bool Front_Desk::is_done()
 {
-	cout << "buffer queue empty: " << buffer_queue->is_empty() << endl;
+	//cout << "buffer queue empty: " << buffer_queue->is_empty() << endl;
 	return done;
 }
 
@@ -42,12 +42,12 @@ Order Front_Desk::pass_order()
 	
 	if (!buffer_queue->is_empty()){
 		next_order = buffer_queue->remove();
-	}else if (buffer_queue->is_empty){
+	}else if (buffer_queue->is_empty()){
 		done = true;
 	}
 	
 	r_order.fetch_wait = desk_time;
-	cout << "pass_order id: " << r_order.id << endl;
+	//cout << "pass_order id: " << r_order.id << endl;
 	
 	return r_order;
 }
