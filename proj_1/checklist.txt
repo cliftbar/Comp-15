@@ -1,0 +1,17 @@
+order struct defined -- check
+queue works -- check
+read in to bufffer -- check
+store buffer into front desk -- check
+manager time loop -- check *for current functions*
+pass orders from front desk to manager -- check
+pass orders to fetcher -- check
+fetcher holds for proper amount of time -- check
+
+pass order from fetcher to pack boss -- not started
+pack boss chooses shortest packer without supreme consideration -- not started
+pack boss chooses shortest queue with supreme consideration -- not started
+packer holds order for proper time -- not started
+packer handles supreme interrupts properly -- not started
+packer passes out orders to exit buffer -- not started
+stats class reads in the required values -- not started
+stats class calculations work -- not started
