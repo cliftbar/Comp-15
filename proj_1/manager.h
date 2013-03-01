@@ -4,9 +4,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "order.h"
+#include "fetcher.h"
 #include "queue.h"
 #include "buffer.h"
-#include "queue.h"
+#include "front.h"
 
 using namespace std;
 
@@ -27,10 +29,6 @@ private:
 	//the available packers
 	//void shortest_queue();
 	
-	//array of pointers to fetchers,
-	//array is static
-	//Fetching_Unit* fetchers[NUM_FETCHERS];
-	
 	//array of pointers to packers,
 	//array is static
 	//Packing_Unit* packers[NUM_PACKERS];
@@ -40,8 +38,9 @@ private:
 	
 	//master time for the simulation
 	int absolute_time;
-	
-	Queue order_queue;
+	Front_Desk order_takers;
+	Fetcher fetch_bot;
+	Queue* order_queue;
 	
 };
 

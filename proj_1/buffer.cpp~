@@ -41,9 +41,11 @@ bool Buffer::is_order()
 	return true;
 }
 
-Queue Buffer::pass_queue()
+Queue* Buffer::pass_queue()
 {
-	Queue pass_to = order_queue;
+	Queue* pass_to = new Queue;
+	
+	pass_to = order_queue;
 	
 return pass_to;
 }
@@ -51,5 +53,4 @@ return pass_to;
 void Buffer::print_orders()
 {
 	order_queue.print_queue();
-	cout << "queue length: " << order_queue.get_length() << endl;
 }

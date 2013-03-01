@@ -3,80 +3,7 @@ Time arrive: 0
 Fetch Time: 15
 Packing Time: 22
 Priority: regular
-Time out: 4198773
-
-Order ID: 2
-Time arrive: 3
-Fetch Time: 3
-Packing Time: 7
-Priority: regular
-Time out: 4198773
-
-Order ID: 3
-Time arrive: 5
-Fetch Time: 7
-Packing Time: 3
-Priority: regular
-Time out: 4198773
-
-Order ID: 4
-Time arrive: 10
-Fetch Time: 2
-Packing Time: 1
-Priority: regular
-Time out: 4198773
-
-Order ID: 5
-Time arrive: 14
-Fetch Time: 1
-Packing Time: 1
-Priority: regular
-Time out: 4198773
-
-Order ID: 6
-Time arrive: 20
-Fetch Time: 20
-Packing Time: 1
-Priority: regular
-Time out: 4198773
-
-Order ID: 7
-Time arrive: 30
-Fetch Time: 3
-Packing Time: 18
-Priority: regular
-Time out: 4198773
-
-Order ID: 8
-Time arrive: 31
-Fetch Time: 8
-Packing Time: 10
-Priority: regular
-Time out: 4198773
-
-Order ID: 9
-Time arrive: 32
-Fetch Time: 2
-Packing Time: 12
-Priority: regular
-Time out: 4198773
-
-Order ID: 10
-Time arrive: 34
-Fetch Time: 4
-Packing Time: 2
-Priority: regular
-Time out: 4198773
-
-queue length: 10
-
-queue length: 0
-
-Order ID: 1
-Time arrive: 0
-Fetch Time: 15
-Packing Time: 22
-Priority: regular
+Fetch wait: 0
 Time out: 0
 
 Order ID: 2
@@ -84,63 +11,165 @@ Time arrive: 3
 Fetch Time: 3
 Packing Time: 7
 Priority: regular
-Time out: 3
+Fetch wait: 0
+Time out: 0
 
 Order ID: 3
 Time arrive: 5
 Fetch Time: 7
 Packing Time: 3
 Priority: regular
-Time out: 5
+Fetch wait: 0
+Time out: 0
 
 Order ID: 4
 Time arrive: 10
 Fetch Time: 2
 Packing Time: 1
 Priority: regular
-Time out: 10
+Fetch wait: 0
+Time out: 0
 
 Order ID: 5
 Time arrive: 14
 Fetch Time: 1
 Packing Time: 1
 Priority: regular
-Time out: 14
+Fetch wait: 0
+Time out: 0
 
 Order ID: 6
 Time arrive: 20
 Fetch Time: 20
 Packing Time: 1
 Priority: regular
-Time out: 20
+Fetch wait: 0
+Time out: 0
 
 Order ID: 7
 Time arrive: 30
 Fetch Time: 3
 Packing Time: 18
 Priority: regular
-Time out: 30
+Fetch wait: 0
+Time out: 0
 
 Order ID: 8
 Time arrive: 31
 Fetch Time: 8
 Packing Time: 10
 Priority: regular
-Time out: 31
+Fetch wait: 0
+Time out: 0
 
 Order ID: 9
 Time arrive: 32
 Fetch Time: 2
 Packing Time: 12
 Priority: regular
-Time out: 32
+Fetch wait: 0
+Time out: 0
 
 Order ID: 10
 Time arrive: 34
 Fetch Time: 4
 Packing Time: 2
 Priority: regular
-Time out: 34
+Fetch wait: 0
+Time out: 0
 
 queue length: 10
+
+pass_order id: 1
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+buffer queue empty: 0
+Order ID: 3
+Time arrive: 5
+Fetch Time: 7
+Packing Time: 3
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 4
+Time arrive: 10
+Fetch Time: 2
+Packing Time: 1
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 5
+Time arrive: 14
+Fetch Time: 1
+Packing Time: 1
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 6
+Time arrive: 20
+Fetch Time: 20
+Packing Time: 1
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 7
+Time arrive: 30
+Fetch Time: 3
+Packing Time: 18
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 8
+Time arrive: 31
+Fetch Time: 8
+Packing Time: 10
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 9
+Time arrive: 32
+Fetch Time: 2
+Packing Time: 12
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+Order ID: 10
+Time arrive: 34
+Fetch Time: 4
+Packing Time: 2
+Priority: regular
+Fetch wait: 0
+Time out: 0
+
+queue length: 8
+
+Order ID: 1
+Time arrive: 0
+Fetch Time: 15
+Packing Time: 22
+Priority: regular
+Fetch wait: 15
+Time out: 15
+
+queue length: 1
 

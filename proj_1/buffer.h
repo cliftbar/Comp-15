@@ -23,7 +23,7 @@ public:
 	
 	//Passes an order from the queue
 	//Does not check if there is an order or not
-	Queue pass_queue();
+	Queue* pass_queue();
 	
 	void print_orders();
 	

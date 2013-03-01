@@ -27,6 +27,9 @@ void Buffer::read_in()
 			cin >> new_order.t_pack;
 			cin >> junk;
 			
+			new_order.t_out = 0;
+			new_order.fetch_wait = 0;
+
 			order_queue.insert(new_order);
 		}
 	}
@@ -41,9 +44,14 @@ bool Buffer::is_order()
 	return true;
 }
 
-Queue Buffer::pass_queue()
+Queue* Buffer::pass_queue()
 {
-	Queue pass_to = order_queue;
+	Queue* pass_to = new Queue;
+	Queue temp = order_queue;
+	
+	while(!temp.is_empty()){
+		pass_to->insert(temp.remove());
+	}
 	
 return pass_to;
 }

@@ -8,28 +8,32 @@ Manager::Manager()
 void Manager::increment_time()
 {
 	++absolute_time;
+	order_takers.increment_time();
+	fetch_bot.increment_time();
 }
 
 void Manager::run_floor()
 {
-	Buffer sales;
 	Order next_order;
 	Queue order_out;
 	
-	sales.read_in();
-	sales.print_orders();
-	
-	order_queue = sales.pass_queue();
-	
-	while (!order_queue.is_empty()){
-		if (order_queue.t_next() == absolute_time){
-			next_order = order_queue.remove();
+	//time loop
+	do{
+		if(fetch_bot.unit_free()){
+			fetch_bot.get_order(order_takers.pass_order());
+		}
+		
+		//fetch_bot.print_debug();
+		//cout << "fetch_bot order ready: " << fetch_bot.order_ready() << endl;
+		if (fetch_bot.order_ready()){
+			//cout << "check1\n";
+			next_order = fetch_bot.deliver_order();
 			next_order.t_out = absolute_time;
 			order_out.insert(next_order);
 		}
 		increment_time();
-	}
+	}while (!order_takers.is_done() && !fetch_bot.unit_free());
 	
-	order_queue.print_queue();
+	order_takers.print_buffer();
 	order_out.print_queue();
 }

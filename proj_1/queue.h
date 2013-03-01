@@ -22,6 +22,7 @@ class Queue
 public:
 	Queue();
 	Queue(const Queue &rhs);
+	//const Queue operator=(const Queue &rhs);
 	bool is_empty();
 	void insert(const Order to_add);
 	Order remove();
@@ -30,6 +31,8 @@ public:
 	int t_next();
 	
 private:
+	void delete_list();
+	void copy_in_list(Node* f_other);
 	Node* front;
 	Node* back;
 	int length;

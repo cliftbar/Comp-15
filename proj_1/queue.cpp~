@@ -15,16 +15,24 @@ Queue::Queue()
 
 Queue::Queue(const Queue &rhs)
 {
-	Node* f_in = rhs.front;
+	
 	front = NULL;
 	back = NULL;
 	length = 0;
 	
-	while(f_in != NULL){
-		insert(f_in->data);
-		f_in = f_in->next;
-	}
+	copy_in_list(rhs.front);
 }
+
+/*
+const Queue Queue::operator=(const Queue &rhs)
+{
+	if (this != &rhs){
+		delete_list();
+		copy_in_list(rhs.front);
+	}
+	return this;
+}
+*/
 
 bool Queue::is_empty()
 {
@@ -87,7 +95,7 @@ void Queue::print_queue()
 		cout << "Fetch Time: " << iter->data.t_fetch << endl;
 		cout << "Packing Time: " << iter->data.t_pack << endl;
 		cout << "Priority: " << iter->data.priority << endl;
-		cout << "Time out: " << t_out << endl;
+		cout << "Time out: " << iter->data.t_out << endl;
 		cout << endl;
 		
 		iter = iter->next;
@@ -99,4 +107,32 @@ void Queue::print_queue()
 int Queue::t_next()
 {
 	return front->data.t_arrive;
+}
+
+/////////Private Methods///////////////
+
+void Queue::delete_list()
+{
+	Node* temp;
+	Node* iter = front;
+	
+	while(iter != NULL){
+		temp  = iter;
+		iter = iter->next;
+		delete temp;
+	}
+	
+	front = NULL;
+	back = NULL;
+}
+
+void Queue::copy_in_list(Node* f_other)
+{
+	Node* f_in = f_other;
+	
+	while(f_in != NULL){
+		insert(f_in->data);
+		f_in = f_in->next;
+	}
+	cout << "copied\n";
 }

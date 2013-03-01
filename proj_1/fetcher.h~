@@ -45,5 +45,7 @@ private:
 	//holds status of unit
 	//true for free, false for not free
 	bool unit_status;
+	
+	bool is_done
 };
 #endif

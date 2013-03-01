@@ -4,9 +4,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "order.h"
+#include "fetcher.h"
 #include "queue.h"
 #include "buffer.h"
-#include "queue.h"
+#include "front.h"
 
 using namespace std;
 
@@ -14,7 +16,7 @@ using namespace std;
 class Manager
 {
 public:
-	Manger();
+	Manager();
 	//runs all of the functions required for
 	//a time interval on the floor
 	void run_floor();
@@ -40,8 +42,8 @@ private:
 	
 	//master time for the simulation
 	int absolute_time;
-	
-	Queue order_queue;
+	Front_Desk order_takers;
+	Queue* order_queue;
 	
 };
 
