@@ -6,6 +6,8 @@
 
 #include "fetcher.h"
 
+////////////////PUBLIC METHODS///////////////////////
+
 //Constructor
 Fetcher::Fetcher()
 {
@@ -19,6 +21,7 @@ void Fetcher::get_order(Order o_in)
 {
 	curr_order = o_in;
 	unit_status = false;
+	curr_time = 0;
 }
 
 //returns the order stored inside.  Will return the order
@@ -28,7 +31,7 @@ void Fetcher::get_order(Order o_in)
 Order Fetcher::deliver_order()
 {
 	unit_status = true;
-	curr_time = 0;
+	
 	return curr_order;
 }
 
@@ -62,6 +65,7 @@ void Fetcher::print_debug()
 	cout << "Fetcher, Current Order ID: " << curr_order.id << endl;
 	cout << "Current Time: " << curr_time << endl;
 	cout << "Current order fetch time: " << curr_order.t_fetch << endl;
+	cout << "Current Order fetch_wait: " << curr_order.fetch_wait << endl;
 	
 	cout << endl;
 }

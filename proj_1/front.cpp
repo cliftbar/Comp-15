@@ -47,7 +47,7 @@ Order Front_Desk::pass_order()
 	}
 	
 	//sets the fetch_wait to the time spent waiting to be fetched
-	r_order.fetch_wait = desk_time;
+	r_order.front_wait = desk_time;
 	
 	//cout << "pass_order id: " << r_order.id << endl;//DEBUG CODE
 	
