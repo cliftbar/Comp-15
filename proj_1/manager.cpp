@@ -51,10 +51,11 @@ void Manager::run_floor()
 		
 		//cout << "fetch_bot.unit_free(): " << fetch_bot.unit_free() << endl;
 		//pack_bot.print_current();//DEBUG CODE
-		//cout << "current wait: " << pack_bot.wait_time() << endl << endl;//DEBUG CODE
+		//cout << "regular current wait: " << pack_bot.wait_time(false) << endl << endl;//DEBUG CODE
+		//cout << "supreme current wait: " << pack_bot.wait_time(true) << endl << endl;//DEBUG CODE
 		//pack_bot.print_queue();
 		
-		//pack_chief.print_packers();//DEBUG CODE
+		pack_chief.print_packers();//DEBUG CODE
 		//cout << "check 9 \n" << endl;//DEBUG
 		while (pack_chief.num_orders_up() > 0){
 			//cout << "check2\n";//DEBUG CODE//DEBUG

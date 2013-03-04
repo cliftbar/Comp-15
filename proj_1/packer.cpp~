@@ -7,8 +7,11 @@ Packer::Packer()
 	curr_time = 0;
 	t_wait = 0;
 	t_absolute = 0;
+	t_interrupt = 0;
+	supreme_wait = 0;
 	o_up = false;
 	is_order = false;
+	interrupt_order.priority = "NULL";
 }
 
 void Packer::insert(Order o_in)
@@ -17,13 +20,24 @@ void Packer::insert(Order o_in)
 	//cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
 	
 	if (is_order){
-		order_queue.insert(o_in);
+		if (o_in.priority == "supreme" && curr_order.priority == "supreme"){
+			supreme_queue.insert(o_in);
+		}else if (o_in.priority == "supreme" && curr_order.priority == "regular"){
+			interrupt_order = curr_order;
+			t_interrupt = curr_time;
+			curr_order = o_in;
+		}else{
+			order_queue.insert(o_in);
+		}
 	}else if (!is_order){
 		curr_time = 0;
 		curr_order = o_in;
 	}
 	
-	t_wait = t_wait + o_in.t_pack;
+	t_wait += o_in.t_pack;
+	if (curr_order.priority == "supreme"){
+		supreme_wait += o_in.t_pack;
+	}
 	is_order = true;
 }
 
@@ -32,24 +46,38 @@ Order Packer::pass_to()
 	Order temp;
 	
 	temp = curr_order;
-	if (!order_queue.is_empty()){
-		curr_order = order_queue.remove();
-		curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.t_pack - curr_order.fetch_wait;
-	}else{
-		is_order = false;
+	
+	if (supreme_queue.is_empty() && t_interrupt == 0){
+		if (!order_queue.is_empty()){
+			curr_order = order_queue.remove();
+			curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
+		}else{
+			is_order = false;
+		}
+		curr_time = 0;
+	}else if (supreme_queue.is_empty() && curr_order.priority == "supreme" && t_interrupt != 0){
+		curr_order = interrupt_order;
+		curr_time = t_interrupt;
+		t_interrupt = 0;
+		interrupt_order.priority = "NULL";
+	}else if (!supreme_queue.is_empty()){
+		curr_order = supreme_queue.remove();
+		curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
+		curr_time = 0;
 	}
 	
-	
-	//t_wait = t_wait - temp.t_pack;
 	o_up = false;
-	curr_time = 0;
 	
 	return temp;
 }
 
-int Packer::wait_time()
+int Packer::wait_time(bool supreme)
 {
-	return t_wait;
+	if (!supreme){
+		return t_wait;
+	}else {
+		return supreme_wait;
+	}
 }
 
 bool Packer::order_up()
@@ -84,6 +112,12 @@ void Packer::increment_time()
 	if (t_wait > 0){
 		--t_wait;
 	}
+	if (supreme_wait > 0){
+		--supreme_wait;
+	}
+	if (interrupt_order.priority != "NULL"){
+		++interrupt_order.spent_interrupted;
+	}
 }
 
 void Packer::print_queue()
@@ -91,6 +125,10 @@ void Packer::print_queue()
 	cout << "Packer queue, normal: " << endl;
 	order_queue.print_queue();
 	cout << "Queue length: " << order_queue.get_length() << endl << endl;
+	
+	cout << "Packer queue, supreme: " << endl;
+	supreme_queue.print_queue();
+	cout << "Queue length: " << supreme_queue.get_length() << endl << endl;
 }
 
 void Packer::print_current()

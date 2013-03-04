@@ -4,7 +4,7 @@ using namespace std;
 
 Pack_Boss::Pack_Boss()
 {
-	NUM_PACKERS = 3;
+	NUM_PACKERS = 2;
 	all_packers = new Packer[NUM_PACKERS];
 	packers_done = false;
 }
@@ -12,8 +12,8 @@ Pack_Boss::Pack_Boss()
 void Pack_Boss::pass_in(Order o_in)
 {
 	//cout << "check 1 \n" << endl;//DEBUG
-	int shortest = find_shortest();
-	//cout << "shortest: " << shortest << endl;//DEBUG
+	int shortest = find_shortest(o_in.priority == "supreme");
+	cout << "shortest: " << shortest << endl;//DEBUG
 	all_packers[shortest].insert(o_in);
 }
 
@@ -46,21 +46,43 @@ Order Pack_Boss::pass_out()
 	exit(1);
 }
 
-int Pack_Boss::find_shortest()
+int Pack_Boss::find_shortest(bool supreme)
 {
 	//cout << "check 4 \n" << endl;//DEBUG
+	int temp_wait;
+	int packer_num;
 	
-	int temp_wait = all_packers[0].wait_time();
-	//cout << "check 7 \n" << endl;//DEBUG
-	int packer_num = 0;
+	if (supreme && all_supreme()){
+		temp_wait = all_packers[0].wait_time(supreme);
+	}else{
+		temp_wait = all_packers[0].wait_time(!supreme);
+	}
 	
-	for(int i = 0; i < NUM_PACKERS; ++i){
-		if (all_packers[i].wait_time() < temp_wait){
-			packer_num = i;
+	if (supreme){
+		cout << "check 9" << endl;//DEBUG
+		for (int i = 0; i < NUM_PACKERS; ++i){
+			if (all_supreme()){
+				cout << "check 10" << endl;//DEBUG
+				if (all_packers[i].wait_time(supreme) < temp_wait){
+					packer_num = i;
+				}
+			}else if (!all_supreme()){
+				cout << "check 11" << endl;//DEBUG
+				if (all_packers[i].wait_time(supreme) == 0 && (all_packers[i].wait_time(!supreme) < temp_wait)){
+					packer_num = i;
+				}
+			}
+		}
+	}else if (!supreme){
+		cout << "check 8" << endl;//DEBUG
+		for(int i = 0; i < NUM_PACKERS; ++i){
+			if (all_packers[i].wait_time(supreme) < temp_wait){
+				packer_num = i;
+			}
 		}
 	}
 	//cout << "check 8 \n" << endl;//DEBUG
-	//cout << "packer_num: " << packer_num << endl;//DEBUG
+	cout << "packer_num: " << packer_num << endl;//DEBUG
 	return packer_num;
 }
 
@@ -86,7 +108,8 @@ void Pack_Boss::print_packers()
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		cout << "Packer[" << i << "]: " << endl;
 		all_packers[i].print_current();
-		cout << "all_packers[" << i<< "].wait_time(): " << all_packers[i].wait_time() << endl << endl;
+		cout << "regular all_packers[" << i<< "].wait_time(false): " << all_packers[i].wait_time(false) << endl;
+		cout << "supreme all_packers[" << i<< "].wait_time(true): " << all_packers[i].wait_time(true) << endl << endl;
 	}
 }
 
@@ -96,4 +119,18 @@ void Pack_Boss::increment_time()
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		all_packers[i].increment_time();
 	}
+}
+
+bool Pack_Boss::all_supreme()
+{
+	bool supreme_status = true;
+	
+	for (int i = 0; i < NUM_PACKERS; ++i){
+		if (all_packers[i].wait_time(true) == 0 ){
+			supreme_status = false;
+		}
+	}
+	
+	cout << "all supreme: " << supreme_status << endl;//DEBUG
+	return supreme_status;
 }

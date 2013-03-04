@@ -28,7 +28,7 @@ public:
 	void increment_time();
 	
 private:
-	void find_shortest();
+	int find_shortest(bool supreme);
 	
 	Packer* all_packers;
 	

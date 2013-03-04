@@ -85,10 +85,12 @@ void Queue::print_queue()
 
 		///DEBUG CODE
 		cout << "Order " << iter->data.id << endl;
+		cout << "Priority " << iter->data.priority << endl;
 		cout << "fetch time " << iter->data.t_fetch << endl;
 		cout << "Fetch wait: " << iter->data.fetch_wait << endl;
 		cout << "Pack wait: " << iter->data.pack_wait << endl;
 		cout << "pack time " << iter->data.t_pack << endl;
+		cout << "interrupted time " << iter->data.spent_interrupted << endl;
 		cout << "front wait: " << iter->data.front_wait << endl;
 		cout << "time out: " << iter->data.t_out << endl << endl;
 		///DEBUG END

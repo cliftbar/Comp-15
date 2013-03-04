@@ -23,7 +23,7 @@ public:
 	Order pass_to();
 	
 	//returns the wait time of the normal orders
-	int wait_time();
+	int wait_time(bool supreme);
 	
 	//asks if the current order is done
 	bool order_up();
@@ -39,14 +39,6 @@ public:
 	void print_current();
 	
 private:
-	/*
-	//checks if the order added is supreme or not
-	void is_supreme();
-	
-	//Prints the packing report for the current order
-	void packing_report();
-	*/
-	
 	//contains the order currently being packed
 	Order curr_order;
 	
@@ -54,14 +46,16 @@ private:
 	Queue order_queue;
 	
 	//holds the supreme queue
-	//Queue supreme_queue
+	Queue supreme_queue;
 	
 	//holds the current packing time,
 	//resets to zero after every order.
 	int curr_time;
 	
 	//store the time of an order on hold
-	//int t_hold;
+	int t_interrupt;
+	
+	Order interrupt_order;
 	
 	//time required for all items in the queue
 	int t_wait;
@@ -73,7 +67,7 @@ private:
 	bool is_order;
 		
 	//wait time for the supreme orders
-	//int supreme_wait
+	int supreme_wait;
 };
 
 #endif

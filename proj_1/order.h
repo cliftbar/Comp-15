@@ -35,6 +35,9 @@ struct Order
 	//time spent in packaging queue
 	int pack_wait;
 
+	//time spent interrupted
+	int spent_interrupted;
+
 	//time out of simulation
 	int t_out;
 };
