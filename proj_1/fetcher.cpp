@@ -64,6 +64,7 @@ void Fetcher::print_debug()
 	cout << "Fetcher, Current Order ID: " << curr_order.id << endl;
 	cout << "Current Time: " << curr_time << endl;
 	cout << "Current order fetch time: " << curr_order.t_fetch << endl;
+	cout << "Current Order fetch_wait: " << curr_order.fetch_wait << endl;
 	
 	cout << endl;
 }

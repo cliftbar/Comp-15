@@ -10,6 +10,7 @@
 #include "queue.h"
 #include "buffer.h"
 #include "front.h"
+#include "pack_boss.h"
 
 using namespace std;
 
@@ -38,6 +39,8 @@ private:
 	Front_Desk order_takers;
 	
 	Fetcher fetch_bot;
+	
+	Pack_Boss pack_chief;
 	
 	//temporary queue for debugging purposes
 	Queue* order_queue;

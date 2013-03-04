@@ -1,40 +1,73 @@
 //Created by: Cameron Barclift
 
-#ifndef packer.h
-#define
+#ifndef PACKER
+#define PACKER
 #include <iostream>
-#include <cstdlib>
-#include <string>
-#include "packing_report"
-#include "queue"
-#include "order"
+#include "queue.h"
+#include "order.h"
 
-class Packing_Unit
+using namespace std;
+
+class Packer
 {
 public:
-	//returns the queue length
-	int queue_length();
+	//constructor
+	Packer();
+	
 	//adds an order to the queue
-	void add_to_queue(Order o_add);
-	//asks if the packing on the current order is done,
-	//if it is, a packing report is printed
-	bool packing_done();
+	void insert(Order o_add);
+	
+	bool order_ready();
+	
+	//returns the order that's finished being packed
+	Order pass_to();
+	
+	//returns the wait time of the normal orders
+	int wait_time(bool supreme);
+	
+	//asks if the current order is done
+	bool order_up();
+	
+	//asks if the packer is done with orders
+	bool is_done();
+	
+	void increment_time();
+	
+	void print_queue();
+	
+	//DEBUG
+	void print_current();
+	
 private:
-	//checks if the order added is supreme or not
-	void is_supreme();
-	//Prints the packing report for the current order
-	void packing_report();
 	//contains the order currently being packed
-	Order* curr_order;
-	//holds the start of the queue
-	Order* queue_start;
+	Order curr_order;
+	
+	//holds the packaging queue
+	Queue order_queue;
+	
+	//holds the supreme queue
+	Queue supreme_queue;
+	
 	//holds the current packing time,
 	//resets to zero after every order.
 	int curr_time;
+	
 	//store the time of an order on hold
-	int t_hold;
+	int t_interrupt;
+	
+	Order interrupt_order;
+	
 	//time required for all items in the queue
-	int queue_time;
+	int t_wait;
+	
+	int t_absolute;
+	
+	bool o_up;
+	
+	bool is_order;
+		
+	//wait time for the supreme orders
+	int supreme_wait;
 };
 
 #endif

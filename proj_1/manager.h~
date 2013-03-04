@@ -5,12 +5,12 @@
 #ifndef MANAGER
 #define MANAGER
 #include <iostream>
-#include <string>
 #include "order.h"
 #include "fetcher.h"
 #include "queue.h"
 #include "buffer.h"
 #include "front.h"
+#include "pack_boss.h"
 
 using namespace std;
 
@@ -39,6 +39,8 @@ private:
 	Front_Desk order_takers;
 	
 	Fetcher fetch_bot;
+	
+	pack_boss pack_chief;
 	
 	//temporary queue for debugging purposes
 	Queue* order_queue;

@@ -82,6 +82,20 @@ void Queue::print_queue()
 	Node* iter = front;
 	
 	while(iter != NULL){
+
+		///DEBUG CODE
+		cout << "Order " << iter->data.id << endl;
+		cout << "Priority " << iter->data.priority << endl;
+		cout << "fetch time " << iter->data.t_fetch << endl;
+		cout << "Fetch wait: " << iter->data.fetch_wait << endl;
+		cout << "Pack wait: " << iter->data.pack_wait << endl;
+		cout << "pack time " << iter->data.t_pack << endl;
+		cout << "interrupted time " << iter->data.spent_interrupted << endl;
+		cout << "front wait: " << iter->data.front_wait << endl;
+		cout << "time out: " << iter->data.t_out << endl << endl;
+		///DEBUG END
+		
+		/*//FINAL PRINTOUT
 		cout << "Order " << iter->data.id << " ";
 		cout << "for " << iter->data.priority << " customer ";
 		cout << "arrived at time " << iter->data.t_arrive << endl;
@@ -91,11 +105,12 @@ void Queue::print_queue()
 		cout << "the order was added to packaging queue at time " << iter->data.fetch_wait << endl;
 		//cout << "Time out: " << iter->data.t_out << endl;
 		cout << endl;
+		*///END FINAL
 		
 		iter = iter->next;
 	}
 	
-	//cout << "queue length: " << length << endl << endl;//DEBUG
+	cout << "queue length: " << length << endl << endl;//DEBUG
 }
 
 //returns the arrival time of the next order in the queue

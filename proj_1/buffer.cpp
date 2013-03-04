@@ -35,6 +35,9 @@ void Buffer::read_in()
 			
 			new_order.t_out = 0;
 			new_order.fetch_wait = 0;
+			new_order.front_wait = 0;
+			new_order.pack_wait = 0;
+			new_order.spent_interrupted = 0;
 
 			order_queue.insert(new_order);
 		}

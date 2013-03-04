@@ -26,7 +26,19 @@ struct Order
 	//determines packaging priority
 	string priority;
 	
+	//time spent in front desk queue
+	int front_wait;
+
+	//time spent being fetched
 	int fetch_wait;
+	
+	//time spent in packaging queue
+	int pack_wait;
+
+	//time spent interrupted
+	int spent_interrupted;
+
+	//time out of simulation
 	int t_out;
 };
 
