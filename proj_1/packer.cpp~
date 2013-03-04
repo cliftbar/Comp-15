@@ -20,22 +20,30 @@ void Packer::insert(Order o_in)
 	//cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
 	
 	if (is_order){
+		cout << "There is an order\n";
 		if (o_in.priority == "supreme" && curr_order.priority == "supreme"){
+			cout << "new order supreme, curr_order supreme\n";
 			supreme_queue.insert(o_in);
 		}else if (o_in.priority == "supreme" && curr_order.priority == "regular"){
+			cout << "new order supreme, curr_order regular\n";
 			interrupt_order = curr_order;
 			t_interrupt = curr_time;
+			curr_time = 0;
 			curr_order = o_in;
 		}else{
+			cout << "new order regular\n";
 			order_queue.insert(o_in);
 		}
 	}else if (!is_order){
+		cout << "no order present\n";
 		curr_time = 0;
 		curr_order = o_in;
 	}
 	
 	t_wait += o_in.t_pack;
-	if (curr_order.priority == "supreme"){
+	cout << "t_wait after insert: " << t_wait << endl;
+	
+	if (o_in.priority == "supreme"){
 		supreme_wait += o_in.t_pack;
 	}
 	is_order = true;
@@ -48,6 +56,7 @@ Order Packer::pass_to()
 	temp = curr_order;
 	
 	if (supreme_queue.is_empty() && t_interrupt == 0){
+		cout << "supreme_queue empty, no interrupt_order\n";
 		if (!order_queue.is_empty()){
 			curr_order = order_queue.remove();
 			curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
@@ -56,11 +65,13 @@ Order Packer::pass_to()
 		}
 		curr_time = 0;
 	}else if (supreme_queue.is_empty() && curr_order.priority == "supreme" && t_interrupt != 0){
+		cout << "supreme_queue empty, curr_order supreme, interrupt_order present\n";
 		curr_order = interrupt_order;
 		curr_time = t_interrupt;
 		t_interrupt = 0;
 		interrupt_order.priority = "NULL";
 	}else if (!supreme_queue.is_empty()){
+		cout << "supreme_queue not empty\n";
 		curr_order = supreme_queue.remove();
 		curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
 		curr_time = 0;
@@ -98,7 +109,7 @@ bool Packer::order_up()
 bool Packer::is_done()
 {
 	
-	if (order_queue.is_empty() && !is_order){
+	if (order_queue.is_empty() && supreme_queue.is_empty() && !is_order){
 		return true;
 	}else {
 		return false;

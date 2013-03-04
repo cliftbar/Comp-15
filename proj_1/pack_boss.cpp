@@ -4,7 +4,7 @@ using namespace std;
 
 Pack_Boss::Pack_Boss()
 {
-	NUM_PACKERS = 2;
+	NUM_PACKERS = 3;
 	all_packers = new Packer[NUM_PACKERS];
 	packers_done = false;
 }
@@ -13,7 +13,7 @@ void Pack_Boss::pass_in(Order o_in)
 {
 	//cout << "check 1 \n" << endl;//DEBUG
 	int shortest = find_shortest(o_in.priority == "supreme");
-	cout << "shortest: " << shortest << endl;//DEBUG
+	//cout << "shortest: " << shortest << endl;//DEBUG
 	all_packers[shortest].insert(o_in);
 }
 
@@ -59,22 +59,22 @@ int Pack_Boss::find_shortest(bool supreme)
 	}
 	
 	if (supreme){
-		cout << "check 9" << endl;//DEBUG
+		//cout << "check 9" << endl;//DEBUG
 		for (int i = 0; i < NUM_PACKERS; ++i){
 			if (all_supreme()){
-				cout << "check 10" << endl;//DEBUG
+				//cout << "check 10" << endl;//DEBUG
 				if (all_packers[i].wait_time(supreme) < temp_wait){
 					packer_num = i;
 				}
 			}else if (!all_supreme()){
-				cout << "check 11" << endl;//DEBUG
+				//cout << "check 11" << endl;//DEBUG
 				if (all_packers[i].wait_time(supreme) == 0 && (all_packers[i].wait_time(!supreme) < temp_wait)){
 					packer_num = i;
 				}
 			}
 		}
 	}else if (!supreme){
-		cout << "check 8" << endl;//DEBUG
+		//cout << "check 8" << endl;//DEBUG
 		for(int i = 0; i < NUM_PACKERS; ++i){
 			if (all_packers[i].wait_time(supreme) < temp_wait){
 				packer_num = i;
@@ -82,7 +82,7 @@ int Pack_Boss::find_shortest(bool supreme)
 		}
 	}
 	//cout << "check 8 \n" << endl;//DEBUG
-	cout << "packer_num: " << packer_num << endl;//DEBUG
+	//cout << "packer_num: " << packer_num << endl;//DEBUG
 	return packer_num;
 }
 
@@ -93,6 +93,7 @@ bool Pack_Boss::all_done()
 	bool check_done = true;
 	
 	for (int i = 0; i < NUM_PACKERS; ++i){
+		//cout << "all_packers[" << i << "].is_done(): " << all_packers[i].is_done() << endl;//DEBUG CODE
 		if (!all_packers[i].is_done()){
 			check_done = all_packers[i].is_done();
 		}
@@ -131,6 +132,6 @@ bool Pack_Boss::all_supreme()
 		}
 	}
 	
-	cout << "all supreme: " << supreme_status << endl;//DEBUG
+	//cout << "all supreme: " << supreme_status << endl;//DEBUG
 	return supreme_status;
 }

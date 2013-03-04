@@ -51,12 +51,12 @@ void Manager::run_floor()
 		
 		//cout << "fetch_bot.unit_free(): " << fetch_bot.unit_free() << endl;
 		//pack_bot.print_current();//DEBUG CODE
-		cout << "regular current wait: " << pack_bot.wait_time(false) << endl << endl;//DEBUG CODE
-		cout << "supreme current wait: " << pack_bot.wait_time(true) << endl << endl;//DEBUG CODE
+		//cout << "regular current wait: " << pack_bot.wait_time(false) << endl << endl;//DEBUG CODE
+		//cout << "supreme current wait: " << pack_bot.wait_time(true) << endl << endl;//DEBUG CODE
 		//pack_bot.print_queue();
 		
-		//pack_chief.print_packers();//DEBUG CODE
-		//cout << "check 9 \n" << endl;//DEBUG
+		pack_chief.print_packers();//DEBUG CODE
+		cout << "check 9" << endl;//DEBUG
 		while (pack_chief.num_orders_up() > 0){
 			//cout << "check2\n";//DEBUG CODE//DEBUG
 			next_order = pack_chief.pass_out();
@@ -64,7 +64,7 @@ void Manager::run_floor()
 			next_order.t_out = absolute_time;
 			order_out.insert(next_order);
 		}
-		//cout << "pack_bot.is_done(): " << pack_bot.is_done() << endl;//DEBUG CODE
+		cout << "pack_chief.all_done(): " << pack_chief.all_done() << endl << endl;//DEBUG CODE
 
 			
 		/*DEBUG CODE
