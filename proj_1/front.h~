@@ -15,7 +15,8 @@ using namespace std;
 class Front_Desk
 {
 public:
-	//constructor
+	//Preferred Constructor, takes in whether to consider supreme orders
+	//and a pointer to a copy of the input buffer
 	Front_Desk(bool do_supreme, Queue* queue_in);
 	
 	//true: done, internal queue empty
@@ -25,13 +26,15 @@ public:
 	//returns the next order, removes from class
 	Order pass_order();
 	
+	//handles moving time forward one step
 	void increment_time();
 	
+	//prints the queue stored in front
 	void print_buffer();
 
 private:
 	//runs the functions to create the input buffer
-	void run_buffer();
+	void run_buffer(Queue* queue_in);
 	
 	//holds the next order in line, not stored in the internal
 	//order queue

@@ -2,6 +2,8 @@
 //Created by: Cameron Barclift
 //Front_Desk class acts as the order reciever from an input buffer,
 //class never actually directly reads from the stream or a file.
+//Note:  This class alters order priorities depending on whether supreme
+//orders are being considered, this occurs in the pass order function.
 
 #ifndef FRONT
 #define FRONT
@@ -15,7 +17,8 @@ using namespace std;
 class Front_Desk
 {
 public:
-	//constructor
+	//Preferred Constructor, takes in whether to consider supreme orders
+	//and a pointer to a copy of the input buffer
 	Front_Desk(bool do_supreme, Queue* queue_in);
 	
 	//true: done, internal queue empty
@@ -25,8 +28,10 @@ public:
 	//returns the next order, removes from class
 	Order pass_order();
 	
+	//handles moving time forward one step
 	void increment_time();
 	
+	//prints the queue stored in front
 	void print_buffer();
 
 private:

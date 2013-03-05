@@ -7,14 +7,14 @@
 
 ////////////////PUBLIC METHODS///////////////////////
 
-//default constructor, sets initial values AND reads in the buffer,
-//make sure you want that when you create this class.
+//preferred constructor, initializes whether to consider supreme orders
+//and copies the queue passed into the class
 Front_Desk::Front_Desk(bool do_supreme, Queue* queue_in)
 {
 	consider_supreme = do_supreme;
 	desk_time = 0;
 	done = false;
-	cout << "front desk queue" << endl;
+	//copies the queue passed in
 	run_buffer(queue_in);
 }
 
@@ -22,13 +22,12 @@ Front_Desk::Front_Desk(bool do_supreme, Queue* queue_in)
 //false: not done, queue not empty
 bool Front_Desk::is_done()
 {
-	//cout << "buffer queue empty: " << buffer_queue->is_empty() << endl;??DEBUG CODE
+	//cout << "buffer queue empty: " << buffer_queue->is_empty()
+		  //<< endl;//DEBUG CODE
 	
 	return done;
 }
 
-
-//For manager use ONLY!!!!!!!
 void Front_Desk::increment_time()
 {
 	++desk_time;
@@ -49,6 +48,10 @@ Order Front_Desk::pass_order()
 	
 	//sets the fetch_wait to the time spent waiting to be fetched
 	r_order.front_wait = desk_time;
+
+	//If supreme is not being considered, and the priority of the order
+	//is supreme, then the priority is changed from supreme to regular
+	//and the switched variable is set to true to note the change
 	if (!consider_supreme){
 		if(r_order.priority == "supreme"){
 			r_order.priority = "regular";
@@ -68,9 +71,9 @@ void Front_Desk::print_buffer()
 /////////PRIVATE METHODS///////////////
 
 
-//Creates an instance of the buffer class, reads in the input using the buffer,|||||
-//then stores the buffer queue (a dynamic linked list).  If the buffer is not
-//empty, the first order is removed from the internal queue and stored.
+//Copies the buffer (the queue passed in) into the internal queue.
+//If the buffer is not empty, the first order is removed from the
+//internal queue and stored.
 void Front_Desk::run_buffer(Queue* queue_in)
 {
 		
