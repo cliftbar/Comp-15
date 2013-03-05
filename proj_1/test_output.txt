@@ -1,72 +1,102 @@
-Order 6
-Priority supreme
-fetch time 5
-Fetch wait: 4
+Order 1
+Priority regular
+fetch time 6
+Fetch wait: 6
 Pack wait: 0
-pack time 10
+pack time 3
 interrupted time 0
-front wait: 26
-time out: 40
+front wait: 0
+time out: 9
 
-Order 5
+Order 2
 Priority supreme
-fetch time 5
-Fetch wait: 4
+fetch time 8
+Fetch wait: 7
 Pack wait: 0
-pack time 15
+pack time 3
 interrupted time 0
-front wait: 21
-time out: 40
+front wait: 7
+time out: 17
+
+Order 3
+Priority regular
+fetch time 9
+Fetch wait: 8
+Pack wait: 0
+pack time 2
+interrupted time 0
+front wait: 15
+time out: 25
 
 Order 4
 Priority supreme
 fetch time 5
 Fetch wait: 4
 Pack wait: 0
-pack time 20
+pack time 5
 interrupted time 0
-front wait: 16
-time out: 40
+front wait: 24
+time out: 33
+
+Order 6
+Priority supreme
+fetch time 3
+Fetch wait: 2
+Pack wait: 0
+pack time 1
+interrupted time 0
+front wait: 30
+time out: 33
+
+Order 5
+Priority regular
+fetch time 1
+Fetch wait: 0
+Pack wait: 0
+pack time 5
+interrupted time 0
+front wait: 29
+time out: 34
 
 Order 7
-Priority supreme
-fetch time 5
-Fetch wait: 4
-Pack wait: 5
-pack time 20
-interrupted time 0
-front wait: 31
-time out: 60
-
-Order 1
 Priority regular
-fetch time 5
-Fetch wait: 5
+fetch time 3
+Fetch wait: 2
 Pack wait: 0
-pack time 30
-interrupted time 30
-front wait: 0
-time out: 65
-
-Order 2
-Priority regular
-fetch time 5
-Fetch wait: 4
-Pack wait: 55
-pack time 25
+pack time 5
 interrupted time 0
-front wait: 6
-time out: 90
+front wait: 33
+time out: 40
 
-Order 3
+Order 9
 Priority regular
-fetch time 5
-Fetch wait: 4
-Pack wait: 75
-pack time 20
+fetch time 1
+Fetch wait: 0
+Pack wait: 0
+pack time 4
 interrupted time 0
-front wait: 11
-time out: 110
+front wait: 40
+time out: 44
 
-queue length: 7
+Order 8
+Priority supreme
+fetch time 4
+Fetch wait: 3
+Pack wait: 0
+pack time 5
+interrupted time 0
+front wait: 36
+time out: 44
+
+Order 10
+Priority supreme
+fetch time 3
+Fetch wait: 2
+Pack wait: 0
+pack time 5
+interrupted time 0
+front wait: 41
+time out: 48
+
+queue length: 10
 

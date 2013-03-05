@@ -1,0 +1,6 @@
+
+Ricky to the rescue:
+printing inorder: 17 22 26 27 30 36 41 45 54 74 76 82 
+Answer:           17 22 26 27 30 36 41 45 54 74 76 82
+
+Stacey saves the day
