@@ -30,6 +30,8 @@ public:
 private:
 	int find_shortest(bool supreme);
 	
+	bool all_supreme();
+	
 	Packer* all_packers;
 	
 	int NUM_PACKERS;

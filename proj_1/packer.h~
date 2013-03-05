@@ -68,8 +68,6 @@ private:
 		
 	//wait time for the supreme orders
 	int supreme_wait;
-	
-	bool any_supreme;
 };
 
 #endif

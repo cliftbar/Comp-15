@@ -20,28 +20,28 @@ void Packer::insert(Order o_in)
 	//cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
 	
 	if (is_order){
-		cout << "There is an order\n";
+		//cout << "There is an order\n";//DEBUG CODE
 		if (o_in.priority == "supreme" && curr_order.priority == "supreme"){
-			cout << "new order supreme, curr_order supreme\n";
+			//cout << "new order supreme, curr_order supreme\n";//DEBUG CODE
 			supreme_queue.insert(o_in);
 		}else if (o_in.priority == "supreme" && curr_order.priority == "regular"){
-			cout << "new order supreme, curr_order regular\n";
+			//cout << "new order supreme, curr_order regular\n";//DEBUG CODE
 			interrupt_order = curr_order;
 			t_interrupt = curr_time;
 			curr_time = 0;
 			curr_order = o_in;
 		}else{
-			cout << "new order regular\n";
+			//cout << "new order regular\n";//DEBUG CODE
 			order_queue.insert(o_in);
 		}
 	}else if (!is_order){
-		cout << "no order present\n";
+		//cout << "no order present\n";//DEBUG CODE
 		curr_time = 0;
 		curr_order = o_in;
 	}
 	
 	t_wait += o_in.t_pack;
-	cout << "t_wait after insert: " << t_wait << endl;
+	//cout << "t_wait after insert: " << t_wait << endl;//DEBUG CODE
 	
 	if (o_in.priority == "supreme"){
 		supreme_wait += o_in.t_pack;
@@ -56,7 +56,7 @@ Order Packer::pass_to()
 	temp = curr_order;
 	
 	if (supreme_queue.is_empty() && t_interrupt == 0){
-		cout << "supreme_queue empty, no interrupt_order\n";
+		//cout << "supreme_queue empty, no interrupt_order\n";//DEBUG CODE
 		if (!order_queue.is_empty()){
 			curr_order = order_queue.remove();
 			curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
@@ -65,13 +65,13 @@ Order Packer::pass_to()
 		}
 		curr_time = 0;
 	}else if (supreme_queue.is_empty() && curr_order.priority == "supreme" && t_interrupt != 0){
-		cout << "supreme_queue empty, curr_order supreme, interrupt_order present\n";
+		//cout << "supreme_queue empty, curr_order supreme, interrupt_order present\n";//DEBUG CODE
 		curr_order = interrupt_order;
 		curr_time = t_interrupt;
 		t_interrupt = 0;
 		interrupt_order.priority = "NULL";
 	}else if (!supreme_queue.is_empty()){
-		cout << "supreme_queue not empty\n";
+		//cout << "supreme_queue not empty\n";//DEBUG CODE
 		curr_order = supreme_queue.remove();
 		curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
 		curr_time = 0;
