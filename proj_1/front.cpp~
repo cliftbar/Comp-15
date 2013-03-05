@@ -9,12 +9,13 @@
 
 //default constructor, sets initial values AND reads in the buffer,
 //make sure you want that when you create this class.
-Front_Desk::Front_Desk()
+Front_Desk::Front_Desk(bool do_supreme, Queue* queue_in)
 {
+	consider_supreme = do_supreme;
 	desk_time = 0;
 	done = false;
-	buffer_queue = NULL;
-	run_buffer();
+	cout << "front desk queue" << endl;
+	run_buffer(queue_in);
 }
 
 //true: done, queue empty
@@ -48,7 +49,12 @@ Order Front_Desk::pass_order()
 	
 	//sets the fetch_wait to the time spent waiting to be fetched
 	r_order.front_wait = desk_time;
-	
+	if (!consider_supreme){
+		if(r_order.priority == "supreme"){
+			r_order.priority = "regular";
+			r_order.switched = true;
+		}
+	}
 	//cout << "pass_order id: " << r_order.id << endl;//DEBUG CODE
 	
 	return r_order;
@@ -65,15 +71,10 @@ void Front_Desk::print_buffer()
 //Creates an instance of the buffer class, reads in the input using the buffer,|||||
 //then stores the buffer queue (a dynamic linked list).  If the buffer is not
 //empty, the first order is removed from the internal queue and stored.
-void Front_Desk::run_buffer()
+void Front_Desk::run_buffer(Queue* queue_in)
 {
-	Buffer sales;
-	
-	sales.read_in();
-	
-	//sales.print_orders();//DUBUG CODE
-	
-	buffer_queue = sales.pass_queue();
+		
+	buffer_queue = queue_in;
 	
 	if (!buffer_queue->is_empty()){
 		next_order = buffer_queue->remove();

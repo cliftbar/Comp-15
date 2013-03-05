@@ -10,7 +10,7 @@ using namespace std;
 class Stats
 {
 public:
-	Stats(/*bool consider_supreme*/);
+	Stats(bool consider_supreme);
 	void get_order(Order o_in);
 	void run_calcs();
 	Order return_order();
@@ -25,6 +25,7 @@ private:
 	
 	Order curr_order;
 	bool first_order;
+	bool supreme;
 	int sim_num;
 	int sim_max;
 	int sim_min;

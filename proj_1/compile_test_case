@@ -1,1 +1,1 @@
-g++ -g queue.cpp packer.cpp pack_boss.cpp manager.cpp main.cpp front.cpp fetcher.cpp buffer.cpp stats.cpp -o test_case
+g++ -g queue.cpp packer.cpp pack_boss.cpp simulation.cpp main.cpp front.cpp fetcher.cpp buffer.cpp stats.cpp manager.cpp -o test_case

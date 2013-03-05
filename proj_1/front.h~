@@ -16,7 +16,7 @@ class Front_Desk
 {
 public:
 	//constructor
-	Front_Desk(bool supreme);
+	Front_Desk(bool do_supreme, Queue* queue_in);
 	
 	//true: done, internal queue empty
 	//false: not done, internal queue not empty
@@ -43,6 +43,8 @@ private:
 	int desk_time;
 	
 	bool done;
+	
+	bool consider_supreme;
 };
 
 #endif

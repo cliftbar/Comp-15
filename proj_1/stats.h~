@@ -10,7 +10,7 @@ using namespace std;
 class Stats
 {
 public:
-	Stats(/*bool consider_supreme*/);
+	Stats(bool consider_supreme);
 	void get_order(Order o_in);
 	void run_calcs();
 	Order return_order();
@@ -28,9 +28,9 @@ private:
 	int sim_num;
 	int sim_max;
 	int sim_min;
-	int mean_reg;
-	int mean_sup;
-	int mean_all;
+	double mean_reg;
+	double mean_sup;
+	double mean_all;
 	int num_reg_processed;
 	int num_sup_processed;
 	int num_all_processed;

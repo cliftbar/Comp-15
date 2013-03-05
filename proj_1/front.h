@@ -16,7 +16,7 @@ class Front_Desk
 {
 public:
 	//constructor
-	Front_Desk();
+	Front_Desk(bool do_supreme, Queue* queue_in);
 	
 	//true: done, internal queue empty
 	//false: not done, internal queue not empty
@@ -31,7 +31,7 @@ public:
 
 private:
 	//runs the functions to create the input buffer
-	void run_buffer();
+	void run_buffer(Queue* queue_in);
 	
 	//holds the next order in line, not stored in the internal
 	//order queue
@@ -43,6 +43,8 @@ private:
 	int desk_time;
 	
 	bool done;
+	
+	bool consider_supreme;
 };
 
 #endif

@@ -40,6 +40,8 @@ struct Order
 
 	//time out of simulation
 	int t_out;
+	
+	bool switched;
 };
 
 #endif

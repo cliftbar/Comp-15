@@ -1,8 +1,11 @@
 //buffer.cpp
 //Created by: Cameron Barclift
 //need a destructor
+//Buffer reads input from the standard stream and stores the relevant
+//data into a queue.  It can pass out a copy of the buffer queue
 
 #include "buffer.h"
+
 ////////////Public Methods///////////
 
 //constructor
@@ -32,6 +35,10 @@ void Buffer::read_in()
 			
 			new_order.t_out = 0;
 			new_order.fetch_wait = 0;
+			new_order.front_wait = 0;
+			new_order.pack_wait = 0;
+			new_order.spent_interrupted = 0;
+			new_order.switched = false;
 
 			order_queue.insert(new_order);
 		}

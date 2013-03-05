@@ -38,6 +38,7 @@ void Buffer::read_in()
 			new_order.front_wait = 0;
 			new_order.pack_wait = 0;
 			new_order.spent_interrupted = 0;
+			new_order.switched = false;
 
 			order_queue.insert(new_order);
 		}
@@ -49,6 +50,7 @@ return;
 //returns a pointer to a copy of the buffer queue
 Queue* Buffer::pass_queue()
 {
+	//Order hold_order;
 	Queue* pass_to = new Queue;
 	Queue temp = order_queue;
 	

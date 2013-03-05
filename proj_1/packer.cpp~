@@ -15,10 +15,15 @@ Packer::Packer(/*bool is_supreme*/)
 	interrupt_order.priority = "NULL";
 }
 
+void Packer::consider_supreme(bool do_supreme)
+{
+	supreme = do_supreme;
+}
+
 void Packer::insert(Order o_in)
 {	
-	//cout << "Order in ID: " << o_in.id << endl;//DEBUG CODE
-	//cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
+	cout << "Order in ID: " << o_in.id << endl;//DEBUG CODE
+	cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
 	
 	if (is_order){
 		//cout << "There is an order\n";//DEBUG CODE

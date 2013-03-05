@@ -2,23 +2,23 @@
 #include "stats.h"
 using namespace std;
 
-Stats::Stats(/*bool consider_supreme*/)
+Stats::Stats(bool consider_supreme)
 {
-	/*
+	//cout << "consider_supreme: " << consider_supreme << endl;//DEBUG CODE
 	if (consider_supreme){
 		sim_num = 2;
 	}else if (!consider_supreme){
 		sim_num = 1;
 	}
-	*/
+	supreme = consider_supreme;
 	
-	sim_num = 1;//DEBUG CODE;
+	//sim_num = 1;//DEBUG CODE;
 	sim_max = 0;
 	sim_min = 0;
 	mean_reg = 0;
 	mean_sup = 0;
 	mean_all = 0;
-	bool first_order = true;
+	first_order = true;
 	num_reg_processed = 0;
 	num_sup_processed = 0;
 	num_all_processed = 0;
@@ -26,10 +26,12 @@ Stats::Stats(/*bool consider_supreme*/)
 void Stats::get_order(Order o_in)
 {
 	if (first_order){
+		//cout << "check first" << endl;//DEBUG CODE
 		sim_max = o_in.t_out;
 		sim_min = o_in.t_out;
 		first_order = false;
 	}
+	
 	curr_order = o_in;
 }
 
@@ -52,10 +54,10 @@ void Stats::print_stats()
 	
 	cout << "sim" << sim_num << " min elapsed time " << sim_min << " minutes" << endl;
 	cout << "sim" << sim_num << " max elapsed time " << sim_max << " minutes" << endl;
-	if (sim_num == 1){
-		cout << "sim" << sim_num << " mean elapsed time " << print_mean_reg << " minutes" << endl;
-	}else if(sim_num == 2){
-		cout << "sim" << sim_num << " mean total time for all customers " << print_mean_reg << " minutes" << endl;
+	if (!supreme){
+		cout << "sim" << sim_num << " mean elapsed time " << print_mean_all << " minutes" << endl;
+	}else if(supreme){
+		cout << "sim" << sim_num << " mean total time for all customers " << print_mean_all << " minutes" << endl;
 		cout << "sim" << sim_num << " mean total time for supreme customers " << print_mean_sup << " minutes" << endl;
 		cout << "sim" << sim_num << " mean total time for regular customers " << print_mean_reg << " minutes" << endl;
 	}
@@ -64,9 +66,13 @@ void Stats::print_stats()
 
 void Stats::calc_min_max()
 {
+	//cout << "current order time: " << curr_order.t_out;//DEBUG CODE
+	
 	if (curr_order.t_out < sim_min){
+		//cout << " is a min" << endl;//DEBUG CODE
 		sim_min = curr_order.t_out;
 	}else if (curr_order.t_out > sim_max){
+		//cout << " is a max" << endl;//DEBUG CODE
 		sim_max = curr_order.t_out;
 	}
 }
