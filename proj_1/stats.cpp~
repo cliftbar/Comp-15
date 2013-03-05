@@ -26,7 +26,7 @@ Stats::Stats(bool consider_supreme)
 void Stats::get_order(Order o_in)
 {
 	if (first_order){
-		cout << "check first" << endl;//DEBUG CODE
+		//cout << "check first" << endl;//DEBUG CODE
 		sim_max = o_in.t_out;
 		sim_min = o_in.t_out;
 		first_order = false;

@@ -48,18 +48,18 @@ Order Stats::return_order()
 
 void Stats::print_stats()
 {
-	int print_mean_reg = mean_reg;
-	int print_mean_sup = mean_sup;
-	int print_mean_all = mean_all;
+	//int print_mean_reg = mean_reg;
+	//int print_mean_sup = mean_sup;
+	//int print_mean_all = mean_all;
 	
 	cout << "sim" << sim_num << " min elapsed time " << sim_min << " minutes" << endl;
 	cout << "sim" << sim_num << " max elapsed time " << sim_max << " minutes" << endl;
 	if (!supreme){
-		cout << "sim" << sim_num << " mean elapsed time " << print_mean_all << " minutes" << endl;
+		cout << "sim" << sim_num << " mean elapsed time " << /*print_mean_all*/(int)mean_all << " minutes" << endl;
 	}else if(supreme){
-		cout << "sim" << sim_num << " mean total time for all customers " << print_mean_all << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for supreme customers " << print_mean_sup << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for regular customers " << print_mean_reg << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for all customers " << /*print_mean_all*/int(mean_all) << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for supreme customers " << /*print_mean_sup*/int(mean_sup) << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for regular customers " << /*print_mean_reg*/(int)mean_reg << " minutes" << endl;
 	}
 	cout << num_all_processed << " orders processed" << endl << endl;
 }
