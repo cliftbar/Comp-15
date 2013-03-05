@@ -24,6 +24,7 @@ public:
 	//returns a pointer to a copy of the buffer queue
 	Queue* pass_queue();
 	
+	//prints orders in the buffer, in order
 	void print_orders();
 	
 private:

@@ -11,6 +11,7 @@
 //constructor
 Buffer::Buffer()
 {
+	//default constructor
 }
 
 //reads in and stores the file/stream input into a queue
@@ -20,8 +21,10 @@ void Buffer::read_in()
 	Order new_order;
 
 	while(!cin.eof()){
+		//read in to check if we're still in the stream
 		cin >> junk;
 		if(!cin.eof()){
+			//read in data
 			cin >> new_order.id;
 			cin >> junk;
 			cin >> new_order.priority;
@@ -33,6 +36,7 @@ void Buffer::read_in()
 			cin >> new_order.t_pack;
 			cin >> junk;
 			
+			//initialize order parameters
 			new_order.t_out = 0;
 			new_order.fetch_wait = 0;
 			new_order.front_wait = 0;
@@ -54,6 +58,7 @@ Queue* Buffer::pass_queue()
 	Queue* pass_to = new Queue;
 	Queue temp = order_queue;
 	
+	//copies temp queue to new dynamic array
 	while(!temp.is_empty()){
 		pass_to->insert(temp.remove());
 	}

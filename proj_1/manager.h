@@ -1,3 +1,5 @@
+//manager.h
+//Created by: Cameron Barclift
 
 #ifndef MANGER
 #define MANAGER
@@ -10,10 +12,11 @@ using namespace std;
 class Manager
 {
 public:
+	//default constructor, does nothing on purpose
 	Manager();
 	
+	//runs both simulations
 	void run_simulations();
 };
-
 
 #endif
