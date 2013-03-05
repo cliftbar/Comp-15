@@ -7,8 +7,10 @@
 ////////////////PUBLIC METHODS///////////////////////
 
 //Default constructor
-Manager::Manager()
+Manager::Manager(bool is_supreme)
 {
+	supreme = is_supreme;
+	pack_chief.consider_supreme(supreme);
 	absolute_time = 0;
 }
 
@@ -23,7 +25,7 @@ void Manager::run_floor()
 	//time loop
 	//Exit Condition: The order_takers has no more orders in queue AND
 	//the fetching unit is free (AND other things to be imlemented)
-	while (!order_takers.is_done() || !fetch_bot.unit_free() || !pack_chief.all_done()){
+	while (!order_takers.is_done() || !fetch_bot.unit_free() || !pack_chief->all_done()){
 		
 		//if the fetcher is free, then give the fetcher the next order to arrive
 		if(fetch_bot.unit_free() && !order_takers.is_done()){
@@ -46,7 +48,7 @@ void Manager::run_floor()
 		//it will eventually be the packing boss.
 		if (fetch_bot.order_ready()){
 			//cout << "check1\n";//DEBUG CODE
-			pack_chief.pass_in(fetch_bot.deliver_order());
+			pack_chief->pass_in(fetch_bot.deliver_order());
 		}
 		
 		//cout << "fetch_bot.unit_free(): " << fetch_bot.unit_free() << endl;
@@ -55,16 +57,16 @@ void Manager::run_floor()
 		//cout << "supreme current wait: " << pack_bot.wait_time(true) << endl << endl;//DEBUG CODE
 		//pack_bot.print_queue();
 		
-		pack_chief.print_packers();//DEBUG CODE
-		cout << "check 9" << endl;//DEBUG
-		while (pack_chief.num_orders_up() > 0){
+		//pack_chief.print_packers();//DEBUG CODE
+		//cout << "check 9" << endl;//DEBUG
+		while (pack_chief->num_orders_up() > 0){
 			//cout << "check2\n";//DEBUG CODE//DEBUG
-			next_order = pack_chief.pass_out();
+			next_order = pack_chief->pass_out();
 			//cout << "next order id: " << next_order.id << endl;//DEBUG CODE
 			next_order.t_out = absolute_time;
 			order_out.insert(next_order);
 		}
-		cout << "pack_chief.all_done(): " << pack_chief.all_done() << endl << endl;//DEBUG CODE
+		//cout << "pack_chief.all_done(): " << pack_chief.all_done() << endl << endl;//DEBUG CODE
 
 			
 		/*DEBUG CODE
@@ -83,7 +85,16 @@ void Manager::run_floor()
 	//cout << "order_out Queue: " << endl;
 	DEBUG END*/
 	
+	//cout << "check15\n";//DEBUG CODE
 	order_out.print_queue();
+	//cout << "check14\n";//DEBUG CODE
+	while (!order_out.is_empty()){
+		calc_shop.get_order(order_out.remove());
+		//cout << "check13\n";//DEBUG CODE
+		calc_shop.run_calcs();
+	}
+	//cout << "check12\n";//DEBUG CODE
+	calc_shop.print_stats();	
 }
 
 /////////PRIVATE METHODS///////////////
@@ -95,5 +106,5 @@ void Manager::increment_time()
 	++absolute_time;
 	order_takers.increment_time();
 	fetch_bot.increment_time();
-	pack_chief.increment_time();
+	pack_chief->increment_time();
 }

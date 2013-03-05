@@ -7,7 +7,6 @@
 #define FRONT
 
 #include <iostream>
-#include <string>
 #include "queue.h"
 #include "buffer.h"
 
@@ -17,7 +16,7 @@ class Front_Desk
 {
 public:
 	//constructor
-	Front_Desk();
+	Front_Desk(bool supreme);
 	
 	//true: done, internal queue empty
 	//false: not done, internal queue not empty

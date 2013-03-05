@@ -2,8 +2,9 @@
 #include "packer.h"
 using namespace std;
 
-Packer::Packer()
+Packer::Packer(/*bool is_supreme*/)
 {
+	//supreme = is_supreme;
 	curr_time = 0;
 	t_wait = 0;
 	t_absolute = 0;
@@ -12,6 +13,11 @@ Packer::Packer()
 	o_up = false;
 	is_order = false;
 	interrupt_order.priority = "NULL";
+}
+
+void Packer::consider_supreme(bool do_supreme)
+{
+	supreme = do_supreme;
 }
 
 void Packer::insert(Order o_in)

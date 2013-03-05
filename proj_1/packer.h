@@ -14,6 +14,8 @@ public:
 	//constructor
 	Packer();
 	
+	void consider_supreme(bool do_supreme);
+	
 	//adds an order to the queue
 	void insert(Order o_add);
 	
@@ -68,6 +70,8 @@ private:
 		
 	//wait time for the supreme orders
 	int supreme_wait;
+	
+	bool supreme;
 };
 
 #endif

@@ -9,6 +9,14 @@ Pack_Boss::Pack_Boss()
 	packers_done = false;
 }
 
+void Pack_Boss::consider_supreme(bool do_supreme)
+{
+	supreme = do_supreme;
+	for (int i = 0; i < NUM_PACKERS; ++i){
+		all_packers[i].consider_supreme(supreme);
+	}
+}
+
 void Pack_Boss::pass_in(Order o_in)
 {
 	//cout << "check 1 \n" << endl;//DEBUG

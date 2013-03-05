@@ -4,9 +4,17 @@ using namespace std;
 
 Pack_Boss::Pack_Boss()
 {
-	NUM_PACKERS = 2;
+	NUM_PACKERS = 3;
 	all_packers = new Packer[NUM_PACKERS];
 	packers_done = false;
+}
+
+void Pack_Boss::consider_supreme(bool do_supreme)
+{
+	supreme = consider_supreme;
+	for (int i = 0; i < NUM_PACKERS; ++i){
+		all_packers[i].consider_supreme(supreme);
+	}
 }
 
 void Pack_Boss::pass_in(Order o_in)

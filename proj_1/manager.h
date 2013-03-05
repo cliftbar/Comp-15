@@ -11,6 +11,7 @@
 #include "buffer.h"
 #include "front.h"
 #include "pack_boss.h"
+#include "stats.h"
 
 using namespace std;
 
@@ -19,7 +20,7 @@ class Manager
 {
 public:
 	//constructor
-	Manager();
+	Manager(bool is_supreme);
 	
 	//runs all of the functions required for
 	//a time interval on the floor
@@ -36,11 +37,15 @@ private:
 	//master time for the simulation
 	int absolute_time;
 	
+	bool supreme;
+	
 	Front_Desk order_takers;
 	
 	Fetcher fetch_bot;
 	
 	Pack_Boss pack_chief;
+	
+	Stats calc_shop;
 	
 	//temporary queue for debugging purposes
 	Queue* order_queue;

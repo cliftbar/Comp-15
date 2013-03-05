@@ -1,6 +1,6 @@
 //main.cpp test file
 
-#include "buffer.h"
+#include "manager.h"
 #include <iostream>
 
 using namespace std;

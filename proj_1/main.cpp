@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	Manager head_cheese;
+	Manager head_cheese(true);
 	
 	head_cheese.run_floor();
 	

@@ -7,8 +7,10 @@
 ////////////////PUBLIC METHODS///////////////////////
 
 //Default constructor
-Manager::Manager()
+Manager::Manager(bool is_supreme)
 {
+	supreme = is_supreme;
+	pack_chief.consider_supreme(supreme);
 	absolute_time = 0;
 }
 
@@ -83,7 +85,16 @@ void Manager::run_floor()
 	//cout << "order_out Queue: " << endl;
 	DEBUG END*/
 	
+	//cout << "check15\n";//DEBUG CODE
 	order_out.print_queue();
+	//cout << "check14\n";//DEBUG CODE
+	while (!order_out.is_empty()){
+		calc_shop.get_order(order_out.remove());
+		//cout << "check13\n";//DEBUG CODE
+		calc_shop.run_calcs();
+	}
+	//cout << "check12\n";//DEBUG CODE
+	calc_shop.print_stats();	
 }
 
 /////////PRIVATE METHODS///////////////

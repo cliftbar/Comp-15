@@ -1,5 +1,6 @@
 Order 6
 Priority supreme
+Arrival time: 25
 fetch time 5
 Fetch wait: 4
 Pack wait: 0
@@ -10,6 +11,7 @@ time out: 40
 
 Order 5
 Priority supreme
+Arrival time: 20
 fetch time 5
 Fetch wait: 4
 Pack wait: 0
@@ -20,6 +22,7 @@ time out: 40
 
 Order 4
 Priority supreme
+Arrival time: 15
 fetch time 5
 Fetch wait: 4
 Pack wait: 0
@@ -30,6 +33,7 @@ time out: 40
 
 Order 7
 Priority supreme
+Arrival time: 30
 fetch time 5
 Fetch wait: 4
 Pack wait: 5
@@ -40,6 +44,7 @@ time out: 60
 
 Order 1
 Priority regular
+Arrival time: 0
 fetch time 5
 Fetch wait: 5
 Pack wait: 0
@@ -50,6 +55,7 @@ time out: 65
 
 Order 2
 Priority regular
+Arrival time: 5
 fetch time 5
 Fetch wait: 4
 Pack wait: 55
@@ -60,6 +66,7 @@ time out: 90
 
 Order 3
 Priority regular
+Arrival time: 10
 fetch time 5
 Fetch wait: 4
 Pack wait: 75
@@ -69,4 +76,9 @@ front wait: 11
 time out: 110
 
 queue length: 7
+
+sim1 min elapsed time 40 minutes
+sim1 max elapsed time 110 minutes
+sim1 mean elapsed time 88 minutes
+7 orders processed
 

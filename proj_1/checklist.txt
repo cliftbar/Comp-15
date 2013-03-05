@@ -10,10 +10,12 @@ pass order from fetcher to pack boss -- check
 pack boss chooses shortest packer without supreme consideration -- check
 packer holds order for proper time -- check
 packer passes out orders to pack boss -- check
+pack boss returns orders that finish at the same time -- check
+pack boss chooses shortest queue with supreme consideration -- check
+packer handles supreme interrupts properly -- check
 
-pack boss returns orders that finish at the same time -- need test data, should work
-
-pack boss chooses shortest queue with supreme consideration -- not started
-packer handles supreme interrupts properly -- not started
 stats class reads in the required values -- not started
 stats class calculations work -- not started
+stats class passes to a buffer -- not started
+front class reworked to allow for two simulations -- not started 
+propogate bool from manager through for two simulations -- not started
