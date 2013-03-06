@@ -1,284 +1,1472 @@
 Order 1
 Priority regular
 Arrival time: 0
-fetch time 5
-Fetch wait: 5
+fetch time 1
+Fetch wait: 1
 Pack wait: 0
-pack time 30
+pack time 13
 interrupted time 0
 front wait: 0
-time out sim1: 35
+time out sim1: 14
 time out sim2: 0
 
 Order 2
-Priority regular
-Arrival time: 5
-fetch time 5
-Fetch wait: 4
-Pack wait: 25
-pack time 25
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 1
+Pack wait: 11
+pack time 19
 interrupted time 0
-front wait: 6
-time out sim1: 60
+front wait: 2
+time out sim1: 33
 time out sim2: 0
 
 Order 3
 Priority regular
-Arrival time: 10
-fetch time 5
-Fetch wait: 4
-Pack wait: 45
-pack time 20
+Arrival time: 4
+fetch time 2
+Fetch wait: 1
+Pack wait: 28
+pack time 19
 interrupted time 0
-front wait: 11
-time out sim1: 80
+front wait: 4
+time out sim1: 52
 time out sim2: 0
 
 Order 4
 Priority supreme
-Arrival time: 15
-fetch time 5
-Fetch wait: 4
-Pack wait: 60
-pack time 20
+Arrival time: 7
+fetch time 3
+Fetch wait: 2
+Pack wait: 44
+pack time 17
 interrupted time 0
-front wait: 16
-time out sim1: 100
+front wait: 6
+time out sim1: 69
 time out sim2: 0
 
 Order 5
-Priority supreme
-Arrival time: 20
-fetch time 5
-Fetch wait: 4
-Pack wait: 75
-pack time 15
+Priority regular
+Arrival time: 8
+fetch time 3
+Fetch wait: 2
+Pack wait: 58
+pack time 20
 interrupted time 0
-front wait: 21
-time out sim1: 115
+front wait: 9
+time out sim1: 89
 time out sim2: 0
 
 Order 6
 Priority supreme
-Arrival time: 25
-fetch time 5
-Fetch wait: 4
-Pack wait: 85
-pack time 10
+Arrival time: 10
+fetch time 1
+Fetch wait: 0
+Pack wait: 77
+pack time 20
 interrupted time 0
-front wait: 26
-time out sim1: 125
+front wait: 12
+time out sim1: 109
 time out sim2: 0
 
 Order 7
-Priority supreme
-Arrival time: 30
-fetch time 5
-Fetch wait: 4
-Pack wait: 90
-pack time 20
+Priority regular
+Arrival time: 13
+fetch time 2
+Fetch wait: 1
+Pack wait: 95
+pack time 14
 interrupted time 0
-front wait: 31
-time out sim1: 145
+front wait: 13
+time out sim1: 123
 time out sim2: 0
 
-queue length: 7
+Order 8
+Priority supreme
+Arrival time: 14
+fetch time 3
+Fetch wait: 2
+Pack wait: 106
+pack time 5
+interrupted time 0
+front wait: 15
+time out sim1: 128
+time out sim2: 0
 
-sim1 min elapsed time 35 minutes
-sim1 max elapsed time 145 minutes
-sim1 mean elapsed time 94 minutes
-7 orders processed
+Order 9
+Priority regular
+Arrival time: 17
+fetch time 1
+Fetch wait: 0
+Pack wait: 110
+pack time 19
+interrupted time 0
+front wait: 18
+time out sim1: 147
+time out sim2: 0
+
+Order 10
+Priority supreme
+Arrival time: 19
+fetch time 2
+Fetch wait: 1
+Pack wait: 127
+pack time 11
+interrupted time 0
+front wait: 19
+time out sim1: 158
+time out sim2: 0
+
+Order 11
+Priority regular
+Arrival time: 22
+fetch time 2
+Fetch wait: 1
+Pack wait: 136
+pack time 8
+interrupted time 0
+front wait: 21
+time out sim1: 166
+time out sim2: 0
+
+Order 12
+Priority supreme
+Arrival time: 24
+fetch time 3
+Fetch wait: 2
+Pack wait: 141
+pack time 16
+interrupted time 0
+front wait: 23
+time out sim1: 182
+time out sim2: 0
+
+Order 13
+Priority regular
+Arrival time: 26
+fetch time 1
+Fetch wait: 0
+Pack wait: 156
+pack time 13
+interrupted time 0
+front wait: 26
+time out sim1: 195
+time out sim2: 0
+
+Order 14
+Priority supreme
+Arrival time: 29
+fetch time 1
+Fetch wait: 0
+Pack wait: 168
+pack time 18
+interrupted time 0
+front wait: 27
+time out sim1: 213
+time out sim2: 0
+
+Order 15
+Priority regular
+Arrival time: 30
+fetch time 2
+Fetch wait: 1
+Pack wait: 184
+pack time 5
+interrupted time 0
+front wait: 28
+time out sim1: 218
+time out sim2: 0
+
+Order 16
+Priority supreme
+Arrival time: 31
+fetch time 3
+Fetch wait: 2
+Pack wait: 186
+pack time 8
+interrupted time 0
+front wait: 30
+time out sim1: 226
+time out sim2: 0
+
+Order 17
+Priority regular
+Arrival time: 34
+fetch time 3
+Fetch wait: 2
+Pack wait: 191
+pack time 15
+interrupted time 0
+front wait: 33
+time out sim1: 241
+time out sim2: 0
+
+Order 18
+Priority supreme
+Arrival time: 36
+fetch time 1
+Fetch wait: 0
+Pack wait: 205
+pack time 7
+interrupted time 0
+front wait: 36
+time out sim1: 248
+time out sim2: 0
+
+Order 19
+Priority regular
+Arrival time: 37
+fetch time 3
+Fetch wait: 2
+Pack wait: 209
+pack time 20
+interrupted time 0
+front wait: 37
+time out sim1: 268
+time out sim2: 0
+
+Order 20
+Priority supreme
+Arrival time: 39
+fetch time 2
+Fetch wait: 1
+Pack wait: 227
+pack time 16
+interrupted time 0
+front wait: 40
+time out sim1: 284
+time out sim2: 0
+
+Order 21
+Priority regular
+Arrival time: 40
+fetch time 2
+Fetch wait: 1
+Pack wait: 241
+pack time 1
+interrupted time 0
+front wait: 42
+time out sim1: 285
+time out sim2: 0
+
+Order 22
+Priority supreme
+Arrival time: 41
+fetch time 3
+Fetch wait: 2
+Pack wait: 239
+pack time 11
+interrupted time 0
+front wait: 44
+time out sim1: 296
+time out sim2: 0
+
+Order 23
+Priority regular
+Arrival time: 42
+fetch time 3
+Fetch wait: 2
+Pack wait: 247
+pack time 20
+interrupted time 0
+front wait: 47
+time out sim1: 316
+time out sim2: 0
+
+Order 24
+Priority supreme
+Arrival time: 45
+fetch time 2
+Fetch wait: 1
+Pack wait: 265
+pack time 15
+interrupted time 0
+front wait: 50
+time out sim1: 331
+time out sim2: 0
+
+Order 25
+Priority regular
+Arrival time: 47
+fetch time 3
+Fetch wait: 2
+Pack wait: 277
+pack time 8
+interrupted time 0
+front wait: 52
+time out sim1: 339
+time out sim2: 0
+
+Order 26
+Priority supreme
+Arrival time: 49
+fetch time 2
+Fetch wait: 1
+Pack wait: 283
+pack time 19
+interrupted time 0
+front wait: 55
+time out sim1: 358
+time out sim2: 0
+
+Order 27
+Priority regular
+Arrival time: 52
+fetch time 1
+Fetch wait: 0
+Pack wait: 301
+pack time 8
+interrupted time 0
+front wait: 57
+time out sim1: 366
+time out sim2: 0
+
+Order 28
+Priority supreme
+Arrival time: 53
+fetch time 1
+Fetch wait: 0
+Pack wait: 308
+pack time 8
+interrupted time 0
+front wait: 58
+time out sim1: 374
+time out sim2: 0
+
+Order 29
+Priority regular
+Arrival time: 55
+fetch time 2
+Fetch wait: 1
+Pack wait: 314
+pack time 13
+interrupted time 0
+front wait: 59
+time out sim1: 387
+time out sim2: 0
+
+Order 30
+Priority supreme
+Arrival time: 57
+fetch time 2
+Fetch wait: 1
+Pack wait: 325
+pack time 3
+interrupted time 0
+front wait: 61
+time out sim1: 390
+time out sim2: 0
+
+Order 31
+Priority regular
+Arrival time: 59
+fetch time 3
+Fetch wait: 2
+Pack wait: 325
+pack time 3
+interrupted time 0
+front wait: 63
+time out sim1: 393
+time out sim2: 0
+
+Order 32
+Priority supreme
+Arrival time: 60
+fetch time 1
+Fetch wait: 0
+Pack wait: 327
+pack time 14
+interrupted time 0
+front wait: 66
+time out sim1: 407
+time out sim2: 0
+
+Order 33
+Priority regular
+Arrival time: 63
+fetch time 3
+Fetch wait: 2
+Pack wait: 338
+pack time 15
+interrupted time 0
+front wait: 67
+time out sim1: 422
+time out sim2: 0
+
+Order 34
+Priority supreme
+Arrival time: 64
+fetch time 3
+Fetch wait: 2
+Pack wait: 350
+pack time 15
+interrupted time 0
+front wait: 70
+time out sim1: 437
+time out sim2: 0
+
+Order 35
+Priority regular
+Arrival time: 67
+fetch time 3
+Fetch wait: 2
+Pack wait: 362
+pack time 2
+interrupted time 0
+front wait: 73
+time out sim1: 439
+time out sim2: 0
+
+Order 36
+Priority supreme
+Arrival time: 69
+fetch time 2
+Fetch wait: 1
+Pack wait: 362
+pack time 2
+interrupted time 0
+front wait: 76
+time out sim1: 441
+time out sim2: 0
+
+Order 37
+Priority regular
+Arrival time: 70
+fetch time 1
+Fetch wait: 0
+Pack wait: 363
+pack time 13
+interrupted time 0
+front wait: 78
+time out sim1: 454
+time out sim2: 0
+
+Order 38
+Priority supreme
+Arrival time: 72
+fetch time 2
+Fetch wait: 1
+Pack wait: 374
+pack time 19
+interrupted time 0
+front wait: 79
+time out sim1: 473
+time out sim2: 0
+
+Order 39
+Priority regular
+Arrival time: 74
+fetch time 3
+Fetch wait: 2
+Pack wait: 390
+pack time 20
+interrupted time 0
+front wait: 81
+time out sim1: 493
+time out sim2: 0
+
+Order 40
+Priority supreme
+Arrival time: 76
+fetch time 3
+Fetch wait: 2
+Pack wait: 407
+pack time 6
+interrupted time 0
+front wait: 84
+time out sim1: 499
+time out sim2: 0
+
+queue length: 40
+
+sim1 min elapsed time 14 minutes
+sim1 max elapsed time 499 minutes
+sim1 mean elapsed time 276 minutes
+40 orders processed
 
 simulation done
-Order 6
+Order 2
 Priority supreme
-Arrival time: 25
-fetch time 5
-Fetch wait: 8
-Pack wait: 85
-pack time 10
+Arrival time: 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 11
+pack time 19
 interrupted time 0
-front wait: 26
-time out sim1: 125
-time out sim2: 40
-
-Order 5
-Priority supreme
-Arrival time: 20
-fetch time 5
-Fetch wait: 8
-Pack wait: 75
-pack time 15
-interrupted time 0
-front wait: 21
-time out sim1: 115
-time out sim2: 40
+front wait: 2
+time out sim1: 33
+time out sim2: 22
 
 Order 4
 Priority supreme
-Arrival time: 15
-fetch time 5
-Fetch wait: 8
-Pack wait: 60
-pack time 20
+Arrival time: 7
+fetch time 3
+Fetch wait: 4
+Pack wait: 44
+pack time 17
 interrupted time 0
-front wait: 16
-time out sim1: 100
-time out sim2: 40
+front wait: 6
+time out sim1: 69
+time out sim2: 25
 
-Order 7
+Order 8
 Priority supreme
-Arrival time: 30
-fetch time 5
-Fetch wait: 8
-Pack wait: 1
+Arrival time: 14
+fetch time 3
+Fetch wait: 4
+Pack wait: 3
+pack time 5
+interrupted time 0
+front wait: 15
+time out sim1: 128
+time out sim2: 27
+
+Order 6
+Priority supreme
+Arrival time: 10
+fetch time 1
+Fetch wait: 0
+Pack wait: 77
 pack time 20
 interrupted time 0
-front wait: 31
-time out sim1: 145
-time out sim2: 60
+front wait: 12
+time out sim1: 109
+time out sim2: 32
+
+Order 10
+Priority supreme
+Arrival time: 19
+fetch time 2
+Fetch wait: 2
+Pack wait: 6
+pack time 11
+interrupted time 0
+front wait: 19
+time out sim1: 158
+time out sim2: 38
+
+Order 12
+Priority supreme
+Arrival time: 24
+fetch time 3
+Fetch wait: 4
+Pack wait: -2
+pack time 16
+interrupted time 0
+front wait: 23
+time out sim1: 182
+time out sim2: 41
+
+Order 16
+Priority supreme
+Arrival time: 31
+fetch time 3
+Fetch wait: 4
+Pack wait: 4
+pack time 8
+interrupted time 0
+front wait: 30
+time out sim1: 226
+time out sim2: 46
+
+Order 14
+Priority supreme
+Arrival time: 29
+fetch time 1
+Fetch wait: 0
+Pack wait: 5
+pack time 18
+interrupted time 0
+front wait: 27
+time out sim1: 213
+time out sim2: 50
+
+Order 18
+Priority supreme
+Arrival time: 36
+fetch time 1
+Fetch wait: 0
+Pack wait: 10
+pack time 7
+interrupted time 0
+front wait: 36
+time out sim1: 248
+time out sim2: 53
+
+Order 20
+Priority supreme
+Arrival time: 39
+fetch time 2
+Fetch wait: 2
+Pack wait: -1
+pack time 16
+interrupted time 0
+front wait: 40
+time out sim1: 284
+time out sim2: 57
+
+Order 22
+Priority supreme
+Arrival time: 41
+fetch time 3
+Fetch wait: 4
+Pack wait: 2
+pack time 11
+interrupted time 0
+front wait: 44
+time out sim1: 296
+time out sim2: 61
+
+Order 24
+Priority supreme
+Arrival time: 45
+fetch time 2
+Fetch wait: 2
+Pack wait: 1
+pack time 15
+interrupted time 0
+front wait: 50
+time out sim1: 331
+time out sim2: 68
+
+Order 28
+Priority supreme
+Arrival time: 53
+fetch time 1
+Fetch wait: 0
+Pack wait: 3
+pack time 8
+interrupted time 0
+front wait: 58
+time out sim1: 374
+time out sim2: 69
+
+Order 30
+Priority supreme
+Arrival time: 57
+fetch time 2
+Fetch wait: 2
+Pack wait: 5
+pack time 3
+interrupted time 0
+front wait: 61
+time out sim1: 390
+time out sim2: 71
+
+Order 26
+Priority supreme
+Arrival time: 49
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 19
+interrupted time 0
+front wait: 55
+time out sim1: 358
+time out sim2: 76
+
+Order 36
+Priority supreme
+Arrival time: 69
+fetch time 2
+Fetch wait: 2
+Pack wait: 362
+pack time 2
+interrupted time 0
+front wait: 76
+time out sim1: 441
+time out sim2: 79
+
+Order 32
+Priority supreme
+Arrival time: 60
+fetch time 1
+Fetch wait: 0
+Pack wait: 3
+pack time 14
+interrupted time 0
+front wait: 66
+time out sim1: 407
+time out sim2: 83
 
 Order 1
 Priority regular
 Arrival time: 0
-fetch time 5
-Fetch wait: 10
+fetch time 1
+Fetch wait: 2
 Pack wait: 0
-pack time 30
-interrupted time 30
+pack time 13
+interrupted time 71
 front wait: 0
-time out sim1: 35
-time out sim2: 65
+time out sim1: 14
+time out sim2: 85
 
-Order 2
-Priority regular
-Arrival time: 5
-fetch time 5
-Fetch wait: 8
-Pack wait: 51
-pack time 25
+Order 34
+Priority supreme
+Arrival time: 64
+fetch time 3
+Fetch wait: 4
+Pack wait: 350
+pack time 15
 interrupted time 0
-front wait: 6
-time out sim1: 60
-time out sim2: 90
+front wait: 70
+time out sim1: 437
+time out sim2: 87
+
+Order 40
+Priority supreme
+Arrival time: 76
+fetch time 3
+Fetch wait: 4
+Pack wait: 407
+pack time 6
+interrupted time 0
+front wait: 84
+time out sim1: 499
+time out sim2: 92
+
+Order 38
+Priority supreme
+Arrival time: 72
+fetch time 2
+Fetch wait: 2
+Pack wait: 374
+pack time 19
+interrupted time 0
+front wait: 79
+time out sim1: 473
+time out sim2: 99
+
+Order 7
+Priority regular
+Arrival time: 13
+fetch time 2
+Fetch wait: 2
+Pack wait: 56
+pack time 14
+interrupted time 15
+front wait: 13
+time out sim1: 123
+time out sim2: 100
 
 Order 3
 Priority regular
-Arrival time: 10
-fetch time 5
-Fetch wait: 8
-Pack wait: 71
-pack time 20
-interrupted time 0
-front wait: 11
-time out sim1: 80
+Arrival time: 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 79
+pack time 19
+interrupted time 6
+front wait: 4
+time out sim1: 52
 time out sim2: 110
 
-queue length: 7
-
-sim2 min elapsed time 40 minutes
-sim2 max elapsed time 110 minutes
-sim2 mean total time for all customers 63 minutes
-sim2 mean total time for supreme customers 45 minutes
-sim2 mean total time for regular customers 88 minutes
-7 orders processed
-
-simulation done
-Order 6
-Priority supreme
-Arrival time: 25
-fetch time 5
-Fetch wait: 8
-Pack wait: 85
-pack time 10
-interrupted time 0
-front wait: 26
-time out sim1: 125
-time out sim2: 40
+Order 9
+Priority regular
+Arrival time: 17
+fetch time 1
+Fetch wait: 0
+Pack wait: 58
+pack time 19
+interrupted time 21
+front wait: 18
+time out sim1: 147
+time out sim2: 116
 
 Order 5
-Priority supreme
-Arrival time: 20
-fetch time 5
-Fetch wait: 8
-Pack wait: 75
-pack time 15
+Priority regular
+Arrival time: 8
+fetch time 3
+Fetch wait: 4
+Pack wait: 97
+pack time 20
+interrupted time 0
+front wait: 9
+time out sim1: 89
+time out sim2: 130
+
+Order 11
+Priority regular
+Arrival time: 22
+fetch time 2
+Fetch wait: 2
+Pack wait: 107
+pack time 8
 interrupted time 0
 front wait: 21
-time out sim1: 115
-time out sim2: 40
+time out sim1: 166
+time out sim2: 138
+
+Order 13
+Priority regular
+Arrival time: 26
+fetch time 1
+Fetch wait: 0
+Pack wait: 112
+pack time 13
+interrupted time 0
+front wait: 26
+time out sim1: 195
+time out sim2: 151
+
+Order 15
+Priority regular
+Arrival time: 30
+fetch time 2
+Fetch wait: 2
+Pack wait: 121
+pack time 5
+interrupted time 0
+front wait: 28
+time out sim1: 218
+time out sim2: 156
+
+Order 17
+Priority regular
+Arrival time: 34
+fetch time 3
+Fetch wait: 4
+Pack wait: 119
+pack time 15
+interrupted time 0
+front wait: 33
+time out sim1: 241
+time out sim2: 171
+
+Order 19
+Priority regular
+Arrival time: 37
+fetch time 3
+Fetch wait: 4
+Pack wait: 130
+pack time 20
+interrupted time 0
+front wait: 37
+time out sim1: 268
+time out sim2: 191
+
+Order 21
+Priority regular
+Arrival time: 40
+fetch time 2
+Fetch wait: 2
+Pack wait: 147
+pack time 1
+interrupted time 0
+front wait: 42
+time out sim1: 285
+time out sim2: 192
+
+Order 23
+Priority regular
+Arrival time: 42
+fetch time 3
+Fetch wait: 4
+Pack wait: 141
+pack time 20
+interrupted time 0
+front wait: 47
+time out sim1: 316
+time out sim2: 212
+
+Order 25
+Priority regular
+Arrival time: 47
+fetch time 3
+Fetch wait: 4
+Pack wait: 156
+pack time 8
+interrupted time 0
+front wait: 52
+time out sim1: 339
+time out sim2: 220
+
+Order 27
+Priority regular
+Arrival time: 52
+fetch time 1
+Fetch wait: 0
+Pack wait: 163
+pack time 8
+interrupted time 0
+front wait: 57
+time out sim1: 366
+time out sim2: 228
+
+Order 29
+Priority regular
+Arrival time: 55
+fetch time 2
+Fetch wait: 2
+Pack wait: 167
+pack time 13
+interrupted time 0
+front wait: 59
+time out sim1: 387
+time out sim2: 241
+
+Order 31
+Priority regular
+Arrival time: 59
+fetch time 3
+Fetch wait: 4
+Pack wait: 174
+pack time 3
+interrupted time 0
+front wait: 63
+time out sim1: 393
+time out sim2: 244
+
+Order 33
+Priority regular
+Arrival time: 63
+fetch time 3
+Fetch wait: 4
+Pack wait: 173
+pack time 15
+interrupted time 0
+front wait: 67
+time out sim1: 422
+time out sim2: 259
+
+Order 35
+Priority regular
+Arrival time: 67
+fetch time 3
+Fetch wait: 4
+Pack wait: 182
+pack time 2
+interrupted time 0
+front wait: 73
+time out sim1: 439
+time out sim2: 261
+
+Order 37
+Priority regular
+Arrival time: 70
+fetch time 1
+Fetch wait: 0
+Pack wait: 183
+pack time 13
+interrupted time 0
+front wait: 78
+time out sim1: 454
+time out sim2: 274
+
+Order 39
+Priority regular
+Arrival time: 74
+fetch time 3
+Fetch wait: 4
+Pack wait: 189
+pack time 20
+interrupted time 0
+front wait: 81
+time out sim1: 493
+time out sim2: 294
+
+queue length: 40
+
+sim2 min elapsed time 22 minutes
+sim2 max elapsed time 294 minutes
+sim2 mean total time for all customers 123 minutes
+sim2 mean total time for supreme customers 58 minutes
+sim2 mean total time for regular customers 188 minutes
+40 orders processed
+
+simulation done
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 11
+pack time 19
+interrupted time 0
+front wait: 2
+time out sim1: 33
+time out sim2: 22
 
 Order 4
 Priority supreme
-Arrival time: 15
-fetch time 5
-Fetch wait: 8
-Pack wait: 60
-pack time 20
+Arrival time: 7
+fetch time 3
+Fetch wait: 4
+Pack wait: 44
+pack time 17
 interrupted time 0
-front wait: 16
-time out sim1: 100
-time out sim2: 40
+front wait: 6
+time out sim1: 69
+time out sim2: 25
 
-Order 7
+Order 8
 Priority supreme
-Arrival time: 30
-fetch time 5
-Fetch wait: 8
-Pack wait: 1
+Arrival time: 14
+fetch time 3
+Fetch wait: 4
+Pack wait: 3
+pack time 5
+interrupted time 0
+front wait: 15
+time out sim1: 128
+time out sim2: 27
+
+Order 6
+Priority supreme
+Arrival time: 10
+fetch time 1
+Fetch wait: 0
+Pack wait: 77
 pack time 20
 interrupted time 0
-front wait: 31
-time out sim1: 145
-time out sim2: 60
+front wait: 12
+time out sim1: 109
+time out sim2: 32
+
+Order 10
+Priority supreme
+Arrival time: 19
+fetch time 2
+Fetch wait: 2
+Pack wait: 6
+pack time 11
+interrupted time 0
+front wait: 19
+time out sim1: 158
+time out sim2: 38
+
+Order 12
+Priority supreme
+Arrival time: 24
+fetch time 3
+Fetch wait: 4
+Pack wait: -2
+pack time 16
+interrupted time 0
+front wait: 23
+time out sim1: 182
+time out sim2: 41
+
+Order 16
+Priority supreme
+Arrival time: 31
+fetch time 3
+Fetch wait: 4
+Pack wait: 4
+pack time 8
+interrupted time 0
+front wait: 30
+time out sim1: 226
+time out sim2: 46
+
+Order 14
+Priority supreme
+Arrival time: 29
+fetch time 1
+Fetch wait: 0
+Pack wait: 5
+pack time 18
+interrupted time 0
+front wait: 27
+time out sim1: 213
+time out sim2: 50
+
+Order 18
+Priority supreme
+Arrival time: 36
+fetch time 1
+Fetch wait: 0
+Pack wait: 10
+pack time 7
+interrupted time 0
+front wait: 36
+time out sim1: 248
+time out sim2: 53
+
+Order 20
+Priority supreme
+Arrival time: 39
+fetch time 2
+Fetch wait: 2
+Pack wait: -1
+pack time 16
+interrupted time 0
+front wait: 40
+time out sim1: 284
+time out sim2: 57
+
+Order 22
+Priority supreme
+Arrival time: 41
+fetch time 3
+Fetch wait: 4
+Pack wait: 2
+pack time 11
+interrupted time 0
+front wait: 44
+time out sim1: 296
+time out sim2: 61
+
+Order 24
+Priority supreme
+Arrival time: 45
+fetch time 2
+Fetch wait: 2
+Pack wait: 1
+pack time 15
+interrupted time 0
+front wait: 50
+time out sim1: 331
+time out sim2: 68
+
+Order 28
+Priority supreme
+Arrival time: 53
+fetch time 1
+Fetch wait: 0
+Pack wait: 3
+pack time 8
+interrupted time 0
+front wait: 58
+time out sim1: 374
+time out sim2: 69
+
+Order 30
+Priority supreme
+Arrival time: 57
+fetch time 2
+Fetch wait: 2
+Pack wait: 5
+pack time 3
+interrupted time 0
+front wait: 61
+time out sim1: 390
+time out sim2: 71
+
+Order 26
+Priority supreme
+Arrival time: 49
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 19
+interrupted time 0
+front wait: 55
+time out sim1: 358
+time out sim2: 76
+
+Order 36
+Priority supreme
+Arrival time: 69
+fetch time 2
+Fetch wait: 2
+Pack wait: 362
+pack time 2
+interrupted time 0
+front wait: 76
+time out sim1: 441
+time out sim2: 79
+
+Order 32
+Priority supreme
+Arrival time: 60
+fetch time 1
+Fetch wait: 0
+Pack wait: 3
+pack time 14
+interrupted time 0
+front wait: 66
+time out sim1: 407
+time out sim2: 83
 
 Order 1
 Priority regular
 Arrival time: 0
-fetch time 5
-Fetch wait: 10
+fetch time 1
+Fetch wait: 2
 Pack wait: 0
-pack time 30
-interrupted time 30
+pack time 13
+interrupted time 71
 front wait: 0
-time out sim1: 35
-time out sim2: 65
+time out sim1: 14
+time out sim2: 85
 
-Order 2
-Priority regular
-Arrival time: 5
-fetch time 5
-Fetch wait: 8
-Pack wait: 51
-pack time 25
+Order 34
+Priority supreme
+Arrival time: 64
+fetch time 3
+Fetch wait: 4
+Pack wait: 350
+pack time 15
 interrupted time 0
-front wait: 6
-time out sim1: 60
-time out sim2: 90
+front wait: 70
+time out sim1: 437
+time out sim2: 87
+
+Order 40
+Priority supreme
+Arrival time: 76
+fetch time 3
+Fetch wait: 4
+Pack wait: 407
+pack time 6
+interrupted time 0
+front wait: 84
+time out sim1: 499
+time out sim2: 92
+
+Order 38
+Priority supreme
+Arrival time: 72
+fetch time 2
+Fetch wait: 2
+Pack wait: 374
+pack time 19
+interrupted time 0
+front wait: 79
+time out sim1: 473
+time out sim2: 99
+
+Order 7
+Priority regular
+Arrival time: 13
+fetch time 2
+Fetch wait: 2
+Pack wait: 56
+pack time 14
+interrupted time 15
+front wait: 13
+time out sim1: 123
+time out sim2: 100
 
 Order 3
 Priority regular
-Arrival time: 10
-fetch time 5
-Fetch wait: 8
-Pack wait: 71
-pack time 20
-interrupted time 0
-front wait: 11
-time out sim1: 80
+Arrival time: 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 79
+pack time 19
+interrupted time 6
+front wait: 4
+time out sim1: 52
 time out sim2: 110
 
-queue length: 7
+Order 9
+Priority regular
+Arrival time: 17
+fetch time 1
+Fetch wait: 0
+Pack wait: 58
+pack time 19
+interrupted time 21
+front wait: 18
+time out sim1: 147
+time out sim2: 116
 
-sim1 min elapsed time 35 minutes
-sim1 max elapsed time 145 minutes
-sim1 mean elapsed time 94 minutes
-7 orders processed
+Order 5
+Priority regular
+Arrival time: 8
+fetch time 3
+Fetch wait: 4
+Pack wait: 97
+pack time 20
+interrupted time 0
+front wait: 9
+time out sim1: 89
+time out sim2: 130
 
-sim2 min elapsed time 40 minutes
-sim2 max elapsed time 110 minutes
-sim2 mean total time for all customers 63 minutes
-sim2 mean total time for supreme customers 45 minutes
-sim2 mean total time for regular customers 88 minutes
-7 orders processed
+Order 11
+Priority regular
+Arrival time: 22
+fetch time 2
+Fetch wait: 2
+Pack wait: 107
+pack time 8
+interrupted time 0
+front wait: 21
+time out sim1: 166
+time out sim2: 138
+
+Order 13
+Priority regular
+Arrival time: 26
+fetch time 1
+Fetch wait: 0
+Pack wait: 112
+pack time 13
+interrupted time 0
+front wait: 26
+time out sim1: 195
+time out sim2: 151
+
+Order 15
+Priority regular
+Arrival time: 30
+fetch time 2
+Fetch wait: 2
+Pack wait: 121
+pack time 5
+interrupted time 0
+front wait: 28
+time out sim1: 218
+time out sim2: 156
+
+Order 17
+Priority regular
+Arrival time: 34
+fetch time 3
+Fetch wait: 4
+Pack wait: 119
+pack time 15
+interrupted time 0
+front wait: 33
+time out sim1: 241
+time out sim2: 171
+
+Order 19
+Priority regular
+Arrival time: 37
+fetch time 3
+Fetch wait: 4
+Pack wait: 130
+pack time 20
+interrupted time 0
+front wait: 37
+time out sim1: 268
+time out sim2: 191
+
+Order 21
+Priority regular
+Arrival time: 40
+fetch time 2
+Fetch wait: 2
+Pack wait: 147
+pack time 1
+interrupted time 0
+front wait: 42
+time out sim1: 285
+time out sim2: 192
+
+Order 23
+Priority regular
+Arrival time: 42
+fetch time 3
+Fetch wait: 4
+Pack wait: 141
+pack time 20
+interrupted time 0
+front wait: 47
+time out sim1: 316
+time out sim2: 212
+
+Order 25
+Priority regular
+Arrival time: 47
+fetch time 3
+Fetch wait: 4
+Pack wait: 156
+pack time 8
+interrupted time 0
+front wait: 52
+time out sim1: 339
+time out sim2: 220
+
+Order 27
+Priority regular
+Arrival time: 52
+fetch time 1
+Fetch wait: 0
+Pack wait: 163
+pack time 8
+interrupted time 0
+front wait: 57
+time out sim1: 366
+time out sim2: 228
+
+Order 29
+Priority regular
+Arrival time: 55
+fetch time 2
+Fetch wait: 2
+Pack wait: 167
+pack time 13
+interrupted time 0
+front wait: 59
+time out sim1: 387
+time out sim2: 241
+
+Order 31
+Priority regular
+Arrival time: 59
+fetch time 3
+Fetch wait: 4
+Pack wait: 174
+pack time 3
+interrupted time 0
+front wait: 63
+time out sim1: 393
+time out sim2: 244
+
+Order 33
+Priority regular
+Arrival time: 63
+fetch time 3
+Fetch wait: 4
+Pack wait: 173
+pack time 15
+interrupted time 0
+front wait: 67
+time out sim1: 422
+time out sim2: 259
+
+Order 35
+Priority regular
+Arrival time: 67
+fetch time 3
+Fetch wait: 4
+Pack wait: 182
+pack time 2
+interrupted time 0
+front wait: 73
+time out sim1: 439
+time out sim2: 261
+
+Order 37
+Priority regular
+Arrival time: 70
+fetch time 1
+Fetch wait: 0
+Pack wait: 183
+pack time 13
+interrupted time 0
+front wait: 78
+time out sim1: 454
+time out sim2: 274
+
+Order 39
+Priority regular
+Arrival time: 74
+fetch time 3
+Fetch wait: 4
+Pack wait: 189
+pack time 20
+interrupted time 0
+front wait: 81
+time out sim1: 493
+time out sim2: 294
+
+queue length: 40
+
+sim1 min elapsed time 14 minutes
+sim1 max elapsed time 499 minutes
+sim1 mean elapsed time 276 minutes
+40 orders processed
+
+sim2 min elapsed time 22 minutes
+sim2 max elapsed time 294 minutes
+sim2 mean total time for all customers 123 minutes
+sim2 mean total time for supreme customers 58 minutes
+sim2 mean total time for regular customers 188 minutes
+40 orders processed
 
