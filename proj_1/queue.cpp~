@@ -24,6 +24,16 @@ Queue::Queue(const Queue &rhs)
 	copy_in_list(rhs.front);
 }
 
+//copy constructor
+Queue::Queue(const Queue* &rhs)
+{
+	front = NULL;
+	back = NULL;
+	length = 0;
+	
+	copy_in_list(rhs->front);
+}
+
 bool Queue::is_empty()
 {
 	return (front == NULL);
@@ -86,14 +96,15 @@ void Queue::print_queue()
 		///DEBUG CODE
 		cout << "Order " << iter->data.id << endl;
 		cout << "Priority " << iter->data.priority << endl;
-		//cout << "Arrival time: " << iter->data.t_arrive << endl;
+		cout << "Arrival time: " << iter->data.t_arrive << endl;
 		cout << "fetch time " << iter->data.t_fetch << endl;
 		cout << "Fetch wait: " << iter->data.fetch_wait << endl;
 		cout << "Pack wait: " << iter->data.pack_wait << endl;
 		cout << "pack time " << iter->data.t_pack << endl;
 		cout << "interrupted time " << iter->data.spent_interrupted << endl;
 		cout << "front wait: " << iter->data.front_wait << endl;
-		cout << "time out: " << iter->data.t_out << endl << endl;
+		cout << "time out sim1: " << iter->data.t_out_sim1 << endl;
+		cout << "time out sim2: " << iter->data.t_out_sim2 << endl << endl;
 		///DEBUG END
 		
 		/*//FINAL PRINTOUT

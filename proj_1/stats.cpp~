@@ -58,6 +58,10 @@ Order Stats::return_order()
 
 void Stats::print_stats()
 {
+	//int print_mean_reg = mean_reg;
+	//int print_mean_sup = mean_sup;
+	//int print_mean_all = mean_all;
+	
 	cout << "sim" << sim_num << " min elapsed time " << sim_min << " minutes" << endl;
 	cout << "sim" << sim_num << " max elapsed time " << sim_max << " minutes" << endl;
 	if (!supreme){

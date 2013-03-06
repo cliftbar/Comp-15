@@ -93,7 +93,8 @@ void Queue::print_queue()
 		cout << "pack time " << iter->data.t_pack << endl;
 		cout << "interrupted time " << iter->data.spent_interrupted << endl;
 		cout << "front wait: " << iter->data.front_wait << endl;
-		cout << "time out: " << iter->data.t_out << endl << endl;
+		cout << "time out sim1: " << iter->data.t_out_sim1 << endl;
+		cout << "time out sim2: " << iter->data.t_out_sim2 << endl << endl;
 		///DEBUG END
 		
 		/*//FINAL PRINTOUT

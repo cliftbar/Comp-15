@@ -17,11 +17,11 @@ public:
 	void print_stats();
 	
 private:
-	void calc_min_max();
-	void calc_means();
-	void calc_mean_regular();
-	void calc_mean_supreme();
-	void calc_mean_all();
+	void calc_min_max(int t_comp);
+	void calc_means(int t_in);
+	void calc_mean_regular(int t_comp);
+	void calc_mean_supreme(int t_comp);
+	void calc_mean_all(int t_comp);
 	
 	Order curr_order;
 	bool first_order;

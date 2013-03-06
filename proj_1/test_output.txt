@@ -7,7 +7,8 @@ Pack wait: 0
 pack time 30
 interrupted time 0
 front wait: 0
-time out: 35
+time out sim1: 35
+time out sim2: 0
 
 Order 2
 Priority regular
@@ -18,7 +19,8 @@ Pack wait: 25
 pack time 25
 interrupted time 0
 front wait: 6
-time out: 60
+time out sim1: 60
+time out sim2: 0
 
 Order 3
 Priority regular
@@ -29,7 +31,8 @@ Pack wait: 45
 pack time 20
 interrupted time 0
 front wait: 11
-time out: 80
+time out sim1: 80
+time out sim2: 0
 
 Order 4
 Priority supreme
@@ -40,7 +43,8 @@ Pack wait: 60
 pack time 20
 interrupted time 0
 front wait: 16
-time out: 100
+time out sim1: 100
+time out sim2: 0
 
 Order 5
 Priority supreme
@@ -51,7 +55,8 @@ Pack wait: 75
 pack time 15
 interrupted time 0
 front wait: 21
-time out: 115
+time out sim1: 115
+time out sim2: 0
 
 Order 6
 Priority supreme
@@ -62,7 +67,8 @@ Pack wait: 85
 pack time 10
 interrupted time 0
 front wait: 26
-time out: 125
+time out sim1: 125
+time out sim2: 0
 
 Order 7
 Priority supreme
@@ -73,7 +79,8 @@ Pack wait: 90
 pack time 20
 interrupted time 0
 front wait: 31
-time out: 145
+time out sim1: 145
+time out sim2: 0
 
 queue length: 7
 
@@ -82,84 +89,191 @@ sim1 max elapsed time 145 minutes
 sim1 mean elapsed time 94 minutes
 7 orders processed
 
+simulation done
 Order 6
 Priority supreme
 Arrival time: 25
 fetch time 5
-Fetch wait: 4
-Pack wait: 0
+Fetch wait: 8
+Pack wait: 85
 pack time 10
 interrupted time 0
 front wait: 26
-time out: 40
+time out sim1: 125
+time out sim2: 40
 
 Order 5
 Priority supreme
 Arrival time: 20
 fetch time 5
-Fetch wait: 4
-Pack wait: 0
+Fetch wait: 8
+Pack wait: 75
 pack time 15
 interrupted time 0
 front wait: 21
-time out: 40
+time out sim1: 115
+time out sim2: 40
 
 Order 4
 Priority supreme
 Arrival time: 15
 fetch time 5
-Fetch wait: 4
-Pack wait: 0
+Fetch wait: 8
+Pack wait: 60
 pack time 20
 interrupted time 0
 front wait: 16
-time out: 40
+time out sim1: 100
+time out sim2: 40
 
 Order 7
 Priority supreme
 Arrival time: 30
 fetch time 5
-Fetch wait: 4
-Pack wait: 5
+Fetch wait: 8
+Pack wait: 1
 pack time 20
 interrupted time 0
 front wait: 31
-time out: 60
+time out sim1: 145
+time out sim2: 60
 
 Order 1
 Priority regular
 Arrival time: 0
 fetch time 5
-Fetch wait: 5
+Fetch wait: 10
 Pack wait: 0
 pack time 30
 interrupted time 30
 front wait: 0
-time out: 65
+time out sim1: 35
+time out sim2: 65
 
 Order 2
 Priority regular
 Arrival time: 5
 fetch time 5
-Fetch wait: 4
-Pack wait: 55
+Fetch wait: 8
+Pack wait: 51
 pack time 25
 interrupted time 0
 front wait: 6
-time out: 90
+time out sim1: 60
+time out sim2: 90
 
 Order 3
 Priority regular
 Arrival time: 10
 fetch time 5
-Fetch wait: 4
-Pack wait: 75
+Fetch wait: 8
+Pack wait: 71
 pack time 20
 interrupted time 0
 front wait: 11
-time out: 110
+time out sim1: 80
+time out sim2: 110
 
 queue length: 7
+
+sim2 min elapsed time 40 minutes
+sim2 max elapsed time 110 minutes
+sim2 mean total time for all customers 63 minutes
+sim2 mean total time for supreme customers 45 minutes
+sim2 mean total time for regular customers 88 minutes
+7 orders processed
+
+simulation done
+Order 6
+Priority supreme
+Arrival time: 25
+fetch time 5
+Fetch wait: 8
+Pack wait: 85
+pack time 10
+interrupted time 0
+front wait: 26
+time out sim1: 125
+time out sim2: 40
+
+Order 5
+Priority supreme
+Arrival time: 20
+fetch time 5
+Fetch wait: 8
+Pack wait: 75
+pack time 15
+interrupted time 0
+front wait: 21
+time out sim1: 115
+time out sim2: 40
+
+Order 4
+Priority supreme
+Arrival time: 15
+fetch time 5
+Fetch wait: 8
+Pack wait: 60
+pack time 20
+interrupted time 0
+front wait: 16
+time out sim1: 100
+time out sim2: 40
+
+Order 7
+Priority supreme
+Arrival time: 30
+fetch time 5
+Fetch wait: 8
+Pack wait: 1
+pack time 20
+interrupted time 0
+front wait: 31
+time out sim1: 145
+time out sim2: 60
+
+Order 1
+Priority regular
+Arrival time: 0
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+pack time 30
+interrupted time 30
+front wait: 0
+time out sim1: 35
+time out sim2: 65
+
+Order 2
+Priority regular
+Arrival time: 5
+fetch time 5
+Fetch wait: 8
+Pack wait: 51
+pack time 25
+interrupted time 0
+front wait: 6
+time out sim1: 60
+time out sim2: 90
+
+Order 3
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 8
+Pack wait: 71
+pack time 20
+interrupted time 0
+front wait: 11
+time out sim1: 80
+time out sim2: 110
+
+queue length: 7
+
+sim1 min elapsed time 35 minutes
+sim1 max elapsed time 145 minutes
+sim1 mean elapsed time 94 minutes
+7 orders processed
 
 sim2 min elapsed time 40 minutes
 sim2 max elapsed time 110 minutes

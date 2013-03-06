@@ -38,8 +38,11 @@ struct Order
 	//time spent interrupted
 	int spent_interrupted;
 
-	//time out of simulation
-	int t_out;
+	//time out of simulation two (don't consider supreme)
+	int t_out_sim1;
+	
+	//Time out of simulation one (consider supreme)
+	int t_out_sim2;
 	
 	bool switched;
 };

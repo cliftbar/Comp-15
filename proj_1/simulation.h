@@ -25,7 +25,7 @@ public:
 	
 	//runs all of the functions required for
 	//a time interval on the floor
-	void run_sim();
+	Queue* run_sim();
 	
 	//Prints the final report on floor activities
 	//void report();

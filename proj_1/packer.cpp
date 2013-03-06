@@ -155,7 +155,8 @@ void Packer::print_current()
 	cout << "Fetch wait: " << curr_order.fetch_wait << endl;
 	cout << "Pack wait: " << curr_order.pack_wait << endl;
 	cout << "front wait: " << curr_order.front_wait << endl;
-	cout << "time out: " << curr_order.t_out << endl;
+	cout << "time out sim1: " << curr_order.t_out_sim1 << endl;
+	cout << "time out sim2: " << curr_order.t_out_sim2 << endl;
 	cout << "pack time " << curr_order.t_pack << endl;
 	cout << "current time: " << curr_time << endl;
 	cout << "absolute time: " << t_absolute << endl;

@@ -11,6 +11,7 @@
 //constructor
 Buffer::Buffer()
 {
+	//default constructor
 }
 
 //reads in and stores the file/stream input into a queue

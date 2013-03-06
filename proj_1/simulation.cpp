@@ -22,10 +22,10 @@ Simulation::Simulation(bool is_supreme, Queue* sales_queue)
 }
 
 //function to handle running the simulation
-void Simulation::run_sim()
+Queue* Simulation::run_sim()
 {
 	Order next_order;
-	Queue order_out;
+	Queue* order_out = new Queue;
 	//int num_packer_orders;//DEBUG CODE
 	
 	//time loop
@@ -89,7 +89,14 @@ void Simulation::run_sim()
 			//cout << "check2\n";//DEBUG CODE
 			next_order = pack_chief.pass_out();
 			//cout << "next order id: " << next_order.id << endl;//DEBUG
-			next_order.t_out = absolute_time;
+			
+			//sets time out of simulation based on whether simulation is considering
+			//supreme orders or not
+			if (!supreme){
+				next_order.t_out_sim1 = absolute_time;
+			}else if (supreme) {
+				next_order.t_out_sim2 = absolute_time;
+			}
 			calc_shop->get_order(next_order);
 			calc_shop->run_calcs();
 			next_order = calc_shop->return_order();
@@ -103,7 +110,7 @@ void Simulation::run_sim()
 				}
 			}
 			//cout << "order inserted" << endl;//DEBUG CODE
-			order_out.insert(next_order);
+			order_out->insert(next_order);
 		}
 		//cout << "pack_chief.all_done(): " << pack_chief.all_done()
 			  //<< endl << endl;//DEBUG CODE
@@ -140,11 +147,14 @@ void Simulation::run_sim()
 	*/
 	
 	//prints output queue
-	order_out.print_queue();
+	order_out->print_queue();
 	//cout << "check12\n";//DEBUG CODE
 	
 	//prints calculation results
 	calc_shop->print_stats();
+	
+	cout << "simulation done\n";
+	return order_out;
 }
 
 /////////PRIVATE METHODS///////////////

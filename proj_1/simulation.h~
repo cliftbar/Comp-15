@@ -19,13 +19,13 @@ using namespace std;
 class Simulation
 {
 public:
-	//constructor, takes in whether to consider supreme orders
+	//Preferred constructor, takes in whether to consider supreme orders
 	//and a pointer to a copy of the buffer queue
 	Simulation(bool is_supreme, Queue* sales_queue);
 	
 	//runs all of the functions required for
 	//a time interval on the floor
-	void run_sim();
+	Queue run_sim();
 	
 	//Prints the final report on floor activities
 	//void report();

@@ -37,7 +37,8 @@ void Buffer::read_in()
 			cin >> junk;
 			
 			//initialize order parameters
-			new_order.t_out = 0;
+			new_order.t_out_sim1 = 0;
+			new_order.t_out_sim2 = 0;
 			new_order.fetch_wait = 0;
 			new_order.front_wait = 0;
 			new_order.pack_wait = 0;

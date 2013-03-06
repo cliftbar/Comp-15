@@ -11,7 +11,7 @@ Pack_Boss::Pack_Boss()
 
 void Pack_Boss::consider_supreme(bool do_supreme)
 {
-	supreme = consider_supreme;
+	supreme = do_supreme;
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		all_packers[i].consider_supreme(supreme);
 	}

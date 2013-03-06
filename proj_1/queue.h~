@@ -27,6 +27,9 @@ public:
 	//copy constructor
 	Queue(const Queue &rhs);
 	
+	//copy constructor
+	Queue(const Queue* &rhs);
+	
 	bool is_empty();
 	
 	void insert(const Order to_add);
