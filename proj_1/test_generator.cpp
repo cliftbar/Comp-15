@@ -27,7 +27,7 @@ int main(){
     pack  = rand() % PACK_RANGE + 1;
   
     if(i % 2 == 0){
-    cout << "Order " << i << " for special customer arrived at time " << time 
+    cout << "Order " << i << " for supreme customer arrived at time " << time 
          << "\nfetch time " << fetch << " minutes, pack time " << pack << " minutes\n\n";
     }
     else{
