@@ -13,9 +13,38 @@ packer passes out orders to pack boss -- check
 pack boss returns orders that finish at the same time -- check
 pack boss chooses shortest queue with supreme consideration -- check
 packer handles supreme interrupts properly -- check
+stats class reads in the required values -- check
+stats class calculations work -- check
+stats class passes to a buffer -- check
+front class reworked to allow for two simulations -- check
+propogate bool from manager through for two simulations -- Abandoned
+Alter/unalter works for sim1 vs sim2 (supreme vs. no supreme) -- Check
+correct values obtained at end of program -- check, would like an output to compare to
+make output exactly correct -- not done
+make destructors -- not done
+run valgrind because because -- not done
+Clean Up Files
+	-Manager.h -- pass1: Check -- pass2: not done
+	-Manager.cpp -- pass1: check -- Pass2: N/D
+	-Simulation.h -- pass1: check -- pass2: N/D
+	-Simualtion.cpp -- pass1: check -- pass2: N/D
+	-Buffer.h -- pass1: check -- pass2: N/D
+	-Buffer.cpp -- pass1: check -- pass2: N/D
+	-Front.h -- pass1: check -- pass2: N/D
+	-Front.cpp -- pass1: check -- pass2: N/D
+	-Fetcher.h -- pass1: check -- pass2: N/D
+	-Fetcher.cpp -- pass1: check -- pass2: N/D
+	-Stats.h -- pass1: Check -- pass2: N/D
+	-Stats.cpp -- pass1: Check -- pass2: N/D
 
-stats class reads in the required values -- not started
-stats class calculations work -- not started
-stats class passes to a buffer -- not started
-front class reworked to allow for two simulations -- not started 
-propogate bool from manager through for two simulations -- not started
+	-Queue.h -- pass1: Check -- pass2: N/D
+	-Queue.cpp -- pass1: Check -- pass2: N/D
+	-Order.h -- pass1: N/D -- pass2: N/D
+	-Pack_boss.h -- pass1: N/D -- pass2: N/D
+	-Pack_boss.cpp -- pass1: N/D -- pass2: N/D
+	-Packer.h -- pass1: N/D -- pass2: N/D
+	-Packer.cpp -- pass1: N/D -- pass2: N/D
+	-main.cpp -- pass1: N/D -- pass2: N/D
+	-README.txt -- pass1: N/D -- pass2: N/D
+
+	

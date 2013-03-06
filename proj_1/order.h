@@ -1,9 +1,10 @@
+//order.h
 //Created by: Cameron Barclift
+//struct to hold the orders
 
 #ifndef ORDER
 #define ORDER
 #include <iostream>
-#include <cstdlib>
 #include <string>
 
 using namespace std;

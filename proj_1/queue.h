@@ -1,4 +1,4 @@
-//queue.cpp
+//queue.h
 //Created by: Cameron Barclift
 //implements a queue of orders, fifo
 
@@ -27,6 +27,8 @@ public:
 	//copy constructor
 	Queue(const Queue &rhs);
 	
+	//True: queue is empty
+	//False: queue is not empty
 	bool is_empty();
 	
 	void insert(const Order to_add);
@@ -43,8 +45,10 @@ public:
 	
 private:
 	
+	//deletes the entire list
 	void delete_list();
 	
+	//copies a list passed in
 	void copy_in_list(Node* f_other);
 	
 	Node* front;

@@ -104,7 +104,8 @@ void Queue::print_queue()
 		cout << "fetch time " << iter->data.t_fetch << " minutes, ";
 		cout << "pack time " << iter->data.t_pack << " minutes" << endl;
 		
-		cout << "the order was added to packaging queue at time " << iter->data.fetch_wait << endl;
+		cout << "the order was added to packaging queue at time "
+			<< iter->data.fetch_wait << endl;
 		//cout << "Time out: " << iter->data.t_out << endl;
 		cout << endl;
 		*///END FINAL

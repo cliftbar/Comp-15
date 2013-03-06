@@ -1,10 +1,24 @@
 
+//stats.h
+//Created by: Cameron Barclift
+//Class used to calculate statistics for the simulation.
+//Values calculated:
+//	total number of orders processed
+//	minumum time spent in the simulation
+//	maximum time spent in the simulation
+//	mean time spent in simulation for all customers
+//	mean time spent in simulation for regular customers
+//	mean time spent in simulation for supreme customers
+
 #include "stats.h"
 using namespace std;
+
+//////////////////////PUBLIC METHODS////////////////////////////////////
 
 Stats::Stats(bool consider_supreme)
 {
 	//cout << "consider_supreme: " << consider_supreme << endl;//DEBUG CODE
+	//Sets what number simulation it is
 	if (consider_supreme){
 		sim_num = 2;
 	}else if (!consider_supreme){
@@ -25,6 +39,7 @@ Stats::Stats(bool consider_supreme)
 }
 void Stats::get_order(Order o_in)
 {
+	//if the first order is read in, initialize sim_max and sim_min
 	if (first_order){
 		//cout << "check first" << endl;//DEBUG CODE
 		if(supreme){
@@ -42,6 +57,8 @@ void Stats::get_order(Order o_in)
 
 void Stats::run_calcs()
 {
+	//decides which order time to send to the calculation functions,
+	//sim 1 time or sim 2 time
 	if (supreme){
 		calc_min_max(curr_order.t_out_sim2);
 		calc_means(curr_order.t_out_sim2);
@@ -58,22 +75,30 @@ Order Stats::return_order()
 
 void Stats::print_stats()
 {
-	cout << "sim" << sim_num << " min elapsed time " << sim_min << " minutes" << endl;
-	cout << "sim" << sim_num << " max elapsed time " << sim_max << " minutes" << endl;
+	cout << "sim" << sim_num << " min elapsed time " << sim_min << " minutes"
+		<< endl;
+	cout << "sim" << sim_num << " max elapsed time " << sim_max << " minutes"
+		<< endl;
 	if (!supreme){
-		cout << "sim" << sim_num << " mean elapsed time " << /*print_mean_all*/(int)mean_all << " minutes" << endl;
+		cout << "sim" << sim_num << " mean elapsed time " << (int)mean_all
+			<< " minutes" << endl;
 	}else if(supreme){
-		cout << "sim" << sim_num << " mean total time for all customers " << /*print_mean_all*/int(mean_all) << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for supreme customers " << /*print_mean_sup*/int(mean_sup) << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for regular customers " << /*print_mean_reg*/(int)mean_reg << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for all customers "
+			<< int(mean_all) << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for supreme customers "
+			<< int(mean_sup) << " minutes" << endl;
+		cout << "sim" << sim_num << " mean total time for regular customers "
+			<< (int)mean_reg << " minutes" << endl;
 	}
 	cout << num_all_processed << " orders processed" << endl << endl;
 }
 
+////////////////////////////PRIVATE METHODS///////////////////////////////
+
 void Stats::calc_min_max(int t_comp)
 {
 	//cout << "current order time: " << curr_order.t_out;//DEBUG CODE
-	
+	//if the total time passed in is a min or max, it is stored
 	if (t_comp < sim_min){
 		//cout << " is a min" << endl;//DEBUG CODE
 		sim_min = t_comp;
@@ -82,8 +107,8 @@ void Stats::calc_min_max(int t_comp)
 		sim_max = t_comp;
 	}
 }
-	
 
+//Mean calculation functions below
 void Stats::calc_means(int t_in)
 {
 	if (curr_order.priority == "regular"){
@@ -94,6 +119,7 @@ void Stats::calc_means(int t_in)
 	calc_mean_all(t_in);
 	
 }
+
 void Stats::calc_mean_regular(int t_comp)
 {
 	double temp = mean_reg;

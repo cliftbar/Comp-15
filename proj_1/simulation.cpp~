@@ -22,7 +22,7 @@ Simulation::Simulation(bool is_supreme, Queue* sales_queue)
 }
 
 //function to handle running the simulation
-Queue Simulation::run_sim()
+Queue* Simulation::run_sim()
 {
 	Order next_order;
 	Queue* order_out = new Queue;

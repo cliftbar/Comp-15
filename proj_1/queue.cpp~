@@ -24,16 +24,6 @@ Queue::Queue(const Queue &rhs)
 	copy_in_list(rhs.front);
 }
 
-//copy constructor
-Queue::Queue(const Queue* &rhs)
-{
-	front = NULL;
-	back = NULL;
-	length = 0;
-	
-	copy_in_list(rhs->front);
-}
-
 bool Queue::is_empty()
 {
 	return (front == NULL);

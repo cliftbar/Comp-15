@@ -42,7 +42,7 @@ struct Order
 	int t_out_sim1;
 	
 	//Time out of simulation one (consider supreme)
-	int t_out_sim2
+	int t_out_sim2;
 	
 	bool switched;
 };

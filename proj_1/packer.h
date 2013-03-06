@@ -1,4 +1,12 @@
+//packer.h
 //Created by: Cameron Barclift
+//Packer class, handles packing an order.
+//Class has two queues, one for supreme customers
+//and one for regular customers.  If a supreme order is passed in,
+//and a regular order is being packed, the regular order is interrupted
+//until there are no more supreme orders in the packer.  Orders cannot
+//be held in the packer, they must be taken immediately when ready or
+//the packer will fail.
 
 #ifndef PACKER
 #define PACKER
@@ -14,11 +22,10 @@ public:
 	//constructor
 	Packer();
 	
-	void consider_supreme(bool do_supreme);
-	
 	//adds an order to the queue
 	void insert(Order o_add);
 	
+	//True if an order is ready
 	bool order_ready();
 	
 	//returns the order that's finished being packed
@@ -33,6 +40,8 @@ public:
 	//asks if the packer is done with orders
 	bool is_done();
 	
+	//increments internal times: current pack time, absolute simulation time
+	//total wait time, and supreme wait time (if necessary)
 	void increment_time();
 	
 	void print_queue();
@@ -54,24 +63,27 @@ private:
 	//resets to zero after every order.
 	int curr_time;
 	
-	//store the time of an order on hold
+	//store the time of the order on hold
 	int t_interrupt;
 	
+	//holds the order that has been interrupted
 	Order interrupt_order;
 	
 	//time required for all items in the queue
 	int t_wait;
 	
+	//absolute simulation time, needed to set
+	//time spent in packing queue
 	int t_absolute;
 	
+	//True if an order has finished packing
 	bool o_up;
 	
+	//True if there is an order in the queue
 	bool is_order;
 		
 	//wait time for the supreme orders
 	int supreme_wait;
-	
-	bool supreme;
 };
 
 #endif
