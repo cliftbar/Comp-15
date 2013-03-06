@@ -23,6 +23,19 @@ correct values obtained at end of program -- check, would like an output to comp
 make output exactly correct -- not done
 make destructors -- not done
 run valgrind because because -- not done
+check for leaks in:
+	-main.cpp:12
+	-simulation.cpp:20
+	-simulation.cpp:16
+	-manager.cpp:29
+	-simulation.cpp:28
+	-manager.cpp:30
+	-queue.cpp:35
+	-buffer.cpp:48
+	-manager.cpp:21
+	-pack_boss.cpp:13
+	-simulation.cpp:10
+
 Clean Up Files
 	-Manager.h -- pass1: Check -- pass2: not done
 	-Manager.cpp -- pass1: check -- Pass2: N/D
@@ -36,14 +49,14 @@ Clean Up Files
 	-Fetcher.cpp -- pass1: check -- pass2: N/D
 	-Stats.h -- pass1: Check -- pass2: N/D
 	-Stats.cpp -- pass1: Check -- pass2: N/D
-
 	-Queue.h -- pass1: Check -- pass2: N/D
 	-Queue.cpp -- pass1: Check -- pass2: N/D
-	-Order.h -- pass1: N/D -- pass2: N/D
-	-Pack_boss.h -- pass1: N/D -- pass2: N/D
-	-Pack_boss.cpp -- pass1: N/D -- pass2: N/D
-	-Packer.h -- pass1: N/D -- pass2: N/D
-	-Packer.cpp -- pass1: N/D -- pass2: N/D
+	-Order.h -- pass1: Check -- pass2: N/D
+	-Pack_boss.h -- pass1: check -- pass2: N/D
+	-Pack_boss.cpp -- pass1: check -- pass2: N/D
+	-Packer.h -- pass1: check -- pass2: N/D
+	-Packer.cpp -- pass1: check -- pass2: N/D
+
 	-main.cpp -- pass1: N/D -- pass2: N/D
 	-README.txt -- pass1: N/D -- pass2: N/D
 

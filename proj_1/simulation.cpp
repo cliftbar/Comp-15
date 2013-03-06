@@ -90,8 +90,8 @@ Queue* Simulation::run_sim()
 			next_order = pack_chief.pass_out();
 			//cout << "next order id: " << next_order.id << endl;//DEBUG
 			
-			//sets time out of simulation based on whether simulation is considering
-			//supreme orders or not
+			//sets time out of simulation based on whether simulation
+			//is considering supreme orders or not
 			if (!supreme){
 				next_order.t_out_sim1 = absolute_time;
 			}else if (supreme) {
