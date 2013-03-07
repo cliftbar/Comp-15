@@ -101,16 +101,11 @@ int Packer::wait_time(bool supreme)
 //time is the same as the pack time.
 bool Packer::order_up()
 {
-	//cout << "curr_order.id: " << curr_order.id << endl;
-	//cout << "curr_order.t_pack: " << curr_order.t_pack << endl;
-	//cout << "curr_time: " << curr_time << endl;
 	if (is_order){
 		o_up = curr_order.t_pack == curr_time;
 	}else {
 		o_up = false;
 	}
-		
-	//cout << "Order_Up: " << o_up << endl;
 	return o_up;
 }
 
@@ -134,19 +129,22 @@ void Packer::increment_time()
 	if (is_order){
 		++curr_time;
 	}
+	
 	++t_absolute;
 	if (t_wait > 0){
 		--t_wait;
 	}
+	
 	if (supreme_wait > 0){
 		--supreme_wait;
 	}
+	
 	if (interrupt_order.priority != "NULL"){
 		++interrupt_order.spent_interrupted;
 	}
 }
 
-//prints the regular and supreme queues
+//prints the regular and supreme queues, debug
 void Packer::print_queue()
 {
 	cout << "Packer queue, normal: " << endl;

@@ -144,34 +144,6 @@ void Packer::increment_time()
 	}
 }
 
-//prints the regular and supreme queues, debug
-void Packer::print_queue()
-{
-	cout << "Packer queue, normal: " << endl;
-	order_queue.print_queue();
-	cout << "Queue length: " << order_queue.get_length() << endl << endl;
-	
-	cout << "Packer queue, supreme: " << endl;
-	supreme_queue.print_queue();
-	cout << "Queue length: " << supreme_queue.get_length() << endl << endl;
-}
-
-//debug function
-void Packer::print_current()
-{
-	cout << "Current Order " << curr_order.id << endl;
-	cout << "fetch time " << curr_order.t_fetch << endl;
-	cout << "Fetch wait: " << curr_order.fetch_wait << endl;
-	cout << "Pack wait: " << curr_order.pack_wait << endl;
-	cout << "front wait: " << curr_order.front_wait << endl;
-	cout << "time out sim1: " << curr_order.t_out_sim1 << endl;
-	cout << "time out sim2: " << curr_order.t_out_sim2 << endl;
-	cout << "pack time " << curr_order.t_pack << endl;
-	cout << "current time: " << curr_time << endl;
-	cout << "absolute time: " << t_absolute << endl;
-}
-
-
 //there is an order currently being packed
 void Packer::insert_is_order(Order o_in)
 {

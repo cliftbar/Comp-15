@@ -81,13 +81,13 @@ void Stats::print_stats()
 			<< " minutes" << endl;
 	}else if(supreme){
 		cout << "sim" << sim_num
-			<< " mean total time for all customers "
+			<< " mean elapsed time for all customers "
 			<< int(mean_all) << " minutes" << endl;
 		cout << "sim" << sim_num
-			<< " mean total time for supreme customers "
+			<< " mean elapsed time for supreme customers "
 			<< int(mean_sup) << " minutes" << endl;
 		cout << "sim" << sim_num
-			<< " mean total time for regular customers "
+			<< " mean elapsed time for regular customers "
 			<< (int)mean_reg << " minutes" << endl;
 	}
 	cout << num_all_processed << " orders processed" << endl << endl;

@@ -42,13 +42,7 @@ public:
 	
 	//increments internal times: current pack time, absolute simulation time
 	//total wait time, and supreme wait time (if necessary)
-	void increment_time();
-	
-	void print_queue();
-	
-	//DEBUG
-	void print_current();
-	
+	void increment_time();	
 private:
 	
 	//logic for inserting when an order currently being packed

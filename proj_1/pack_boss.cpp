@@ -18,9 +18,7 @@ Pack_Boss::Pack_Boss()
 //takes in an order and passes it to the shortest packer queue
 void Pack_Boss::pass_in(Order o_in)
 {
-	//cout << "check 1 \n" << endl;//DEBUG
 	int shortest = find_shortest(o_in.priority == "supreme");
-	//cout << "shortest: " << shortest << endl;//DEBUG
 	o_in.pack_queue = shortest;
 	all_packers[shortest].insert(o_in);
 }
@@ -28,18 +26,14 @@ void Pack_Boss::pass_in(Order o_in)
 //returns the number of orders ready from all packers
 int Pack_Boss::num_orders_up()
 {
-	//cout << "check 2 \n" << endl;//DEBUG
 	int counter = 0;
 	
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		if (all_packers[i].order_up()){
-			cout << "packer ready: " << i << endl << endl;
 		++counter;
 		}
 	}
-	
-	//cout << "check 10 \n" << endl;//DEBUG
-	
+		
 	return counter;
 }
 
@@ -47,9 +41,7 @@ int Pack_Boss::num_orders_up()
 //must be called multiple times to get multiple orders.
 //if called when there are no orders ready, the program exits with an error
 Order Pack_Boss::pass_out()
-{
-	//cout << "check 3 \n" << endl;//DEBUG
-	
+{	
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		if (all_packers[i].order_up()){
 			return all_packers[i].pass_to();
@@ -64,94 +56,25 @@ Order Pack_Boss::pass_out()
 //returns the number of the shortest packer queue
 int Pack_Boss::find_shortest(bool supreme)
 {
-	//cout << "check 4 \n" << endl;//DEBUG
-	int temp_wait;
-	int special_reg_wait = all_packers[0].wait_time(!supreme);
-	int packer_num = 0;
+	special_reg_wait = all_packers[0].wait_time(!supreme);
+	packer_num = 0;
 	
-	cout << "all_supreme(): " << all_supreme() << endl;
-	cout << "supreme: " << supreme << ", !supreme: " << (supreme == false) << endl;
-	
-	//initializes the hold time to first packers queue time
-	if (supreme && all_supreme()){
-		cout << "check1\n";
-		temp_wait = all_packers[0].wait_time(supreme);
-	}else if (supreme && !all_supreme()){
-		cout << "check2\n";
-		temp_wait = all_packers[0].wait_time(!supreme);
-	}else{
-		cout << "check2.2\n";
-		temp_wait = all_packers[0].wait_time(supreme);
-	}
-	
-	cout << "temp_wait: " << temp_wait << endl;
+	temp_wait_init(supreme);
 	
 	if (supreme){
-		//if the order is supreme
-		cout << "check 9" << endl;//DEBUG
-		for (int i = 0; i < NUM_PACKERS; ++i){
-			cout << "all_packers[" << i << "].wait_time.(supreme): "
-				<< all_packers[i].wait_time(supreme) << endl;
-			cout << "temp_wait: " << temp_wait << endl;
-			if (all_supreme()){
-				//if all packers have a supreme order
-				cout << "check 10" << endl;//DEBUG
-				if (all_packers[i].wait_time(supreme) < temp_wait){
-					temp_wait = all_packers[i].wait_time(supreme);
-					packer_num = i;
-				}else if (all_packers[i].wait_time(supreme) == temp_wait){
-					if (all_packers[i].wait_time(!supreme) < special_reg_wait){
-						special_reg_wait = all_packers[i].wait_time(!supreme);
-						packer_num = i;
-					}
-				}
-			}else if (!all_supreme()){
-				//if all packers do not have a supreme order
-				cout << "check 11" << endl;//DEBUG
-				if (all_packers[i].wait_time(supreme) == 0 &&
-				    all_packers[i].wait_time(!supreme) < temp_wait){
-					//forces the order to a packer queue with a supreme
-					//wait of zero find the queue of these with the
-					//shortest regular wait
-					temp_wait = all_packers[i].wait_time(!supreme);
-					packer_num = i;
-					cout << "packer num fr 11: " << i << endl;
-				}
-			}
-		}
+		supreme_case(supreme);
 	}else if (!supreme){
-		//the order is not supreme
-		cout << "check 7" << endl;//DEBUG
-		//cout << "NUM_PACKERS: " << NUM_PACKERS << endl;
-		for(int i = 0; i < NUM_PACKERS; ++i){
-			//cout << "check 9" << endl;//DEBUG
-			cout << "all_packers[" << i << "].wait_time.(supreme): "
-				<< all_packers[i].wait_time(supreme) << endl;
-			cout << "temp_wait: " << temp_wait << endl;
-			if (all_packers[i].wait_time(supreme) < temp_wait){
-			//	cout << "check9\n";
-				temp_wait = all_packers[i].wait_time(supreme);
-				packer_num = i;
-			}
-		}
-		//cout << "packer num: " << packer_num << endl;
-		//cout << "check 10" << endl;//DEBUG
+		regular_case(supreme);
 	}
-	//cout << "check 8 \n" << endl;//DEBUG
-	//cout << "packer_num: " << packer_num << endl;//DEBUG
 	return packer_num;
 }
 
 //returns true only if all packers are empty
 bool Pack_Boss::all_done()
-{
-	//cout << "check 5 \n" << endl;//DEBUG
-	
+{	
 	bool check_done = true;
 	
 	for (int i = 0; i < NUM_PACKERS; ++i){
-		//cout << "all_packers[" << i << "].is_done(): "
-			  //<< all_packers[i].is_done() << endl;//DEBUG CODE
 		if (!all_packers[i].is_done()){
 			check_done = all_packers[i].is_done();
 		}
@@ -162,28 +85,15 @@ bool Pack_Boss::all_done()
 	return packers_done;
 }
 
-//Debug function
-void Pack_Boss::print_packers()
-{
-	for (int i = 0; i < NUM_PACKERS; ++i){
-		cout << "Packer[" << i << "]: " << endl;
-		all_packers[i].print_current();
-		cout << "regular all_packers[" << i<< "].wait_time(false): "
-			<< all_packers[i].wait_time(false) << endl;
-		cout << "supreme all_packers[" << i<< "].wait_time(true): "
-			<< all_packers[i].wait_time(true) << endl << endl;
-	}
-}
-
 //increments the time of all packers. Pack_Boss does not keep internal time
 void Pack_Boss::increment_time()
 {
-	//cout << "check 6 \n" << endl;//DEBUG
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		all_packers[i].increment_time();
 	}
 }
 
+//returns whether all of the packers have a supreme order
 bool Pack_Boss::all_supreme()
 {
 	bool supreme_status = true;
@@ -194,6 +104,67 @@ bool Pack_Boss::all_supreme()
 		}
 	}
 	
-	//cout << "all supreme: " << supreme_status << endl;//DEBUG
 	return supreme_status;
+}
+
+//initializes the hold time to first packers queue time
+void Pack_Boss::temp_wait_init(bool supreme)
+{
+	if (supreme && all_supreme()){
+		temp_wait = all_packers[0].wait_time(supreme);
+	}else if (supreme && !all_supreme()){
+		temp_wait = all_packers[0].wait_time(!supreme);
+	}else{
+		temp_wait = all_packers[0].wait_time(supreme);
+	}
+}
+
+//if all packers have a supreme order
+void Pack_Boss::all_supreme_case(bool supreme, int i)
+{
+	if (all_packers[i].wait_time(supreme) < temp_wait){
+		temp_wait = all_packers[i].wait_time(supreme);
+		packer_num = i;
+	}else if (all_packers[i].wait_time(supreme) == temp_wait){
+		if (all_packers[i].wait_time(!supreme) < special_reg_wait){
+			special_reg_wait = all_packers[i].wait_time(!supreme);
+			packer_num = i;
+		}
+	}
+}
+
+//if all packers do not have a supreme order
+void Pack_Boss::not_all_supreme_case(bool supreme, int i)
+{
+	if (all_packers[i].wait_time(supreme) == 0 &&
+	    all_packers[i].wait_time(!supreme) < temp_wait){
+		//forces the order to a packer queue with a supreme
+		//wait of zero find the queue of these with the
+		//shortest regular wait
+		temp_wait = all_packers[i].wait_time(!supreme);
+		packer_num = i;
+	}
+}
+
+//if the order is supreme
+void Pack_Boss::supreme_case(bool supreme)
+{
+	for (int i = 0; i < NUM_PACKERS; ++i){
+		if (all_supreme()){
+			all_supreme_case(supreme, i);
+		}else if (!all_supreme()){
+			not_all_supreme_case(supreme, i);
+		}
+	}
+}
+
+//the order is not supreme
+void Pack_Boss::regular_case(bool supreme)
+{
+	for(int i = 0; i < NUM_PACKERS; ++i){
+		if (all_packers[i].wait_time(supreme) < temp_wait){
+			temp_wait = all_packers[i].wait_time(supreme);
+			packer_num = i;
+		}
+	}
 }

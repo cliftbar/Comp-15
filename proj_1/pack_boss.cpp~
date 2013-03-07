@@ -30,7 +30,6 @@ int Pack_Boss::num_orders_up()
 	
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		if (all_packers[i].order_up()){
-			cout << "packer ready: " << i << endl << endl;
 		++counter;
 		}
 	}
@@ -42,7 +41,7 @@ int Pack_Boss::num_orders_up()
 //must be called multiple times to get multiple orders.
 //if called when there are no orders ready, the program exits with an error
 Order Pack_Boss::pass_out()
-{
+{	
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		if (all_packers[i].order_up()){
 			return all_packers[i].pass_to();
@@ -58,28 +57,24 @@ Order Pack_Boss::pass_out()
 int Pack_Boss::find_shortest(bool supreme)
 {
 	special_reg_wait = all_packers[0].wait_time(!supreme);
-	int packer_num = 0;
+	packer_num = 0;
 	
-	set_init_temp_wait(supreme);
+	temp_wait_init(supreme);
 	
 	if (supreme){
-		packer_num = f_shortest_supreme(supreme);
+		supreme_case(supreme);
 	}else if (!supreme){
-		packer_num = f_shortest_regular(supreme);
+		regular_case(supreme);
 	}
 	return packer_num;
 }
 
 //returns true only if all packers are empty
 bool Pack_Boss::all_done()
-{
-	//cout << "check 5 \n" << endl;//DEBUG
-	
+{	
 	bool check_done = true;
 	
 	for (int i = 0; i < NUM_PACKERS; ++i){
-		//cout << "all_packers[" << i << "].is_done(): "
-			  //<< all_packers[i].is_done() << endl;//DEBUG CODE
 		if (!all_packers[i].is_done()){
 			check_done = all_packers[i].is_done();
 		}
@@ -90,23 +85,9 @@ bool Pack_Boss::all_done()
 	return packers_done;
 }
 
-//Debug function
-void Pack_Boss::print_packers()
-{
-	for (int i = 0; i < NUM_PACKERS; ++i){
-		cout << "Packer[" << i << "]: " << endl;
-		all_packers[i].print_current();
-		cout << "regular all_packers[" << i<< "].wait_time(false): "
-			<< all_packers[i].wait_time(false) << endl;
-		cout << "supreme all_packers[" << i<< "].wait_time(true): "
-			<< all_packers[i].wait_time(true) << endl << endl;
-	}
-}
-
 //increments the time of all packers. Pack_Boss does not keep internal time
 void Pack_Boss::increment_time()
 {
-	//cout << "check 6 \n" << endl;//DEBUG
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		all_packers[i].increment_time();
 	}
@@ -126,7 +107,7 @@ bool Pack_Boss::all_supreme()
 }
 
 //initializes the hold time to first packers queue time
-void Pack_Boss::set_init_temp_wait(bool supreme)
+void Pack_Boss::temp_wait_init(bool supreme)
 {
 	if (supreme && all_supreme()){
 		temp_wait = all_packers[0].wait_time(supreme);
@@ -138,21 +119,21 @@ void Pack_Boss::set_init_temp_wait(bool supreme)
 }
 
 //if all packers have a supreme order
-int Pack_Boss::f_short_all_supreme(bool supreme, int i)
+void Pack_Boss::all_supreme_case(bool supreme, int i)
 {
 	if (all_packers[i].wait_time(supreme) < temp_wait){
 		temp_wait = all_packers[i].wait_time(supreme);
-		return i;
+		packer_num = i;
 	}else if (all_packers[i].wait_time(supreme) == temp_wait){
 		if (all_packers[i].wait_time(!supreme) < special_reg_wait){
 			special_reg_wait = all_packers[i].wait_time(!supreme);
-			return i;
+			packer_num = i;
 		}
 	}
 }
 
 //if all packers do not have a supreme order
-int Pack_Boss::f_short_not_all_supreme(bool supreme, int i)
+void Pack_Boss::not_all_supreme_case(bool supreme, int i)
 {
 	if (all_packers[i].wait_time(supreme) == 0 &&
 	    all_packers[i].wait_time(!supreme) < temp_wait){
@@ -160,37 +141,29 @@ int Pack_Boss::f_short_not_all_supreme(bool supreme, int i)
 		//wait of zero find the queue of these with the
 		//shortest regular wait
 		temp_wait = all_packers[i].wait_time(!supreme);
-		return i;
+		packer_num = i;
 	}
 }
 
 //if the order is supreme
-int Pack_Boss::f_shortest_supreme(bool supreme)
+void Pack_Boss::supreme_case(bool supreme)
 {
-	int r_num = 0;
-	
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		if (all_supreme()){
-			r_num = f_short_all_supreme(supreme, i);
+			all_supreme_case(supreme, i);
 		}else if (!all_supreme()){
-			r_num = f_short_not_all_supreme(supreme, i);
+			not_all_supreme_case(supreme, i);
 		}
 	}
-	
-	return r_num;
 }
 
 //the order is not supreme
-int Pack_Boss::f_shortest_regular(bool supreme)
+void Pack_Boss::regular_case(bool supreme)
 {
-	int r_num = 0;
-	
 	for(int i = 0; i < NUM_PACKERS; ++i){
 		if (all_packers[i].wait_time(supreme) < temp_wait){
 			temp_wait = all_packers[i].wait_time(supreme);
-			r_num = i;
+			packer_num = i;
 		}
 	}
-	
-	return r_num;
 }

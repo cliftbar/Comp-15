@@ -31,6 +31,7 @@ private:
 	Node* prev;
 	Node* temp;
 	Node* iter;
+	Queue* temp_queue;
 };
 
 #endif

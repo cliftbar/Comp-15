@@ -63,6 +63,9 @@ private:
 	//logic for second case in pass_to function
 	void pass_to_case_2();
 	
+	//logic for third case in pass_to function
+	void pass_to_case_3();
+	
 	//contains the order currently being packed
 	Order curr_order;
 	

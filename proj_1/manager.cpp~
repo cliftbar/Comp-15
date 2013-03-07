@@ -23,7 +23,6 @@ void Manager::run_simulations()
 	sim_2_stats = new Stats(true);
 	
 	sales.read_in();
-	Queue* temp_queue;
 	
 	Simulation sim_1(false, sales.pass_queue());
 	temp_queue = sim_1.run_sim();
@@ -76,11 +75,13 @@ void Manager::unscramble_insert(Queue* q_in)
 			head = temp;
 			prev = temp;
 		}else {
-			while(iter->next != NULL && iter->data.t_arrive < temp->data.t_arrive){
+			while(iter->next != NULL &&
+				 iter->data.t_arrive < temp->data.t_arrive){
 				prev = iter;
 				iter = iter->next;
 			}
-			if (iter->next == NULL && iter->data.t_arrive < temp->data.t_arrive){
+			if (iter->next == NULL &&
+			    iter->data.t_arrive < temp->data.t_arrive){
 				prev = iter;
 				iter->next = temp;
 			}else {
@@ -90,7 +91,8 @@ void Manager::unscramble_insert(Queue* q_in)
 		}
 	}
 }
-			
+
+//runs the statisctics on the queue for both simulations
 Queue* Manager::run_stats(Queue* temp_queue)
 {
 	for (int i = 0; i < temp_queue->get_length(); ++i){
@@ -103,16 +105,3 @@ Queue* Manager::run_stats(Queue* temp_queue)
 	
 	return temp_queue;
 }
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
