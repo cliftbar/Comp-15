@@ -141,10 +141,10 @@ regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
 fetch_bot print pre_get
-Fetcher, Current Order ID: 0
+Fetcher, Current Order ID: -1216655671
 Current Time: 0
-Current order fetch time: -1834514912
-Current Order fetch_wait: 32530
+Current order fetch time: 134513196
+Current Order fetch_wait: -1217886664
 
 fetch_bot print post_get
 Fetcher, Current Order ID: 1
@@ -3525,10 +3525,10 @@ regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
 fetch_bot print pre_get
-Fetcher, Current Order ID: -1845987512
+Fetcher, Current Order ID: -1075685180
 Current Time: 0
-Current order fetch time: -1834647552
-Current Order fetch_wait: 32530
+Current order fetch time: 0
+Current Order fetch_wait: -1216811084
 
 fetch_bot print post_get
 Fetcher, Current Order ID: 1
