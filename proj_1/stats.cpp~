@@ -13,6 +13,8 @@
 #include "stats.h"
 using namespace std;
 
+//////////////////////PUBLIC METHODS////////////////////////////////////
+
 Stats::Stats(bool consider_supreme)
 {
 	//cout << "consider_supreme: " << consider_supreme << endl;//DEBUG CODE
@@ -61,6 +63,7 @@ void Stats::run_calcs()
 		calc_min_max(curr_order.t_out_sim2);
 		calc_means(curr_order.t_out_sim2);
 	}else if(!supreme){
+		cout << "current order time sim 2: " << curr_order.t_out_sim2 << endl;
 		calc_min_max(curr_order.t_out_sim1);
 		calc_means(curr_order.t_out_sim1);
 	}
@@ -90,6 +93,8 @@ void Stats::print_stats()
 	}
 	cout << num_all_processed << " orders processed" << endl << endl;
 }
+
+////////////////////////////PRIVATE METHODS///////////////////////////////
 
 void Stats::calc_min_max(int t_comp)
 {

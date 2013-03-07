@@ -101,7 +101,7 @@ int Pack_Boss::find_shortest(bool supreme)
 					//forces the order to a packer queue with a supreme
 					//wait of zero find the queue of these with the
 					//shortest regular wait
-					temp_wait = all_packers[i].wait_time(supreme);
+					temp_wait = all_packers[i].wait_time(!supreme);
 					packer_num = i;
 				}
 			}

@@ -143,8 +143,8 @@ supreme all_packers[2].wait_time(true): 0
 fetch_bot print pre_get
 Fetcher, Current Order ID: 0
 Current Time: 0
-Current order fetch time: -2015123936
-Current Order fetch_wait: 32722
+Current order fetch time: -1834514912
+Current Order fetch_wait: 32530
 
 fetch_bot print post_get
 Fetcher, Current Order ID: 1
@@ -3525,10 +3525,10 @@ regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
 fetch_bot print pre_get
-Fetcher, Current Order ID: -2026596536
+Fetcher, Current Order ID: -1845987512
 Current Time: 0
-Current order fetch time: -2015256576
-Current Order fetch_wait: 32722
+Current order fetch time: -1834647552
+Current Order fetch_wait: 32530
 
 fetch_bot print post_get
 Fetcher, Current Order ID: 1
@@ -4679,7 +4679,7 @@ all_packers[1].wait_time.(supreme): 0
 temp_wait: 15
 check 11
 all_packers[2].wait_time.(supreme): 0
-temp_wait: 0
+temp_wait: 10
 check 11
 is_order: 1
 Packer wait times: 
@@ -5380,6 +5380,9 @@ absolute time: 39
 regular all_packers[2].wait_time(false): 6
 supreme all_packers[2].wait_time(true): 1
 
+current order time sim 2: 25
+current order time sim 2: 20
+current order time sim 2: 15
 Packer wait times: 
 Packer[0]: 
 Current Order 7
@@ -5595,6 +5598,7 @@ absolute time: 44
 regular all_packers[2].wait_time(false): 1
 supreme all_packers[2].wait_time(true): 0
 
+current order time sim 2: 35
 Packer wait times: 
 Packer[0]: 
 Current Order 7
@@ -5810,6 +5814,7 @@ absolute time: 49
 regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
+current order time sim 2: 45
 Packer wait times: 
 Packer[0]: 
 Current Order 7
@@ -6240,6 +6245,7 @@ absolute time: 59
 regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
+current order time sim 2: 30
 Packer wait times: 
 Packer[0]: 
 Current Order 1
@@ -6885,6 +6891,7 @@ absolute time: 74
 regular all_packers[2].wait_time(false): 0
 supreme all_packers[2].wait_time(true): 0
 
+current order time sim 2: 75
 Packer wait times: 
 Packer[0]: 
 Current Order 1
@@ -7050,6 +7057,13 @@ sim2 mean total time for regular customers 51 minutes
 7 orders processed
 
 simulation done
+current order time sim 2: 25
+current order time sim 2: 20
+current order time sim 2: 15
+current order time sim 2: 35
+current order time sim 2: 45
+current order time sim 2: 30
+current order time sim 2: 75
 Order 4
 Priority supreme
 Arrival time: 15
