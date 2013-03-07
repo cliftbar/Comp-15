@@ -34,18 +34,20 @@ Packer::Packer()
 void Packer::insert(Order o_in)
 {	
 	//cout << "Order in ID: " << o_in.id << endl;//DEBUG CODE
-	//cout << "Order in pack time: " << o_in.t_pack << endl << endl;//DEBUG CODE
+	//cout << "Order in pack time: " << o_in.t_pack << endl
+		  //<< endl;//DEBUG CODE
 	
 	if (is_order){
 		//there is an order currently being packed
 		//cout << "There is an order\n";//DEBUG CODE
 		if (o_in.priority == "supreme" && curr_order.priority == "supreme"){
 			//current order is supreme and new order is supreme
-			//cout << "new order supreme, curr_order supreme\n";//DEBUG CODE
+			//cout << "new order supreme, curr_order supreme\n";//DEBUG
 			supreme_queue.insert(o_in);
-		}else if (o_in.priority == "supreme" && curr_order.priority == "regular"){
+		}else if (o_in.priority == "supreme" &&
+				curr_order.priority == "regular"){
 			//current order is regular, new order is supreme
-			//cout << "new order supreme, curr_order regular\n";//DEBUG CODE
+			//cout << "new order supreme, curr_order regular\n";//DEBUG
 			interrupt_order = curr_order;
 			t_interrupt = curr_time;
 			curr_time = 0;
@@ -101,7 +103,8 @@ Order Packer::pass_to()
 		//cout << "supreme_queue empty, no interrupt_order\n";//DEBUG CODE
 		if (!order_queue.is_empty()){
 			curr_order = order_queue.remove();
-			curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
+			curr_order.pack_wait = t_absolute - curr_order.front_wait
+										- curr_order.fetch_wait;
 		}else{
 			is_order = false;
 		}
@@ -109,7 +112,8 @@ Order Packer::pass_to()
 	}else if (supreme_queue.is_empty() && t_interrupt != 0){
 		//supreme queue empty, there is an interrupted order,
 		//current order is necessarily supreme
-		//cout << "supreme_queue empty, curr_order supreme, interrupt_order present\n";//DEBUG CODE
+		//cout << "supreme_queue empty, curr_order supreme,
+			  //interrupt_order present\n";//DEBUG CODE
 		curr_order = interrupt_order;
 		curr_time = t_interrupt;
 		t_interrupt = 0;
@@ -118,7 +122,8 @@ Order Packer::pass_to()
 		//supreme queue is not empty
 		//cout << "supreme_queue not empty\n";//DEBUG CODE
 		curr_order = supreme_queue.remove();
-		curr_order.pack_wait = t_absolute - curr_order.front_wait - curr_order.fetch_wait;
+		curr_order.pack_wait = t_absolute - curr_order.front_wait
+									- curr_order.fetch_wait;
 		curr_time = 0;
 	}
 	
@@ -155,7 +160,8 @@ bool Packer::order_up()
 	return o_up;
 }
 
-//
+//true if the packer is done, which means
+//there is no order being packed and both queues are empty
 bool Packer::is_done()
 {
 	
@@ -166,6 +172,9 @@ bool Packer::is_done()
 	}
 }
 
+//increments the time.  current time and absolute time are increased,
+//wait times are decreased unless they are zero, and the time spent
+//interrupted by the interrupted order is increased
 void Packer::increment_time()
 {
 	++curr_time;
@@ -181,6 +190,7 @@ void Packer::increment_time()
 	}
 }
 
+//prints the regular and supreme queues
 void Packer::print_queue()
 {
 	cout << "Packer queue, normal: " << endl;

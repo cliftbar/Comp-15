@@ -37,6 +37,7 @@ void Packer::insert(Order o_in)
 	//cout << "Order in pack time: " << o_in.t_pack << endl
 		  //<< endl;//DEBUG CODE
 	
+	cout << "is_order: " << is_order << endl;
 	if (is_order){
 		//there is an order currently being packed
 		//cout << "There is an order\n";//DEBUG CODE

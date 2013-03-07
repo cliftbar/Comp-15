@@ -92,6 +92,13 @@ void Queue::print_queue()
 		cout << "Pack wait: " << iter->data.pack_wait << endl;
 		cout << "pack time " << iter->data.t_pack << endl;
 		cout << "interrupted time " << iter->data.spent_interrupted << endl;
+		cout << "fetch time + pack wait + pack time: "
+			<< iter->data.t_fetch + iter->data.t_pack + iter->data.pack_wait
+			<< endl;
+		cout << "time out sim1 - t_interrupt: "
+			<< iter->data.t_out_sim1 - iter->data.spent_interrupted << endl;
+		cout << "time out sim2 - t_interrupt: "
+			<< iter->data.t_out_sim2 - iter->data.spent_interrupted << endl;
 		cout << "front wait: " << iter->data.front_wait << endl;
 		cout << "time out sim1: " << iter->data.t_out_sim1 << endl;
 		cout << "time out sim2: " << iter->data.t_out_sim2 << endl << endl;
@@ -104,7 +111,8 @@ void Queue::print_queue()
 		cout << "fetch time " << iter->data.t_fetch << " minutes, ";
 		cout << "pack time " << iter->data.t_pack << " minutes" << endl;
 		
-		cout << "the order was added to packaging queue at time " << iter->data.fetch_wait << endl;
+		cout << "the order was added to packaging queue at time "
+			<< iter->data.fetch_wait << endl;
 		//cout << "Time out: " << iter->data.t_out << endl;
 		cout << endl;
 		*///END FINAL
