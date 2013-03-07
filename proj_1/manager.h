@@ -19,6 +19,14 @@ public:
 	void run_simulations();
 	
 	Queue* unscramble_queue(Queue* q_in);
+	
+private:
+	void unscramble_insert(Queue* q_in);
+	Queue* sort_queue;
+	Node* head;
+	Node* prev;
+	Node* temp;
+	Node* iter;
 };
 
 #endif

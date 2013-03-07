@@ -40,6 +40,21 @@ private:
 	//returns if all of the queues have a supreme order
 	bool all_supreme();
 	
+	//sets the initial wait time for find shortest function
+	void set_init_temp_wait(bool supreme);
+	
+	//logic to find the shortest queue if all queues have a supreme order
+	int f_short_all_supreme(bool supreme, int i);
+	
+	//logic to find the shortest queue if not all queues have a supreme order
+	int f_short_not_all_supreme(bool supreme, int i);
+	
+	//logic to find the shortest queue if the order is supreme
+	int f_shortest_supreme(bool supreme);
+	
+	//logic to find the shortest queue if the order is regular
+	int f_shortest_regular(bool supreme);
+	
 	//Pointer to an array of packers
 	Packer* all_packers;
 	
@@ -47,6 +62,14 @@ private:
 	
 	//holds if the packers are done
 	bool packers_done;
+	
+	//hold value to find shortest queue
+	int temp_wait;
+	
+	//wait time variable used specifically for the case when
+	//multiple supreme queues have the same supreme wait time
+	int special_reg_wait;
+
 };
 
 

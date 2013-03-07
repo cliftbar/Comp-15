@@ -40,7 +40,16 @@ private:
 	
 	bool supreme;
 	
-	void final_steps();
+	void un_switch();
+	
+	//loop to move order from pack_chief to output queue
+	void pack_chief_loop();
+	
+	//loop to move order from fetcher to pack_chief
+	void fetch_bot_loop();
+	
+	//Loop for moving an order from order_takers to fetcher
+	void order_takers_loop();
 	
 	Front_Desk* order_takers;
 	
@@ -50,8 +59,9 @@ private:
 	
 	Stats* calc_shop;
 	
-	//temporary queue for debugging purposes
-	Queue* order_queue;
+	Queue* order_out;
+	
+	Order next_order;
 };
 
 #endif

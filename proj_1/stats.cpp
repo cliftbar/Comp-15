@@ -17,7 +17,6 @@ using namespace std;
 
 Stats::Stats(bool consider_supreme)
 {
-	//cout << "consider_supreme: " << consider_supreme << endl;//DEBUG CODE
 	//Sets what number simulation it is
 	if (consider_supreme){
 		sim_num = 2;
@@ -26,7 +25,6 @@ Stats::Stats(bool consider_supreme)
 	}
 	supreme = consider_supreme;
 	
-	//sim_num = 1;//DEBUG CODE;
 	sim_max = 0;
 	sim_min = 0;
 	mean_reg = 0;
@@ -41,7 +39,6 @@ void Stats::get_order(Order o_in)
 {
 	//if the first order is read in, initialize sim_max and sim_min
 	if (first_order){
-		//cout << "check first" << endl;//DEBUG CODE
 		if(supreme){
 			sim_max = o_in.t_out_sim2;
 			sim_min = o_in.t_out_sim2;
@@ -60,8 +57,6 @@ void Stats::run_calcs()
 	//decides which order time to send to the calculation functions,
 	//sim 1 time or sim 2 time
 	if (supreme){
-		cout << "current order time sim 2: "
-			<< curr_order.t_out_sim2 << endl;
 		calc_min_max(curr_order.t_out_sim2);
 		calc_means(curr_order.t_out_sim2);
 	}else if(!supreme){
@@ -85,11 +80,14 @@ void Stats::print_stats()
 		cout << "sim" << sim_num << " mean elapsed time " << (int)mean_all
 			<< " minutes" << endl;
 	}else if(supreme){
-		cout << "sim" << sim_num << " mean total time for all customers "
+		cout << "sim" << sim_num
+			<< " mean total time for all customers "
 			<< int(mean_all) << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for supreme customers "
+		cout << "sim" << sim_num
+			<< " mean total time for supreme customers "
 			<< int(mean_sup) << " minutes" << endl;
-		cout << "sim" << sim_num << " mean total time for regular customers "
+		cout << "sim" << sim_num
+			<< " mean total time for regular customers "
 			<< (int)mean_reg << " minutes" << endl;
 	}
 	cout << num_all_processed << " orders processed" << endl << endl;
@@ -99,13 +97,10 @@ void Stats::print_stats()
 
 void Stats::calc_min_max(int t_comp)
 {
-	//cout << "current order time: " << curr_order.t_out;//DEBUG CODE
 	//if the total time passed in is a min or max, it is stored
 	if (t_comp < sim_min){
-		//cout << " is a min" << endl;//DEBUG CODE
 		sim_min = t_comp;
 	}else if (t_comp > sim_max){
-		//cout << " is a max" << endl;//DEBUG CODE
 		sim_max = t_comp;
 	}
 }

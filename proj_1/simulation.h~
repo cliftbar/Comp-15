@@ -25,7 +25,7 @@ public:
 	
 	//runs all of the functions required for
 	//a time interval on the floor
-	Queue run_sim();
+	Queue* run_sim();
 	
 	//Prints the final report on floor activities
 	//void report();
@@ -40,7 +40,13 @@ private:
 	
 	bool supreme;
 	
-	void final_steps();
+	void un_switch();
+	
+	void pack_chief_loop();
+	
+	void fetch_bot_loop();
+	
+	void order_takers_loop();
 	
 	Front_Desk* order_takers;
 	
@@ -50,8 +56,9 @@ private:
 	
 	Stats* calc_shop;
 	
-	//temporary queue for debugging purposes
-	Queue* order_queue;
+	Queue* order_out;
+	
+	Order next_order;
 };
 
 #endif

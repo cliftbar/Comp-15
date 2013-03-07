@@ -81,47 +81,18 @@ void Queue::print_queue()
 {
 	Node* iter = front;
 	
-	while(iter != NULL){
-
-		///DEBUG CODE
-		cout << "Order " << iter->data.id << endl;
-		cout << "Priority " << iter->data.priority << endl;
-		cout << "Arrival time: " << iter->data.t_arrive << endl;
-		cout << "fetch time " << iter->data.t_fetch << endl;
-		cout << "Fetch wait: " << iter->data.fetch_wait << endl;
-		cout << "Pack wait: " << iter->data.pack_wait << endl;
-		cout << "pack time " << iter->data.t_pack << endl;
-		cout << "Pack queue: " << iter->data.pack_queue << endl;
-		cout << "interrupted time " << iter->data.spent_interrupted << endl;
-		cout << "fetch time + pack wait + pack time: "
-			<< iter->data.t_fetch + iter->data.t_pack + iter->data.pack_wait
-			<< endl;
-		cout << "time out sim1 - t_interrupt: "
-			<< iter->data.t_out_sim1 - iter->data.spent_interrupted << endl;
-		cout << "time out sim2 - t_interrupt: "
-			<< iter->data.t_out_sim2 - iter->data.spent_interrupted << endl;
-		cout << "front wait: " << iter->data.front_wait << endl;
-		cout << "time out sim1: " << iter->data.t_out_sim1 << endl;
-		cout << "time out sim2: " << iter->data.t_out_sim2 << endl << endl;
-		///DEBUG END
-		
-		/*//FINAL PRINTOUT
+	while(iter != NULL){		
 		cout << "Order " << iter->data.id << " ";
 		cout << "for " << iter->data.priority << " customer ";
 		cout << "arrived at time " << iter->data.t_arrive << endl;
 		cout << "fetch time " << iter->data.t_fetch << " minutes, ";
 		cout << "pack time " << iter->data.t_pack << " minutes" << endl;
-		
-		cout << "the order was added to packaging queue at time "
-			<< iter->data.fetch_wait << endl;
-		//cout << "Time out: " << iter->data.t_out << endl;
-		cout << endl;
-		*///END FINAL
+		cout << "elapsed time sim1 " << iter->data.t_out_sim1 << " minutes,"
+			<< " elapsed time sim2 " << iter->data.t_out_sim2 << " minutes"
+			<< endl << endl;
 		
 		iter = iter->next;
 	}
-	
-	cout << "queue length: " << length << endl << endl;//DEBUG
 }
 
 //returns the arrival time of the next order in the queue
@@ -131,22 +102,6 @@ int Queue::t_next()
 }
 
 /////////PRIVATE METHODS///////////////
-
-//Deletes the entire list
-void Queue::delete_list()
-{
-	Node* temp;
-	Node* iter = front;
-	
-	while(iter != NULL){
-		temp  = iter;
-		iter = iter->next;
-		delete temp;
-	}
-	
-	front = NULL;
-	back = NULL;
-}
 
 //copies a queue into this queue
 void Queue::copy_in_list(Node* f_other)

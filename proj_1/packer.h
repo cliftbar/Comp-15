@@ -50,6 +50,22 @@ public:
 	void print_current();
 	
 private:
+	
+	//logic for inserting when an order currently being packed
+	void insert_is_order(Order o_in);
+	
+	//logic for inserting when no order is currently being packed
+	void insert_not_is_order(Order o_in);
+	
+	//logic for first case in pass_to function
+	void pass_to_case_1();
+	
+	//logic for second case in pass_to function
+	void pass_to_case_2();
+	
+	//logic for third case in pass_to function
+	void pass_to_case_3();
+	
 	//contains the order currently being packed
 	Order curr_order;
 	

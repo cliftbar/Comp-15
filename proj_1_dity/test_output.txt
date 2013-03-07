@@ -1,0 +1,5537 @@
+order takers queue: 
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 0
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 0
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 0
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 0
+Pack wait: 0
+pack time 8
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 0
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 0
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 0
+Pack wait: 0
+pack time 3
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 0
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 0
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 0
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+
+queue length: 9
+
+pack_chief.num_orders_up(): 0
+unit_free: 1
+curr_time: 0
+curr_order.t_fetch: -41257440
+Packer wait times: 
+Packer[0]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 0
+desk_time: 0
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 0
+desk_time: 0
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 0
+Current Time: 0
+Current order fetch time: -41257440
+Current Order fetch_wait: 32644
+
+next_order.id: 2
+next_order.t_arrive: 1
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 1
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 0
+
+Absolute time: 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 1
+desk_time: 1
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 2
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 2
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 2
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 1
+desk_time: 2
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 1
+desk_time: 2
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 1
+Current Time: 2
+Current order fetch time: 2
+Current Order fetch_wait: 2
+
+next_order.id: 3
+next_order.t_arrive: 5
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 2
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 0
+
+Absolute time: 2
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 3
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 3
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 3
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 3
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 4
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 4
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 4
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 4
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 5
+desk_time: 4
+
+pack_chief.num_orders_up(): 0
+unit_free: 1
+curr_time: 3
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 5
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 5
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 5
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 5
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 5
+desk_time: 5
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 2
+Current Time: 3
+Current order fetch time: 2
+Current Order fetch_wait: 3
+
+next_order.id: 4
+next_order.t_arrive: 6
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 3
+Current Time: 0
+Current order fetch time: 3
+Current Order fetch_wait: 0
+
+Absolute time: 5
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 3
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 6
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 6
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 6
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 6
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 3
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 7
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 7
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 7
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 7
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 3
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 1
+check 7
+all_packers[0].wait_time.(supreme): 1
+temp_wait: 1
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 1
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 8
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 8
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 8
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 8
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 6
+desk_time: 8
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 3
+Current Time: 3
+Current order fetch time: 3
+Current Order fetch_wait: 3
+
+next_order.id: 5
+next_order.t_arrive: 10
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 4
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 0
+
+Absolute time: 8
+packer ready: 0
+
+packer ready: 1
+
+pack_chief.num_orders_up(): 2
+packer ready: 0
+
+packer ready: 1
+
+check 22
+packer ready: 1
+
+check 22
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 9
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 9
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 9
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 10
+desk_time: 9
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 10
+regular all_packers[0].wait_time(false): 6
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 10
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 10
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 10
+desk_time: 10
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 10
+desk_time: 10
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 4
+Current Time: 2
+Current order fetch time: 2
+Current Order fetch_wait: 2
+
+next_order.id: 6
+next_order.t_arrive: 15
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 5
+Current Time: 0
+Current order fetch time: 5
+Current Order fetch_wait: 0
+
+Absolute time: 10
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 1
+absolute time: 11
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 11
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 11
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 11
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 2
+absolute time: 12
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 12
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 12
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 12
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 3
+absolute time: 13
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 13
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 13
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 13
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 4
+absolute time: 14
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 14
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 14
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 14
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 5
+curr_order.t_fetch: 5
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 1
+check 7
+all_packers[0].wait_time.(supreme): 1
+temp_wait: 1
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 1
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 5
+absolute time: 15
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 0
+absolute time: 15
+regular all_packers[1].wait_time(false): 8
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 15
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 15
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 15
+desk_time: 15
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 5
+Current Time: 5
+Current order fetch time: 5
+Current Order fetch_wait: 5
+
+next_order.id: 7
+next_order.t_arrive: 17
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 6
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 0
+
+Absolute time: 15
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 16
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 1
+absolute time: 16
+regular all_packers[1].wait_time(false): 7
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 16
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 16
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 17
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 2
+absolute time: 17
+regular all_packers[1].wait_time(false): 6
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 17
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 17
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 18
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 3
+absolute time: 18
+regular all_packers[1].wait_time(false): 5
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 18
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 18
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 4
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 19
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 4
+absolute time: 19
+regular all_packers[1].wait_time(false): 4
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 19
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 19
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 17
+desk_time: 19
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 6
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+next_order.id: 8
+next_order.t_arrive: 22
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 7
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 0
+
+Absolute time: 19
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 2
+current time: 1
+absolute time: 20
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 5
+absolute time: 20
+regular all_packers[1].wait_time(false): 3
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 20
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 20
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 21
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 6
+absolute time: 21
+regular all_packers[1].wait_time(false): 2
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 21
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 21
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 22
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 7
+absolute time: 22
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 22
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 22
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 1
+
+pack_chief.num_orders_up(): 1
+packer ready: 1
+
+check 22
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 23
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 8
+current time: 0
+absolute time: 23
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 23
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 23
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 22
+desk_time: 23
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 7
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+next_order.id: 9
+next_order.t_arrive: 23
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 8
+Current Time: 0
+Current order fetch time: 1
+Current Order fetch_wait: 0
+
+Absolute time: 23
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 1
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 4
+check 7
+all_packers[0].wait_time.(supreme): 4
+temp_wait: 4
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 4
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 24
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 24
+regular all_packers[1].wait_time(false): 3
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 24
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 23
+desk_time: 24
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 23
+desk_time: 24
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 8
+Current Time: 1
+Current order fetch time: 1
+Current Order fetch_wait: 1
+
+next_order.id: 10
+next_order.t_arrive: 24
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 9
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 0
+
+Absolute time: 24
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 25
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 1
+absolute time: 25
+regular all_packers[1].wait_time(false): 2
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 25
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 25
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 26
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 2
+absolute time: 26
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 26
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 26
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 1
+
+pack_chief.num_orders_up(): 1
+packer ready: 1
+
+check 22
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 27
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 27
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 27
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 27
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 28
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 28
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 28
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 28
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 24
+desk_time: 28
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 9
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 10
+Current Time: 0
+Current order fetch time: 5
+Current Order fetch_wait: 0
+
+Absolute time: 28
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 29
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 29
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 29
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 29
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 30
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 30
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 30
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 30
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 31
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 31
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 31
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 31
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 32
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 32
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 32
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 32
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 0
+curr_time: 5
+curr_order.t_fetch: 5
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 10
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 4
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 33
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 33
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 33
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 33
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 1
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+unit_free: 1
+curr_time: 6
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 10
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+front wait: 4
+time out sim1: 0
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 34
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+front wait: 1
+time out sim1: 0
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 34
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 34
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 34
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 1
+Order 1
+Priority regular
+Arrival time: 0
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 3
+time out sim1 - t_interrupt: 3
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 3
+time out sim2: 0
+
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 8
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+pack time 1
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 4
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 6
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 8
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 13
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+pack time 3
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 5
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 11
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 4
+time out sim1: 10
+time out sim2: 0
+
+queue length: 10
+
+sim1 min elapsed time 3 minutes
+sim1 max elapsed time 13 minutes
+sim1 mean elapsed time 8 minutes
+10 orders processed
+
+simulation done
+check A
+check C
+check D
+check E
+check D
+check G
+check I
+check D
+check G
+check H
+check I
+check D
+check G
+check H
+check H
+check I
+check D
+check G
+check H
+check H
+check H
+check I
+check D
+check G
+check H
+check H
+check H
+check H
+check J
+check D
+check G
+check H
+check H
+check H
+check H
+check H
+check I
+check D
+check G
+check H
+check H
+check H
+check H
+check H
+check H
+check J
+check D
+check G
+check H
+check H
+check H
+check H
+check H
+check H
+check H
+check I
+check D
+check G
+check H
+check H
+check H
+check H
+check H
+check H
+check H
+check H
+check I
+check K
+check K
+check K
+check K
+check K
+check K
+check K
+check K
+check K
+check K
+check L
+unscramble_queue: 
+Order 1
+Priority regular
+Arrival time: 0
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 3
+time out sim1 - t_interrupt: 3
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 3
+time out sim2: 0
+
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 8
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+pack time 1
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 4
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 8
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 13
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 6
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 11
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+pack time 3
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 5
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 4
+time out sim1: 10
+time out sim2: 0
+
+queue length: 10
+
+order takers queue: 
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 8
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 3
+Pack wait: 0
+pack time 1
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 4
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 2
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 8
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 13
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 6
+time out sim2 - t_interrupt: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 11
+time out sim2 - t_interrupt: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 1
+Pack wait: 0
+pack time 3
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 5
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 5
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 0
+front wait: 4
+time out sim1: 10
+time out sim2: 0
+
+queue length: 9
+
+pack_chief.num_orders_up(): 0
+unit_free: 1
+curr_time: 0
+curr_order.t_fetch: -41390080
+Packer wait times: 
+Packer[0]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 0
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 0
+desk_time: 0
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 0
+desk_time: 0
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: -52730040
+Current Time: 0
+Current order fetch time: -41390080
+Current Order fetch_wait: 32644
+
+next_order.id: 2
+next_order.t_arrive: 1
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 1
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 2
+
+Absolute time: 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 1
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 1
+desk_time: 1
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 1
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 3
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 2
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 2
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 2
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 1
+desk_time: 2
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 1
+desk_time: 2
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 1
+Current Time: 2
+Current order fetch time: 2
+Current Order fetch_wait: 4
+
+next_order.id: 3
+next_order.t_arrive: 5
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 2
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 2
+
+Absolute time: 2
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 3
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 1
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 0
+time out sim1: 3
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 3
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 3
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 3
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 3
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 4
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 5
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 4
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 4
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 4
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 5
+desk_time: 4
+
+pack_chief.num_orders_up(): 0
+unit_free: 1
+curr_time: 3
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 5
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 4
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 5
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 5
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 5
+desk_time: 5
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 5
+desk_time: 5
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 2
+Current Time: 3
+Current order fetch time: 2
+Current Order fetch_wait: 5
+
+next_order.id: 4
+next_order.t_arrive: 6
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 3
+Current Time: 0
+Current order fetch time: 3
+Current Order fetch_wait: 3
+
+Absolute time: 5
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 3
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 6
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 3
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 6
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 6
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 6
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 3
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 7
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 2
+
+Packer[1]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 7
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 7
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 7
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 3
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 1
+check 7
+all_packers[0].wait_time.(supreme): 1
+temp_wait: 1
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 1
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 8
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 1
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 8
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 8
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 6
+desk_time: 8
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 6
+desk_time: 8
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 3
+Current Time: 3
+Current order fetch time: 3
+Current Order fetch_wait: 6
+
+next_order.id: 5
+next_order.t_arrive: 10
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 4
+Current Time: 0
+Current order fetch time: 2
+Current Order fetch_wait: 2
+
+Absolute time: 8
+packer ready: 0
+
+packer ready: 1
+
+pack_chief.num_orders_up(): 2
+packer ready: 0
+
+packer ready: 1
+
+check 22
+current order time sim 2: 8
+packer ready: 1
+
+check 22
+current order time sim 2: 4
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 2
+Packer wait times: 
+Packer[0]: 
+Current Order 2
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 1
+time out sim1: 8
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 9
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 9
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 9
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 10
+desk_time: 9
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 2
+check1
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 10
+regular all_packers[0].wait_time(false): 6
+supreme all_packers[0].wait_time(true): 6
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 10
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 10
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 10
+desk_time: 10
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 10
+desk_time: 10
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 4
+Current Time: 2
+Current order fetch time: 2
+Current Order fetch_wait: 4
+
+next_order.id: 6
+next_order.t_arrive: 15
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 5
+Current Time: 0
+Current order fetch time: 5
+Current Order fetch_wait: 5
+
+Absolute time: 10
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 1
+absolute time: 11
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 5
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 11
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 11
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 11
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 2
+absolute time: 12
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 4
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 12
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 12
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 12
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 3
+absolute time: 13
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 3
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 13
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 13
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 13
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 4
+absolute time: 14
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 2
+
+Packer[1]: 
+Current Order 3
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+front wait: 0
+time out sim1: 4
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 14
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 14
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 14
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 5
+curr_order.t_fetch: 5
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 1
+check 7
+all_packers[0].wait_time.(supreme): 1
+temp_wait: 1
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 1
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 5
+absolute time: 15
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 1
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 0
+absolute time: 15
+regular all_packers[1].wait_time(false): 8
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 15
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 15
+desk_time: 15
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 15
+desk_time: 15
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 5
+Current Time: 5
+Current order fetch time: 5
+Current Order fetch_wait: 10
+
+next_order.id: 7
+next_order.t_arrive: 17
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 6
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+Absolute time: 15
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 10
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 16
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 1
+absolute time: 16
+regular all_packers[1].wait_time(false): 7
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 16
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 16
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 17
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 2
+absolute time: 17
+regular all_packers[1].wait_time(false): 6
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 17
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 17
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 4
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+front wait: 2
+time out sim1: 10
+time out sim2: 0
+pack time 6
+current time: 0
+absolute time: 18
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 3
+absolute time: 18
+regular all_packers[1].wait_time(false): 5
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 18
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 18
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 19
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 2
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 4
+absolute time: 19
+regular all_packers[1].wait_time(false): 4
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 19
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 17
+desk_time: 19
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 17
+desk_time: 19
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 6
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 8
+
+next_order.id: 8
+next_order.t_arrive: 22
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 7
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+Absolute time: 19
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+pack time 2
+current time: 1
+absolute time: 20
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 1
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 5
+absolute time: 20
+regular all_packers[1].wait_time(false): 3
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 20
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 20
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 6
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 21
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 6
+absolute time: 21
+regular all_packers[1].wait_time(false): 2
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 21
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 21
+
+order_takers->has_arrived(): 0
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 6
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 0
+time out sim1: 6
+time out sim2: 0
+pack time 2
+current time: 0
+absolute time: 22
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 7
+absolute time: 22
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 22
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 22
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 1
+
+pack_chief.num_orders_up(): 1
+packer ready: 1
+
+check 22
+current order time sim 2: 13
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 23
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 5
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 0
+time out sim1: 13
+time out sim2: 0
+pack time 8
+current time: 0
+absolute time: 23
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 23
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 22
+desk_time: 23
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 22
+desk_time: 23
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 7
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 8
+
+next_order.id: 9
+next_order.t_arrive: 23
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 8
+Current Time: 0
+Current order fetch time: 1
+Current Order fetch_wait: 1
+
+Absolute time: 23
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 1
+check1
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 4
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 4
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 4
+check 11
+packer num fr 11: 1
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 24
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 24
+regular all_packers[1].wait_time(false): 3
+supreme all_packers[1].wait_time(true): 3
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 24
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 23
+desk_time: 24
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 23
+desk_time: 24
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 8
+Current Time: 1
+Current order fetch time: 1
+Current Order fetch_wait: 2
+
+next_order.id: 10
+next_order.t_arrive: 24
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 9
+Current Time: 0
+Current order fetch time: 4
+Current Order fetch_wait: 4
+
+Absolute time: 24
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 25
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 1
+absolute time: 25
+regular all_packers[1].wait_time(false): 2
+supreme all_packers[1].wait_time(true): 2
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 25
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 25
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 26
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 2
+absolute time: 26
+regular all_packers[1].wait_time(false): 1
+supreme all_packers[1].wait_time(true): 1
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 26
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 26
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 1
+
+pack_chief.num_orders_up(): 1
+packer ready: 1
+
+check 22
+current order time sim 2: 5
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 4
+Packer wait times: 
+Packer[0]: 
+Current Order 7
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 2
+time out sim1: 11
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 27
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 27
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 27
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 27
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 0
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 11
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 4
+check1
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+pack time 5
+current time: 0
+absolute time: 28
+regular all_packers[0].wait_time(false): 5
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 28
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 28
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 28
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 0
+next_order.t_arrive: 24
+desk_time: 28
+
+fetch_bot print pre_get
+Fetcher, Current Order ID: 9
+Current Time: 4
+Current order fetch time: 4
+Current Order fetch_wait: 8
+
+fetch_bot print post_get
+Fetcher, Current Order ID: 10
+Current Time: 0
+Current order fetch time: 5
+Current Order fetch_wait: 5
+
+Absolute time: 28
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 1
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+pack time 5
+current time: 1
+absolute time: 29
+regular all_packers[0].wait_time(false): 4
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 29
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 29
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 29
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 2
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+pack time 5
+current time: 2
+absolute time: 30
+regular all_packers[0].wait_time(false): 3
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 30
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 30
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 30
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 3
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+pack time 5
+current time: 3
+absolute time: 31
+regular all_packers[0].wait_time(false): 2
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 31
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 31
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 31
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+pack_chief.num_orders_up(): 0
+unit_free: 0
+curr_time: 4
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 9
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+front wait: 1
+time out sim1: 10
+time out sim2: 0
+pack time 5
+current time: 4
+absolute time: 32
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 32
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 32
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 32
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 0
+order_takers->is_done(): 1
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 10
+unit_free: 0
+curr_time: 5
+curr_order.t_fetch: 5
+check1
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+is_order: 0
+Packer wait times: 
+Packer[0]: 
+Current Order 10
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 4
+time out sim1: 10
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 33
+regular all_packers[0].wait_time(false): 1
+supreme all_packers[0].wait_time(true): 1
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 33
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 33
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 33
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 1
+packer ready: 0
+
+pack_chief.num_orders_up(): 1
+packer ready: 0
+
+check 22
+current order time sim 2: 10
+unit_free: 1
+curr_time: 6
+curr_order.t_fetch: 5
+Packer wait times: 
+Packer[0]: 
+Current Order 10
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+front wait: 4
+time out sim1: 10
+time out sim2: 0
+pack time 1
+current time: 0
+absolute time: 34
+regular all_packers[0].wait_time(false): 0
+supreme all_packers[0].wait_time(true): 0
+
+Packer[1]: 
+Current Order 8
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+front wait: 1
+time out sim1: 5
+time out sim2: 0
+pack time 3
+current time: 0
+absolute time: 34
+regular all_packers[1].wait_time(false): 0
+supreme all_packers[1].wait_time(true): 0
+
+Packer[2]: 
+Current Order 0
+fetch time 0
+Fetch wait: 0
+Pack wait: 0
+front wait: 0
+time out sim1: 0
+time out sim2: 0
+pack time 0
+current time: 0
+absolute time: 34
+regular all_packers[2].wait_time(false): 0
+supreme all_packers[2].wait_time(true): 0
+
+next_order.t_arrive: 24
+desk_time: 34
+
+order_takers->has_arrived(): 1
+fetch_bot.unit_free(): 1
+order_takers->is_done(): 1
+Order 1
+Priority regular
+Arrival time: 0
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 3
+time out sim1 - t_interrupt: 3
+time out sim2 - t_interrupt: 3
+front wait: 0
+time out sim1: 3
+time out sim2: 3
+
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 8
+time out sim2 - t_interrupt: 8
+front wait: 1
+time out sim1: 8
+time out sim2: 8
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+pack time 1
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 4
+time out sim2 - t_interrupt: 4
+front wait: 0
+time out sim1: 4
+time out sim2: 4
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 2
+time out sim1: 10
+time out sim2: 10
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 6
+time out sim2 - t_interrupt: 6
+front wait: 0
+time out sim1: 6
+time out sim2: 6
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+pack time 8
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 13
+time out sim2 - t_interrupt: 13
+front wait: 0
+time out sim1: 13
+time out sim2: 13
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+pack time 3
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 5
+time out sim2 - t_interrupt: 5
+front wait: 1
+time out sim1: 5
+time out sim2: 5
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 11
+time out sim2 - t_interrupt: 11
+front wait: 2
+time out sim1: 11
+time out sim2: 11
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 1
+time out sim1: 10
+time out sim2: 10
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 4
+time out sim1: 10
+time out sim2: 10
+
+queue length: 10
+
+sim2 min elapsed time 3 minutes
+sim2 max elapsed time 13 minutes
+sim2 mean total time for all customers 8 minutes
+sim2 mean total time for supreme customers 7 minutes
+sim2 mean total time for regular customers 8 minutes
+10 orders processed
+
+simulation done
+current order time sim 2: 3
+current order time sim 2: 8
+current order time sim 2: 4
+current order time sim 2: 10
+current order time sim 2: 6
+current order time sim 2: 13
+current order time sim 2: 5
+current order time sim 2: 11
+current order time sim 2: 10
+current order time sim 2: 10
+Order 1
+Priority regular
+Arrival time: 0
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 3
+time out sim1 - t_interrupt: 3
+time out sim2 - t_interrupt: 3
+front wait: 0
+time out sim1: 3
+time out sim2: 3
+
+Order 2
+Priority supreme
+Arrival time: 1
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 7
+time out sim1 - t_interrupt: 8
+time out sim2 - t_interrupt: 8
+front wait: 1
+time out sim1: 8
+time out sim2: 8
+
+Order 3
+Priority regular
+Arrival time: 5
+fetch time 3
+Fetch wait: 6
+Pack wait: 0
+pack time 1
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 4
+time out sim2 - t_interrupt: 4
+front wait: 0
+time out sim1: 4
+time out sim2: 4
+
+Order 4
+Priority supreme
+Arrival time: 6
+fetch time 2
+Fetch wait: 4
+Pack wait: 0
+pack time 6
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 8
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 2
+time out sim1: 10
+time out sim2: 10
+
+Order 6
+Priority supreme
+Arrival time: 15
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 2
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 6
+time out sim2 - t_interrupt: 6
+front wait: 0
+time out sim1: 6
+time out sim2: 6
+
+Order 5
+Priority regular
+Arrival time: 10
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+pack time 8
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 13
+time out sim1 - t_interrupt: 13
+time out sim2 - t_interrupt: 13
+front wait: 0
+time out sim1: 13
+time out sim2: 13
+
+Order 8
+Priority supreme
+Arrival time: 22
+fetch time 1
+Fetch wait: 2
+Pack wait: 0
+pack time 3
+Pack queue: 1
+interrupted time 0
+fetch time + pack wait + pack time: 4
+time out sim1 - t_interrupt: 5
+time out sim2 - t_interrupt: 5
+front wait: 1
+time out sim1: 5
+time out sim2: 5
+
+Order 7
+Priority regular
+Arrival time: 17
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 11
+time out sim2 - t_interrupt: 11
+front wait: 2
+time out sim1: 11
+time out sim2: 11
+
+Order 9
+Priority regular
+Arrival time: 23
+fetch time 4
+Fetch wait: 8
+Pack wait: 0
+pack time 5
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 9
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 1
+time out sim1: 10
+time out sim2: 10
+
+Order 10
+Priority supreme
+Arrival time: 24
+fetch time 5
+Fetch wait: 10
+Pack wait: 0
+pack time 1
+Pack queue: 0
+interrupted time 0
+fetch time + pack wait + pack time: 6
+time out sim1 - t_interrupt: 10
+time out sim2 - t_interrupt: 10
+front wait: 4
+time out sim1: 10
+time out sim2: 10
+
+queue length: 10
+
+sim1 min elapsed time 3 minutes
+sim1 max elapsed time 13 minutes
+sim1 mean elapsed time 8 minutes
+10 orders processed
+
+sim2 min elapsed time 3 minutes
+sim2 max elapsed time 13 minutes
+sim2 mean total time for all customers 8 minutes
+sim2 mean total time for supreme customers 7 minutes
+sim2 mean total time for regular customers 8 minutes
+10 orders processed
+

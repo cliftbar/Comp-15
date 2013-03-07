@@ -21,14 +21,12 @@ void Manager::run_simulations()
 	sales.read_in();
 	Queue* temp_queue;
 	
-	//sales.print_orders();//DEBUG CODE
 	
 	Simulation sim_1(false, sales.pass_queue());
 	temp_queue = sim_1.run_sim();
 	
 	
 	temp_queue = unscramble_queue(temp_queue);
-	cout << "unscramble_queue: " << endl;
 	temp_queue->print_queue();
 	
 	Simulation sim_2(true, temp_queue);
@@ -45,58 +43,22 @@ void Manager::run_simulations()
 	temp_queue->print_queue();
 	
 	sim_1_stats.print_stats();
-	sim_2_stats.print_stats();		
+	sim_2_stats.print_stats();
 }
 
 Queue* Manager::unscramble_queue(Queue* q_in)
 {
-	cout << "check A\n";
-	Queue* sort_queue = new Queue;
-	Node* head = NULL;
-	Node* prev = NULL;
-	Node* temp = NULL;
-	Node* iter = NULL;
+	sort_queue = new Queue;
+	head = NULL;
+	prev = NULL;
+	temp = NULL;
+	iter = NULL;
 		
 	if (q_in == NULL){
-		cout << "check B\n";
 		return q_in;
 	}
 	
-	cout << "check C\n";
-	while (!q_in->is_empty()){
-		cout << "check D\n";
-		temp = new Node;
-		temp->data = q_in->remove();
-		temp->next = NULL;
-		iter = head;
-		
-		if (head == NULL){
-			cout << "check E\n";
-			head = temp;
-			prev = temp;
-		}else if (iter->data.t_arrive > temp->data.t_arrive){
-			cout << "check F\n";
-			temp->next = iter;
-			head = temp;
-			prev = temp;
-		}else {
-			cout << "check G\n";
-			while(iter->next != NULL && iter->data.t_arrive < temp->data.t_arrive){
-				cout << "check H\n";
-				prev = iter;
-				iter = iter->next;
-			}
-			if (iter->next == NULL){
-				cout << "check I\n";
-				prev = iter;
-				iter->next = temp;
-			}else {
-				cout << "check J\n";
-				temp->next = iter;
-				prev->next = temp;
-			}
-		}
-	}
+	unscramble_insert(q_in);
 	
 	iter = head;
 	
@@ -112,7 +74,36 @@ Queue* Manager::unscramble_queue(Queue* q_in)
 	return sort_queue;
 }
 			
-			
+void Manager::unscramble_insert(Queue* q_in)
+{
+	while (!q_in->is_empty()){
+		temp = new Node;
+		temp->data = q_in->remove();
+		temp->next = NULL;
+		iter = head;
+		
+		if (head == NULL){
+			head = temp;
+			prev = temp;
+		}else if (iter->data.t_arrive > temp->data.t_arrive){
+			temp->next = iter;
+			head = temp;
+			prev = temp;
+		}else {
+			while(iter->next != NULL && iter->data.t_arrive < temp->data.t_arrive){
+				prev = iter;
+				iter = iter->next;
+			}
+			if (iter->next == NULL && iter->data.t_arrive < temp->data.t_arrive){
+				prev = iter;
+				iter->next = temp;
+			}else {
+				temp->next = iter;
+				prev->next = temp;
+			}
+		}
+	}
+}
 			
 			
 			

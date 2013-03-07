@@ -1,0 +1,60 @@
+//front.h
+//Created by: Cameron Barclift
+//Front_Desk class acts as the order reciever from an input buffer,
+//class never actually directly reads from the stream or a file.
+//Note:  This class alters order priorities depending on whether supreme
+//orders are being considered, this occurs in the pass order function.
+
+#ifndef FRONT
+#define FRONT
+
+#include <iostream>
+#include "queue.h"
+#include "buffer.h"
+
+using namespace std;
+
+class Front_Desk
+{
+public:
+	//Preferred Constructor, takes in whether to consider supreme orders
+	//and a pointer to a copy of the input buffer
+	Front_Desk(bool do_supreme, Queue* queue_in);
+	
+	//true: done, internal queue empty
+	//false: not done, internal queue not empty
+	bool is_done();
+	
+	//returns whether an order has arrived
+	//True: order has arrived
+	//False: order has not arrived
+	bool order_arrived();
+	
+	//returns the next order, removes from class
+	Order pass_order();
+	
+	//handles moving time forward one step
+	void increment_time();
+	
+	//prints the queue stored in front
+	void print_buffer();
+
+private:
+	//runs the functions to create the input buffer
+	void run_buffer(Queue* queue_in);
+	
+	//holds the next order in line, not stored in the internal
+	//order queue
+	Order next_order;
+	
+	Queue* buffer_queue;
+	
+	//should stay the same as the absolute time
+	int desk_time;
+	
+	bool done;
+	
+	bool consider_supreme;
+};
+
+#endif
