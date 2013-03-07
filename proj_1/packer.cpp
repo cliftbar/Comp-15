@@ -47,12 +47,15 @@ void Packer::insert(Order o_in)
 			supreme_queue.insert(o_in);
 		}else if (o_in.priority == "supreme" &&
 				curr_order.priority == "regular"){
+			cout << "curr_order.id: " << curr_order.id << endl;
+			cout << "Interrupted\n";
 			//current order is regular, new order is supreme
 			//cout << "new order supreme, curr_order regular\n";//DEBUG
 			interrupt_order = curr_order;
 			t_interrupt = curr_time;
 			curr_time = 0;
 			curr_order = o_in;
+			cout << "curr_order.id: " << curr_order.id << endl;
 		}else{
 			//new order is regular
 			//cout << "new order regular\n";//DEBUG CODE
@@ -178,7 +181,9 @@ bool Packer::is_done()
 //interrupted by the interrupted order is increased
 void Packer::increment_time()
 {
-	++curr_time;
+	if (is_order){
+		++curr_time;
+	}
 	++t_absolute;
 	if (t_wait > 0){
 		--t_wait;

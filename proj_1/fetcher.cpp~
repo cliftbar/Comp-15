@@ -21,7 +21,6 @@ void Fetcher::get_order(Order o_in)
 {
 	curr_order = o_in;
 	unit_status = false;
-	curr_time = 0;
 }
 
 //returns the order stored inside.  Will return the order
@@ -31,7 +30,7 @@ void Fetcher::get_order(Order o_in)
 Order Fetcher::deliver_order()
 {
 	unit_status = true;
-	
+	curr_time = 0;
 	return curr_order;
 }
 
@@ -46,8 +45,11 @@ bool Fetcher::unit_free()
 //otherwise, return false
 bool Fetcher::order_ready()
 {
+	cout << "unit_free: " << unit_free() << endl;
+	cout << "curr_time: " << curr_time << endl;
+	cout << "curr_order.t_fetch: " << curr_order.t_fetch << endl;
 	if (!unit_free()){
-		return (curr_time == curr_order.t_fetch);
+		return (curr_time >= curr_order.t_fetch);
 	}else {
 		return false;
 	}

@@ -60,7 +60,8 @@ void Stats::run_calcs()
 	//decides which order time to send to the calculation functions,
 	//sim 1 time or sim 2 time
 	if (supreme){
-		cout << "current order time sim 2: " << curr_order.t_out_sim2 << endl;
+		cout << "current order time sim 2: "
+			<< curr_order.t_out_sim2 << endl;
 		calc_min_max(curr_order.t_out_sim2);
 		calc_means(curr_order.t_out_sim2);
 	}else if(!supreme){

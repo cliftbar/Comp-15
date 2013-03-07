@@ -25,6 +25,11 @@ public:
 	//false: not done, internal queue not empty
 	bool is_done();
 	
+	//returns whether an order has arrived
+	//True: order has arrived
+	//False: order has not arrived
+	bool has_arrived();
+	
 	//returns the next order, removes from class
 	Order pass_order();
 	

@@ -2,6 +2,8 @@
 //Created by: Cameron Barclift
 //Front_Desk class acts as the order reciever from an input buffer,
 //class never actually directly reads from the stream or a file.
+//Note:  This class alters order priorities depending on whether supreme
+//orders are being considered, this occurs in the pass order function.
 
 #ifndef FRONT
 #define FRONT
@@ -22,6 +24,11 @@ public:
 	//true: done, internal queue empty
 	//false: not done, internal queue not empty
 	bool is_done();
+	
+	//returns whether an order has arrived
+	//True: order has arrived
+	//False: order has not arrived
+	bool order_arrived();
 	
 	//returns the next order, removes from class
 	Order pass_order();
