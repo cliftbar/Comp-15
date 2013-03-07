@@ -21,12 +21,17 @@ public:
 	Queue* unscramble_queue(Queue* q_in);
 	
 private:
+	Queue* run_stats(Queue* temp_queue);
 	void unscramble_insert(Queue* q_in);
+	
+	Stats* sim_1_stats;
+	Stats* sim_2_stats;
 	Queue* sort_queue;
 	Node* head;
 	Node* prev;
 	Node* temp;
 	Node* iter;
+	Queue* temp_queue;
 };
 
 #endif

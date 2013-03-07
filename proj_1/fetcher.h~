@@ -7,7 +7,6 @@
 #ifndef FETCHER
 #define FETCHER
 #include <iostream>
-#include <string>
 #include "order.h"
 #include "queue.h"
 

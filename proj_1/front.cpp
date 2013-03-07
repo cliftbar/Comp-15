@@ -22,9 +22,6 @@ Front_Desk::Front_Desk(bool do_supreme, Queue* queue_in)
 //false: not done, queue not empty
 bool Front_Desk::is_done()
 {
-	//cout << "buffer queue empty: " << buffer_queue->is_empty()
-		  //<< endl;//DEBUG CODE
-	
 	return done;
 }
 
@@ -33,8 +30,6 @@ bool Front_Desk::is_done()
 //False: order has not arrived
 bool Front_Desk::has_arrived()
 {
-	cout << "next_order.t_arrive: " << next_order.t_arrive << endl;
-	cout << "desk_time: " << desk_time << endl << endl;
 	if (next_order.t_arrive <= desk_time){
 		return true;
 	}else{
@@ -56,8 +51,6 @@ Order Front_Desk::pass_order()
 	//check if queue is empty
 	if (!buffer_queue->is_empty()){
 		next_order = buffer_queue->remove();
-		cout << "next_order.id: " << next_order.id << endl;
-		cout << "next_order.t_arrive: " << next_order.t_arrive << endl << endl;
 	}else if (buffer_queue->is_empty()){
 		done = true;
 	}
@@ -74,7 +67,6 @@ Order Front_Desk::pass_order()
 			r_order.switched = true;
 		}
 	}
-	//cout << "pass_order id: " << r_order.id << endl;//DEBUG CODE
 	
 	return r_order;
 }

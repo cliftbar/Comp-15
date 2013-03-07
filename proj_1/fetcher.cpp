@@ -31,7 +31,6 @@ void Fetcher::get_order(Order o_in)
 Order Fetcher::deliver_order()
 {
 	unit_status = true;
-	//curr_time = 0;
 	return curr_order;
 }
 
@@ -46,9 +45,6 @@ bool Fetcher::unit_free()
 //otherwise, return false
 bool Fetcher::order_ready()
 {
-	cout << "unit_free: " << unit_free() << endl;
-	cout << "curr_time: " << curr_time << endl;
-	cout << "curr_order.t_fetch: " << curr_order.t_fetch << endl;
 	if (!unit_free()){
 		return (curr_time >= curr_order.t_fetch);
 	}else {
@@ -60,15 +56,4 @@ void Fetcher::increment_time()
 {
 	++curr_order.fetch_wait;
 	++curr_time;
-}
-
-//Debug print function
-void Fetcher::print_debug()
-{
-	cout << "Fetcher, Current Order ID: " << curr_order.id << endl;
-	cout << "Current Time: " << curr_time << endl;
-	cout << "Current order fetch time: " << curr_order.t_fetch << endl;
-	cout << "Current Order fetch_wait: " << curr_order.fetch_wait << endl;
-	
-	cout << endl;
 }

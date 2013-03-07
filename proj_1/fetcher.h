@@ -36,10 +36,7 @@ public:
 	//increments the internal time and
 	//the time of held order, also updates the
 	//queue time
-	void increment_time();
-	
-	void print_debug();
-	
+	void increment_time();	
 private:
 	//holds the current order
 	Order curr_order;

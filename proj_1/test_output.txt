@@ -1,691 +1,331 @@
-unit_free: 1
-curr_time: 0
-curr_order.t_fetch: -1
-next_order.t_arrive: 0
-desk_time: 0
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-next_order.id: 2
-next_order.t_arrive: 5
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 5
-desk_time: 5
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-next_order.id: 3
-next_order.t_arrive: 10
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 4
+check 7
+all_packers[0].wait_time.(supreme): 4
+temp_wait: 4
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 4
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 10
-desk_time: 10
-
-next_order.id: 4
-next_order.t_arrive: 15
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 15
-desk_time: 15
-
-next_order.id: 5
-next_order.t_arrive: 20
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 20
-desk_time: 20
-
-next_order.id: 6
-next_order.t_arrive: 25
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 25
-desk_time: 25
-
-next_order.id: 7
-next_order.t_arrive: 30
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 30
-desk_time: 30
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 1
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
 packer ready: 0
 
 packer ready: 1
 
-packer ready: 2
+packer ready: 1
+
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
+
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 3
+check 7
+all_packers[0].wait_time.(supreme): 3
+temp_wait: 3
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 3
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
 packer ready: 1
 
-packer ready: 2
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-packer ready: 2
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
 
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 6
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 7
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 8
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 9
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 10
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 11
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 12
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 13
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 14
-curr_order.t_fetch: 5
-packer ready: 2
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+packer ready: 0
 
-unit_free: 1
-curr_time: 15
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 16
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 17
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 18
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 19
-curr_order.t_fetch: 5
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
+
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 4
+check 7
+all_packers[0].wait_time.(supreme): 4
+temp_wait: 4
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 4
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+packer ready: 0
+
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+packer ready: 0
+
 packer ready: 1
 
-unit_free: 1
-curr_time: 20
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 21
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 22
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 23
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 24
-curr_order.t_fetch: 5
-packer ready: 0
-
-unit_free: 1
-curr_time: 25
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 26
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 27
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 28
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 29
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 30
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 31
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 32
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 33
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 34
-curr_order.t_fetch: 5
-packer ready: 2
-
-unit_free: 1
-curr_time: 35
-curr_order.t_fetch: 5
-check K
-check K
-check K
-check K
-check K
-check K
-check K
-check L
-Order 1 for regular customer arrived at time 0
-fetch time 5 minutes, pack time 30 minutes
-elapsed time sim1 35 minutes, elapsed time sim2 0 minutes
-
-Order 2 for regular customer arrived at time 5
-fetch time 5 minutes, pack time 25 minutes
-elapsed time sim1 30 minutes, elapsed time sim2 0 minutes
-
-Order 3 for regular customer arrived at time 10
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 25 minutes, elapsed time sim2 0 minutes
-
-Order 4 for supreme customer arrived at time 15
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 40 minutes, elapsed time sim2 0 minutes
-
-Order 5 for supreme customer arrived at time 20
-fetch time 5 minutes, pack time 15 minutes
-elapsed time sim1 30 minutes, elapsed time sim2 0 minutes
-
-Order 6 for supreme customer arrived at time 25
-fetch time 5 minutes, pack time 10 minutes
-elapsed time sim1 20 minutes, elapsed time sim2 0 minutes
-
-Order 7 for supreme customer arrived at time 30
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 35 minutes, elapsed time sim2 0 minutes
-
-unit_free: 1
-curr_time: 0
-curr_order.t_fetch: 4196488
-next_order.t_arrive: 0
-desk_time: 0
-
-next_order.id: 2
-next_order.t_arrive: 5
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 5
-desk_time: 5
-
-next_order.id: 3
-next_order.t_arrive: 10
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 10
-desk_time: 10
-
-next_order.id: 4
-next_order.t_arrive: 15
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 15
-desk_time: 15
-
-next_order.id: 5
-next_order.t_arrive: 20
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 20
-desk_time: 20
-
-next_order.id: 6
-next_order.t_arrive: 25
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 25
-desk_time: 25
-
-next_order.id: 7
-next_order.t_arrive: 30
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-next_order.t_arrive: 30
-desk_time: 30
-
-unit_free: 0
-curr_time: 1
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 2
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 3
-curr_order.t_fetch: 5
-unit_free: 0
-curr_time: 4
-curr_order.t_fetch: 5
 packer ready: 1
 
-packer ready: 2
-
-packer ready: 2
-
-unit_free: 0
-curr_time: 5
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 6
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 7
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 8
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 9
-curr_order.t_fetch: 5
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 0
+check 7
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
 packer ready: 0
 
-unit_free: 1
-curr_time: 10
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 11
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 12
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 13
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 14
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 15
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 16
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 17
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 18
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 19
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 20
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 21
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 22
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 23
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 24
-curr_order.t_fetch: 5
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_supreme(): 0
+supreme: 0, !supreme: 1
+check2.2
+temp_wait: 3
+check 7
+all_packers[0].wait_time.(supreme): 3
+temp_wait: 3
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 3
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
 packer ready: 0
 
-unit_free: 1
-curr_time: 25
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 26
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 27
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 28
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 29
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 30
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 31
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 32
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 33
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 34
-curr_order.t_fetch: 5
+packer ready: 1
+
+all_supreme(): 0
+supreme: 1, !supreme: 0
+check2
+temp_wait: 0
+check 9
+all_packers[0].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[1].wait_time.(supreme): 0
+temp_wait: 0
+check 11
+all_packers[2].wait_time.(supreme): 0
+temp_wait: 0
+check 11
 packer ready: 0
-
-unit_free: 1
-curr_time: 35
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 36
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 37
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 38
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 39
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 40
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 41
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 42
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 43
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 44
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 45
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 46
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 47
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 48
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 49
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 50
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 51
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 52
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 53
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 54
-curr_order.t_fetch: 5
-packer ready: 0
-
-unit_free: 1
-curr_time: 55
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 56
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 57
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 58
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 59
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 60
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 61
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 62
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 63
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 64
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 65
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 66
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 67
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 68
-curr_order.t_fetch: 5
-unit_free: 1
-curr_time: 69
-curr_order.t_fetch: 5
-packer ready: 0
-
-unit_free: 1
-curr_time: 70
-curr_order.t_fetch: 5
-Order 2 for regular customer arrived at time 5
-fetch time 5 minutes, pack time 25 minutes
-elapsed time sim1 30 minutes, elapsed time sim2 30 minutes
-
-Order 3 for regular customer arrived at time 10
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 25 minutes, elapsed time sim2 25 minutes
-
-Order 4 for supreme customer arrived at time 15
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 40 minutes, elapsed time sim2 25 minutes
-
-Order 5 for supreme customer arrived at time 20
-fetch time 5 minutes, pack time 15 minutes
-elapsed time sim1 30 minutes, elapsed time sim2 35 minutes
-
-Order 6 for supreme customer arrived at time 25
-fetch time 5 minutes, pack time 10 minutes
-elapsed time sim1 20 minutes, elapsed time sim2 40 minutes
-
-Order 7 for supreme customer arrived at time 30
-fetch time 5 minutes, pack time 20 minutes
-elapsed time sim1 35 minutes, elapsed time sim2 55 minutes
 
 Order 1 for regular customer arrived at time 0
-fetch time 5 minutes, pack time 30 minutes
-elapsed time sim1 35 minutes, elapsed time sim2 100 minutes
+fetch time 6 minutes, pack time 3 minutes
+elapsed time sim1 9 minutes, elapsed time sim2 9 minutes
 
-sim1 min elapsed time 20 minutes
-sim1 max elapsed time 40 minutes
-sim1 mean elapsed time 30 minutes
-7 orders processed
+Order 2 for supreme customer arrived at time 3
+fetch time 8 minutes, pack time 3 minutes
+elapsed time sim1 14 minutes, elapsed time sim2 14 minutes
 
-sim2 min elapsed time 25 minutes
-sim2 max elapsed time 100 minutes
-sim2 mean total time for all customers 44 minutes
-sim2 mean total time for supreme customers 38 minutes
-sim2 mean total time for regular customers 51 minutes
-7 orders processed
+Order 3 for regular customer arrived at time 11
+fetch time 9 minutes, pack time 2 minutes
+elapsed time sim1 14 minutes, elapsed time sim2 14 minutes
+
+Order 4 for supreme customer arrived at time 18
+fetch time 5 minutes, pack time 5 minutes
+elapsed time sim1 15 minutes, elapsed time sim2 15 minutes
+
+Order 6 for supreme customer arrived at time 30
+fetch time 3 minutes, pack time 1 minutes
+elapsed time sim1 4 minutes, elapsed time sim2 4 minutes
+
+Order 5 for regular customer arrived at time 28
+fetch time 1 minutes, pack time 5 minutes
+elapsed time sim1 6 minutes, elapsed time sim2 6 minutes
+
+Order 7 for regular customer arrived at time 35
+fetch time 3 minutes, pack time 5 minutes
+elapsed time sim1 8 minutes, elapsed time sim2 8 minutes
+
+Order 8 for supreme customer arrived at time 43
+fetch time 4 minutes, pack time 5 minutes
+elapsed time sim1 9 minutes, elapsed time sim2 9 minutes
+
+Order 9 for regular customer arrived at time 48
+fetch time 1 minutes, pack time 4 minutes
+elapsed time sim1 5 minutes, elapsed time sim2 5 minutes
+
+Order 10 for supreme customer arrived at time 58
+fetch time 3 minutes, pack time 5 minutes
+elapsed time sim1 8 minutes, elapsed time sim2 8 minutes
+
+sim1 min elapsed time 4 minutes
+sim1 max elapsed time 15 minutes
+sim1 mean elapsed time 9 minutes
+10 orders processed
+
+sim2 min elapsed time 4 minutes
+sim2 max elapsed time 15 minutes
+sim2 mean total time for all customers 9 minutes
+sim2 mean total time for supreme customers 10 minutes
+sim2 mean total time for regular customers 8 minutes
+10 orders processed
 

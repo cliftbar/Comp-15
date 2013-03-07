@@ -19,35 +19,24 @@ Manager::Manager()
 void Manager::run_simulations()
 {
 	Buffer sales;
-	Stats sim_1_stats(false);
-	Stats sim_2_stats(true);
+	sim_1_stats = new Stats(false);
+	sim_2_stats = new Stats(true);
 	
 	sales.read_in();
-	Queue* temp_queue;
-	
 	
 	Simulation sim_1(false, sales.pass_queue());
 	temp_queue = sim_1.run_sim();
 	
-	
 	temp_queue = unscramble_queue(temp_queue);
-	temp_queue->print_queue();
 	
 	Simulation sim_2(true, temp_queue);
 	temp_queue = sim_2.run_sim();
 	
-	for (int i = 0; i < temp_queue->get_length(); ++i){
-		sim_1_stats.get_order(temp_queue->remove());
-		sim_1_stats.run_calcs();
-		sim_2_stats.get_order(sim_1_stats.return_order());
-		sim_2_stats.run_calcs();
-		temp_queue->insert(sim_2_stats.return_order());
-	}
+	temp_queue = run_stats(temp_queue);
 	
 	temp_queue->print_queue();
-	
-	sim_1_stats.print_stats();
-	sim_2_stats.print_stats();
+	sim_1_stats->print_stats();
+	sim_2_stats->print_stats();
 }
 
 Queue* Manager::unscramble_queue(Queue* q_in)
@@ -61,14 +50,12 @@ Queue* Manager::unscramble_queue(Queue* q_in)
 	iter = head;
 	
 	while (iter != NULL){
-		cout << "check K\n";
 		temp = iter;
 		sort_queue->insert(temp->data);
 		iter = iter->next;
 		delete temp;
 	}
 	
-	cout << "check L\n";
 	return sort_queue;
 }
 			
@@ -103,7 +90,18 @@ void Manager::unscramble_insert(Queue* q_in)
 	}
 }
 			
-			
+Queue* Manager::run_stats(Queue* temp_queue)
+{
+	for (int i = 0; i < temp_queue->get_length(); ++i){
+		sim_1_stats->get_order(temp_queue->remove());
+		sim_1_stats->run_calcs();
+		sim_2_stats->get_order(sim_1_stats->return_order());
+		sim_2_stats->run_calcs();
+		temp_queue->insert(sim_2_stats->return_order());
+	}
+	
+	return temp_queue;
+}
 			
 			
 			
