@@ -83,16 +83,19 @@ int Pack_Boss::find_shortest(bool supreme)
 		//if the order is supreme
 		cout << "check 9" << endl;//DEBUG
 		for (int i = 0; i < NUM_PACKERS; ++i){
+			cout << "all_packers[" << i << "].wait_time.(supreme): "
+				<< all_packers[i].wait_time(supreme) << endl;
+			cout << "temp_wait: " << temp_wait << endl;
 			if (all_supreme()){
 				//if all packers have a supreme order
-				//cout << "check 10" << endl;//DEBUG
+				cout << "check 10" << endl;//DEBUG
 				if (all_packers[i].wait_time(supreme) < temp_wait){
 					temp_wait = all_packers[i].wait_time(supreme);
 					packer_num = i;
 				}
 			}else if (!all_supreme()){
 				//if all packers do not have a supreme order
-				//cout << "check 11" << endl;//DEBUG
+				cout << "check 11" << endl;//DEBUG
 				if (all_packers[i].wait_time(supreme) == 0 &&
 				    all_packers[i].wait_time(!supreme) < temp_wait){
 					//forces the order to a packer queue with a supreme
@@ -105,13 +108,13 @@ int Pack_Boss::find_shortest(bool supreme)
 		}
 	}else if (!supreme){
 		//the order is not supreme
-		//cout << "check 8" << endl;//DEBUG
+		cout << "check 7" << endl;//DEBUG
 		//cout << "NUM_PACKERS: " << NUM_PACKERS << endl;
 		for(int i = 0; i < NUM_PACKERS; ++i){
 			//cout << "check 9" << endl;//DEBUG
-			//cout << "all_packers[" << i << "].wait_time.(supreme): "
-			//	<< all_packers[i].wait_time(supreme) << endl;
-			//cout << "temp_wait: " << temp_wait << endl;
+			cout << "all_packers[" << i << "].wait_time.(supreme): "
+				<< all_packers[i].wait_time(supreme) << endl;
+			cout << "temp_wait: " << temp_wait << endl;
 			if (all_packers[i].wait_time(supreme) < temp_wait){
 			//	cout << "check9\n";
 				temp_wait = all_packers[i].wait_time(supreme);

@@ -164,6 +164,8 @@ Queue* Simulation::run_sim()
 	Queue* order_out = new Queue;
 	//int num_packer_orders;//DEBUG CODE
 	
+	cout << "order takers queue: " << order_takers->print_buffer() << endl;
+	
 	//time loop
 	//Exit Condition: The order_takers has no more orders in queue AND
 	//the fetching unit is free AND the packing unit is done)
@@ -216,7 +218,8 @@ Queue* Simulation::run_sim()
 		
 		//cout << "fetch_bot.unit_free(): " << fetch_bot.unit_free()
 			  //<< endl;
-		pack_chief.print_current();//DEBUG CODE
+		cout << "Packer wait times: " << endl;
+		pack_chief.print_packers();//DEBUG CODE
 		//cout << "regular current wait: " << pack_bot.wait_time(false)
 			  //<< endl << endl;//DEBUG CODE
 		//cout << "supreme current wait: " << pack_bot.wait_time(true)

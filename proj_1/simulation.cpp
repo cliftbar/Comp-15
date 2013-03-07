@@ -164,6 +164,9 @@ Queue* Simulation::run_sim()
 	Queue* order_out = new Queue;
 	//int num_packer_orders;//DEBUG CODE
 	
+	cout << "order takers queue: " << endl;
+	order_takers->print_buffer();
+	
 	//time loop
 	//Exit Condition: The order_takers has no more orders in queue AND
 	//the fetching unit is free AND the packing unit is done)

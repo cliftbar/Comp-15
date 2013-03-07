@@ -17,6 +17,8 @@ public:
 	
 	//runs both simulations
 	void run_simulations();
+	
+	Queue* unscramble_queue(Queue* q_in);
 };
 
 #endif
