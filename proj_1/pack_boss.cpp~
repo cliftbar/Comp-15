@@ -7,6 +7,8 @@
 #include "pack_boss.h"
 using namespace std;
 
+////////////////////////////////Public Methods////////////////////////
+
 Pack_Boss::Pack_Boss()
 {
 	NUM_PACKERS = 3;
@@ -53,22 +55,6 @@ Order Pack_Boss::pass_out()
 	exit(1);
 }
 
-//returns the number of the shortest packer queue
-int Pack_Boss::find_shortest(bool supreme)
-{
-	special_reg_wait = all_packers[0].wait_time(!supreme);
-	packer_num = 0;
-	
-	temp_wait_init(supreme);
-	
-	if (supreme){
-		supreme_case(supreme);
-	}else if (!supreme){
-		regular_case(supreme);
-	}
-	return packer_num;
-}
-
 //returns true only if all packers are empty
 bool Pack_Boss::all_done()
 {	
@@ -91,6 +77,24 @@ void Pack_Boss::increment_time()
 	for (int i = 0; i < NUM_PACKERS; ++i){
 		all_packers[i].increment_time();
 	}
+}
+
+////////////////////////////////Private Methods////////////////////////
+
+//returns the number of the shortest packer queue
+int Pack_Boss::find_shortest(bool supreme)
+{
+	special_reg_wait = all_packers[0].wait_time(!supreme);
+	packer_num = 0;
+	
+	temp_wait_init(supreme);
+	
+	if (supreme){
+		supreme_case(supreme);
+	}else if (!supreme){
+		regular_case(supreme);
+	}
+	return packer_num;
 }
 
 //returns whether all of the packers have a supreme order
