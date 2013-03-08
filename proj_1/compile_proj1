@@ -1,0 +1,1 @@
+g++ -g -Wall -Wextra queue.cpp packer.cpp pack_boss.cpp simulation.cpp main.cpp front.cpp fetcher.cpp buffer.cpp stats.cpp manager.cpp

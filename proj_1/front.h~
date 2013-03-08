@@ -28,7 +28,7 @@ public:
 	//returns whether an order has arrived
 	//True: order has arrived
 	//False: order has not arrived
-	bool order_arrived();
+	bool has_arrived();
 	
 	//returns the next order, removes from class
 	Order pass_order();

@@ -1,3 +1,4 @@
+
 //buffer.cpp
 //Created by: Cameron Barclift
 //need a destructor

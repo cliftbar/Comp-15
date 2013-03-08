@@ -1,3 +1,4 @@
+
 //packer.cpp
 //Created by: Cameron Barclift
 //Packer class, handles packing an order.
@@ -10,6 +11,8 @@
 
 #include "packer.h"
 using namespace std;
+
+///////////////////////////////Public Methods/////////////////////////////
 
 Packer::Packer()
 {
@@ -143,6 +146,8 @@ void Packer::increment_time()
 		++interrupt_order.spent_interrupted;
 	}
 }
+
+///////////////////////////////Private Methods/////////////////////////////
 
 //there is an order currently being packed
 void Packer::insert_is_order(Order o_in)

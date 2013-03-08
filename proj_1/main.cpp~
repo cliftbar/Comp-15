@@ -1,6 +1,6 @@
 //main.cpp test file
 
-#include "simulation.h"
+#include "manager.h"
 #include <iostream>
 
 using namespace std;

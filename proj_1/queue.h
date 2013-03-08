@@ -1,6 +1,8 @@
+
 //queue.h
 //Created by: Cameron Barclift
 //implements a queue of orders, fifo
+//Also has the print function for final order queue
 
 #ifndef QUEUE
 #define QUEUE

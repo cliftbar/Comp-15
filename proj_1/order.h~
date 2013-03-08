@@ -45,7 +45,11 @@ struct Order
 	//Time out of simulation one (consider supreme)
 	int t_out_sim2;
 	
+	//was order priority swtched
 	bool switched;
+	
+	//which queue was it packed in
+	int pack_queue;
 };
 
 #endif

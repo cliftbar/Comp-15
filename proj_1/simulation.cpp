@@ -1,3 +1,4 @@
+
 //simulation.cpp
 //Created by: Cameron Barclift
 //Simulation class contains everything to run the simulation.
@@ -17,7 +18,6 @@ Simulation::Simulation(bool is_supreme, Queue* sales_queue)
 	
 	//initializes Stats class variable with whether
 	//to consider supreme orders
-	calc_shop = new Stats(supreme);
 	absolute_time = 0;
 }
 

@@ -1,3 +1,4 @@
+
 //fetcher.h
 //Created by: Cameron Barclift
 //fetcher simulates moving an order from the recieving/storage
@@ -34,7 +35,7 @@ Order Fetcher::deliver_order()
 	return curr_order;
 }
 
-
+//Return true if there is no order currently being fetched
 bool Fetcher::unit_free()
 {
 	return unit_status;

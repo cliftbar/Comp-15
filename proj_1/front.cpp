@@ -1,3 +1,4 @@
+
 //front.cpp
 //Created by: Cameron Barclift
 //Front_Desk class acts as the order reciever from an input buffer,

@@ -1,3 +1,4 @@
+
 //packer.h
 //Created by: Cameron Barclift
 //Packer class, handles packing an order.
@@ -24,9 +25,6 @@ public:
 	
 	//adds an order to the queue
 	void insert(Order o_add);
-	
-	//True if an order is ready
-	bool order_ready();
 	
 	//returns the order that's finished being packed
 	Order pass_to();

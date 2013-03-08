@@ -93,6 +93,7 @@ void Pack_Boss::increment_time()
 	}
 }
 
+//returns whether all of the packers have a supreme order
 bool Pack_Boss::all_supreme()
 {
 	bool supreme_status = true;

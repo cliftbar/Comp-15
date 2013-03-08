@@ -1,11 +1,15 @@
+
 //manager.cpp
 //Created by: Cameron Barclift
-//Creates the input buffer, then runs the two simulations.
-//Mainly just a wrapper for the simulations and buffer.
+//Creates the input buffer, then runs the two simulations, then calulates
+//the statistics, then prints the output
+
 #include <iostream>
 #include "manager.h"
 
 using namespace std;
+
+/////////////////////////Publics Methods////////////////////////////////
 
 Manager::Manager()
 {
@@ -38,12 +42,18 @@ void Manager::run_simulations()
 	//run statisctics
 	temp_queue = run_stats(temp_queue);
 	
-	//print results
+	//print results, with extra lines to match output formatting
 	temp_queue->print_queue();
+	cout << endl;
 	sim_1_stats->print_stats();
+	cout << endl;
 	sim_2_stats->print_stats();
 }
 
+/////////////////////////Private Methods////////////////////////////////
+
+
+//Resorts the orders, earliest arrival time first
 Queue* Manager::unscramble_queue(Queue* q_in)
 {
 	if (q_in == NULL){

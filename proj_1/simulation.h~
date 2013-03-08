@@ -1,3 +1,4 @@
+
 //simulation.h
 //Created by: Cameron Barclift
 //Simulation class contains everything to run the simulation.
@@ -42,10 +43,13 @@ private:
 	
 	void un_switch();
 	
+	//loop to move order from pack_chief to output queue
 	void pack_chief_loop();
 	
+	//loop to move order from fetcher to pack_chief
 	void fetch_bot_loop();
 	
+	//Loop for moving an order from order_takers to fetcher
 	void order_takers_loop();
 	
 	Front_Desk* order_takers;
@@ -54,10 +58,12 @@ private:
 	
 	Pack_Boss pack_chief;
 	
-	Stats* calc_shop;
+	//Stats* calc_shop;
 	
+	//output queue
 	Queue* order_out;
 	
+	//temporary hold order
 	Order next_order;
 };
 

@@ -15,7 +15,7 @@
 class Buffer
 {
 public:
-	//cosntructor
+	//cosntructor, does nothing on purpose
 	Buffer();
 	
 	//reads in and stores the file/stream input into a queue

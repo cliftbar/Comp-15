@@ -1,6 +1,8 @@
+
 //queue.cpp
 //Created by: Cameron Barclift
 //implements a queue of orders, fifo
+//Also has the print function for final order queue
 
 #include "queue.h"
 
@@ -102,24 +104,6 @@ int Queue::t_next()
 }
 
 /////////PRIVATE METHODS///////////////
-
-/*
-//Deletes the entire list
-void Queue::delete_list()
-{
-	Node* temp;
-	Node* iter = front;
-	
-	while(iter != NULL){
-		temp  = iter;
-		iter = iter->next;
-		delete temp;
-	}
-	
-	front = NULL;
-	back = NULL;
-}
-*/
 
 //copies a queue into this queue
 void Queue::copy_in_list(Node* f_other)

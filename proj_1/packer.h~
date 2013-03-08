@@ -25,9 +25,6 @@ public:
 	//adds an order to the queue
 	void insert(Order o_add);
 	
-	//True if an order is ready
-	bool order_ready();
-	
 	//returns the order that's finished being packed
 	Order pass_to();
 	
@@ -42,13 +39,7 @@ public:
 	
 	//increments internal times: current pack time, absolute simulation time
 	//total wait time, and supreme wait time (if necessary)
-	void increment_time();
-	
-	void print_queue();
-	
-	//DEBUG
-	void print_current();
-	
+	void increment_time();	
 private:
 	
 	//logic for inserting when an order currently being packed

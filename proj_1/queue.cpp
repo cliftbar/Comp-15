@@ -1,6 +1,8 @@
+
 //queue.cpp
 //Created by: Cameron Barclift
 //implements a queue of orders, fifo
+//Also has the print function for final order queue
 
 #include "queue.h"
 
@@ -24,6 +26,7 @@ Queue::Queue(const Queue &rhs)
 	copy_in_list(rhs.front);
 }
 
+//Returns True if empty
 bool Queue::is_empty()
 {
 	return (front == NULL);

@@ -1,3 +1,4 @@
+
 //simulation.h
 //Created by: Cameron Barclift
 //Simulation class contains everything to run the simulation.
@@ -11,7 +12,6 @@
 #include "buffer.h"
 #include "front.h"
 #include "pack_boss.h"
-#include "stats.h"
 
 using namespace std;
 
@@ -56,11 +56,11 @@ private:
 	Fetcher fetch_bot;
 	
 	Pack_Boss pack_chief;
-	
-	Stats* calc_shop;
-	
+		
+	//output queue
 	Queue* order_out;
 	
+	//temporary hold order
 	Order next_order;
 };
 

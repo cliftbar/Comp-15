@@ -44,10 +44,6 @@ public:
 	int t_next();
 	
 private:
-	
-	//deletes the entire list
-	void delete_list();
-	
 	//copies a list passed in
 	void copy_in_list(Node* f_other);
 	
@@ -55,7 +51,7 @@ private:
 	
 	Node* back;
 	
-	int length;	
+	int length;
 };
 
 #endif

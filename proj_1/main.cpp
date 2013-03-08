@@ -1,4 +1,6 @@
+
 //main.cpp test file
+//Created By: Cameron Barclift
 
 #include "manager.h"
 #include <iostream>

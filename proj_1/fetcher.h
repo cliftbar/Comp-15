@@ -1,3 +1,4 @@
+
 //fetcher.h
 //Created by: Cameron Barclift
 //fetcher simulates moving an order from the recieving/storage

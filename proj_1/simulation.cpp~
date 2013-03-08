@@ -1,3 +1,4 @@
+
 //simulation.cpp
 //Created by: Cameron Barclift
 //Simulation class contains everything to run the simulation.
@@ -17,7 +18,6 @@ Simulation::Simulation(bool is_supreme, Queue* sales_queue)
 	
 	//initializes Stats class variable with whether
 	//to consider supreme orders
-	calc_shop = new Stats(supreme);
 	absolute_time = 0;
 }
 
@@ -100,7 +100,7 @@ void Simulation::fetch_bot_loop()
 {
 	if (fetch_bot.order_ready()){
 		pack_chief.pass_in(fetch_bot.deliver_order());
-	}	
+	}
 }
 
 //if the fetcher is free, an order has arrived, and the front desk queue
