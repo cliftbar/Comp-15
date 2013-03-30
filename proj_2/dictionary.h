@@ -21,7 +21,6 @@ private:
 	string clean_digit();
 	string all_lower();
 	Node* root;
-	
 }
 
 #endif

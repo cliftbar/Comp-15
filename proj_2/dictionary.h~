@@ -4,7 +4,7 @@
 #define DICTIONARY
 #include <iostream>
 #include <cctype>
-#include <strind>
+#include <string>
 #include <cstdlib>
 using namespace std;
 
