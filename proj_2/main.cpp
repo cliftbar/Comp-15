@@ -11,6 +11,12 @@ int main()
 	Dictionary my_dictionary;
 	bool gogo = true;
 	
+	
+	while (!cin.eof()){
+		cin >> input;
+		my_dictionary.insert(input);
+	}
+	/*
 	while(gogo){
 		cout << "input a string: ";
 		cin >> input;
@@ -61,7 +67,7 @@ int main()
 	}
 
 	cout << "does empty string exist? " << my_dictionary.isWord("") << endl;
-	
+	*/
 	my_dictionary.print_all_words();
 	
 	return 0;
