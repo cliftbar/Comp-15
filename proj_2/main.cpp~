@@ -14,9 +14,14 @@ int main()
 	
 	while (!cin.eof()){
 		cin >> input;
-		my_dictionary.inster(input);
+		my_dictionary.insert(input);
 	}
-	/*
+	
+	cin.ignore(1000, '\n');
+	
+	cout << "Add a string? ";
+	cin >> gogo;
+	
 	while(gogo){
 		cout << "input a string: ";
 		cin >> input;
@@ -27,8 +32,8 @@ int main()
 		cin >> gogo;
 	}
 	
-	cout << "entering empty string" << endl;
-	my_dictionary.insert("");
+	//cout << "entering empty string" << endl;
+	//my_dictionary.insert("");
 	
 	cout << "enter a prefix now? ";
 	cin >> gogo;
@@ -47,7 +52,7 @@ int main()
 		cin >> gogo;
 	}
 	
-	cout << "Is empty string a prefix? " << my_dictionary.isWord("");
+	cout << "Is empty string a prefix? " << my_dictionary.isWord("") << endl;
 	
 	cout << "find a word now? ";
 	cin >> gogo;
@@ -67,7 +72,7 @@ int main()
 	}
 
 	cout << "does empty string exist? " << my_dictionary.isWord("") << endl;
-	*/
+	
 	my_dictionary.print_all_words();
 	
 	return 0;
