@@ -1,0 +1,319 @@
+check read dict
+check read board
+A A V Y 
+I E E I 
+B O N H 
+N C E M 
+current word is: VEIN.
+found start letter: 1
+check up
+check up, right
+check right
+check down, right
+check down
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check up, left
+State: 0
+check left
+check up, left
+State: 1
+OK VEIN
+current word is: BONE.
+found start letter: 1
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+OK BONE
+current word is: NONE.
+found start letter: 1
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check left
+check up, left
+State: 1
+check up, left
+State: 1
+OK NONE
+current word is: BIN.
+found start letter: 1
+check up
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+NO BIN
+current word is: NoNE.
+found start letter: 1
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check left
+check up, left
+State: 1
+check up, left
+State: 1
+OK NONE
+current word is: CONE.
+found start letter: 1
+check up
+check up
+check up, right
+check right
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, right
+check down
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 0
+check left
+check up, left
+State: 1
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+OK CONE
+current word is: BiB.
+found start letter: 1
+check up
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+OK BIB
+current word is: VEE.
+found start letter: 1
+check up
+check up, right
+check right
+check down, right
+check down
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check left
+check up, left
+State: 1
+OK VEE
+current word is: BON.
+found start letter: 1
+NO BON
+current word is: HEN.
+found start letter: 1
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+check left
+check up, left
+check up
+check up, right
+check right
+check down, right
+check down
+check down, left
+check left
+check up, left
+State: 1
+State: 1
+OK HEN
+current word is: QUICK.
+found start letter: 0
+NO QUICK
+words checked

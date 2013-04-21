@@ -1,0 +1,39 @@
+if (p_board_director(s_in, next_pos, row_up, c_col)){
+		cout << "check up" << endl;//DEBUG
+		up = true;	//check up
+	}else if (p_board_director(s_in, next_pos, row_up, col_right)){
+		cout << "check up, right" << endl;//DEBUG
+		up_right = true;	//check up, right
+	}else if (p_board_director(s_in, next_pos, c_row, col_right)){
+		cout << "check right" << endl;//DEBUG
+		right = true;	//check right
+	}else if (p_board_director(s_in, next_pos, row_down, col_right)){
+		cout << "check down, right" << endl;//DEBUG
+		down_right = true;	//check down, right
+	}else if (p_board_director(s_in, next_pos, row_down, c_col)){
+		cout << "check down" << endl;//DEBUG
+		down = true;	//check down
+	}else if (p_board_director(s_in, next_pos, row_down, col_left)){
+		cout << "check down, left" << endl;//DEBUG
+		down_left = true;	//check down, left
+	}else if (p_board_director(s_in, next_pos, c_row, col_left)){
+		cout << "check left" << endl;//DEBUG
+		left = true;	//check left
+	}else if (p_board_director(s_in, next_pos, row_up, col_left)){
+		cout << "check up, left" << endl;//DEBUG
+		up_left = true;	//check up, left
+	}
+
+
+Sample words (no on BON BIB BIN)
+VEIN
+BONE
+NONE
+BIN
+NONE
+CONE
+BIB
+VEE
+BON
+HEN
+QUICK
