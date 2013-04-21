@@ -27,8 +27,8 @@ private:
 	BogLett** board;
 	int check_row;
 	int check_col;
-	unsigned int rows;
-	unsigned int cols;
+	int rows;
+	int cols;
 	string check_string;
 	void build_board();
 	bool on_board(string s_in, int s_pos, int c_row, int c_col);

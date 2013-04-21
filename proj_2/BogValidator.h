@@ -36,6 +36,7 @@ private:
 		int n_col);
 	bool find_start_letter(char c);
 	string to_upper(string s);
+	BogLettList* word_list;
 };
 
 #endif
