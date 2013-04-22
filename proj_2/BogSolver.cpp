@@ -6,10 +6,16 @@ BogSolver::BogSolver(Dictionary &word_list)
 	/*typedef*/ words_found = 
 }
 
-void BogSolver::
+void BogSolver::solve()
+{
+	//loop for every element as a start position
+	//rec_solve(i, j, char at [i][j])
+	
+	//if word_list == NULL, return false
+	//else, return true
 
 
-void BogSolver::rec_solve_board(int c_row, int c_col, string curr_string)
+void BogSolver::rec_solve(int c_row, int c_col, string curr_string)
 {
 	int row_up = c_row - 1;
 	int row_down = c_row + 1;
@@ -27,7 +33,7 @@ void BogSolver::rec_solve_board(int c_row, int c_col, string curr_string)
 	if(/*check if in bounds*/){
 		if (isPrefix(curr_string + /*char @ next position*/){
 			//travel to position, recursive call
-			//solve_board(proper row, proper col, curr_string + next char)
+			//rec_solve(proper row, proper col, curr_string + next char)
 		}
 	}
 	/*for all directions, same construction
