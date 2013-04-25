@@ -47,9 +47,9 @@ bool BogValidator::readBoard()
 	for (int i = 0; i < rows; ++i){
 		if(cin >> row_string && row_string.length() == read_cols){
 			for (int j = 0; j < cols; ++j){
-				board[i][j].c = toupper(row_string[j]);
-				board[i][j].row = i;
-				board[i][j].col = j;
+				board[i][j].l.c = toupper(row_string[j]);
+				board[i][j].l.row = i;
+				board[i][j].l.col = j;
 				board[i][j].visited = false;
 			}
 		}
@@ -151,7 +151,7 @@ int c_col)
 	s_in += check_string[s_pos];
 	//cout << "current s_in: " << s_in[s_pos] << endl;//DEBUG
 	//cout << "next_letter fr check_string: " << check_string[next_pos] <<
-//endl;
+	//endl;
 	//cout << "current board place: " << board[c_row][c_col].c << endl;
 	
 	if (board[c_row][c_col].visited){
@@ -216,7 +216,7 @@ bool BogValidator::p_board_director(string curr_string, int n_pos, int  n_row,
 	//cout << "N_pos: " << n_pos << endl;
 	//cout << "check_string[n_pos]: " << check_string[n_pos] << endl;
 	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
-	&& board[n_row][n_col].c == check_string[n_pos]){
+	&& board[n_row][n_col].l.c == check_string[n_pos]){
 		//cout << "check1" << endl;
 		return on_board(curr_string, n_pos, n_row, n_col);
 	}
@@ -225,9 +225,9 @@ bool BogValidator::p_board_director(string curr_string, int n_pos, int  n_row,
 
 void BogValidator::build_board()
 {
-	board = new BogLett*[rows];
+	board = new Letter*[rows];
 	for (int i = 0; i < rows; ++i){
-		board[i] = new BogLett[cols];
+		board[i] = new Letter[cols];
 	}
 }
 
@@ -235,7 +235,7 @@ void BogValidator::print_board()
 {
 	for (int i = 0; i < rows; ++i){
 		for (int j = 0; j < cols; ++j){
-			cout << board[i][j].c << " ";
+			cout << board[i][j].l.c << " ";
 		}
 		cout << endl;
 	}
@@ -248,7 +248,7 @@ bool BogValidator::find_start_letter(char c)
 	
 	for (int i = 0; i < rows; ++i){
 		for (int j = 0; j < cols; ++j){
-			if (board[i][j].c == c){
+			if (board[i][j].l.c == c){
 				//cout << "c to find: " << c << endl;
 				//cout << "Found c at: [" << i << "][" << j << "]" << endl;
 				if (word_list == NULL){
@@ -261,7 +261,7 @@ bool BogValidator::find_start_letter(char c)
 					temp = temp->next;
 				}
 				temp->next = NULL;
-				temp->letter = board[i][j];
+				temp->letter = board[i][j].l;
 				//cout << "temp->letter.c: " << temp->letter.c << endl;
 				present = true;
 			}

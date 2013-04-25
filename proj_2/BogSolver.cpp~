@@ -265,8 +265,6 @@ void BogSolver::rm_dups(){
 		if (!present){
 			word_array[num_words] = iter->word;
 			++num_words;
-		}else{
-			present = false;
 		}
 		//cout << "num_words: " << num_words << endl;
 		//cout << "array: " << word_array[num_words] << endl;;

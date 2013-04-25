@@ -173138,21 +173138,10 @@ zymurgies
 zymurgy
 zyzzyva
 .
-4 4
-AAVY
-IEEI
-BONH
-NCEM
-
-
-VEIN
-BONE
-NONE
-BIN
-NONE
-CONE
-BIB
-VEE
-BON
-HEN
-QUICK
+6 6
+DFIIAi
+EECORw
+SNFTYe
+TENKIy
+RPEEFg
+abigla

@@ -1,8 +1,14 @@
 struct BogLett {
 	char c;
 	int row, col;
+};
+
+struct Letter
+{
+	BogLett l;
 	bool visited;
 };
+
 struct BogWord {
 	int numLetts;
 	BogLett* letts;
@@ -16,6 +22,10 @@ struct BogLettList
 {
 	BogLett letter;
 	BogLettList* next;
-	int num_letts;
-}
-	
+};
+
+struct Linked_Words
+{
+	string word;
+	Linked_Words* next;
+};

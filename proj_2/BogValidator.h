@@ -24,7 +24,7 @@ public:
 private:	
 	Dictionary dict; // must use a Dictionary
 	// other private methods or data may appear here
-	BogLett** board;
+	Letter** board;
 	int check_row;
 	int check_col;
 	int rows;
