@@ -13,6 +13,7 @@ struct BogWord {
 	int numLetts;
 	BogLett* letts;
 };
+
 struct BogWordList {
 	int numWords;
 	BogWord* words;

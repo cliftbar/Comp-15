@@ -91,6 +91,23 @@ bool BogSolver::solve()
 	}
 }
 
+int BogSolver::numWords()
+{
+	return num_words;
+}
+
+int BogSolver::numWords(int len)
+{
+	int ret_len = 0;
+	
+	for (int i = 0; i < num_words; ++i){
+		if (word_array[i].length() == len){
+			++ret_len;
+		}
+	}
+	
+	return ret_len;
+}
 
 bool BogSolver::rec_solve(int c_row, int c_col, string curr_string, int s_pos)
 {
@@ -123,33 +140,22 @@ bool BogSolver::rec_solve(int c_row, int c_col, string curr_string, int s_pos)
 	//cout << "checking if is word" << endl;
 	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3 ){
 		//cout << "check1" << endl;
-		/*
-		if(word_list == NULL){
-			//cout << "check2" << endl;
-			word_list = new Linked_Words;
-			word_list->word = curr_string;
-			word_list->next = NULL;
-			eof_list = word_list;
-			cout << "word_list->word: " << word_list->word << endl;
-		}else {
-			*/
-			//cout << "check3" << endl;
-			temp = new Linked_Words;
-			if (temp == NULL){
-				cerr << "out of mem" << endl;
-				exit(1);
-			}
-			//cout << "check4" << endl;
-			temp->word = curr_string;
-			temp->next = NULL;
+		//cout << "check3" << endl;
+		temp = new Linked_Words;
+		if (temp == NULL){
+			cerr << "out of mem" << endl;
+			exit(1);
+		}
+		//cout << "check4" << endl;
+		temp->word = curr_string;
+		temp->next = NULL;
 		
-			//cout << "check5" << endl;
-			temp->next = word_list;
-			//cout << "check6" << endl;
-			word_list = temp;
-			++num_words_dups;
-			//cout << "check7" << endl;
-		//}
+		//cout << "check5" << endl;
+		temp->next = word_list;
+		//cout << "check6" << endl;
+		word_list = temp;
+		++num_words_dups;
+		//cout << "check7" << endl;
 		
 	}
 	//cout << "checked if is word" << endl;

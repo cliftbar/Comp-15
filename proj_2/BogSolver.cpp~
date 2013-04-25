@@ -91,6 +91,23 @@ bool BogSolver::solve()
 	}
 }
 
+int BogSolver::numWords()
+{
+	return num_words;
+}
+
+int BogSolver::numWords(int len)
+{
+	int ret_len = 0;
+	
+	for (int i = 0; i < num_words; ++i){
+		if (word_array[i].length() == len){
+			++ret_len;
+		}
+	}
+	
+	return ret_len;
+}
 
 bool BogSolver::rec_solve(int c_row, int c_col, string curr_string, int s_pos)
 {
@@ -265,6 +282,8 @@ void BogSolver::rm_dups(){
 		if (!present){
 			word_array[num_words] = iter->word;
 			++num_words;
+		}else{
+			present = false;
 		}
 		//cout << "num_words: " << num_words << endl;
 		//cout << "array: " << word_array[num_words] << endl;;
