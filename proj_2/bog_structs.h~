@@ -27,6 +27,6 @@ struct BogLettList
 
 struct Linked_Words
 {
-	string word;
+	BogLettList* word;
 	Linked_Words* next;
 };

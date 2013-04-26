@@ -147,7 +147,7 @@ bool BogSolver::rec_solve(int c_row, int c_col, string curr_string, int s_pos)
 			exit(1);
 		}
 		//cout << "check4" << endl;
-		temp->word = curr_string;
+		temp->word = str_to_bll(curr_string, c_row, c_col);
 		temp->next = NULL;
 		
 		//cout << "check5" << endl;
@@ -242,7 +242,7 @@ void BogSolver::printWords()
 	cout << "linked list with duplicates: " << endl;
 	while(iter != NULL){
 		//cout << "iter: " << iter << endl;
-		cout << iter->word << endl;
+		cout << iter->word-> << endl;
 		iter = iter->next;
 	}
 	cout << "number of words with duplicates: " << num_words_dups << endl;
@@ -279,3 +279,49 @@ void BogSolver::rm_dups(){
 		iter = iter->next;
 	}
 }
+
+BogLettList* str_to_bll(string str_in, int row_in, int col_in)
+{
+	BogLettList* ret_list = NULL;
+	BogLettList* temp = NULL;
+	BogLettList* iter = NULL;
+	int len = str_in.length();
+	
+	for (int i = 0; i < len; ++i){
+		temp = new BogLettList;
+		temp->letter.c = str_in[i];
+		temp->letter.row = row_in;
+		temp->letter.col = col_in;
+		temp->next = NULL;
+		
+		if(ret_list == NULL){
+			ret_list = temp;
+			iter = ret_list;
+		}else{
+			iter->next = temp;
+			iter = temp;
+		}
+	}
+	
+	return ret_list;
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

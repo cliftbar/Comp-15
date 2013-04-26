@@ -41,6 +41,7 @@ private:
 	int num_words_dups;
 	string* word_array;
 	int num_words;
+	BogLettList* str_to_bll(string str_in, int row_in, int col_in);
 };
 
 #endif

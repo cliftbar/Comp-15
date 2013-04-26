@@ -40,6 +40,7 @@ private:
 	void rm_dups();
 	int num_words_dups;
 	string* word_array;
+	int num_words;
 };
 
 #endif
