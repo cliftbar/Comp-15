@@ -25,7 +25,7 @@ bool BogSolver::readDict()
 	string temp;
 	cin >> temp;
 	for (int i = 0; i < (int)temp.length(); ++i){
-		if (temp[i] == 'q' && temp[i+1] == 'u'){
+		if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 			temp.erase(temp.begin() + i + 1);
 			//cout << "u removed: " << temp << endl;
 		}
@@ -38,7 +38,7 @@ bool BogSolver::readDict()
 		}
 		cin >> temp;
 		for (int i = 0; i < (int)temp.length(); ++i){
-			if (temp[i] == 'q' && temp[i+1] == 'u'){
+			if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 				temp.erase(temp.begin() + i + 1);
 				//cout << "u removed: " << temp << endl;
 			}
