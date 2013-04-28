@@ -24,12 +24,25 @@ bool BogSolver::readDict()
 {
 	string temp;
 	cin >> temp;
+	for (int i = 0; i < (int)temp.length(); ++i){
+		if (temp[i] == 'q' && temp[i+1] == 'u'){
+			temp.erase(temp.begin() + i + 1);
+			//cout << "u removed: " << temp << endl;
+		}
+		
+	}
 	
 	while (temp != "."){
 		if (!dict.insert(temp)){
 			return false;
 		}
 		cin >> temp;
+		for (int i = 0; i < (int)temp.length(); ++i){
+			if (temp[i] == 'q' && temp[i+1] == 'u'){
+				temp.erase(temp.begin() + i + 1);
+				//cout << "u removed: " << temp << endl;
+			}
+		}
 	}
 	return true;
 }
@@ -318,7 +331,12 @@ void BogSolver::printWords()
 	for (int i = 0; i < num_words; ++i){
 		cout << "< ";
 		for (int j = 0; j < bword_array[i].numLetts; ++j){
-			cout << bword_array[i].letts[j].c << " ";
+			cout << bword_array[i].letts[j].c;
+			if (bword_array[i].letts[j].c == 'Q'){
+				cout << 'U' << " ";
+			}else{
+				cout << " ";
+			}
 			cout << bword_array[i].letts[j].row << " ";
 			cout << bword_array[i].letts[j].col << " ";
 		}
