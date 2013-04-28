@@ -13,7 +13,6 @@ BogSolver::BogSolver()
 	word_list = NULL;
 	num_words_dups = 0;
 	num_words = 0;
-	solve_list = NULL;
 }
 BogSolver::~BogSolver()
 {
@@ -27,7 +26,6 @@ bool BogSolver::readDict()
 	for (int i = 0; i < (int)temp.length(); ++i){
 		if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 			temp.erase(temp.begin() + i + 1);
-			//cout << "u removed: " << temp << endl;
 		}
 		
 	}
@@ -40,7 +38,6 @@ bool BogSolver::readDict()
 		for (int i = 0; i < (int)temp.length(); ++i){
 			if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 				temp.erase(temp.begin() + i + 1);
-				//cout << "u removed: " << temp << endl;
 			}
 		}
 	}
@@ -90,21 +87,21 @@ bool BogSolver::readBoard()
 
 bool BogSolver::solve()
 {
+	bool ret_value = true;
+	
 	//cout << "check enter solve" << endl;
 	//loop for every element as a start position
 	for (int i = 0; i < rows; ++i){
 		//cout << "on row: " << i << endl;
 		for (int j = 0; j < cols; ++j){
 			//cout << "on col: " << j << endl;
-			rec_solve(i, j, start_bword, "", s_pos);
+			ret_value = (true == rec_solve(i, j, start_bword, "", s_pos));
 		}
 	}
 	
-	if (word_list == NULL){
-		return false;
-	}else{
-		return true;
-	}
+	rm_dups();
+	
+	return ret_value;
 }
 
 int BogSolver::numWords()
@@ -125,209 +122,47 @@ int BogSolver::numWords(int len)
 	return ret_len;
 }
 
-bool BogSolver::rec_solve(int c_row, int c_col, BogWord curr_bword, string
-curr_string, int s_pos)
+BogWordList* BogSolver::getWords()
 {
-	//cout << "check enter rec_solve" << endl;
-	//cout << "string in: " << curr_string << endl;
-	//cout << "board char: " << board[c_row][c_col].l.c << endl;
-	//cout << "board pos: [" << c_row << "][" << c_col << "]" << endl;
+	BogWordList* ret_list = NULL;
+	if (num_words == 0){
+		return ret_list;
+	}
+	ret_list = new BogWordList;
+	ret_list->words = new BogWord[num_words];
+	ret_list->numWords = num_words;
 	
-	int row_up = c_row - 1;
-	int row_down = c_row + 1;
-	int col_left = c_col -1;
-	int col_right = c_col + 1;
-	int next_pos = s_pos + 1;
-	Linked_Words* temp;
-	bool state = false;
-	bool up, up_right, right, down_right, down, down_left, left, up_left;
-	
-	curr_string += board[c_row][c_col].l.c;
-	//cout << "curr_string rec: " << curr_string << endl;
-	curr_bword.numLetts++;
-	if(curr_bword.letts == NULL){
-		//cout << "check curr_bword NULL" << endl;
-		
-		curr_bword.letts = new BogLett[curr_bword.numLetts];
-		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
-		curr_bword.letts[curr_bword.numLetts-1].row =
-			board[c_row][c_col].l.row;
-		curr_bword.letts[curr_bword.numLetts-1].col =
-			board[c_row][c_col].l.col;
-			
-		//cout << "length: " << curr_bword.numLetts << endl;
-		//cout << "curr_bword.letts[len-1] NULL added: " <<
-			//curr_bword.letts[curr_bword.numLetts-1].c << endl;
-	}else {
-		//cout << "length: " << curr_bword.numLetts << endl;
-		//cout << "curr_bword.letts[len-1] pre-add: " <<
-			//curr_bword.letts[curr_bword.numLetts-1].c << endl;
-		curr_bword.letts = expand_word_len(curr_bword);
-		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
-		//cout << "curr_bword.letts[len-1] post-add: " <<
-			//curr_bword.letts[curr_bword.numLetts-1].c << endl;
+	for (int i = 0; i < num_words; ++i){
+		ret_list->words[i] = bword_array[i];
 	}
 	
-	//cout << "check3" << endl;
-	
-	//cout << "new string: " << curr_string << endl;
-	//cout << "visited: " << board[c_row][c_col].visited << endl;
-	
-	
-	if (board[c_row][c_col].visited){
-		//board[c_row][c_col].visited = false;
-		return false;
-	}else{
-		board[c_row][c_col].visited = true;
-	}
-	
-	//cout << "checking if is word" << endl;
-	
-	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3 ){
-		//cout << "check8" << endl;
-		temp = new Linked_Words;
-		if (temp == NULL){
-			cerr << "out of mem" << endl;
-			exit(1);
-		}
-		//cout << "check4" << endl;
-		temp->word.numLetts = curr_bword.numLetts;
-		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
-		temp->str_word = curr_string;
-		temp->next = NULL;
-		
-		//cout << "check5" << endl;
-		temp->next = word_list;
-		//cout << "check6" << endl;
-		word_list = temp;
-		++num_words_dups;
-		//cout << "check7" << endl;
-		
-	}
-	//cout << "checked if is word" << endl;
-
-	
-	//Propogate in all directions where
-	//Sample direction
-	up = p_board_director(curr_bword, curr_string, next_pos, row_up,
-c_col);//check up
-	//cout << "check up " << up << endl;//DEBUG
-	
-	up_right = p_board_director(curr_bword, curr_string, next_pos, row_up,
-col_right);
-	//check up, right
-	//cout << "check up, right " << up_right << endl;//DEBUG
-	
-	right = p_board_director(curr_bword, curr_string, next_pos, c_row,
-col_right);
-	//check right
-	//cout << "check right " << right << endl;//DEBUG
-	
-	down_right = p_board_director(curr_bword, curr_string, next_pos, row_down,
-col_right);
-	//check down, right
-	//cout << "check down, right " << down_right<< endl;//DEBUG
-	
-	down = p_board_director(curr_bword, curr_string, next_pos, row_down,
-c_col);
-	//check down
-	//cout << "check down " << down << endl;//DEBUG
-	
-	down_left = p_board_director(curr_bword, curr_string, next_pos, row_down,
-col_left);
-	//check down, left
-	//cout << "check down, left " << down_left << endl;//DEBUG
-	
-	left = p_board_director(curr_bword, curr_string, next_pos, c_row,
-col_left);
-	//checkleft
-	//cout << "check left " << left<< endl;//DEBUG
-	
-	up_left = p_board_director(curr_bword, curr_string, next_pos, row_up,
-col_left);
-	//check up, left
-	//cout << "check up, left " << up_left << endl;//DEBUG
-	
-	state = (true ==
-		(up||up_right||right||down_right||down||down_left||left||up_left));
-	
-	//cout << "reached end, current string is " << curr_string << endl;
-	//if we get to the end of the function, no further prefixes
-	//set element to unvisited
-	board[c_row][c_col].visited = false;
-	return state;
+	return ret_list;
 }
 
-void BogSolver::build_board()
+BogWordList* BogSolver::getWords(int len)
 {
-	board = new Letter*[rows];
-	if(board == NULL){
-		cerr << "out of mem" << endl;
-		exit(1);
+	BogWordList* ret_list = NULL;
+	int num_of_len = numWords(len);
+	
+	if(num_of_len == 0){
+		return ret_list;
 	}
-	for (int i = 0; i < rows; ++i){
-		board[i] = new Letter[cols];
-		if (board[i] == NULL){
-			cerr << "out of mem" << endl;
-			exit(1);
+	
+	ret_list = new BogWordList[num_of_len];
+	ret_list->words = new BogWord[num_of_len];
+	ret_list->numWords = num_of_len;
+	
+	for (int i = 0; i < num_words; ++i){
+		if (bword_array[i].numLetts == len){
+			ret_list->words[i] = bword_array[i];
 		}
 	}
-}
-
-bool BogSolver::p_board_director(BogWord curr_bword, string curr_string, int
-n_pos, int n_row, int n_col)
-{
-	//cout << "n_row: " << n_row << ", n_col: " << n_col << endl;
-	//cout << "current string: " << curr_string << endl;
-	//cout << "N_pos: " << n_pos << endl;
-	//cout << "check_string[n_pos]: " << check_string[n_pos] << endl;
-	//cout << "check director" << endl;
-	//cout << "board: " <<n_row << n_col << endl;
-	//cout << "curr_string: " << curr_string << endl;
-	/*
-	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
-	&& dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
-		cout << "check1" << endl;
-		return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
-	}
-	*/
-	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)){
-		//cout << "check9" << endl;
-		if (dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
-			//cout << "check1" << endl;
-			return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
-		}
-	}
-	//cout << "check2" << endl;
-	return false;
+	
+	return ret_list;
 }
 
 void BogSolver::printWords()
 {
-	Linked_Words* iter = word_list;
-	//cout << "check1" << endl;
-	
-	/*
-	cout << "linked list with duplicates: " << endl;
-	while(iter != NULL){
-		//cout << "iter: " << iter << endl;
-		cout << bword_to_string(iter->word) << endl;
-		iter = iter->next;
-	}
-	cout << "number of words with duplicates: " << num_words_dups << endl;
-	//cout << "get here?" << endl;
-	*/
-	
-	rm_dups();
-	/*
-	for (int i = 0; i < num_words; ++i){
-		cout << bword_to_string(bword_array[i]) << endl;;
-	}
-	*/
-	//cout << "num_words without duplicates: " << num_words << endl << endl;
-	
-	//cout << "HBF format:" << endl;
-	
 	for (int i = 0; i < num_words; ++i){
 		cout << "< ";
 		for (int j = 0; j < bword_array[i].numLetts; ++j){
@@ -344,7 +179,196 @@ void BogSolver::printWords()
 	}
 }
 
+void BogSolver::printWords(int len)
+{
+	for (int i = 0; i < num_words; ++i){
+		if (bword_array[i].numLetts == len){
+			cout << "< ";
+			for (int j = 0; j < bword_array[i].numLetts; ++j){
+				cout << bword_array[i].letts[j].c;
+				if (bword_array[i].letts[j].c == 'Q'){
+					cout << 'U' << " ";
+				}else{
+					cout << " ";
+				}
+				cout << bword_array[i].letts[j].row << " ";
+				cout << bword_array[i].letts[j].col << " ";
+			}
+			cout << ">" << endl;
+		}
+	}
+}
 
+void BogSolver::listWords()
+{
+	string temp;
+	
+	for (int i = 0; i < num_words; ++i){
+		temp = "";
+		for (int j = 0; j < bword_array[i].numLetts; ++j){
+			temp += bword_array[i].letts[j].c;
+			if (bword_array[i].letts[j].c == 'Q'){
+				temp += 'U';
+			}
+		}
+		cout << temp << endl;
+	}
+}
+
+void BogSolver::listWords(int len)
+{
+	string temp;
+	
+	for (int i = 0; i < num_words; ++i){
+		if(bword_array[i].numLetts == len){
+			temp = "";
+			for (int j = 0; j < bword_array[i].numLetts; ++j){
+				temp += bword_array[i].letts[j].c;
+				if (bword_array[i].letts[j].c == 'Q'){
+					temp += 'U';
+				}
+			}
+			cout << temp << endl;
+		}
+	}
+}
+
+bool BogSolver::build_board()
+{
+	board = new Letter*[rows];
+	if(board == NULL){
+		//cerr << "out of mem" << endl;
+		//exit(1);
+		return false;
+	}
+	for (int i = 0; i < rows; ++i){
+		board[i] = new Letter[cols];
+		if (board[i] == NULL){
+			//cerr << "out of mem" << endl;
+			//exit(1);
+			return false;
+		}
+	}
+	return true;
+}
+
+bool BogSolver::rec_solve(int c_row, int c_col, BogWord curr_bword, string
+curr_string, int s_pos)
+{
+	int r_up = c_row - 1;
+	int r_down = c_row + 1;
+	int c_left = c_col -1;
+	int c_right = c_col + 1;
+	int n_pos = s_pos + 1;
+	Linked_Words* temp;
+	bool state = false;
+	bool up, up_right, right, d_right, down, d_left, left, up_left;
+	
+	curr_string += board[c_row][c_col].l.c;
+	curr_bword.numLetts++;
+	if(curr_bword.letts == NULL){
+		curr_bword.letts = new BogLett[curr_bword.numLetts];
+		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
+		curr_bword.letts[curr_bword.numLetts-1].row =
+			board[c_row][c_col].l.row;
+		curr_bword.letts[curr_bword.numLetts-1].col =
+			board[c_row][c_col].l.col;
+	}else {
+		curr_bword.letts = expand_word_len(curr_bword);
+		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
+	}
+	
+	if (board[c_row][c_col].visited){
+		return false;
+	}else{
+		board[c_row][c_col].visited = true;
+	}
+	
+	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3 ){
+		temp = new Linked_Words;
+		if (temp == NULL){
+			//cerr << "out of mem" << endl;
+			//exit(1);
+			return false;
+		}
+		temp->word.numLetts = curr_bword.numLetts;
+		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
+		temp->str_word = curr_string;
+		temp->next = NULL;
+		
+		temp->next = word_list;
+		word_list = temp;
+		++num_words_dups;
+		
+	}
+	
+	//Propogate in all directions where
+	//Sample direction
+	
+	//check up
+	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
+	
+	//check up, right
+	up_right = p_board_director(curr_bword,curr_string,n_pos,r_up,c_right);
+	
+	//check right
+	right = p_board_director(curr_bword,curr_string,n_pos,c_row,c_right);
+	
+	//check down, right
+	d_right = p_board_director(curr_bword,curr_string,n_pos,r_down,c_right);
+	
+	//check down
+	down = p_board_director(curr_bword, curr_string, n_pos, r_down, c_col);
+	
+	//check down, left
+	d_left = p_board_director(curr_bword,curr_string,n_pos,r_down,c_left);
+	
+	//check left
+	left = p_board_director(curr_bword, curr_string, n_pos, c_row, c_left);
+	
+	//check up, left
+	up_left = p_board_director(curr_bword,curr_string,n_pos,r_up,c_left);
+	
+	state = (true ==
+		(up||up_right||right||d_right||down||d_left||left||up_left));
+	
+	//if we get to the end of the function, no further prefixes
+	//set element to unvisited
+	board[c_row][c_col].visited = false;
+	return state;
+}
+
+
+
+bool BogSolver::p_board_director(BogWord curr_bword, string curr_string, int
+n_pos, int n_row, int n_col)
+{
+	//cout << "n_row: " << n_row << ", n_col: " << n_col << endl;
+	//cout << "current string: " << curr_string << endl;
+	//cout << "N_pos: " << n_pos << endl;
+	//cout << "check_string[n_pos]: " << check_string[n_pos] << endl;
+	//cout << "check director" << endl;
+	//cout << "board: " <<n_row << n_col << endl;
+	//cout << "curr_string: " << curr_string << endl;
+	
+	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
+	&& dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
+		//cout << "check1" << endl;
+		return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
+	}
+	
+	/*
+	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)){
+		//cout << "check9" << endl;
+		if (dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
+			//cout << "check1" << endl;
+			return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
+		}
+	}
+	*/
+	//cout << "check2" << endl;
+	return false;
+}
 
 void BogSolver::rm_dups(){
 	bword_array = new BogWord[num_words_dups];

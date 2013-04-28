@@ -37,6 +37,10 @@ private:
 	bool find_start_letter(char c);
 	string to_upper(string s);
 	BogLettList* word_list;
+	string* said_array;
+	int num_said;
+	int said_cap;
+	void expand_said();
 };
 
 #endif

@@ -31,4 +31,3 @@ struct Linked_Words
 	string str_word;
 	Linked_Words* next;
 };
-
