@@ -31,6 +31,7 @@ void search(TLink m[])
     while(!s1.empty() && temp.mkey != "LINKY"){
 	    temp = m[s1.top()];
 	    s1.pop();
+	    
 	    if (temp.second != 0){
 		    s1.push(temp.second);
 	    }
