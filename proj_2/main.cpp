@@ -19,11 +19,11 @@ int main()
 	
 	BogSolver solver;
 	solver.readDict();
-	cout << "check read dict" << endl;
+	//cout << "check read dict" << endl;
 	solver.readBoard();
-	cout << "check read board" << endl;
+	//cout << "check read board" << endl;
 	solver.solve();
-	cout << "check solve" << endl;
+	//cout << "check solve" << endl;
 	solver.printWords();
 	
 	

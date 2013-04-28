@@ -28,20 +28,26 @@ private:
 	// other private methods or data may appear here
 	void build_board();
 	Letter** board;
-	string start_string;
+	BogWord start_bword;
 	int cols;
 	int rows;
 	int s_pos;
 	Linked_Words* word_list;
 	Linked_Words* eof_list;
-	bool rec_solve(int c_row, int c_col, string curr_string, int s_pos);
-	bool p_board_director(string curr_string, int n_pos, int n_row,
+	bool rec_solve(int c_row, int c_col, BogWord curr_bword, string
+curr_string, int s_pos);
+	bool p_board_director(BogWord curr_bword, string curr_string, int n_pos,
+int n_row,
 		int n_col);
 	void rm_dups();
 	int num_words_dups;
-	string* word_array;
+	BogWord* bword_array;
+	string* str_word_array;
 	int num_words;
-	BogLettList* str_to_bll(string str_in, int row_in, int col_in);
+	string bword_to_string(BogWord bword_in);
+	Linked_Words* solve_list;
+	BogLett* expand_word_len(BogWord bword);
+	BogLett* copy_bw(BogLett* letts_in, int len);
 };
 
 #endif
