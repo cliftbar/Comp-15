@@ -1,0 +1,1 @@
+g++ -g -Wextra -Wall BogValidator.cpp Dictionary.cpp main.cpp -o bbchecker

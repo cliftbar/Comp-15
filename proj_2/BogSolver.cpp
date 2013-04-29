@@ -284,7 +284,8 @@ curr_string, int s_pos)
 		board[c_row][c_col].visited = true;
 	}
 	
-	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3 ){
+	//can turn into giant "or" with a function
+	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3){
 		temp = new Linked_Words;
 		if (temp == NULL){
 			//cerr << "out of mem" << endl;
@@ -299,7 +300,22 @@ curr_string, int s_pos)
 		temp->next = word_list;
 		word_list = temp;
 		++num_words_dups;
+	}else if (dict.isWord(curr_string) && contains_q(curr_string) &&
+		(int)curr_string.length() >= 2){
+		temp = new Linked_Words;
+		if (temp == NULL){
+			//cerr << "out of mem" << endl;
+			//exit(1);
+			return false;
+		}
+		temp->word.numLetts = curr_bword.numLetts;
+		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
+		temp->str_word = curr_string;
+		temp->next = NULL;
 		
+		temp->next = word_list;
+		word_list = temp;
+		++num_words_dups;
 	}
 	
 	//Propogate in all directions where
@@ -451,7 +467,16 @@ BogLett* BogSolver::copy_bw(BogLett* letts_in, int len)
 	return temp;
 }
 	
+bool BogSolver::contains_q(string str_in)
+{
+	bool is_q = false;
 	
+	for (int i = 0; i < (int)str_in.length(); ++i){
+		is_q = true;
+	}
+	
+	return is_q;
+}
 	
 	
 	

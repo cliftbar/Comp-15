@@ -31,6 +31,7 @@ private:
 	int cols;
 	string check_string;
 	void build_board();
+	bool contains_q(string str_in);
 	bool on_board(string s_in, int s_pos, int c_row, int c_col);
 	bool p_board_director(string curr_string, int n_pos, int n_row,
 		int n_col);

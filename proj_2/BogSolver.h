@@ -45,6 +45,7 @@ private:
 	string bword_to_string(BogWord bword_in);
 	BogLett* expand_word_len(BogWord bword);
 	BogLett* copy_bw(BogLett* letts_in, int len);
+	bool contains_q(string str_in);
 };
 
 #endif

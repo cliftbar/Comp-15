@@ -113,6 +113,19 @@ bool BogValidator::isValid(string s)
 			list_iter = list_iter->next;
 			//cout << "in_board: " << in_board << endl;
 		}
+	}else if (found_start && contains_q(s) && in_dict && s.length() >= 2){
+		//cout << "check3" << endl;
+		while (list_iter != NULL){
+			//cout << "in while" << endl;
+			check_row = list_iter->letter.row;
+			check_col = list_iter->letter.col;
+			in_board = on_board(rec_string, 0,check_row, check_col);
+			if (in_board){
+				break;
+			}
+			list_iter = list_iter->next;
+			//cout << "in_board: " << in_board << endl;
+		}
 	}else{
 		//cout << "check2" << endl;
 		in_board = false;
@@ -150,6 +163,7 @@ void BogValidator::checkWords()
 		said = false;
 		q_no_u = false;
 		curr_word = to_upper(curr_word);
+		
 		//cout << "num_said1: " << num_said << endl;
 		for (int i = 0; i < (int)curr_word.length(); ++i){
 			if (curr_word[i] == 'Q' && curr_word[i+1] != 'U'){
