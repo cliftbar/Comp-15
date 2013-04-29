@@ -1,12 +1,13 @@
 
 #include <iostream>
 #include "Dictionary.h"
-#include "BogValidator.h"
+//#include "BogValidator.h"
+#include "BogScorer.h"
 //#include "BogSolver.h"
 
 int main()
 {
-	
+	/*
 	BogValidator val;
 	val.readDict();
 	//cout << "check read dict" << endl;
@@ -15,7 +16,7 @@ int main()
 	//val.print_board();
 	val.checkWords();
 	//cout << "words checked" << endl;
-	
+	*/
 	
 	/*
 	BogSolver solver;
@@ -27,6 +28,9 @@ int main()
 	//cout << "check solve" << endl;
 	solver.printWords();
 	*/
+	
+	BogScorer score;
+	score.compute_score();
 	
 	return 0;
 }
