@@ -3,6 +3,7 @@
  *
  *   Implementation of the dictionary class.
  *
+ *   version 2013-04-22 fixed bug with isWord on empty trie (10q MB+SC)
  *   version 2013-04-02
  */
 
@@ -128,14 +129,16 @@ static Node *tree_walk(Node*r, string s)
 	int	pos;
 	Node	*iter = r;
 
-	slen = s.length();
-	for( pos = 0 ; pos < slen ; pos++ )
-	{
-		if ( isalpha(s[pos]) )
+	if ( iter != NULL ){
+		slen = s.length();
+		for( pos = 0 ; pos < slen ; pos++ )
 		{
-			iter = iter->get_link( char_to_int(s[pos]) );
-			if ( iter == NULL )
-				return NULL;
+			if ( isalpha(s[pos]) )
+			{
+				iter = iter->get_link( char_to_int(s[pos]) );
+				if ( iter == NULL )
+					return NULL;
+			}
 		}
 	}
 	return iter;
