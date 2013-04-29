@@ -1,8 +1,0 @@
-//path_finder.h
-//Follows all possible paths for a starting word, and list all valid words
-//those paths.
-
-class BogSolver
-{
-public:
-	void rec_solve_board(int c_row, int c_col, string curr_string);

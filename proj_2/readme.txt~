@@ -1,5 +1,5 @@
-compile solver with 
-clang++ -g -Wall -Wextra BogSolver.cpp Dictionary.cpp main.cpp -o bbsolver
+compile solver with:
+g++ -g -Wall -Wextra BogSolver.cpp Dictionary.cpp solverMain.cpp -o bbsolver
 files:
 BogSolver.h
 BogSolver.cpp
@@ -8,11 +8,19 @@ Dictionary.cpp
 bog_structs.h
 *main.cpp
 
-compile checker with 
-clang++ -g -Wextra -Wall BogValidator.cpp Dictionary.cpp main.cpp -o bbchecker
+compile checker with:
+g++ -g -Wextra -Wall BogValidator.cpp Dictionary.cpp checkerMain.cpp -o
+bbchecker
 files:
 BogValidator.h
 BogValidator.cpp
 Dictionary.h
 Dictionary.cpp
 bog_structs.h
+
+compile scorer with:
+g++ -g -Wall -Wextra BogScorer.cpp scorerMain.cpp -o bbscorer
+Files:
+BogScorer.h
+BogScorer.cpp
+scorerMain.cpp
