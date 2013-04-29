@@ -23,17 +23,13 @@ public:
 	
 private:	
 	Dictionary dict; // must use a Dictionary
+	// other private methods or data may appear here
 	Letter** board;
 	int check_row;
 	int check_col;
 	int rows;
 	int cols;
 	string check_string;
-	int num_said;
-	int said_cap;
-	BogLettList* word_list;
-	string* said_array;
-	
 	void build_board();
 	bool contains_q(string str_in);
 	bool on_board(string s_in, int s_pos, int c_row, int c_col);
@@ -41,6 +37,10 @@ private:
 		int n_col);
 	bool find_start_letter(char c);
 	string to_upper(string s);
+	BogLettList* word_list;
+	string* said_array;
+	int num_said;
+	int said_cap;
 	void expand_said();
 };
 

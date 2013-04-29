@@ -35,6 +35,7 @@ BogScorer::~BogScorer()
 void BogScorer::compute_score()
 {
 	string temp;
+	
 	while (cin >> temp){
 		if (temp == "NO"){
 			cout << NOT_WORD_SCORE << " " << temp << " ";
@@ -61,5 +62,6 @@ void BogScorer::compute_score()
 			++num_words;
 		}
 	}
+	
 	cout << num_words << " words " << curr_score << " points" << endl;
 }

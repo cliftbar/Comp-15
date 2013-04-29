@@ -353,6 +353,7 @@ n_pos, int n_row, int n_col)
 	}
 	
 	
+	cout << n_string << endl;
 	/*
 	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
 	&& dict.isPrefix(n_string)){

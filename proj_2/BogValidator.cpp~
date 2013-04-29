@@ -296,7 +296,7 @@ void BogValidator::expand_said()
 		temp[i] = said_array[i];
 	}
 	
-	delete [] said_array;
+	delete said_array;
 	said_cap = said_cap * 2;
 	
 	said_array = temp;
