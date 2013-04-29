@@ -143,12 +143,21 @@ void BogValidator::checkWords()
 	string temp = "";
 	bool valid;
 	bool said = false;
+	bool q_no_u = false;
 	
 	while (cin >> curr_word){
 		//cout << "current word is: " << curr_word << "." << endl;
 		said = false;
+		q_no_u = false;
 		curr_word = to_upper(curr_word);
+		
 		//cout << "num_said1: " << num_said << endl;
+		for (int i = 0; i < (int)curr_word.length(); ++i){
+			if (curr_word[i] == 'Q' && curr_word[i+1] != 'U'){
+				cout << "NO " << curr_word << endl;
+				q_no_u = true;
+			} 
+		}
 		
 		for (int i = 0; i < (int)curr_word.length(); ++i){
 			if (curr_word[i] == 'Q' && curr_word[i+1] == 'U'){
@@ -158,46 +167,48 @@ void BogValidator::checkWords()
 			}
 		}
 		
-		valid = isValid(curr_word);
+		if (!q_no_u){
+			valid = isValid(curr_word);
 		
-		for (int i = 0; i < (int)curr_word.length() + 1; ++i){
-			if (curr_word[i] == 'Q'){
-				//cout << "check3: " << curr_word << endl;
-				curr_word.insert(curr_word.begin() + i + 1, 'U');
-				//cout << "check4: " << curr_word << endl;
-			}
-		}
-		
-		if(num_said == 0){
-			said_array[num_said] = curr_word;
-			++num_said;
-			//cout << "check7" << endl;
-		}else{
-			//cout << "num_said: " << num_said << endl;
-			for (int i = 0; i < num_said; ++i){
-				if (curr_word == said_array[i]){
-					//cout << "check5" << endl;
-					said = true;
+			for (int i = 0; i < (int)curr_word.length() + 1; ++i){
+				if (curr_word[i] == 'Q'){
+					//cout << "check3: " << curr_word << endl;
+					curr_word.insert(curr_word.begin() + i + 1, 'U');
+					//cout << "check4: " << curr_word << endl;
 				}
 			}
-			if(!said){
+		
+			if(num_said == 0){
 				said_array[num_said] = curr_word;
 				++num_said;
+				//cout << "check7" << endl;
+			}else{
+				//cout << "num_said: " << num_said << endl;
+				for (int i = 0; i < num_said; ++i){
+					if (curr_word == said_array[i]){
+						//cout << "check5" << endl;
+						said = true;
+					}
+				}
+				if(!said){
+					said_array[num_said] = curr_word;
+					++num_said;
+				}
 			}
-		}
 		
-		//cout << "check6" << endl;
+			//cout << "check6" << endl;
 		
-		//cout << "numsaid: " << num_said << endl;
-		if (said_cap-1 <= num_said){
-			expand_said();
-		}
-		//cout << "said_cap: " << said_cap << endl;
+			//cout << "numsaid: " << num_said << endl;
+			if (said_cap-1 <= num_said){
+				expand_said();
+			}
+			//cout << "said_cap: " << said_cap << endl;
 		
-		if(valid && !said){
-			cout << "OK " << curr_word << endl;
-		}else {
-			cout << "NO " << curr_word << endl;
+			if(valid && !said){
+				cout << "OK " << curr_word << endl;
+			}else {
+				cout << "NO " << curr_word << endl;
+			}
 		}
 	}
 }
@@ -264,7 +275,7 @@ int c_col)
 	//cout << "check up, left " << up_left << endl;//DEBUG
 	
 	bool state = (true ==
-(up||up_right||right||down_right||down||down_left||left||up_left));
+		(up||up_right||right||down_right||down||down_left||left||up_left));
 	//cout << "State: " << state << endl;
 	
 	board[c_row][c_col].visited = false;
