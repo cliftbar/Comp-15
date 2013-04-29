@@ -42,8 +42,8 @@ private:
 	bool p_board_director(BogWord curr_bword, string curr_string, int n_pos,
 		int n_row, int n_col);
 	void rm_dups();
-	string bword_to_string(BogWord bword_in);
-	BogLett* expand_word_len(BogWord* bword);
+	string bword_to_string(BogWord &bword_in);
+	BogLett* expand_word_len(BogWord bword);
 	BogLett* copy_bw(BogLett* letts_in, int len);
 	bool contains_q(string str_in);
 };

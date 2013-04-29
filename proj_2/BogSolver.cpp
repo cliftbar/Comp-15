@@ -243,41 +243,38 @@ curr_string, int s_pos)
 	bool state = false;
 	bool up, up_right, right, d_right, down, d_left, left, up_left;
 	
+	//cout << "board: " << board[c_row][c_col].l.c;
 	curr_string += board[c_row][c_col].l.c;
+	curr_bword.numLetts++;
 	
 	
 	if(curr_bword.letts == NULL){
-		curr_bword.letts = new BogLett[curr_bword.numLetts + 1];
-		cout << "check1" << endl;
-		curr_bword.letts[curr_bword.numLetts].c = board[c_row][c_col].l.c;
-		curr_bword.letts[curr_bword.numLetts].row =
+		curr_bword.letts = new BogLett[curr_bword.numLetts];
+		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
+		curr_bword.letts[curr_bword.numLetts-1].row =
 			board[c_row][c_col].l.row;
-		curr_bword.letts[curr_bword.numLetts].col =
+		curr_bword.letts[curr_bword.numLetts-1].col =
 			board[c_row][c_col].l.col;
 	}else {
-		cout << "check2" << endl;
-		//BogLett* temp = expand_word_len(curr_bword);
-		//delete[] curr_bword.letts;
 		curr_bword.letts = expand_word_len(curr_bword);
-		curr_bword.letts[curr_bword.numLetts] = board[c_row][c_col].l;
+		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
 	}
 	
-	curr_bword.numLetts++;
 	
 	if (board[c_row][c_col].visited){
 		return false;
 	}else{
 		board[c_row][c_col].visited = true;
 	}
-	
+	/*
 	//can turn into giant "or" with a function
-	cout << "check3" << endl;
+	//cout << "check3" << endl;
 	cout << curr_string << endl;
 	for (int i = 0; i < curr_bword.numLetts; ++i){
 		cout << curr_bword.letts[i].c;
 	}
 	cout << endl;
-	
+	*/
 	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3){
 		temp = new Linked_Words;
 		if (temp == NULL){
@@ -306,13 +303,13 @@ curr_string, int s_pos)
 		word_list = temp;
 		++num_words_dups;
 	}
-	cout << "check4" << endl;
+	//cout << "check4" << endl;
 	//Propogate in all directions where
 	//Sample direction
 	//check up
 	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
 	//check up, right
-	cout << "check5" << endl;
+	//cout << "check5" << endl;
 	up_right = p_board_director(curr_bword,curr_string,n_pos,r_up,c_right);
 	//check right
 	right = p_board_director(curr_bword,curr_string,n_pos,c_row,c_right);
@@ -341,26 +338,41 @@ curr_string, int s_pos)
 bool BogSolver::p_board_director(BogWord curr_bword, string curr_string, int
 n_pos, int n_row, int n_col)
 {
+	/*
+	for (int i = 0; i < curr_bword.numLetts+4; ++i){
+			cout << curr_bword.letts[i].c;
+		}
 	cout << "check6" << endl;
 	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)){
-		string n_string = curr_string + board[n_row][n_col].l.c;
-		cout << curr_string << " " << board[n_row][n_col].l.c << endl;
+		cout << dict.isPrefix(curr_string) << endl;
+		char board_char = board[n_row][n_col].l.c;
+		cout << "board_char: " << board_char << endl;
+		cout << "check10" << endl;
+		cout << dict.isPrefix(curr_string) << endl;
+		string n_string = curr_string;
+		cout << dict.isPrefix(n_string) << endl;
+		n_string.push_back(board_char);
 		cout << n_string << endl;
+		cout << dict.isPrefix(n_string) << endl;
+		cout << curr_string << " " << board_char << endl;
+		cout << n_string << endl;
+		cout << n_string.length() << endl;
 		if (dict.isPrefix(n_string)){
 			cout << "check7" << endl;
-			return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
+			return rec_solve(n_row, n_col, curr_bword, n_string, n_pos);
 		}
-	}
-	
-	
-	/*
-	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
-	&& dict.isPrefix(n_string)){
-		cout << "check7" << endl;
-		return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
+		cout << "check11" << endl;
 	}
 	*/
-	cout << "check8" << endl;
+	
+	
+	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
+	&& dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
+		//cout << "check7" << endl;
+		return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
+	}
+	
+	//cout << "check8" << endl;
 	return false;
 }
 
@@ -398,16 +410,18 @@ string BogSolver::bword_to_string(BogWord bword_in)
 	return ret_word;
 }
 
-BogLett* BogSolver::expand_word_len(BogWord bword)
+BogLett* BogSolver::expand_word_len(BogWord &bword)
 {
 	int len = bword.numLetts;
 	BogLett* temp = new BogLett[len];
-	
-	for (int i = 0; i < len; ++i){
-		cout << bword.letts[i].c;
-		temp[i] = bword.letts[i];
+	//cout << len << endl;
+	for (int i = 0; i < len-1; ++i){
+		//cout << "woor: " << bword.letts[i].c;
+		temp[i].c = bword.letts[i].c;
+		temp[i].row = bword.letts[i].row;
+		temp[i].col = bword.letts[i].col;
 	}
-	cout << endl;
+	//cout << endl;
 	return temp;
 }
 
