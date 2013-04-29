@@ -386,7 +386,9 @@ bool BogValidator::contains_q(string str_in)
 	bool is_q = false;
 	
 	for (int i = 0; i < (int)str_in.length(); ++i){
-		is_q = true;
+		if(str_in[i] == 'Q'){
+			is_q = true;
+		}
 	}
 	
 	return is_q;

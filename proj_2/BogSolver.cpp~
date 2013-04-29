@@ -467,7 +467,7 @@ BogLett* BogSolver::copy_bw(BogLett* letts_in, int len)
 	return temp;
 }
 	
-bool BogValidator::contains_q(string str_in)
+bool BogSolver::contains_q(string str_in)
 {
 	bool is_q = false;
 	
