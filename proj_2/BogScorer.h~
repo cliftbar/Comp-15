@@ -4,7 +4,9 @@
 #define BOGSCORER
 #include "Dictionary.h"
 #include "bog_structs.h"
-
+//BogScorer.h
+//Created by: Cameron Barclift
+//Scores the results of the checker from standard input stream.
 class BogScorer
 {
 public:

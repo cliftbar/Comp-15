@@ -1,4 +1,6 @@
-
+//BogScorer.cpp
+//Created by: Cameron Barclift
+//Scores the results of the checker from standard input stream.
 #include <iostream>
 #include "BogScorer.h"
 
@@ -42,7 +44,10 @@ BogScorer::~BogScorer()
 void BogScorer::compute_score()
 {
 	string temp;
+	
+	//Read in data until the end of the stream
 	while (cin >> temp){
+		//Determine the scoring bin of the word
 		if (temp == "NO"){
 			cout << NOT_WORD_SCORE << " " << temp << " ";
 			cin >> temp;
@@ -68,5 +73,7 @@ void BogScorer::compute_score()
 			++num_words;
 		}
 	}
+	
+	//output number of point scoring words and total points
 	cout << num_words << " words " << curr_score << " points" << endl;
 }
