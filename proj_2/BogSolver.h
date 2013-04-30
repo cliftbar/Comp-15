@@ -70,6 +70,7 @@ private:
 	BogLett* copy_bw(BogLett* letts_in, int len);
 	//Determines if a string contains a 'Q' character
 	bool contains_q(string str_in);
+	bool add_to_solve_list(BogWord &curr_bword, int c_row, int c_col);
 };
 
 #endif

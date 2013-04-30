@@ -1,6 +1,6 @@
-//path_finder.h
-//Follows all possible paths for a starting word, and list all valid words
-//those paths.
+//BogSolver.h
+//Created by: Cameron Barclift
+//BogSolver reads in a boggle board and solves for every word on the board.
 #ifndef BOGSOLVER
 #define BOGSOLVER
 #include "Dictionary.h"
@@ -10,22 +10,36 @@
 class BogSolver
 {
 public:
+	//Constructor
 	BogSolver();
+	//Destructor
 	~BogSolver();
+	
+	//Reads from the standard input stream to build a dictionary
 	bool readDict();
+	//Reads a Boggle board into the program from the standard input stream
 	bool readBoard();
-	bool solve(); // search board for words in dict
-	int numWords(); // returns number of words found
-	int numWords(int len); // number of words of length len
-	BogWordList* getWords(); // returns all words found
-	BogWordList* getWords(int len); // returns words of len len
-	void printWords(); // print all words in HBF
-	void printWords(int len); // print len-length words in HBF
-	void listWords(); // print just the text, no coords
-	void listWords(int len); 	// just the text, no coords
+	//Search board for words in dictionary
+	bool solve(); 
+	//Returns number of words found
+	int numWords();
+	//Returns the number of words of length len
+	int numWords(int len);
+	//Returns a list of all words found
+	BogWordList* getWords(); 
+	//Returns a list of all words of len len
+	BogWordList* getWords(int len);
+	//Prints all the words in HBF
+	void printWords();
+	//Prints all the words of lenght len in HBF
+	void printWords(int len);
+	//Print just the word text, no coordinates
+	void listWords(); 
+	//Prints just the text of length len words, no coordinates
+	void listWords(int len); 	
 private:
-	Dictionary dict; // must use a Dictionary
-	// other private methods or data may appear here
+	//Private data members
+	Dictionary dict;
 	Letter** board;
 	BogWord start_bword;
 	int cols;
@@ -36,16 +50,27 @@ private:
 	BogWord* bword_array;
 	int num_words;
 	
+	//Private Functions
+	//Builds the framework of the board, no values
 	bool build_board();
+	//Recursive solve function
 	bool rec_solve(int c_row, int c_col, BogWord curr_bword, 
 		string curr_string, int s_pos);
+	//Calls the recursive function on the board cell passed in if the position
+	//is valid
 	bool p_board_director(BogWord curr_bword, string curr_string, int n_pos,
 		int n_row, int n_col);
+	//Removes the duplicates from the internal word list
 	void rm_dups();
+	//converts a BogWord to a string
 	string bword_to_string(BogWord bword_in);
+	//BogLett array expansion function
 	BogLett* expand_word_len(BogWord &bword);
+	//Returns a copy of the BogLett array passed in
 	BogLett* copy_bw(BogLett* letts_in, int len);
+	//Determines if a string contains a 'Q' character
 	bool contains_q(string str_in);
+	bool add_to_solve_list(Bogword &curr_bword, int c_row, int c_col);
 };
 
 #endif

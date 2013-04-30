@@ -6,6 +6,7 @@
 #include <cstdlib>
 using namespace std;
 
+/////////////////////////////Public Functions/////////////////////////////////
 //Constructor
 BogSolver::BogSolver()
 {
@@ -278,6 +279,8 @@ void BogSolver::listWords(int len)
 	}
 }
 
+//////////////////////////////Private Functions///////////////////////////////
+
 //Builds the framwork of the board
 bool BogSolver::build_board()
 {
@@ -322,9 +325,18 @@ curr_string, int s_pos)
 	//accurate until the letter is added in the next if statement
 	curr_bword.numLetts++;
 	
+	bool mem_leave = add_to_solve_list(curr_bword, c_row, c_col);
+	if (!mem_leave){
+		return false;
+	}
+	/*
 	//If NULL, give new memory, otherwise expand array and add letter
 	if(curr_bword.letts == NULL){
 		curr_bword.letts = new BogLett[curr_bword.numLetts];
+		if (curr_bword.letts == NULL){
+			//not enough memory
+			return false;
+		}
 		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
 		curr_bword.letts[curr_bword.numLetts-1].row =
 			board[c_row][c_col].l.row;
@@ -334,24 +346,12 @@ curr_string, int s_pos)
 		curr_bword.letts = expand_word_len(curr_bword);
 		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
 	}
+	*/
 	
 	//If word is in the dictionary and long enough add to solved list.  Words
 	//with a q may be one less than minimum length, as a u will be added.
-	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3){
-		temp = new Linked_Words;
-		if (temp == NULL){
-			return false;
-		}
-		temp->word.numLetts = curr_bword.numLetts;
-		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
-		temp->str_word = curr_string;
-		temp->next = NULL;
-		
-		temp->next = word_list;
-		word_list = temp;
-		++num_words_dups;
-	}else if (dict.isWord(curr_string) && contains_q(curr_string) &&
-		(int)curr_string.length() >= 2){
+	if (dict.isWord(curr_string) && ((int)curr_string.length() >= 3 || 
+		(contains_q(curr_string) && (int)curr_string.length() >= 2))){
 		temp = new Linked_Words;
 		if (temp == NULL){
 			return false;
@@ -367,7 +367,6 @@ curr_string, int s_pos)
 	}
 	
 	//Propogate recursive solver in all directions through director function
-	
 	//check up
 	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
 	
@@ -495,8 +494,26 @@ bool BogSolver::contains_q(string str_in)
 	return is_q;
 }
 	
-	
-	
+bool BogSolver::add_to_solve_list(BogWord &curr_bword, int c_row, int c_col)
+{
+	//If NULL, give new memory, otherwise expand array and add letter
+	if(curr_bword.letts == NULL){
+		curr_bword.letts = new BogLett[curr_bword.numLetts];
+		if (curr_bword.letts == NULL){
+			//not enough memory
+			return false;
+		}
+		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
+		curr_bword.letts[curr_bword.numLetts-1].row =
+			board[c_row][c_col].l.row;
+		curr_bword.letts[curr_bword.numLetts-1].col =
+			board[c_row][c_col].l.col;
+	}else {
+		curr_bword.letts = expand_word_len(curr_bword);
+		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
+		return true;
+	}
+}
 	
 	
 	
