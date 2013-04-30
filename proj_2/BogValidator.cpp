@@ -117,13 +117,6 @@ bool BogValidator::isValid(string s)
 		in_board = false;
 	}
 	
-	//Delete the current starting letter list
-	while(start_lett_list != NULL){
-		list_iter = start_lett_list;
-		start_lett_list = start_lett_list->next;
-		delete list_iter;
-	}
-	
 	return (in_board && in_dict);
 }
 
@@ -143,55 +136,24 @@ void BogValidator::checkWords()
 		q_no_u = false;
 		
 		curr_word = to_upper(curr_word);
+		q_no_u = q_without_u(curr_word);
 		
-		//If a word is input that has a q with no u, immediately output NO
-		for (int i = 0; i < (int)curr_word.length(); ++i){
-			if (curr_word[i] == 'Q' && curr_word[i+1] != 'U'){
-				cout << "NO " << curr_word << endl;
-				q_no_u = true;
-			}
-		}
-		
-		//Remove the u after a q if there is a q
-		for (int i = 0; i < (int)curr_word.length(); ++i){
-			if (curr_word[i] == 'Q' && curr_word[i+1] == 'U'){
-				curr_word.erase(curr_word.begin() + i + 1);
-			}
-		}
+		rm_u(curr_word);//remove u after q
 		
 		//If q_no_u is false, from earlier if statement, check if word is
 		//valid
 		if (!q_no_u){
-			//check if word is valid
-			valid = isValid(curr_word);
+			valid = isValid(curr_word);//check if word is valid
+			add_u(curr_word);//add u back in
+			said = been_said(curr_word);//check if word has been said
 			
-			//add u back in after the q
-			for (int i = 0; i < (int)curr_word.length() + 1; ++i){
-				if (curr_word[i] == 'Q'){
-					curr_word.insert(curr_word.begin() + i + 1, 'U');
-				}
-			}
-		
-			//check if the word has been said before by the user
-			if(num_said == 0){
+			//if not said, add to list
+			if(!said){
 				said_array[num_said] = curr_word;
 				++num_said;
-			}else{
-				for (int i = 0; i < num_said; ++i){
-					if (curr_word == said_array[i]){
-						said = true;
-					}
-				}
-				if(!said){
-					said_array[num_said] = curr_word;
-					++num_said;
-				}
 			}
-				
-			//expand array of words said if it is full
-			if (said_cap-1 <= num_said){
-				expand_said();
-			}
+
+			expand_said();//expand array if said_array is full
 			
 			//print the result
 			if(valid && !said){
@@ -207,12 +169,7 @@ void BogValidator::checkWords()
 bool BogValidator::on_board(string s_in, int s_pos, int c_row,
 int c_col)
 {
-	int row_up = c_row - 1;
-	int row_down = c_row + 1;
-	int col_right = c_col + 1;
-	int col_left = c_col - 1;
-	int next_pos = s_pos + 1;
-	bool up, up_right, right, down_right, down, down_left, left, up_left;
+	bool state = false;
 	s_in += check_string[s_pos];
 	
 	//If the position has been visited, return false, otherwise set board to
@@ -231,23 +188,7 @@ int c_col)
 	}
 	
 	//propogate in all directions
-	up = p_board_director(s_in, next_pos, row_up, c_col);//check up
-	up_right = p_board_director(s_in, next_pos, row_up, col_right);
-	//check up, right
-	right = p_board_director(s_in, next_pos, c_row, col_right);//check right
-	down_right = p_board_director(s_in, next_pos, row_down, col_right);
-	//check down, right
-	down = p_board_director(s_in, next_pos, row_down, c_col);//check down
-	down_left = p_board_director(s_in, next_pos, row_down, col_left);
-	//check down, left
-	left = p_board_director(s_in, next_pos, c_row, col_left);//check left
-	up_left = p_board_director(s_in, next_pos, row_up, col_left);
-	//check up, left
-	
-	//if any directions return true, state is true.  
-	bool state = (true ==
-		(up||up_right||right||down_right||down||down_left||left||up_left));
-	
+	state = propogation(s_in, s_pos, c_row, c_col);
 	//mark position as unvisited and leave
 	board[c_row][c_col].visited = false;
 	return state;
@@ -325,17 +266,19 @@ string BogValidator::to_upper(string s)
 //Expands the said_array to double the size
 void BogValidator::expand_said()
 {
-	string* temp = new string[said_cap*2];
+	if (said_cap-1 <= num_said){
+		string* temp = new string[said_cap*2];
 	
-	//copy to new array
-	for (int i = 0; i < said_cap; ++i){
-		temp[i] = said_array[i];
+		//copy to new array
+		for (int i = 0; i < said_cap; ++i){
+			temp[i] = said_array[i];
+		}
+	
+		delete [] said_array;
+		said_cap = said_cap * 2;
+	
+		said_array = temp;
 	}
-	
-	delete [] said_array;
-	said_cap = said_cap * 2;
-	
-	said_array = temp;
 }
 
 //Returns true if the string contains a q
@@ -351,3 +294,100 @@ bool BogValidator::contains_q(string str_in)
 	
 	return is_q;
 }
+
+bool BogValidator::q_without_u(string curr_word)
+{
+	//If a word is input that has a q with no u, immediately output NO
+	for (int i = 0; i < (int)curr_word.length(); ++i){
+		if (curr_word[i] == 'Q' && curr_word[i+1] != 'U'){
+			cout << "NO " << curr_word << endl;
+			return true;
+		}
+	}
+	return false;
+}
+
+void BogValidator::rm_u(string &curr_word)
+{
+	//Remove the u after a q if there is a q
+	for (int i = 0; i < (int)curr_word.length(); ++i){
+		if (curr_word[i] == 'Q' && curr_word[i+1] == 'U'){
+			curr_word.erase(curr_word.begin() + i + 1);
+		}
+	}
+}
+
+void BogValidator::add_u(string &curr_word)
+{
+	//add u back in after the q
+	for (int i = 0; i < (int)curr_word.length() + 1; ++i){
+		if (curr_word[i] == 'Q'){
+			curr_word.insert(curr_word.begin() + i + 1, 'U');
+		}
+	}
+}
+
+bool BogValidator::been_said(string curr_word)
+{
+	//check if the word has been said before by the user
+	if(num_said == 0){
+		said_array[num_said] = curr_word;
+		++num_said;
+	}else{
+		for (int i = 0; i < num_said; ++i){
+			if (curr_word == said_array[i]){
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool BogValidator::propogation(string s_in, int s_pos, int c_row, int c_col)
+{
+	int row_up = c_row - 1;
+	int row_down = c_row + 1;
+	int col_right = c_col + 1;
+	int col_left = c_col - 1;
+	int next_pos = s_pos + 1;
+	bool up, u_rgt, right, d_rgt, down, d_left, left, up_left;
+	
+	//propogate in all directions
+	up = p_board_director(s_in, next_pos, row_up, c_col);//check up
+	u_rgt = p_board_director(s_in, next_pos, row_up, col_right);
+	//check up, right
+	right = p_board_director(s_in, next_pos, c_row, col_right);//check right
+	d_rgt = p_board_director(s_in, next_pos, row_down, col_right);
+	//check down, right
+	down = p_board_director(s_in, next_pos, row_down, c_col);//check down
+	d_left = p_board_director(s_in, next_pos, row_down, col_left);
+	//check down, left
+	left = p_board_director(s_in, next_pos, c_row, col_left);//check left
+	up_left = p_board_director(s_in, next_pos, row_up, col_left);
+	//check up, left
+	
+	//if any directions return true, state is true.  
+	return (true == (up||u_rgt||right||d_rgt||down||d_left||left||up_left));
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -45,6 +45,11 @@ private:
 	bool find_start_letter(char c);
 	string to_upper(string s);
 	void expand_said();
+	bool q_without_u(string curr_word);
+	void rm_u(string &curr_word);
+	void add_u(string &curr_word);
+	bool been_said(string curr_word);
+	bool propogation(string s_in, int s_pos, int c_row, int c_col);
 };
 
 #endif

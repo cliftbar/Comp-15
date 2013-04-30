@@ -303,14 +303,7 @@ bool BogSolver::build_board()
 bool BogSolver::rec_solve(int c_row, int c_col, BogWord curr_bword, string
 curr_string, int s_pos)
 {
-	int r_up = c_row - 1;
-	int r_down = c_row + 1;
-	int c_left = c_col -1;
-	int c_right = c_col + 1;
-	int n_pos = s_pos + 1;
-	Linked_Words* temp;
 	bool state = false;
-	bool up, up_right, right, d_right, down, d_left, left, up_left;
 	
 	//If board visited, leave, otherwise set board as visited
 	if (board[c_row][c_col].visited){
@@ -325,76 +318,17 @@ curr_string, int s_pos)
 	//accurate until the letter is added in the next if statement
 	curr_bword.numLetts++;
 	
-	bool mem_leave = add_to_solve_list(curr_bword, c_row, c_col);
+	bool mem_leave = add_to_bword_solved(curr_bword, c_row, c_col);
 	if (!mem_leave){
 		return false;
 	}
-	/*
-	//If NULL, give new memory, otherwise expand array and add letter
-	if(curr_bword.letts == NULL){
-		curr_bword.letts = new BogLett[curr_bword.numLetts];
-		if (curr_bword.letts == NULL){
-			//not enough memory
-			return false;
-		}
-		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
-		curr_bword.letts[curr_bword.numLetts-1].row =
-			board[c_row][c_col].l.row;
-		curr_bword.letts[curr_bword.numLetts-1].col =
-			board[c_row][c_col].l.col;
-	}else {
-		curr_bword.letts = expand_word_len(curr_bword);
-		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
-	}
-	*/
 	
-	//If word is in the dictionary and long enough add to solved list.  Words
-	//with a q may be one less than minimum length, as a u will be added.
-	if (dict.isWord(curr_string) && ((int)curr_string.length() >= 3 || 
-		(contains_q(curr_string) && (int)curr_string.length() >= 2))){
-		temp = new Linked_Words;
-		if (temp == NULL){
-			return false;
-		}
-		temp->word.numLetts = curr_bword.numLetts;
-		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
-		temp->str_word = curr_string;
-		temp->next = NULL;
-		
-		temp->next = word_list;
-		word_list = temp;
-		++num_words_dups;
+	mem_leave = add_to_lwords_solved(curr_bword, curr_string);
+	if (!mem_leave){
+		return false;
 	}
 	
-	//Propogate recursive solver in all directions through director function
-	//check up
-	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
-	
-	//check up, right
-	up_right = p_board_director(curr_bword,curr_string,n_pos,r_up,c_right);
-	
-	//check right
-	right = p_board_director(curr_bword,curr_string,n_pos,c_row,c_right);
-	
-	//check down, right
-	d_right = p_board_director(curr_bword,curr_string,n_pos,r_down,c_right);
-	
-	//check down
-	down = p_board_director(curr_bword, curr_string, n_pos, r_down, c_col);
-	
-	//check down, left
-	d_left = p_board_director(curr_bword,curr_string,n_pos,r_down,c_left);
-	
-	//check left
-	left = p_board_director(curr_bword, curr_string, n_pos, c_row, c_left);
-	
-	//check up, left
-	up_left = p_board_director(curr_bword,curr_string,n_pos,r_up,c_left);
-	
-	//If any are true, return true
-	state = (true ==
-		(up||up_right||right||d_right||down||d_left||left||up_left));
-	
+	state = propogation(curr_bword, curr_string, s_pos, c_row, c_col);
 	//Once we get to the end of the function, no further prefixes
 	//set element to unvisited and leave
 	board[c_row][c_col].visited = false;
@@ -494,7 +428,7 @@ bool BogSolver::contains_q(string str_in)
 	return is_q;
 }
 	
-bool BogSolver::add_to_solve_list(BogWord &curr_bword, int c_row, int c_col)
+bool BogSolver::add_to_bword_solved(BogWord &curr_bword, int c_row, int c_col)
 {
 	//If NULL, give new memory, otherwise expand array and add letter
 	if(curr_bword.letts == NULL){
@@ -515,10 +449,60 @@ bool BogSolver::add_to_solve_list(BogWord &curr_bword, int c_row, int c_col)
 	return true;
 }
 	
+bool BogSolver::add_to_lwords_solved(BogWord &curr_bword, string curr_string)
+{
+	Linked_Words* temp;
 	
+	//If word is in the dictionary and long enough add to solved list.  Words
+	//with a q may be one less than minimum length, as a u will be added.
+	if (dict.isWord(curr_string) && ((int)curr_string.length() >= 3 || 
+		(contains_q(curr_string) && (int)curr_string.length() >= 2))){
+		temp = new Linked_Words;
+		if (temp == NULL){
+			return false;
+		}
+		temp->word.numLetts = curr_bword.numLetts;
+		temp->word.letts = copy_bw(curr_bword.letts, curr_bword.numLetts);
+		temp->str_word = curr_string;
+		temp->next = NULL;
+		
+		temp->next = word_list;
+		word_list = temp;
+		++num_words_dups;
+	}
+	return true;
+}
+
+bool BogSolver::propogation(BogWord curr_bword, string curr_string, int s_pos,
+				  int c_row, int c_col)
+{
+	int r_up = c_row - 1;
+	int r_down = c_row + 1;
+	int c_left = c_col -1;
+	int c_right = c_col + 1;
+	int n_pos = s_pos + 1;
+	bool up, u_rgt, right, d_rgt, down, d_left, left, u_left;
 	
-	
-	
+	//Propogate recursive solver in all directions through director function
+	//check up
+	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
+	//check up, right
+	u_rgt = p_board_director(curr_bword,curr_string,n_pos,r_up,c_right);
+	//check right
+	right = p_board_director(curr_bword,curr_string,n_pos,c_row,c_right);
+	//check down, right
+	d_rgt = p_board_director(curr_bword,curr_string,n_pos,r_down,c_right);
+	//check down
+	down = p_board_director(curr_bword, curr_string, n_pos, r_down, c_col);
+	//check down, left
+	d_left = p_board_director(curr_bword,curr_string,n_pos,r_down,c_left);
+	//check left
+	left = p_board_director(curr_bword, curr_string, n_pos, c_row, c_left);
+	//check up, left
+	u_left = p_board_director(curr_bword,curr_string,n_pos,r_up,c_left);
+	//If any are true, return true
+	return (true == (up||u_rgt||right||d_rgt||down||d_left||left||u_left));
+}
 	
 	
 	

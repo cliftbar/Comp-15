@@ -33,7 +33,7 @@ private:
 	string check_string;
 	int num_said;
 	int said_cap;
-	BogLettList* word_list;
+	BogLettList* start_lett_list;
 	string* said_array;
 	
 	//Private Functions
@@ -45,6 +45,10 @@ private:
 	bool find_start_letter(char c);
 	string to_upper(string s);
 	void expand_said();
+	bool q_without_u(string curr_word);
+	void rm_u(string &curr_word);
+	void add_u(string &curr_word);
+	bool been_said(string curr_word);
 };
 
 #endif
