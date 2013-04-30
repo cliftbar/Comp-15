@@ -1,28 +1,30 @@
 //BogValidator.h
-//
+//Created by: Cameron Barclift
 #ifndef BOGVALIDATOR
 #define BOGVALIDATOR
 #include "Dictionary.h"
 #include "bog_structs.h"
+
 class BogValidator
 {
 public:
-	BogValidator(); // constructor
+	BogValidator(); //constructor
 	
-	~BogValidator(); // destructor
+	~BogValidator(); //destructor
 	
-	bool readDict(); // read in a dictionary
+	bool readDict(); //read in a dictionary
 	
-	bool readBoard(); // read in a board
+	bool readBoard(); //read in a board
 	
-	bool isValid(string s); // validates one word
+	bool isValid(string s); //validates one word
 	
-	void checkWords(); // validates cin
+	void checkWords(); //validates the user input
 	
-	void print_board();
+	void print_board(); //Prints the board
 	
-private:	
-	Dictionary dict; // must use a Dictionary
+private:
+	//Private Data members
+	Dictionary dict;
 	Letter** board;
 	int check_row;
 	int check_col;
@@ -31,9 +33,10 @@ private:
 	string check_string;
 	int num_said;
 	int said_cap;
-	BogLettList* word_list;
+	BogLettList* start_lett_list;
 	string* said_array;
 	
+	//Private Functions
 	void build_board();
 	bool contains_q(string str_in);
 	bool on_board(string s_in, int s_pos, int c_row, int c_col);

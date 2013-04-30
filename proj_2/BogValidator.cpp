@@ -1,17 +1,20 @@
-
+//BogValidator.cpp
+//Created by: Cameron Barclift
+//Validates the users input and individual words
 #include "BogValidator.h"
 #include "Dictionary.h"
 #include <cstdlib>
 #include <iostream>
 #include <cctype>
 
+//////////////////////////Public Functions////////////////////////////////////
 BogValidator::BogValidator()
 {
 	//constructor
 	check_row = 0;
 	check_col = 0;
 	check_string = "";
-	word_list = NULL;
+	start_lett_list = NULL;
 	said_cap = 2;
 	said_array = new string[said_cap];
 	num_said = 0;
@@ -22,11 +25,14 @@ BogValidator::~BogValidator()
 	//destructor
 }
 
+//Reads in the dictionary
 bool BogValidator::readDict()
 {
 	string temp;
 	
 	cin >> temp;
+	
+	//If the word read in has a q, remove the u after if present
 	for (int i = 0; i < (int)temp.length(); ++i){
 		if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 			temp.erase(temp.begin() + i + 1);
@@ -34,11 +40,13 @@ bool BogValidator::readDict()
 		
 	}
 	
+	//Read in data until the sentinel value
 	while (temp != "."){
 		if (!dict.insert(temp)){
 			return false;
 		}
 		cin >> temp;
+		//If a q is present, and the next letter is a u, the u is removed
 		for (int i = 0; i < (int)temp.length(); ++i){
 			if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 				temp.erase(temp.begin() + i + 1);
@@ -48,6 +56,7 @@ bool BogValidator::readDict()
 	return true;
 }
 
+//reads in the board
 bool BogValidator::readBoard()
 {
 	string row_string;
@@ -59,6 +68,7 @@ bool BogValidator::readBoard()
 	
 	build_board();
 	
+	//Add characters to board.  Return false if incorrect data
 	for (int i = 0; i < rows; ++i){
 		if(cin >> row_string && row_string.length() == read_cols){
 			for (int j = 0; j < cols; ++j){
@@ -75,6 +85,7 @@ bool BogValidator::readBoard()
 	return true;
 }
 
+//Returns true if the string is valid
 bool BogValidator::isValid(string s)
 {
 	bool in_dict = false;
@@ -83,22 +94,16 @@ bool BogValidator::isValid(string s)
 	string rec_string = "";
 	bool found_start = find_start_letter(s[0]);
 	rec_string[0] = s[0];
-	BogLettList* list_iter = word_list;
+	BogLettList* list_iter = start_lett_list;
 	
 	in_dict = dict.isWord(s);
 	
-	//can be a big or function
-	if (found_start && s.length() >= 3 && in_dict){
-		while (list_iter != NULL){
-			check_row = list_iter->letter.row;
-			check_col = list_iter->letter.col;
-			in_board = on_board(rec_string, 0,check_row, check_col);
-			if (in_board){
-				break;
-			}
-			list_iter = list_iter->next;
-		}
-	}else if (found_start && contains_q(s) && in_dict && s.length() >= 2){
+	//If the first letter of the word is on the board and the length is long
+	//enough or if the first letter is found, the word contains a q, and the
+	//words length is one less than the minimum, enter if statement
+	if ((found_start && s.length() >= 3 && in_dict) || (found_start &&
+		contains_q(s) && in_dict && s.length() >= 2)){
+		
 		while (list_iter != NULL){
 			check_row = list_iter->letter.row;
 			check_col = list_iter->letter.col;
@@ -111,17 +116,19 @@ bool BogValidator::isValid(string s)
 	}else{
 		in_board = false;
 	}
-		
-		
-	while(word_list != NULL){
-		list_iter = word_list;
-		word_list = word_list->next;
+	
+	//Delete the current starting letter list
+	while(start_lett_list != NULL){
+		list_iter = start_lett_list;
+		start_lett_list = start_lett_list->next;
 		delete list_iter;
 	}
 	
 	return (in_board && in_dict);
 }
 
+//Reads in words from cin, and checks if they are valid.  The the word is
+//valid, it is added to the list of valid words
 void BogValidator::checkWords()
 {
 	string curr_word;
@@ -131,32 +138,41 @@ void BogValidator::checkWords()
 	bool q_no_u = false;
 	
 	while (cin >> curr_word){
+		//reset said and has q values
 		said = false;
 		q_no_u = false;
+		
 		curr_word = to_upper(curr_word);
 		
+		//If a word is input that has a q with no u, immediately output NO
 		for (int i = 0; i < (int)curr_word.length(); ++i){
 			if (curr_word[i] == 'Q' && curr_word[i+1] != 'U'){
 				cout << "NO " << curr_word << endl;
 				q_no_u = true;
-			} 
+			}
 		}
 		
+		//Remove the u after a q if there is a q
 		for (int i = 0; i < (int)curr_word.length(); ++i){
 			if (curr_word[i] == 'Q' && curr_word[i+1] == 'U'){
 				curr_word.erase(curr_word.begin() + i + 1);
 			}
 		}
 		
+		//If q_no_u is false, from earlier if statement, check if word is
+		//valid
 		if (!q_no_u){
+			//check if word is valid
 			valid = isValid(curr_word);
-		
+			
+			//add u back in after the q
 			for (int i = 0; i < (int)curr_word.length() + 1; ++i){
 				if (curr_word[i] == 'Q'){
 					curr_word.insert(curr_word.begin() + i + 1, 'U');
 				}
 			}
 		
+			//check if the word has been said before by the user
 			if(num_said == 0){
 				said_array[num_said] = curr_word;
 				++num_said;
@@ -171,11 +187,13 @@ void BogValidator::checkWords()
 					++num_said;
 				}
 			}
-		
+				
+			//expand array of words said if it is full
 			if (said_cap-1 <= num_said){
 				expand_said();
 			}
-		
+			
+			//print the result
 			if(valid && !said){
 				cout << "OK " << curr_word << endl;
 			}else {
@@ -185,6 +203,7 @@ void BogValidator::checkWords()
 	}
 }
 
+//Recursive function to check if a word is on the board
 bool BogValidator::on_board(string s_in, int s_pos, int c_row,
 int c_col)
 {
@@ -196,6 +215,8 @@ int c_col)
 	bool up, up_right, right, down_right, down, down_left, left, up_left;
 	s_in += check_string[s_pos];
 	
+	//If the position has been visited, return false, otherwise set board to
+	//visited
 	if (board[c_row][c_col].visited){
 		board[c_row][c_col].visited = false;
 		return false;
@@ -203,11 +224,13 @@ int c_col)
 		board[c_row][c_col].visited = true;
 	}
 	
+	//If we've found the word, set visited to false return true
 	if (s_in == check_string){
 		board[c_row][c_col].visited = false;
 		return true;
 	}
 	
+	//propogate in all directions
 	up = p_board_director(s_in, next_pos, row_up, c_col);//check up
 	up_right = p_board_director(s_in, next_pos, row_up, col_right);
 	//check up, right
@@ -220,12 +243,18 @@ int c_col)
 	left = p_board_director(s_in, next_pos, c_row, col_left);//check left
 	up_left = p_board_director(s_in, next_pos, row_up, col_left);
 	//check up, left
+	
+	//if any directions return true, state is true.  
 	bool state = (true ==
 		(up||up_right||right||down_right||down||down_left||left||up_left));
+	
+	//mark position as unvisited and leave
 	board[c_row][c_col].visited = false;
 	return state;
 }
 
+//Function to direct the recursive function, and check if the indicated
+//postitin is in bounds.  If not in bounds return false
 bool BogValidator::p_board_director(string curr_string, int n_pos, int  n_row,
 		int n_col)
 {
@@ -236,6 +265,7 @@ bool BogValidator::p_board_director(string curr_string, int n_pos, int  n_row,
 	return false;
 }
 
+//Builds boggle board framework
 void BogValidator::build_board()
 {
 	board = new Letter*[rows];
@@ -244,6 +274,7 @@ void BogValidator::build_board()
 	}
 }
 
+//Prints the boggle board
 void BogValidator::print_board()
 {
 	for (int i = 0; i < rows; ++i){
@@ -254,17 +285,19 @@ void BogValidator::print_board()
 	}
 }
 
+//Checks if the first letter of the word to be validated is on the  board. 
+//All possible start points are added to the list
 bool BogValidator::find_start_letter(char c)
 {
 	bool present = false;
-	BogLettList* temp = word_list;
+	BogLettList* temp = start_lett_list;
 	
 	for (int i = 0; i < rows; ++i){
 		for (int j = 0; j < cols; ++j){
 			if (board[i][j].l.c == c){
-				if (word_list == NULL){
-					word_list = new BogLettList;
-					temp = word_list;
+				if (start_lett_list == NULL){
+					start_lett_list = new BogLettList;
+					temp = start_lett_list;
 				}else {
 					temp->next = new BogLettList;
 					temp = temp->next;
@@ -279,6 +312,7 @@ bool BogValidator::find_start_letter(char c)
 	return present;
 }
 
+//Converts the string passed in to uppercase
 string BogValidator::to_upper(string s)
 {
 	int s_len = s.length();
@@ -288,10 +322,12 @@ string BogValidator::to_upper(string s)
 	return s;
 }
 
+//Expands the said_array to double the size
 void BogValidator::expand_said()
 {
 	string* temp = new string[said_cap*2];
 	
+	//copy to new array
 	for (int i = 0; i < said_cap; ++i){
 		temp[i] = said_array[i];
 	}
@@ -302,6 +338,7 @@ void BogValidator::expand_said()
 	said_array = temp;
 }
 
+//Returns true if the string contains a q
 bool BogValidator::contains_q(string str_in)
 {
 	bool is_q = false;

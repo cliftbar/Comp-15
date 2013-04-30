@@ -1,6 +1,3 @@
-//bog_structs.h
-//Created by: Cameron Barclift
-//Contains all the structs used by the various boggle functions
 struct BogLett {
 	char c;
 	int row, col;

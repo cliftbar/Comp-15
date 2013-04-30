@@ -1,28 +1,42 @@
-//path_finder.cpp
+//BogSolver.cpp
+//Created by: Cameron Barclift
 #include "BogSolver.h"
 #include <iostream>
 #include <cctype>
 #include <cstdlib>
 using namespace std;
 
+/////////////////////////////Public Functions/////////////////////////////////
+//Constructor
 BogSolver::BogSolver()
 {
+	//Initialize private variables
 	start_bword.numLetts = 0;
 	start_bword.letts = NULL;
 	s_pos = 0;
 	word_list = NULL;
 	num_words_dups = 0;
 	num_words = 0;
+	rows = 0;
+	cols = 0;
+	board = NULL;
+	bword_array = NULL;
 }
+
+//Default destructor
 BogSolver::~BogSolver()
 {
 	//destructor
 }
 
+//Reads in a dictionary from the input stream.  All words are converted to
+//uppercase.  A '.' is the sentinel for the end of the dictionary.
 bool BogSolver::readDict()
 {
 	string temp;
 	cin >> temp;
+	
+	//If the word contains a q, and the next letter is a u, the u is removed
 	for (int i = 0; i < (int)temp.length(); ++i){
 		if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 			temp.erase(temp.begin() + i + 1);
@@ -30,11 +44,14 @@ bool BogSolver::readDict()
 		
 	}
 	
+	//loop until the sentinel value is reached
 	while (temp != "."){
 		if (!dict.insert(temp)){
 			return false;
 		}
 		cin >> temp;
+		//If the word contains a q, and the next letter is a u, the u
+		//is removed
 		for (int i = 0; i < (int)temp.length(); ++i){
 			if (toupper(temp[i]) == 'Q' && toupper(temp[i+1]) == 'U'){
 				temp.erase(temp.begin() + i + 1);
@@ -44,6 +61,9 @@ bool BogSolver::readDict()
 	return true;
 }
 
+//Reads in a set amount of data (specified by rows and cols) and builds the
+//boggle board.  Rows are read in a a string, and converted to single
+//BogLetts, all uppercase
 bool BogSolver::readBoard()
 {
 	string row_string;
@@ -71,33 +91,43 @@ bool BogSolver::readBoard()
 	return true;
 }
 
+//Public Sovle Function, sets up for the recursive solver
 bool BogSolver::solve()
 {
 	bool ret_value = true;
 	
-	//loop for every element as a start position
+	//loop calling solver for every element as a start position
 	for (int i = 0; i < rows; ++i){
 		for (int j = 0; j < cols; ++j){
 			ret_value = (true == rec_solve(i, j, start_bword, "", s_pos));
 		}
 	}
 	
+	//remove duplicates from solutions list
 	rm_dups();
 	
 	return ret_value;
 }
 
+//Returns the total number of words
 int BogSolver::numWords()
 {
 	return num_words;
 }
 
+//Returns the total number of words of length len.
 int BogSolver::numWords(int len)
 {
 	int ret_len = 0;
 	
 	for (int i = 0; i < num_words; ++i){
-		if (bword_array[i].numLetts == len){
+		//True cases: word doesn't contain q and is of length len, or if the
+		//word contains q and is of length len-1
+		if((!contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len) ||
+			(contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len-1)){
+				
 			++ret_len;
 		}
 	}
@@ -105,16 +135,21 @@ int BogSolver::numWords(int len)
 	return ret_len;
 }
 
+//Returns a BogWordList containing every word found.  Returns NULL if no words
+//found
 BogWordList* BogSolver::getWords()
 {
 	BogWordList* ret_list = NULL;
 	if (num_words == 0){
 		return ret_list;
 	}
+	
+	//Assign ret_list new memory
 	ret_list = new BogWordList;
 	ret_list->words = new BogWord[num_words];
 	ret_list->numWords = num_words;
 	
+	//Loop through ever word in solve list
 	for (int i = 0; i < num_words; ++i){
 		ret_list->words[i] = bword_array[i];
 	}
@@ -122,6 +157,8 @@ BogWordList* BogSolver::getWords()
 	return ret_list;
 }
 
+//Returns a BogWordList containing every word found of length len.  Returns
+//NULL if no words found of length len
 BogWordList* BogSolver::getWords(int len)
 {
 	BogWordList* ret_list = NULL;
@@ -131,12 +168,20 @@ BogWordList* BogSolver::getWords(int len)
 		return ret_list;
 	}
 	
+	//Assign ret_list new memory
 	ret_list = new BogWordList[num_of_len];
 	ret_list->words = new BogWord[num_of_len];
 	ret_list->numWords = num_of_len;
 	
+	//Loop through every word in solve list
 	for (int i = 0; i < num_words; ++i){
-		if (bword_array[i].numLetts == len){
+		//True cases: word doesn't contain q and is of length len, or if the
+		//word contains q and is of length len-1
+		if((!contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len) || 
+			(contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len - 1)){
+			
 			ret_list->words[i] = bword_array[i];
 		}
 	}
@@ -144,12 +189,14 @@ BogWordList* BogSolver::getWords(int len)
 	return ret_list;
 }
 
+//Prints every word in solve list in HBF format
 void BogSolver::printWords()
 {
 	for (int i = 0; i < num_words; ++i){
 		cout << "< ";
 		for (int j = 0; j < bword_array[i].numLetts; ++j){
 			cout << bword_array[i].letts[j].c;
+			//If there is a q, add a u afterwards
 			if (bword_array[i].letts[j].c == 'Q'){
 				cout << 'U' << " ";
 			}else{
@@ -162,13 +209,21 @@ void BogSolver::printWords()
 	}
 }
 
+//Prints every word in solve list of length len in HBF format
 void BogSolver::printWords(int len)
 {
 	for (int i = 0; i < num_words; ++i){
-		if (bword_array[i].numLetts == len){
+		//True cases: word doesn't contain q and is of length len, or if the
+		//word contains q and is of length len-1
+		if((!contains_q(bword_to_string(bword_array[i])) &&
+			bword_array[i].numLetts == len) ||	
+			(contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len-1)){
+			
 			cout << "< ";
 			for (int j = 0; j < bword_array[i].numLetts; ++j){
 				cout << bword_array[i].letts[j].c;
+				//If there is a q, add a u afterwards
 				if (bword_array[i].letts[j].c == 'Q'){
 					cout << 'U' << " ";
 				}else{
@@ -190,6 +245,7 @@ void BogSolver::listWords()
 		temp = "";
 		for (int j = 0; j < bword_array[i].numLetts; ++j){
 			temp += bword_array[i].letts[j].c;
+			//If there is a q in the word, add a u after
 			if (bword_array[i].letts[j].c == 'Q'){
 				temp += 'U';
 			}
@@ -203,10 +259,17 @@ void BogSolver::listWords(int len)
 	string temp;
 	
 	for (int i = 0; i < num_words; ++i){
-		if(bword_array[i].numLetts == len){
+		//True cases: word doesn't contain q and is of length len, or if the
+		//word contains q and is of length len-1
+		if((!contains_q(bword_to_string(bword_array[i]))
+			&& bword_array[i].numLetts == len) ||
+			(contains_q(bword_to_string(bword_array[i]))
+				&& bword_array[i].numLetts == len-1)){
+			
 			temp = "";
 			for (int j = 0; j < bword_array[i].numLetts; ++j){
 				temp += bword_array[i].letts[j].c;
+				//If there is a q, add a u after
 				if (bword_array[i].letts[j].c == 'Q'){
 					temp += 'U';
 				}
@@ -216,12 +279,17 @@ void BogSolver::listWords(int len)
 	}
 }
 
+//////////////////////////////Private Functions///////////////////////////////
+
+//Builds the framwork of the board
 bool BogSolver::build_board()
 {
+	//If there isn't enough memory, return false
 	board = new Letter*[rows];
 	if(board == NULL){
 		return false;
 	}
+	
 	for (int i = 0; i < rows; ++i){
 		board[i] = new Letter[cols];
 		if (board[i] == NULL){
@@ -231,6 +299,7 @@ bool BogSolver::build_board()
 	return true;
 }
 
+//Recursive solve function
 bool BogSolver::rec_solve(int c_row, int c_col, BogWord curr_bword, string
 curr_string, int s_pos)
 {
@@ -243,11 +312,20 @@ curr_string, int s_pos)
 	bool state = false;
 	bool up, up_right, right, d_right, down, d_left, left, up_left;
 	
-	//cout << "board: " << board[c_row][c_col].l.c;
+	//If board visited, leave, otherwise set board as visited
+	if (board[c_row][c_col].visited){
+		return false;
+	}else{
+		board[c_row][c_col].visited = true;
+	}
+	
+	//Add current letter to current string
 	curr_string += board[c_row][c_col].l.c;
+	//Add 1 to the number of letters in the current BogWord.  This is not
+	//accurate until the letter is added in the next if statement
 	curr_bword.numLetts++;
 	
-	
+	//If NULL, give new memory, otherwise expand array and add letter
 	if(curr_bword.letts == NULL){
 		curr_bword.letts = new BogLett[curr_bword.numLetts];
 		curr_bword.letts[curr_bword.numLetts-1].c = board[c_row][c_col].l.c;
@@ -260,21 +338,8 @@ curr_string, int s_pos)
 		curr_bword.letts[curr_bword.numLetts-1] = board[c_row][c_col].l;
 	}
 	
-	
-	if (board[c_row][c_col].visited){
-		return false;
-	}else{
-		board[c_row][c_col].visited = true;
-	}
-	/*
-	//can turn into giant "or" with a function
-	//cout << "check3" << endl;
-	cout << curr_string << endl;
-	for (int i = 0; i < curr_bword.numLetts; ++i){
-		cout << curr_bword.letts[i].c;
-	}
-	cout << endl;
-	*/
+	//If word is in the dictionary and long enough add to solved list.  Words
+	//with a q may be one less than minimum length, as a u will be added.
 	if (dict.isWord(curr_string) && (int)curr_string.length() >= 3){
 		temp = new Linked_Words;
 		if (temp == NULL){
@@ -303,102 +368,85 @@ curr_string, int s_pos)
 		word_list = temp;
 		++num_words_dups;
 	}
-	//cout << "check4" << endl;
-	//Propogate in all directions where
-	//Sample direction
+	
+	//Propogate recursive solver in all directions through director function
+	
 	//check up
 	up = p_board_director(curr_bword, curr_string, n_pos, r_up, c_col);
+	
 	//check up, right
-	//cout << "check5" << endl;
 	up_right = p_board_director(curr_bword,curr_string,n_pos,r_up,c_right);
+	
 	//check right
 	right = p_board_director(curr_bword,curr_string,n_pos,c_row,c_right);
+	
 	//check down, right
 	d_right = p_board_director(curr_bword,curr_string,n_pos,r_down,c_right);
+	
 	//check down
 	down = p_board_director(curr_bword, curr_string, n_pos, r_down, c_col);
+	
 	//check down, left
 	d_left = p_board_director(curr_bword,curr_string,n_pos,r_down,c_left);
+	
 	//check left
 	left = p_board_director(curr_bword, curr_string, n_pos, c_row, c_left);
+	
 	//check up, left
 	up_left = p_board_director(curr_bword,curr_string,n_pos,r_up,c_left);
 	
+	//If any are true, return true
 	state = (true ==
 		(up||up_right||right||d_right||down||d_left||left||up_left));
 	
-	//if we get to the end of the function, no further prefixes
-	//set element to unvisited
+	//Once we get to the end of the function, no further prefixes
+	//set element to unvisited and leave
 	board[c_row][c_col].visited = false;
 	return state;
 }
 
 
-
 bool BogSolver::p_board_director(BogWord curr_bword, string curr_string, int
 n_pos, int n_row, int n_col)
 {
-	/*
-	for (int i = 0; i < curr_bword.numLetts+4; ++i){
-			cout << curr_bword.letts[i].c;
-		}
-	cout << "check6" << endl;
-	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)){
-		cout << dict.isPrefix(curr_string) << endl;
-		char board_char = board[n_row][n_col].l.c;
-		cout << "board_char: " << board_char << endl;
-		cout << "check10" << endl;
-		cout << dict.isPrefix(curr_string) << endl;
-		string n_string = curr_string;
-		cout << dict.isPrefix(n_string) << endl;
-		n_string.push_back(board_char);
-		cout << n_string << endl;
-		cout << dict.isPrefix(n_string) << endl;
-		cout << curr_string << " " << board_char << endl;
-		cout << n_string << endl;
-		cout << n_string.length() << endl;
-		if (dict.isPrefix(n_string)){
-			cout << "check7" << endl;
-			return rec_solve(n_row, n_col, curr_bword, n_string, n_pos);
-		}
-		cout << "check11" << endl;
-	}
-	*/
-	
-	
+	//If the indicated row and column combination is valid, and the next word
+	//that would be formed is a prefix, go to that space.
 	if ((0 <= n_row && n_row < rows) && (0 <= n_col && n_col < cols)
 	&& dict.isPrefix(curr_string + board[n_row][n_col].l.c)){
-		//cout << "check7" << endl;
 		return rec_solve(n_row, n_col, curr_bword, curr_string, n_pos);
 	}
 	
-	//cout << "check8" << endl;
 	return false;
 }
 
+//Removes duplicate entries from the solve word list to solve word array.  
+//There is no preference for any particular path
 void BogSolver::rm_dups(){
 	bword_array = new BogWord[num_words_dups];
 	bool present = false;
 	Linked_Words* iter = word_list;
 	
 	while(iter != NULL){
+		//if it is said before, present = true
 		for (int i = 0; i < num_words; ++i){
 			if (iter->str_word == bword_to_string(bword_array[i])){
 				present = true;
 			}
 		}
 		
+		//If not said before, add to list
 		if (!present){
 			bword_array[num_words] = iter->word;
 			++num_words;
 		}else{
 			present = false;
 		}
+		//Progress iterator
 		iter = iter->next;
 	}
 }
 
-
+//Converts a BogWord into a string.  Letter coordinates are not included
 string BogSolver::bword_to_string(BogWord bword_in)
 {
 	string ret_word = "";
@@ -410,24 +458,24 @@ string BogSolver::bword_to_string(BogWord bword_in)
 	return ret_word;
 }
 
+//Expands the dynamic array of a BogLett[]
 BogLett* BogSolver::expand_word_len(BogWord &bword)
 {
 	int len = bword.numLetts;
 	BogLett* temp = new BogLett[len];
-	//cout << len << endl;
+	
 	for (int i = 0; i < len-1; ++i){
-		//cout << "woor: " << bword.letts[i].c;
 		temp[i].c = bword.letts[i].c;
 		temp[i].row = bword.letts[i].row;
 		temp[i].col = bword.letts[i].col;
 	}
-	//cout << endl;
 	return temp;
 }
 
+//returns a copy of the BogLetts[]
 BogLett* BogSolver::copy_bw(BogLett* letts_in, int len)
 {
-	BogLett* temp = new BogLett[len+1];
+	BogLett* temp = new BogLett[len];
 	
 	for (int i = 0; i < len; ++i){
 		temp[i] = letts_in[i];
@@ -435,7 +483,8 @@ BogLett* BogSolver::copy_bw(BogLett* letts_in, int len)
 	
 	return temp;
 }
-	
+
+//Returns true if the string passed in contains a q
 bool BogSolver::contains_q(string str_in)
 {
 	bool is_q = false;
