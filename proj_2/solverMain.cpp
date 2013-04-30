@@ -6,14 +6,8 @@ int main()
 {
 	BogSolver solver;
 	solver.readDict();
-	//cout << "check read dict" << endl;
 	solver.readBoard();
-	//cout << "check read board" << endl;
 	solver.solve();
-	//cout << "check solve" << endl;
 	solver.printWords();
-	solver.listWords(3);
-	cout << "len 3 words: " << solver.numWords(3) << endl;;
-	
 	return 0;
 }
