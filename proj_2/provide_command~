@@ -1,0 +1,1 @@
+provide comp15 proj2part2 BogSolver.h BogSolver.cpp Dictionary.h Dictionary.cpp bog_structs.h solverMain.cpp BogValidator.h BogValidator.cpp checkerMain.cpp BogScorer.h BogScorer.cpp scorerMain.cpp
